@@ -1,0 +1,10 @@
+# Cache (auto-deleted after restructure, but ignore if --keep-cache)
+ascendc-dev-knowledge/references/cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
