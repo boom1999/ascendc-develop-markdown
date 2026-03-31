@@ -5,8 +5,6 @@
 
 ---
 
-# SetSingleOutputShape
-
 #### 功能说明
 
 设置单核上结果矩阵Output的形状。
@@ -24,10 +22,6 @@ void SetSingleOutputShape(int64_t singleCo, int64_t singleDo, int64_t singleM)
 | singleCo | 输入 | 单核上输出通道的大小。 |
 | singleDo | 输入 | 单核上Output D维度大小。 |
 | singleM | 输入 | 单核上Output M维度大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

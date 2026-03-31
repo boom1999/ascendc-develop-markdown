@@ -5,8 +5,6 @@
 
 ---
 
-# LayerNormGrad
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -95,10 +93,6 @@ __aicore__ inline void LayerNormGrad(const LocalTensor<T>& outputPdX, const Loca
 | epsilon | 输入 | 防除零的权重系数。 |
 | tiling | 输入 | LayerNormGrad计算所需Tiling信息。 |
 | 表示LayerNormGrad各个输入的数据排布格式Format。默认值表示输入的Format为ND。支持的取值为DataFormat::ND。LayerNormGradShapeInfo类型，具体定义如下。 ``` struct LayerNormGradShapeInfo {     DataFormat dataFormat = DataFormat::ND; }; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

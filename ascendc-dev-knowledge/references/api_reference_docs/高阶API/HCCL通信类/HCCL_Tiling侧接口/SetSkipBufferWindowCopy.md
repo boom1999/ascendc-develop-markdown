@@ -5,8 +5,6 @@
 
 ---
 
-# SetSkipBufferWindowCopy
-
 #### 功能说明
 
 设置通信算法获取输入数据的位置。

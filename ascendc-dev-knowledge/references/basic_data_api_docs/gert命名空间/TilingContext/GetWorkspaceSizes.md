@@ -5,8 +5,6 @@
 
 ---
 
-# GetWorkspaceSizes
-
 #### 函数功能
 
 获取workspace sizes指针，workspace大小以字节为单位。

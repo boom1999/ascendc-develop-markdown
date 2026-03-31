@@ -5,8 +5,6 @@
 
 ---
 
-# SoftMax/SimpleSoftMax Tiling
-
 #### 功能说明
 
 用于获取SoftMax/SimpleSoftMax Tiling参数。

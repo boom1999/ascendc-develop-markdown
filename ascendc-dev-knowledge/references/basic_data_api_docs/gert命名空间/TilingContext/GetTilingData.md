@@ -5,8 +5,6 @@
 
 ---
 
-# GetTilingData
-
 #### 函数功能
 
 获取有类型的tiling data指针。

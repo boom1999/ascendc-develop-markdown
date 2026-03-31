@@ -5,8 +5,6 @@
 
 ---
 
-# GetStreamId
-
 #### 函数功能
 
 返回当前算子绑定的StreamId。

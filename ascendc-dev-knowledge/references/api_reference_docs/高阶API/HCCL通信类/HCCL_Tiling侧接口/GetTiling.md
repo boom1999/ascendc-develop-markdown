@@ -5,8 +5,6 @@
 
 ---
 
-# GetTiling
-
 #### 功能说明
 
 获取Mc2InitTiling参数和Mc2CcTiling参数。

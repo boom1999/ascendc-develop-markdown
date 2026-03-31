@@ -5,8 +5,6 @@
 
 ---
 
-# 使用标准C++语法定义Tiling结构体
-
 #### 具体步骤
 
 在定义Tiling结构体时，可以使用标准C++语法定义一个**POD类型（Plain Old Data）**，即与C语言兼容的数据类型。具体步骤如下。完整样例请参考[标准C++语法定义Tiling结构体样例](https://gitee.com/ascend/samples/tree/master/operator/ascendc/0_introduction/10_matmul_frameworklaunch/MatmulCustomMultiCore)。

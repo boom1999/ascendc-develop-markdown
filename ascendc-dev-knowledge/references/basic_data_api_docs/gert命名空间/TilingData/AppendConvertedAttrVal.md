@@ -5,8 +5,6 @@
 
 ---
 
-# AppendConvertedAttrVal
-
 #### 函数功能
 
 将RuntimeAttrs内存中的第index个属性，从src_type数据类型转成dst_type数据类型后，追加在当前的tilingdata后面。

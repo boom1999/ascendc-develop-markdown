@@ -5,8 +5,6 @@
 
 ---
 
-# GetInputInstanceInfo
-
 #### 函数功能
 
 根据算子IR原型中的输入索引，获取对应的实例化对象。

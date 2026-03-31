@@ -5,8 +5,6 @@
 
 ---
 
-# GetShapeDim
-
 #### 函数功能
 
 获取Shape第idx维度。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetWeightShape
-
 #### 功能说明
 
 设置权重矩阵Weight的形状。
@@ -28,10 +26,6 @@ void SetWeightShape(int64_t cout, int64_t cin, int64_t d, int64_t h, int64_t w)
 | d | 输入 | 设置Weight的Depth值。 |
 | h | 输入 | 设置Weight的Height值。 |
 | w | 输入 | 设置Weight的Width值。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

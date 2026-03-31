@@ -5,8 +5,6 @@
 
 ---
 
-# E10501 Not_Supported_Operator
-
 #### Symptom
 
 IR for Op %s with optype %s is not registered.

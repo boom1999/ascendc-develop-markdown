@@ -5,8 +5,6 @@
 
 ---
 
-# SetOrgWeightShape
-
 #### 功能说明
 
 设置权重矩阵Weight的原始形状。
@@ -25,10 +23,6 @@ void SetOrgWeightShape(int64_t orgCo, int64_t orgKd, int64_t orgKh, int64_t orgK
 | orgKd | 输入 | 原始Weight D维度大小。 |
 | orgKh | 输入 | 原始Weight H维度大小。 |
 | orgKw | 输入 | 原始Weight W维度大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

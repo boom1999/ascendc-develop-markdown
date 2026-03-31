@@ -5,8 +5,6 @@
 
 ---
 
-# ICPU_SET_TILING_KEY
-
 #### 功能说明
 
 用于指定本次CPU调测使用的tilingKey。调测执行时，将只执行算子核函数中该tilingKey对应的分支。
@@ -22,10 +20,6 @@ ICPU_SET_TILING_KEY(tilingKey)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | tilingKey | 输入 | 指定本次CPU调测使用的tilingKey，参数类型为int32_t。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

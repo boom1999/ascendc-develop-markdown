@@ -5,8 +5,6 @@
 
 ---
 
-# Cast
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -296,10 +294,6 @@ __aicore__ inline void Cast(const LocalTensor<T>& dst, const LocalTensor<U>& src
 | int64_t | CAST_NONE |  |
 | int64_t | int32_t | CAST_NONE |
 | float | CAST_RINT/CAST_FLOOR/CAST_CEIL/CAST_ROUND/CAST_TRUNC |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

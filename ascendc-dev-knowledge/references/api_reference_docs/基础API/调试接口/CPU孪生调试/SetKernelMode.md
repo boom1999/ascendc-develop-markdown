@@ -5,8 +5,6 @@
 
 ---
 
-# SetKernelMode
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ void SetKernelMode(KernelMode mode)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | 内核模式，针对AIC，AIV，MIX算子的CPU调试，参数取值分别为AIC_MODE，AIV_MODE，MIX_MODE。                                                                                                                           ``` enum class KernelMode {     MIX_MODE = 0,     AIC_MODE,     AIV_MODE }; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

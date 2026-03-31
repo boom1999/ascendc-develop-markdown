@@ -5,8 +5,6 @@
 
 ---
 
-# GetConstData
-
 #### 函数功能
 
 如果TensorDesc是常量节点的描述，获取TensorDesc中的权重值。

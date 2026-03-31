@@ -5,8 +5,6 @@
 
 ---
 
-# SetStorageFormat
-
 #### 函数功能
 
 设置运行时format。

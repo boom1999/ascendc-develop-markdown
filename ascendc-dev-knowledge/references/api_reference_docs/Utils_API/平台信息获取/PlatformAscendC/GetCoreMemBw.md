@@ -5,8 +5,6 @@
 
 ---
 
-# GetCoreMemBw
-
 #### 功能说明
 
 获取硬件平台存储空间的带宽大小。硬件存储空间类型定义如下：
@@ -36,10 +34,6 @@ void GetCoreMemBw(const CoreMemType &memType, uint64_t &bwSize) const
 | --- | --- | --- |
 | memType | 输入 | 硬件存储空间类型。 |
 | bwSize | 输出 | 对应硬件的存储空间的带宽大小。单位是Byte/cycle，cycle代表时钟周期。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

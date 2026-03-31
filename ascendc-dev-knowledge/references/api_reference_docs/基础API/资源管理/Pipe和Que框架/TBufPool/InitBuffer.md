@@ -5,8 +5,6 @@
 
 ---
 
-# InitBuffer
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -56,10 +54,6 @@ template <TPosition pos> __aicore__ inline bool InitBuffer(TBuf<pos>& buf, uint3
 #### 约束说明
 
 声明TBufPool时，可以通过bufIDSize指定可分配Buffer的最大数量，默认上限为4，最大为16。TQue或TBuf的物理内存需要和TBufPool一致。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

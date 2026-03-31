@@ -5,8 +5,6 @@
 
 ---
 
-# InputsDataDependency
-
 #### 函数功能
 
 设置算子计算依赖第几个输入tensor的值。

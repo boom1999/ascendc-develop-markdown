@@ -5,8 +5,6 @@
 
 ---
 
-# GetLocalMemorySize
-
 #### 函数功能
 
 算子获取所需的Local Memory大小。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetExtendInfo
-
 #### 函数功能
 
 获取本kernel的扩展信息。

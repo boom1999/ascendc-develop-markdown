@@ -5,8 +5,6 @@
 
 ---
 
-# E40024 Environment_Error_Call_Python_Function_Failed
-
 #### Symptom
 
 Failed to call Python Method %s. Reason: %s.

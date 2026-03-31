@@ -5,8 +5,6 @@
 
 ---
 
-# SetFixPipeAddr
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -39,10 +37,6 @@ __aicore__ inline void SetFixPipeAddr(const LocalTensor<T>& eleWiseData, uint16_
 | c0ChStride | 输入 | 在L1 Buffer上的C0 channel stride，单位是C0_SIZE（32B）。 eleWiseData沿N方向以C0为单位切分得到的数据块称为C0 channel，两块C0 channel的间隔称之为C0 channel stride。 |
 
 #### 约束说明
-
-无
-
-#### 返回值说明
 
 无
 

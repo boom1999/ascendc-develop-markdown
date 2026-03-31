@@ -5,8 +5,6 @@
 
 ---
 
-# SetTail
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetTail(int tailM = -1, int tailN = -1, int tailK = -1)
 | tailM | 输入 | 重新设置的singleCoreM值 |
 | tailN | 输入 | 重新设置的singleCoreN值 |
 | tailK | 输入 | 重新设置的singleCoreK值 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

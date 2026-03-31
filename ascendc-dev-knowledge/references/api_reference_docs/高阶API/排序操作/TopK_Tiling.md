@@ -5,8 +5,6 @@
 
 ---
 
-# TopK Tiling
-
 #### 功能说明
 
 用于获取TopK Tiling参数。

@@ -5,8 +5,6 @@
 
 ---
 
-# FormatMatchMode
-
 #### 功能说明
 
 设置输入输出tensor的format匹配模式。

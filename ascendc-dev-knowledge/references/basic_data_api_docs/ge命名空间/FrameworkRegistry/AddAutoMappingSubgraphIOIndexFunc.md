@@ -5,8 +5,6 @@
 
 ---
 
-# AddAutoMappingSubgraphIOIndexFunc
-
 #### 函数功能
 
 注册的具体网络类型的自动映射函数。

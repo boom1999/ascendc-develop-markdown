@@ -5,8 +5,6 @@
 
 ---
 
-# PlatformInfo
-
 #### 功能说明
 
 将指向fe::PlatFormInfos的指针传入TilingContext。

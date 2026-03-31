@@ -5,8 +5,6 @@
 
 ---
 
-# BuildKernelRunContext
-
 #### 功能说明
 
 构造KernelRunContext并返回KernelRunContextHolder的智能指针，该对象可通过GetContext接口获取KernelContext类型的对象。

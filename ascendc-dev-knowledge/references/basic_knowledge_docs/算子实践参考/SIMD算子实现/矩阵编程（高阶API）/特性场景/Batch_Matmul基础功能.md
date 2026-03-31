@@ -5,8 +5,6 @@
 
 ---
 
-# Batch Matmul基础功能
-
 #### 功能介绍
 
 Batch Matmul是指批量处理Matmul计算的场景。该场景对外提供了IterateBatch的调用接口，调用一次IterateBatch，可以计算出多个singleCoreM * singleCoreN大小的C矩阵。

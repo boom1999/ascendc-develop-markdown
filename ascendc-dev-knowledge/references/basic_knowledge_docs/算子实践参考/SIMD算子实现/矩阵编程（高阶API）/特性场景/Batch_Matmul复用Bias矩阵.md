@@ -5,8 +5,6 @@
 
 ---
 
-# Batch Matmul复用Bias矩阵
-
 #### 功能介绍
 
 在Batch Matmul场景中，Matmul API可以一次性计算出多个大小为singleCoreM * singleCoreN的C矩阵。当Batch Matmul场景有Bias输入时，默认的Bias输入矩阵包含Batch轴，即Bias的大小为Batch * N。通过开启Bias复用功能，当每个Batch计算使用的Bias数据相同时，只需输入一个不带Batch轴的Bias矩阵。Batch Matmul的Bias矩阵复用功能默认不启用，用户需要设置MatmulConfig中的isBiasBatch参数为false来开启此功能。

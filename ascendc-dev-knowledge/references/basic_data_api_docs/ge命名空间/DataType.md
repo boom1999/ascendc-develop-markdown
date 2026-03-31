@@ -5,8 +5,6 @@
 
 ---
 
-# DataType
-
 DataType枚举值定义如下：
 
 ```

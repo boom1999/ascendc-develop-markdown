@@ -5,8 +5,6 @@
 
 ---
 
-# EE4002 Model_Unbinding_Errors
-
 #### Symptom
 
 Failed to unbind the stream to the model. %s

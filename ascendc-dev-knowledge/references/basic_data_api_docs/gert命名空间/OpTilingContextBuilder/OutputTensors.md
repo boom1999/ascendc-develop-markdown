@@ -5,8 +5,6 @@
 
 ---
 
-# OutputTensors
-
 #### 函数功能
 
 设置输出Tensor 。

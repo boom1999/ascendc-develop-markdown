@@ -5,8 +5,6 @@
 
 ---
 
-# MatmulPolicy
-
 #### 产品支持情况
 
 | 产品 | MatmulPolicy | TrianUpperMatmulPolicy/TrianLowerMatmulPolicy | NBuffer33MatmulPolicy |

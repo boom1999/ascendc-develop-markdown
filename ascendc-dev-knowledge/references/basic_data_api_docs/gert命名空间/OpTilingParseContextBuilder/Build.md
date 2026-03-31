@@ -5,8 +5,6 @@
 
 ---
 
-# Build
-
 #### 函数功能
 
 根据之前的设置，构建TilingParseContext，返回一个ContextHolder<TilingParseContext>对象。

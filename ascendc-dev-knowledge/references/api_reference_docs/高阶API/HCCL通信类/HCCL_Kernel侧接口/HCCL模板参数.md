@@ -5,8 +5,6 @@
 
 ---
 
-# HCCL模板参数
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -39,10 +37,6 @@ class Hccl;
 | --- | --- |
 | 支持的服务端类型。HcclServerType类型，定义如下。 对于Atlas A2 训练系列产品/Atlas A2 推理系列产品，当前仅支持HCCL_SERVER_TYPE_AICPU。 对于Atlas A3 训练系列产品/Atlas A3 推理系列产品，当前仅支持HCCL_SERVER_TYPE_AICPU。 ``` enum HcclServerType { HCCL_SERVER_TYPE_AICPU = 0, HCCL_SERVER_TYPE_END  // 预留参数，不支持使用 } ``` |  |
 | 用于指定向服务端下发任务的核。HcclServerConfig类型，定义如下，默认值DEFAULT_CFG = {CoreType::DEFAULT, 0}。 ``` struct HcclServerConfig {     CoreType type;  // 向服务端下发任务的核的类型     int64_t blockId;  // 向服务端下发任务的核的ID }; ```  CoreType的定义如下： ``` enum class CoreType: uint8_t {     DEFAULT,  // 表示不指定AIC核或者AIV核     ON_AIV,     // 表示指定为AIV核     ON_AIC     // 表示指定为AIC核 }; ``` |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

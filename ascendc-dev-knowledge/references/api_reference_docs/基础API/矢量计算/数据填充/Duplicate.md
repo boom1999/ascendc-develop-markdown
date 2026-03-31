@@ -5,8 +5,6 @@
 
 ---
 
-# Duplicate
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -71,10 +69,6 @@ __aicore__ inline void Duplicate(const LocalTensor<T>& dst, const T& scalarValue
 | dstRepeatStride | 输入 | 相邻迭代间，矢量目的操作数相同datablock地址步长。 |
 
 #### 约束说明
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

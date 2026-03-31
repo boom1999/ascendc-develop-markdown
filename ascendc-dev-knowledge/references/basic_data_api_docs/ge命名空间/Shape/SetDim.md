@@ -5,8 +5,6 @@
 
 ---
 
-# SetDim
-
 #### 函数功能
 
 将Shape中第idx维度的值设置为value。

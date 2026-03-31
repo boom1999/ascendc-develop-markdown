@@ -5,8 +5,6 @@
 
 ---
 
-# GetSwiGLUTmpBufferFactorSize
-
 #### 功能说明
 
 kernel侧SwiGLU接口的计算需要开发者预留/申请临时空间，最大临时空间（maxTmpBuffer）和输入所占空间（inputSize * typeSize）存在以下关系：
@@ -38,10 +36,6 @@ void GetSwiGLUTmpBufferFactorSize(const uint32_t typeSize, uint32_t& maxLiveNode
 | typeSize | 输入 | 输入的数据类型大小，单位为字节。比如输入的数据类型为half，此处应传入2。 |
 | maxLiveNodeCount | 输出 | 最大存活节点数，最大临时空间是输入所占空间的多少倍。 |
 | extraBuffer | 输出 | 使用的额外临时空间大小，单位为byte。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

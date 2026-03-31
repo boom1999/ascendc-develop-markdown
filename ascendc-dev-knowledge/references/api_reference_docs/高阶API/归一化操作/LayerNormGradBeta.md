@@ -5,8 +5,6 @@
 
 ---
 
-# LayerNormGradBeta
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -71,10 +69,6 @@ __aicore__ inline void LayerNormGradBeta(const LocalTensor<T>& outputPdGamma, co
 | inputDy | 输入 | 源操作数，shape为[B, S, H]，LocalTensor数据结构的定义请参考LocalTensor。inputDy的数据类型需要与目的操作数保持一致，尾轴长度需要32B对齐。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | sharedTmpBuffer | 输入 | 共享缓冲区，用于存放API内部计算产生的临时数据。该方式开发者可以自行管理sharedTmpBuffer内存空间，并在接口调用完成后，复用该部分内存，内存不会反复申请释放，灵活性较高，内存利用率也较高。共享缓冲区大小的获取方式请参考LayerNormGradBeta Tiling。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | tiling | 输入 | LayerNormGradBeta计算所需Tiling信息，Tiling信息的获取请参考LayerNormGradBeta Tiling。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

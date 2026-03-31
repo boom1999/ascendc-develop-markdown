@@ -5,8 +5,6 @@
 
 ---
 
-# SetBiasType
-
 #### 功能说明
 
 设置Bias在内存上的位置、数据格式和数据类型。
@@ -24,10 +22,6 @@ void SetBiasType(const ConvCommonApi::TPosition pos, const ConvCommonApi::ConvFo
 | pos | 输入 | Bias在内存上的位置。当前仅支持TPosition::GM。 |
 | format | 输入 | Bias的数据格式。当前仅支持ConvFormat::ND。 |
 | dtype | 输入 | Bias的数据类型。当前仅支持ConvDtype::FLOAT16、ConvDtype::FLOAT。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

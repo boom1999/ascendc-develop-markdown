@@ -5,8 +5,6 @@
 
 ---
 
-# SetBufferSpace
-
 #### 功能说明
 
 设置Matmul计算时可用的L1 Buffer/L0C Buffer/Unified Buffer/BiasTable Buffer空间大小，单位为字节。

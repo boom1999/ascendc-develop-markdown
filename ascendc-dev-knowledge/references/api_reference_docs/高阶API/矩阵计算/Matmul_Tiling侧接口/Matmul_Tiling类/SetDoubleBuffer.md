@@ -5,8 +5,6 @@
 
 ---
 
-# SetDoubleBuffer
-
 #### 功能说明
 
 设置A/B/C/Bias是否使能double buffer功能，以及是否需要做ND2NZ或者NZ2ND的转换，主要用于Tiling函数内部调优。

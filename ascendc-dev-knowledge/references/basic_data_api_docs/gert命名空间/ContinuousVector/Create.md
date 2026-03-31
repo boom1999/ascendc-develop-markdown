@@ -5,8 +5,6 @@
 
 ---
 
-# Create
-
 #### 函数功能
 
 创建一个ContinuousVector实例，ContinuousVector不支持动态扩容。

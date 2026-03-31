@@ -5,8 +5,6 @@
 
 ---
 
-# SetAtomicAdd
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void SetAtomicAdd()
 | 参数名 | 描述 |
 | --- | --- |
 | T | 设定不同的累加数据类型。 Atlas 训练系列产品，支持的数据类型为：float；支持的数据通路为VECOUT->GM。 Atlas 推理系列产品AI Core，支持的数据类型为int16_t/half/float；支持的数据通路为VECOUT->GM。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，支持的数据类型为int8_t/int16_t/half/bfloat16_t/int32_t/float；支持的数据通路为VECOUT/L0C/L1->GM。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，支持的数据类型为int8_t/int16_t/half/bfloat16_t/int32_t/float；支持的数据通路为VECOUT/L0C/L1->GM。 Atlas 200I/500 A2 推理产品，支持的数据类型为int16_t/half/int32_t/float；支持的数据通路为VECOUT/L0C/L1->GM |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

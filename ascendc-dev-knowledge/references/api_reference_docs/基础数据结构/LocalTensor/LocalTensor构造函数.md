@@ -5,8 +5,6 @@
 
 ---
 
-# LocalTensor构造函数
-
 #### 产品支持情况
 
 | 产品 | 是否支持（Pipe框架） | 是否支持（静态Tensor编程） |
@@ -52,10 +50,6 @@ __aicore__ inline LocalTensor<T>(uint32_t addr)
 | pos | 输入 | LocalTensor所在的逻辑位置。 |
 | addr | 输入 | LocalTensor的起始地址，其范围为[0, 对应物理内存最大值)。起始地址需要保证32字节对齐。 |
 | tileSize | 输入 | LocalTensor的元素个数，addr和tileSize（转换成所占字节数）之和不应超出对应物理内存的范围。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

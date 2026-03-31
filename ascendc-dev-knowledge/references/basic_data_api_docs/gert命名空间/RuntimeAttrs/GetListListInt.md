@@ -5,8 +5,6 @@
 
 ---
 
-# GetListListInt
-
 #### 函数功能
 
 获取ContinuousVectorVector *类型的属性值，即二维数组且每个元素类型为int。

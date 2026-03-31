@@ -5,8 +5,6 @@
 
 ---
 
-# kernel侧获取Tiling信息不正确
-
 #### 现象描述
 
 通过算子在kernel侧实现代码中添加PRINTF打印发现kernel侧获取的Tiling信息不正确。

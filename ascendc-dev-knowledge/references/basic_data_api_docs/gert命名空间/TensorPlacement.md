@@ -5,8 +5,6 @@
 
 ---
 
-# TensorPlacement
-
 ```
 enum TensorPlacement {
     kOnDeviceHbm,  ///< Tensor位于Device

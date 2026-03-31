@@ -5,8 +5,6 @@
 
 ---
 
-# ClampMin
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -67,10 +65,6 @@ __aicore__ inline void ClampMin(const LocalTensor<T>& dstTensor, const LocalTens
 | sharedTmpBuffer | 输入 | 临时缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 用于ClampMin内部复杂计算时存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考GetClampMaxMinTmpSize。 |
 | scalar | 输入 | scalar数据，数据类型与srcTensor一致，支持数据类型为：half、float。 |
 | calCount | 输入 | 参与计算的元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

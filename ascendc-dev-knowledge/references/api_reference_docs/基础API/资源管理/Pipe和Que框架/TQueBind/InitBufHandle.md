@@ -5,8 +5,6 @@
 
 ---
 
-# InitBufHandle
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -51,10 +49,6 @@ __aicore__ inline void InitBufHandle(T* bufPool, uint32_t index, TBufHandle bufh
 
 - TQue、TBuf类继承自TQueBind类，所以TQue、TBuf对象也可使用该接口。
 - 目前只提供给自定义TBufPool初始化TQue、TBuf的内存块时使用。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

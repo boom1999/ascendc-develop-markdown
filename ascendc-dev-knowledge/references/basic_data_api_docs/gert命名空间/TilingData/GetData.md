@@ -5,8 +5,6 @@
 
 ---
 
-# GetData
-
 #### 函数功能
 
 获取TilingData的数据指针。

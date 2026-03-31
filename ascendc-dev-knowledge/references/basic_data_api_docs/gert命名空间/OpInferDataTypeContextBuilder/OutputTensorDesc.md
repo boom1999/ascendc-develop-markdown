@@ -5,8 +5,6 @@
 
 ---
 
-# OutputTensorDesc
-
 #### 函数功能
 
 设置输出Tensor描述信息，用于构造InferDataTypeContext的基类ExtendedKernelContext中的ComputeNodeInfo信息。无需设置输出数据类型信息，输出数据类型由算子根据输入数据类型计算推导得到。

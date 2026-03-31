@@ -5,8 +5,6 @@
 
 ---
 
-# operator==
-
 #### 函数功能
 
 判断与另外一个shape对象是否相等，如果两个shape的dim num相等，并且dim num内每个dim的值都相等，则认为两个shape相等。

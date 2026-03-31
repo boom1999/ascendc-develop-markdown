@@ -96,7 +96,19 @@ BOILERPLATE_PATTERNS = [
         r"^-?\s*操作数地址(?:对齐|重叠)(?:要求|约束)请参[见考].*$",
         re.MULTILINE,
     ),
+    # Dead link text: "更多样例可参考LINK" (LINK is a stripped hyperlink remnant)
+    re.compile(
+        r"^.*更多样例可参考\s*LINK\s*[。.]?\s*$",
+        re.MULTILINE,
+    ),
+    # Empty return value section: "#### 返回值说明\n\n无" (adds no information)
+    re.compile(
+        r"####\s*返回值说明\s*\n+\s*无\s*\n",
+    ),
 ]
+
+# Non-breaking space and zero-width characters to clean
+INVISIBLE_CHARS_RE = re.compile("[\u00a0\u200b\u200c\u200d\ufeff]")
 
 # Internal link pattern: [text](page_id.html#anchor) or [text](page_id.md)
 # Negative lookbehind (?<!!) excludes image references ![text](path)
@@ -261,7 +273,14 @@ def clean_content(
             break
     body = "\n".join(lines[body_start:])
 
-    # 2. Handle image references FIRST - before any link stripping
+    # 2. Strip duplicate H1 heading (body often starts with "# PageName"
+    #    which duplicates the header we add in step 8)
+    body = re.sub(r"^\s*#\s+" + re.escape(page_name) + r"\s*\n+", "", body, count=1)
+
+    # 3. Clean invisible characters (non-breaking space, zero-width chars)
+    body = INVISIBLE_CHARS_RE.sub(" ", body)
+
+    # 4. Handle image references FIRST - before any link stripping
     def replace_image(m):
         alt = m.group(1)
         img_filename = m.group(2)
@@ -273,23 +292,23 @@ def clean_content(
 
     body = IMAGE_REF_RE.sub(replace_image, body)
 
-    # 3. Strip internal links → keep text only
+    # 5. Strip internal links → keep text only
     body = INTERNAL_LINK_RE.sub(r"\1", body)
 
-    # 4. Strip absolute links → keep text only
+    # 6. Strip absolute links → keep text only
     body = ABSOLUTE_LINK_RE.sub(r"\1", body)
 
-    # 5. Strip anchor references
+    # 7. Strip anchor references
     body = ANCHOR_REF_RE.sub(r"\1", body)
 
-    # 6. Remove boilerplate lines
+    # 8. Remove boilerplate lines
     for pattern in BOILERPLATE_PATTERNS:
         body = pattern.sub("", body)
 
-    # 7. Collapse multiple blank lines
+    # 9. Collapse multiple blank lines
     body = MULTI_BLANK_RE.sub("\n\n", body)
 
-    # 8. Build final content with clean header
+    # 10. Build final content with clean header
     clean = (
         f"# {page_name}\n\n"
         f"**页面ID:** {page_id}  \n"

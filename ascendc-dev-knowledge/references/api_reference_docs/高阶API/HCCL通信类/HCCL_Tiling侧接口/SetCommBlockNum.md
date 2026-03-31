@@ -5,8 +5,6 @@
 
 ---
 
-# SetCommBlockNum
-
 #### 功能说明
 
 设置参与BatchWrite通信的核数。

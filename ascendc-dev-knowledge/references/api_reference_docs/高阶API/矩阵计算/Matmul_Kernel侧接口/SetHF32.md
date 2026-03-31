@@ -5,8 +5,6 @@
 
 ---
 
-# SetHF32
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -34,10 +32,6 @@ __aicore__ inline void SetHF32(bool enableHF32 = false, int32_t transMode = 0)
 | --- | --- | --- |
 | enableHF32 | 输入 | 配置是否开启HF32模式，默认值false(不开启)。 |
 | transMode | 输入 | 配置在开启HF32模式时，float转换为hf32时所采用的ROUND模式。默认值0。 0：就近舍入，距离相等时向偶数进位。 1：就近舍入，距离相等时向远离0方向进位。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

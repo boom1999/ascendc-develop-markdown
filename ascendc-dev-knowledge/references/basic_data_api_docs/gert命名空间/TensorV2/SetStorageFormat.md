@@ -5,8 +5,6 @@
 
 ---
 
-# SetStorageFormat
-
 #### 函数功能
 
 设置运行时Tensor的数据格式。
@@ -22,10 +20,6 @@ void SetStorageFormat(const ge::Format storage_format)
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | storage_format | 输入 | 运行时数据格式。 关于ge::Format类型的定义，请参见Format。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

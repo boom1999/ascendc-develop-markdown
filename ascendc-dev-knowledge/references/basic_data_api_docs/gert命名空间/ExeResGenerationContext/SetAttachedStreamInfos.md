@@ -5,8 +5,6 @@
 
 ---
 
-# SetAttachedStreamInfos
-
 #### 函数功能
 
 为当前算子附着一组Stream信息，用于指定该算子在哪个执行流（Stream）上运行。

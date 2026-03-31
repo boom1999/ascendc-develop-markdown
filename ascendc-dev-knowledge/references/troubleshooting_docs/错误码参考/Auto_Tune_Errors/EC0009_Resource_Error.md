@@ -5,8 +5,6 @@
 
 ---
 
-# EC0009 Resource_Error
-
 #### Symptom
 
 Computing resources are insufficient. Reason: %s.

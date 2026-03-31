@@ -5,8 +5,6 @@
 
 ---
 
-# GetTilingCond
-
 #### 函数功能
 
 获取GetTilingCond中设置的tiling cond。

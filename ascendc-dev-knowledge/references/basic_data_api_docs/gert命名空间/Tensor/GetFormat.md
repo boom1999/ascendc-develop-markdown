@@ -5,8 +5,6 @@
 
 ---
 
-# GetFormat
-
 #### 函数功能
 
 获取Tensor的format，包含运行时format和原始format，返回的format对象都是只读的。

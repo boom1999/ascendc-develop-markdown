@@ -5,8 +5,6 @@
 
 ---
 
-# GetFormat
-
 #### 函数功能
 
 获取Tensor的Format。

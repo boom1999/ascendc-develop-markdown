@@ -5,8 +5,6 @@
 
 ---
 
-# SetArgsFormat
-
 #### 函数功能
 
 设置算子的ArgsFormat。

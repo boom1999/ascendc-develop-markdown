@@ -5,8 +5,6 @@
 
 ---
 
-# GetShape
-
 #### 函数功能
 
 获取Tensor的Shape，包含运行时和原始Shape。

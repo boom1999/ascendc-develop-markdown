@@ -5,8 +5,6 @@
 
 ---
 
-# TransDataTo5HD
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -98,10 +96,6 @@ __aicore__ inline void TransDataTo5HD(const LocalTensor<uint64_t>& dst, const Lo
 - 进行NCHW格式到NC1HWC0格式的转换时，一般用法是将srcList/dstList中的每个元素配置为每个HW平面的起点。
 - 为了性能更优，数据类型位宽为8位时建议先固定dstHighHalf、srcHighHalf，在HW方向repeat后，再改变dstHighHalf、srcHighHalf。
 - dst与src中的地址需要连续存放，详见调用示例。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

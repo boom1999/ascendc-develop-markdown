@@ -5,8 +5,6 @@
 
 ---
 
-# SetStride
-
 #### 功能说明
 
 设置Stride信息。
@@ -26,10 +24,6 @@ void SetStride(int64_t strideD, int64_t strideH, int64_t strideW)
 | strideD | 输入 | 卷积正向过程中Depth方向Stride的大小。 |
 | strideH | 输入 | 卷积正向过程中Height方向Stride的大小。 |
 | strideW | 输入 | 卷积正向过程中Width方向Stride的大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

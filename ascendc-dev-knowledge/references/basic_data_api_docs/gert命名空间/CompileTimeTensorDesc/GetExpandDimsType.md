@@ -5,8 +5,6 @@
 
 ---
 
-# GetExpandDimsType
-
 #### 函数功能
 
 获取原始Format向运行时Format转换时的补维规则。

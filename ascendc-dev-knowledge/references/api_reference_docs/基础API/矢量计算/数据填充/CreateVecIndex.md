@@ -5,8 +5,6 @@
 
 ---
 
-# CreateVecIndex
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -66,10 +64,6 @@ __aicore__ inline void CreateVecIndex(LocalTensor<T> &dst, const T &firstValue, 
 | repeatTime | 输入 | 重复迭代次数。矢量计算单元，每次读取连续的256Bytes数据进行计算，为完成对输入数据的处理，必须通过多次迭代（repeat）才能完成所有数据的读取与计算。repeatTime表示迭代的次数。          关于该参数的具体描述请参考通用参数说明。 |
 | dstBlkStride | 输入 | 单次迭代内，目的操作数不同datablock间地址步长。 |
 | dstRepStride | 输入 | 相邻迭代间，目的操作数相同datablock地址步长。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

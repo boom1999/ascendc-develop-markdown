@@ -5,8 +5,6 @@
 
 ---
 
-# SetWorkspace
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -43,10 +41,6 @@ template <class T> __aicore__ inline void SetWorkspace(__gm__ const T* addr, int
 | addr | 输入 | 用户传入的GM上的workspace空间，GlobalTensor类型。 |
 | addr | 输入 | 用户传入的GM上的workspace空间，GM地址类型。 |
 | size | 输入 | 传入GM地址时，需要配合传入元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

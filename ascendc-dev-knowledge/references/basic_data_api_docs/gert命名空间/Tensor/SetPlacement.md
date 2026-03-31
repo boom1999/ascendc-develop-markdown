@@ -5,8 +5,6 @@
 
 ---
 
-# SetPlacement
-
 #### 函数功能
 
 设置tensor的placement。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetOriginShapeDimNum
-
 #### 函数功能
 
 设置原始shape的维度大小，即rank大小。

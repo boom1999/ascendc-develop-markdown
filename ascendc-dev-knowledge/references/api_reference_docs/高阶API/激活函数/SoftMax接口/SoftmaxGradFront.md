@@ -5,8 +5,6 @@
 
 ---
 
-# SoftmaxGradFront
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -96,10 +94,6 @@ __aicore__ inline void SoftmaxGradFront(const LocalTensor<T>& dstTensor, const L
 | sharedTmpBuffer | 输入 | 临时空间。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          该操作数的数据类型固定uint8_t。          用于接口内部复杂计算时存储中间变量，由开发者提供。          临时空间大小BufferSize的获取方式请参考SoftmaxGrad Tiling接口。 |
 | tiling | 输入 | softmaxgradfront计算所需tiling信息，Tiling信息的获取请参考SoftmaxGrad Tiling接口。 |
 | srcTensor的shape信息。SoftMaxShapeInfo类型，具体定义如下：                                                                                                                           ``` struct SoftMaxShapeInfo {     uint32_t srcM; // 非尾轴乘积长度     uint32_t srcK; // 尾轴长度，必须32Byte对齐     uint32_t oriSrcM; // 原始非尾轴乘积长度     uint32_t oriSrcK;  // 原始尾轴长度 }; ```                                                                                      需要注意，当输入输出的数据格式为NZ格式时，尾轴长度为reduce轴长度即图2中的W0*W1，非尾轴为H0*H1。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

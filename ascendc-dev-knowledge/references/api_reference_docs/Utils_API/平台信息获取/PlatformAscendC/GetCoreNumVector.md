@@ -5,8 +5,6 @@
 
 ---
 
-# GetCoreNumVector
-
 #### 功能说明
 
 用于获取硬件平台独立的Vector Core的核数。

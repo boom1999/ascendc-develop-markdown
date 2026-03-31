@@ -5,8 +5,6 @@
 
 ---
 
-# SoftmaxFlashV3
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -131,10 +129,6 @@ __aicore__ inline void SoftmaxFlashV3(const LocalTensor<T>& dstTensor, const Loc
 | sharedTmpBuffer | 输入 | 临时空间。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 该操作数的数据类型固定uint8_t。 接口内部复杂计算时用于存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考SoftmaxFlashV3 Tiling接口。 |
 | tiling | 输入 | SoftmaxFlashV3接口计算所需Tiling信息，Tiling信息的获取请参考SoftmaxFlashV3 Tiling接口。 |
 | srcTensor的shape信息和计算相关参数。SoftMaxParams类型，具体定义如下： ``` struct SoftMaxParams {     uint32_t srcM; // 非尾轴长度的乘积     uint32_t srcK; // 尾轴长度，必须32Byte对齐     uint32_t oriSrcM; // 原始非尾轴长度的乘积     uint32_t oriSrcK;  // 原始尾轴长度     uint32_t loopCnt; // update为true时，公式中的循环次数loopCnt，该参数大于等于1     uint32_t splitMeanCnt; // 公式中计算每一行平均值时的分块个数，当前该参数仅支持取值为8     float alpha; // 公式中的计算参数，推荐取值0.9375、0.96889、0.984497 }; ```  注意，当前本接口不支持非对齐场景，因此参数srcM与oriSrcM相等，参数srcK与oriSrcK相等。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

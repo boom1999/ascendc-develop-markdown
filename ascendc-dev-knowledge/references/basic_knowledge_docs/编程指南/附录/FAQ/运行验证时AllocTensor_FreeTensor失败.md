@@ -5,8 +5,6 @@
 
 ---
 
-# 运行验证时AllocTensor/FreeTensor失败
-
 #### 现象描述
 
 通过NPU进行核函数的运行验证时，出现挂死现象；通过CPU进行核函数的运行验证时，出现AllocTensor/FreeTensor失败的报错，日志报错和调用栈打印如下：

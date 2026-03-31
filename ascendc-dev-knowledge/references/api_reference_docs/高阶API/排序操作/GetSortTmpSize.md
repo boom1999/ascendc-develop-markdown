@@ -5,8 +5,6 @@
 
 ---
 
-# GetSortTmpSize
-
 #### 功能说明
 
 获取Sort接口所需的临时空间大小。

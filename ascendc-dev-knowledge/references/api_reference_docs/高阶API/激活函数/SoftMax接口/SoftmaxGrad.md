@@ -5,8 +5,6 @@
 
 ---
 
-# SoftmaxGrad
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -100,10 +98,6 @@ __aicore__ inline void SoftmaxGrad(const LocalTensor<T>& dstTensor, const LocalT
 | srcTensor的shape信息。SoftMaxShapeInfo类型，具体定义如下：                                                                                                                           ``` struct SoftMaxShapeInfo {     uint32_t srcM; // 非尾轴长度的乘积     uint32_t srcK; // 尾轴长度，必须32Byte对齐     uint32_t oriSrcM; // 原始非尾轴长度的乘积     uint32_t oriSrcK;  // 原始尾轴长度 }; ```                                                                                      需要注意，当输入输出的数据格式为NZ格式时，尾轴长度为reduce轴长度即图2中的W0*W1，非尾轴为H0*H1。 |  |  |
 | tiling | 输入 | softmaxgrad计算所需tiling信息，Tiling信息的获取请参考SoftmaxGrad Tiling接口。 |
 | isFront | 输入 | 是否使能isFront计算，若为True，dstTensor的last轴长度必须固定32Byte。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

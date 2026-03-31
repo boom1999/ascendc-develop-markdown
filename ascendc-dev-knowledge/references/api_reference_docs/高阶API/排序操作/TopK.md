@@ -5,8 +5,6 @@
 
 ---
 
-# TopK
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -183,10 +181,6 @@ __aicore__ inline void TopK(const LocalTensor<T>& dstValueLocal, const LocalTens
 | tilling | 输入 | Topk计算所需Tiling信息，Tiling信息的获取请参考TopK Tiling。 |
 | srcLocal的shape信息。TopKInfo类型，具体定义如下：                                                                                                                           ``` struct TopKInfo {     int32_t outter = 1;    // 表示输入待排序数据的外轴长度     int32_t inner;         // 表示输入待排序数据的内轴长度，inner必须是32的整数倍     int32_t n;             // 表示输入待排序数据的内轴的实际长度 }; ```                                                                                                 - topKInfo.inner必须是32的整数倍。           - topKInfo.inner是topKInfo.n进行32的整数倍向上补齐的值，因此topKInfo.n的大小应该满足：1 <= topKInfo.n <= topKInfo.inner。           - Small模式下，topKInfo.inner必须设置为32。           - Normal模式下，topKInfo.inner最大值为4096。 |  |  |
 | isLargest | 输入 | 类型为bool。取值为true时默认降序排列，获取前k个最大值；取值为false时进行升序排列，获取前k个最小值。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

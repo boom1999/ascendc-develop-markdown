@@ -5,8 +5,6 @@
 
 ---
 
-# SetFixPipeClipRelu
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -41,10 +39,6 @@ __aicore__ inline void SetFixPipeClipRelu(uint64_t config)
 #### 约束说明
 
 使能Relu的情况下，先进行Relu操作，之后再进行ClipRelu。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

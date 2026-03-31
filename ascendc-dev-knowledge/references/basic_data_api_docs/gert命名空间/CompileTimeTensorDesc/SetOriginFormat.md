@@ -5,8 +5,6 @@
 
 ---
 
-# SetOriginFormat
-
 #### 函数功能
 
 向CompileTimeTensorDesc中设置Tensor的原始数据排布格式。

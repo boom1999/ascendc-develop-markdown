@@ -5,8 +5,6 @@
 
 ---
 
-# InputTensors
-
 #### 函数功能
 
 设置输入Tensor指针，用于在Tiling计算时，可通过该Builder类构造的上下文TilingContext获取相应的输入Tensor指针。

@@ -5,8 +5,6 @@
 
 ---
 
-# 如何使用workspace
-
 workspace是设备侧Global Memory上的一块内存。workspace内存分为两部分：系统workspace和用户workspace。
 
 - 系统workspace：Ascend C API需要预留的workspace内存

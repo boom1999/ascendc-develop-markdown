@@ -5,8 +5,6 @@
 
 ---
 
-# REGIST_MATMUL_OBJ
-
 #### 功能说明
 
 初始化Matmul对象。
@@ -26,10 +24,6 @@ REGIST_MATMUL_OBJ(tpipe, workspace, ...)
 | tpipe | 输入 | Tpipe对象。 |
 | workspace | 输入 | 系统workspace指针。 |
 | ... | 输入 | 可变参数，传入Matmul对象和与之对应的Tiling结构，要求Tiling结构的数据类型为TCubeTiling结构。          Tiling参数可以通过Host侧GetTiling接口获取，并传递到kernel侧使用。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

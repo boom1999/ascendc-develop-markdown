@@ -5,8 +5,6 @@
 
 ---
 
-# SetHcclContext
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -37,10 +35,6 @@ __aicore__ inline void SetHcclContext(__gm__ uint8_t* context)
 | --- | --- |
 | index | 模板参数，用来表示要设置的通信域ID，当前只支持2个通信域，index只能为0/1。 |
 | context | 对应通信域的context（消息区）地址。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

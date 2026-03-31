@@ -5,8 +5,6 @@
 
 ---
 
-# IONum
-
 #### 函数功能
 
 设置算子输入输出IR原型个数，用于构造各子类Context的基类ExtendedKernelContext中ComputeNodeInfo信息。该接口默认每个IR原型输入输出的实例个数为1。

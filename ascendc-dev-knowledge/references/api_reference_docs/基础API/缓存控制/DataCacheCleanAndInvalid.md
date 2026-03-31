@@ -5,8 +5,6 @@
 
 ---
 
-# DataCacheCleanAndInvalid
-
 #### 产品支持情况
 
 | 产品 | 是否支持（支持配置dcciDst的原型） | 是否支持（不支持配置dcciDst的原型） |
@@ -74,10 +72,6 @@ __aicore__ inline void DataCacheCleanAndInvalid(const GlobalTensor<T>& dst)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | dst | 输入 | 需要刷新Cache的Tensor。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

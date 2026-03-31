@@ -5,8 +5,6 @@
 
 ---
 
-# SetQuantVector
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -37,10 +35,6 @@ __aicore__ inline void SetQuantVector(const GlobalTensor<uint64_t>& quantTensor)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | quantTensor | 输入 | 量化或反量化运算时的参数向量。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

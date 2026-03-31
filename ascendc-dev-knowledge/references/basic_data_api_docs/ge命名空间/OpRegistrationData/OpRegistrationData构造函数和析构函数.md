@@ -5,8 +5,6 @@
 
 ---
 
-# OpRegistrationData构造函数和析构函数
-
 #### 函数功能
 
 OpRegistrationData构造函数和析构函数。

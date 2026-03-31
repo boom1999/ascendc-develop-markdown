@@ -5,8 +5,6 @@
 
 ---
 
-# GetConcatTmpSize
-
 #### 功能说明
 
 获取Concat接口所需的临时空间大小。

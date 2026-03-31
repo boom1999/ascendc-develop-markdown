@@ -5,8 +5,6 @@
 
 ---
 
-# AI CPU算子编译
-
 #### 通过bisheng命令行编译
 
 下文基于一个Hello World打印样例来讲解如何通过bisheng命令行编译AI CPU算子。

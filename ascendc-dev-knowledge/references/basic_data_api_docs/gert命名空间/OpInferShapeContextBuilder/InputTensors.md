@@ -5,8 +5,6 @@
 
 ---
 
-# InputTensors
-
 #### 函数功能
 
 设置输入Tensor指针。Shape推导时，可通过该Builder类构造的InferShapeContext获取相应的输入Tensor指针。对于数据依赖的算子，对应数据依赖的输入Tensor中的TensorData需要设置为正确的Host地址；对于非数据依赖算子，Tensor的TensorData需要设置为空指针。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetFlag/WaitFlag
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -39,10 +37,6 @@ __aicore__ inline void WaitFlag(TEventID id)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | 事件ID，由用户自己指定，推荐通过AllocEventID或者FetchEventID来获取。定义如下： ``` using TEventID = int8_t; ```  Atlas 训练系列产品，数据范围为：0-3 Atlas 推理系列产品AI Core，数据范围为：0-7 Atlas A2 训练系列产品/Atlas A2 推理系列产品，数据范围为：0-7 Atlas A3 训练系列产品/Atlas A3 推理系列产品，数据范围为：0-7 Atlas 200I/500 A2 推理产品，数据范围为：0-7 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# SetFixPipeConfig
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -52,10 +50,6 @@ __aicore__ inline void SetFixPipeConfig(const LocalTensor<T>& preData, bool isUn
 #### 约束说明
 
 quantPre和reluPre必须是Fixpipe Buffer上的Tensor。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

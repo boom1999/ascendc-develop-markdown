@@ -5,8 +5,6 @@
 
 ---
 
-# Swish
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -50,10 +48,6 @@ __aicore__ inline void Swish(const LocalTensor<T>& dstLocal, const LocalTensor<T
 | srcLocal | 输入 | 源操作数。 源操作数的数据类型需要与目的操作数保持一致。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | dataSize | 输入 | 实际计算数据元素个数。 |
 | scalarValue | 输入 | 激活函数中的β参数。支持的数据类型为：half、float。 β参数的数据类型需要与源操作数和目的操作数保持一致。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

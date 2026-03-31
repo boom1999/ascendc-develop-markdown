@@ -5,8 +5,6 @@
 
 ---
 
-# E21001 File_Operation_Error_Open
-
 #### Symptom
 
 Failed to open file %s. Reason: %s.

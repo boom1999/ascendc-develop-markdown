@@ -5,8 +5,6 @@
 
 ---
 
-# E30006 Package_Error_Verify_OPP
-
 #### Symptom
 
 Failed to verify the OPP.

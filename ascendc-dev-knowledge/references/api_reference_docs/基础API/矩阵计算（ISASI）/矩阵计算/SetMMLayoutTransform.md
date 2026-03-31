@@ -5,8 +5,6 @@
 
 ---
 
-# SetMMLayoutTransform
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetMMLayoutTransform(bool mmLayoutMode)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | mmLayoutMode | 输入 | 控制Mmad 优先通过M/N的哪个方向，bool型，支持如下两种取值：- true：代表CUBE将首先通过N方向，然后通过M方向产生结果。- false：代表CUBE将首先通过M方向，然后通过N方向生成结果。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# GetListFloat
-
 #### 函数功能
 
 获取list_float32类型的属性值。

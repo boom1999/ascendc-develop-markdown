@@ -5,8 +5,6 @@
 
 ---
 
-# LocalTensor简介
-
 LocalTensor用于存放AI Core中Local Memory（内部存储）的数据，支持逻辑位置TPosition为VECIN、VECOUT、VECCALC、A1、A2、B1、B2、CO1、CO2。
 
 #### 需要包含的头文件

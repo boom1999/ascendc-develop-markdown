@@ -5,8 +5,6 @@
 
 ---
 
-# CreateHcomWaitTask
-
 #### 函数功能
 
 创建一个Wait Task，此Task用于阻塞流，当与其有相同group_name的Record Task被执行时，阻塞会被解除。

@@ -5,8 +5,6 @@
 
 ---
 
-# GroupNorm Tiling
-
 #### 功能说明
 
 GroupNorm Tiling API用于获取GroupNorm kernel计算时所需的Tiling参数。获取Tiling参数主要分为如下两步：
@@ -92,10 +90,6 @@ void GetGroupNormNDTilingInfo(const ge::Shape& srcShape, const uint32_t stackBuf
 | isReuseSource | 输入 | 是否可以复用inputX的内存空间。 |
 | groupNum | 输入 | 在C维度上的分组数。 |
 | tiling | 输出 | 输入数据的切分信息。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

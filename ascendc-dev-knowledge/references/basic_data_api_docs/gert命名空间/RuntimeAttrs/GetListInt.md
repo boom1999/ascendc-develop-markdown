@@ -5,8 +5,6 @@
 
 ---
 
-# GetListInt
-
 #### 函数功能
 
 获取list int类型的属性值。

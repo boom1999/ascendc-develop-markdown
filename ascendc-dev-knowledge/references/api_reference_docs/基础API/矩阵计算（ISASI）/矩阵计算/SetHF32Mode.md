@@ -5,8 +5,6 @@
 
 ---
 
-# SetHF32Mode
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetHF32Mode(bool hf32Mode)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | hf32Mode | 输入 | Mmad HF32模式控制入参，bool类型。支持如下两种取值： - true：L0A/L0B中的FP32数据将在矩阵乘法之前被舍入为HF32。- false：将执行常规的FP32矩阵乘法。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

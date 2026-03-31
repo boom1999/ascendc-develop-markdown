@@ -5,8 +5,6 @@
 
 ---
 
-# SetSingleWeightShape
-
 #### 功能说明
 
 设置单核上权重矩阵Weight的形状。
@@ -25,10 +23,6 @@ void SetSingleWeightShape(int64_t singleCi, int64_t singleKd, int64_t singleKh, 
 | singleKd | 输入 | 单核上Weight D维度大小。 |
 | singleKh | 输入 | 单核上Weight H维度大小。 |
 | singleKw | 输入 | 单核上Weight W维度大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

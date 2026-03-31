@@ -5,8 +5,6 @@
 
 ---
 
-# InterHcclGroupSync
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -34,10 +32,6 @@ __aicore__ inline void InterHcclGroupSync(int8_t srcGroupID, HcclHandle srcHandl
 | --- | --- | --- |
 | srcGroupID | 输入 | 通信域编号，即后续通信任务所等待的通信任务所在的通信域编号。 |
 | srcHandleID | 输入 | 通信任务，即后续通信任务所等待的通信任务的标识HcclHandle。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

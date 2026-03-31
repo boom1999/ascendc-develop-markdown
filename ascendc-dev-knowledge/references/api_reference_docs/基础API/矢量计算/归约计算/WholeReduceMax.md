@@ -5,8 +5,6 @@
 
 ---
 
-# WholeReduceMax
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -59,10 +57,6 @@ __aicore__ inline void WholeReduceMax(const LocalTensor<T>& dst, const LocalTens
 | srcBlkStride | 输入 | 单次迭代内datablock的地址步长。详细说明请参考dataBlockStride。 |
 | srcRepStride | 输入 | 源操作数相邻迭代间的地址步长，即源操作数每次迭代跳过的datablock数目。 |
 | order | 输入 | 使用order参数指定dst中index与value的相对位置以及返回结果行为，ReduceOrder类型，默认值为ORDER_VALUE_INDEX。取值范围如下：                     - ORDER_VALUE_INDEX：表示value位于低半部，返回结果存储顺序为[value, index]。           - ORDER_INDEX_VALUE：表示index位于低半部，返回结果存储顺序为[index, value]。           - ORDER_ONLY_VALUE：表示只返回最值，返回结果存储顺序为[value]。           - ORDER_ONLY_INDEX：表示只返回最值索引，返回结果存储顺序为[index]。                                 Atlas A3 训练系列产品            /             Atlas A3 推理系列产品            ，支持ORDER_VALUE_INDEX、ORDER_INDEX_VALUE、ORDER_ONLY_VALUE、ORDER_ONLY_INDEX。                       Atlas A2 训练系列产品            /             Atlas A2 推理系列产品            ，支持ORDER_VALUE_INDEX、ORDER_INDEX_VALUE、ORDER_ONLY_VALUE、ORDER_ONLY_INDEX。                       Atlas 200I/500 A2 推理产品            ，支持ORDER_VALUE_INDEX、ORDER_ONLY_VALUE。                       Atlas 推理系列产品            AI Core，支持ORDER_VALUE_INDEX、ORDER_INDEX_VALUE。                       Atlas 训练系列产品            ，支持ORDER_VALUE_INDEX。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

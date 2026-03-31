@@ -5,8 +5,6 @@
 
 ---
 
-# TRACE_START
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -50,10 +48,6 @@ ascendc_compile_definitions(ascendc_kernels_${RUN_MODE} PRIVATE
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | apid | 输入 | 当前预留了十个用户自定义的类型： - 0x0：USER_DEFINE_0- 0x1：USER_DEFINE_1- 0x2：USER_DEFINE_2- 0x3：USER_DEFINE_3- 0x4：USER_DEFINE_4- 0x5：USER_DEFINE_5- 0x6：USER_DEFINE_6- 0x7：USER_DEFINE_7- 0x8：USER_DEFINE_8- 0x9：USER_DEFINE_9 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

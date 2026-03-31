@@ -5,8 +5,6 @@
 
 ---
 
-# Conv3DBackpropInput Tiling构造函数
-
 #### 功能说明
 
 用于创建一个Conv3DBackpropInput 单核Tiling对象。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetCount
-
 #### 函数功能
 
 获取MemBlock的引用计数。

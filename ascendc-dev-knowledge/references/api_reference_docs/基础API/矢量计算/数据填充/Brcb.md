@@ -5,8 +5,6 @@
 
 ---
 
-# Brcb
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -59,10 +57,6 @@ __aicore__ inline void Brcb(const LocalTensor<T>& dst, const LocalTensor<T>& src
 | src1RepStride |  |
 | repeatStrideMode |  |
 | strideSizeMode |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

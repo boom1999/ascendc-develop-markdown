@@ -5,8 +5,6 @@
 
 ---
 
-# InferOutDataTypeSameWithFirstInput
-
 #### 函数功能
 
 注册一种datatype推导规则，该规则将算子第一个输入的datatype作为所有输出的datatype。

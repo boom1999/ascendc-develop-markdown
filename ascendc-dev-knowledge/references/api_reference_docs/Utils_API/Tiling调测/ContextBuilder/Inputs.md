@@ -5,8 +5,6 @@
 
 ---
 
-# Inputs
-
 #### 功能说明
 
 将void* 指针的vector设置为KernelContext的inputs

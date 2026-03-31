@@ -5,8 +5,6 @@
 
 ---
 
-# SetStartPosition
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ __aicore__ inline void SetStartPosition(uint32_t hoStartIdx)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | hoStartIdx | 输入 | 当前核GradOutput Height方向起始位置。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

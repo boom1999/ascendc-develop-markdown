@@ -5,8 +5,6 @@
 
 ---
 
-# DumpAccChkPoint
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -57,10 +55,6 @@ __aicore__ inline void DumpAccChkPoint(const GlobalTensor<T> &tensor, uint32_t i
 | index | 输入 | 用户自定义附加信息（行号或其他自定义数字）。 |
 | countOff | 输入 | 偏移元素个数。偏移后的Tensor地址需要满足所在物理位置的对齐约束，具体参考通用说明和约束。 |
 | dumpSize | 输入 | 需要dump的元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

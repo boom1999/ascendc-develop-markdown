@@ -5,8 +5,6 @@
 
 ---
 
-# GetCoreNumAiv
-
 #### 功能说明
 
 获取当前硬件平台AI Core中Vector核数。若AI Core的架构为Cube、Vector分离模式，返回Vector Core的核数；耦合模式返回AI Core的核数。

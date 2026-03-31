@@ -5,8 +5,6 @@
 
 ---
 
-# SetOffset
-
 #### 函数功能
 
 设置Tensor中的offset。
@@ -20,10 +18,6 @@ void SetOffset(const int64_t offset)
 #### 参数说明
 
 Tensor的offset。
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

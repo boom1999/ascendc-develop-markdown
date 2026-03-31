@@ -5,8 +5,6 @@
 
 ---
 
-# Build
-
 #### 函数功能
 
 根据前期的设置，构建InferShapeContext，返回一个ContextHolder<InferShapeContext>对象。

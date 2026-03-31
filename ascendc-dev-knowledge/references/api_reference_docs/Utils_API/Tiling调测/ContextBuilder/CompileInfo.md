@@ -5,8 +5,6 @@
 
 ---
 
-# CompileInfo
-
 #### 功能说明
 
 将指向CompileInfo的指针传入TilingContext

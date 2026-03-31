@@ -5,8 +5,6 @@
 
 ---
 
-# ReadSpmBuffer
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -59,10 +57,6 @@ __aicore__ inline void ReadSpmBuffer(const LocalTensor<T>& readBuffer, const int
 | dstGap | 目的操作数相邻连续数据块间的间隔（前面一个数据块的尾与后面数据块的头的间隔），单位为DataBlock（32字节）。uint16_t类型，dstGap不要超出该数据类型的取值范围。 特别地，当dstLocal位于C2PIPE2GM时，单位为128B；当dstLocal位于C2时，单位为64B。 在L1 Buffer -> Fixpipe Buffer场景中，dstGap特指源操作数相邻连续数据块的间隔（前面一个数据块的头与后面数据块的头的间隔），单位为DataBlock（32字节）。uint16_t类型，dstGap不要超出该数据类型的取值范围。 |
 
 #### 约束说明
-
-无
-
-#### 返回值说明
 
 无
 

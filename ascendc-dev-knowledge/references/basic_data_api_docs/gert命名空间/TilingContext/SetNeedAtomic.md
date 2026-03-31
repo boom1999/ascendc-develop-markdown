@@ -5,8 +5,6 @@
 
 ---
 
-# SetNeedAtomic
-
 #### 函数功能
 
 用于设置是否需要框架来完成atomic clean操作，保证在算子kernel执行前，输出内存已经被初始化。

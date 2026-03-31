@@ -5,8 +5,6 @@
 
 ---
 
-# GetFusionParseParamByOpFn
-
 #### 函数功能
 
 获取解析融合算子属性的函数。

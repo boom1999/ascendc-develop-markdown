@@ -5,8 +5,6 @@
 
 ---
 
-# LayerNormGradBeta Tiling
-
 #### 功能说明
 
 LayerNormGradBeta Tiling的功能如下：
@@ -82,10 +80,6 @@ void GetLayerNormGradBetaNDTilingInfo(const ge::Shape srcShape, const uint32_t s
 | typeSize | 输入 | 输入的数据类型大小，单位为字节。比如输入的数据类型为half，此处应传入2。 |
 | isReuseSource | 输入 | 是否可以复用inputDy的内存空间。 |
 | tiling | 输出 | 输入数据的切分信息。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# 使能DoubleBuffer
-
 【优先级】中
 
 【描述】执行于AI Core上的指令队列主要包括如下几类，Vector指令队列（V）、Cube指令队列（M）、Scalar指令队列（S）和搬运指令队列（MTE1/MTE2/MTE3）。不同指令队列间的相互独立性和可并行执行特性，是DoubleBuffer优化机制的基石。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetShapeDimNum
-
 #### 函数功能
 
 获取Shape的维度大小，即rank大小。

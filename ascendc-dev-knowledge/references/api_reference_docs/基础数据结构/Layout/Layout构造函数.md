@@ -5,8 +5,6 @@
 
 ---
 
-# Layout构造函数
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -34,10 +32,6 @@ __aicore__ inline constexpr Layout(const ShapeType& shape  = {}, const StrideTyp
 | --- | --- | --- |
 | shape | 输入 | Std::tuple结构类型，用于定义数据的逻辑形状，例如二维矩阵的行数和列数或多维张量的各维度大小。 |
 | stride | 输入 | Std::tuple结构类型，用于定义各维度在内存中的步长，即同维度相邻元素在内存中的间隔，间隔的单位为元素，与Shape的维度信息一一对应。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

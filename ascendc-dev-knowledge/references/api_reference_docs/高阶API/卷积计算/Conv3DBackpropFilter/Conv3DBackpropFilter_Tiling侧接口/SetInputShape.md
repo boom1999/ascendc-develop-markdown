@@ -5,8 +5,6 @@
 
 ---
 
-# SetInputShape
-
 #### 功能说明
 
 设置特征矩阵Input的形状：Batch、Channel、Depth、Height、Width。
@@ -28,10 +26,6 @@ void SetInputShape(int64_t n, int64_t c, int64_t d, int64_t h, int64_t w)
 | d | 输入 | 输入Input的Depth值。 |
 | h | 输入 | 输入Input的Height值。 |
 | w | 输入 | 输入Input的Width值。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

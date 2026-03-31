@@ -5,8 +5,6 @@
 
 ---
 
-# RmsNorm
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -69,10 +67,6 @@ __aicore__ inline void RmsNorm(const LocalTensor<T>& dstLocal, const LocalTensor
 | sharedTmpBuffer | 输入 | 临时空间。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 接口内部复杂计算时用于存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考RmsNorm Tiling。 |
 | epsilon | 输入 | 防除零的权重系数，数据类型需要与srcLocal/dstLocal保持一致。 |
 | tiling | 输入 | RmsNorm计算所需Tiling信息，Tiling信息的获取请参考RmsNorm Tiling。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

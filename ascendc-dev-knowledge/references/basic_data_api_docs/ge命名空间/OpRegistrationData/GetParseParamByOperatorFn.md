@@ -5,8 +5,6 @@
 
 ---
 
-# GetParseParamByOperatorFn
-
 #### 函数功能
 
 获取解析算子属性的函数。

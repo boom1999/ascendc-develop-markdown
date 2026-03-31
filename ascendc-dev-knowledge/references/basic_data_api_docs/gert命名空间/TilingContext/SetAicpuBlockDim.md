@@ -5,8 +5,6 @@
 
 ---
 
-# SetAicpuBlockDim
-
 #### 函数功能
 
 设置可以调度的AI CPU核数。

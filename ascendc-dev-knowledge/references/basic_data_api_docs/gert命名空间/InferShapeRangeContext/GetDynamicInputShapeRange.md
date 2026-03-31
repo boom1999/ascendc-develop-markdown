@@ -5,8 +5,6 @@
 
 ---
 
-# GetDynamicInputShapeRange
-
 #### 函数功能
 
 根据算子原型定义中的输入索引获取对应的动态输入shape range指针。

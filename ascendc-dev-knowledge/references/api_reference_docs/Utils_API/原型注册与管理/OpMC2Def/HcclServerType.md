@@ -5,8 +5,6 @@
 
 ---
 
-# HcclServerType
-
 #### 功能说明
 
 配置HCCL的服务端类型。

@@ -5,8 +5,6 @@
 
 ---
 
-# LoadFromData
-
 #### 函数功能
 
 提供将序列化后的Task任务反序列化的能力，主要用于在GenerateTask函数中，将框架构造的Task反序列化后，修改其参数使用。

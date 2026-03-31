@@ -5,8 +5,6 @@
 
 ---
 
-# GetStorageShape
-
 #### 函数功能
 
 获取运行时shape。

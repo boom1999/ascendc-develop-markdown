@@ -5,8 +5,6 @@
 
 ---
 
-# BatchWrite
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -104,7 +102,7 @@ extern "C" __global__ __aicore__ void BatchWrite_custom(GM_ADDR inputGM, GM_ADDR
     GET_TILING_DATA_WITH_STRUCT(BatchWriteCustomTilingData, tilingData, tilingGM);
     GM_ADDR contextGM = AscendC::GetHcclContext<0>();
 
-    if constexpr (g_coreType == AscendC::AIV) {
+    if constexpr (g_coreType == AscendC::AIV) {
         Hccl hccl;
         hccl.InitV2(contextGM, &tilingData);
         hccl.SetCcTilingV2(offsetof(BatchWriteCustomTilingData, mc2CcTiling));
@@ -192,7 +190,7 @@ extern "C" __global__ __aicore__ void BatchWrite_custom(GM_ADDR inputGM, GM_ADDR
     GET_TILING_DATA_WITH_STRUCT(BatchWriteCustomTilingData, tilingData, tilingGM);
     GM_ADDR contextGM = AscendC::GetHcclContext<0>();
 
-    if constexpr (g_coreType == AscendC::AIV) {
+    if constexpr (g_coreType == AscendC::AIV) {
         Hccl hccl;
         hccl.InitV2(contextGM, &tilingData);
         hccl.SetCcTilingV2(offsetof(BatchWriteCustomTilingData, mc2CcTiling));

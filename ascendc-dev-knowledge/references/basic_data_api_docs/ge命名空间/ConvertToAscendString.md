@@ -5,8 +5,6 @@
 
 ---
 
-# ConvertToAscendString
-
 #### 函数功能
 
 模板函数，接受一个模板参数T，并将其转换为AscendString类型。这个函数的主要功能是将不同类型的字符串转换为AscendString类型。

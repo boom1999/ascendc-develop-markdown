@@ -5,8 +5,6 @@
 
 ---
 
-# AutoMappingByOpFn
-
 #### 函数功能
 
 自动映射回调函数。

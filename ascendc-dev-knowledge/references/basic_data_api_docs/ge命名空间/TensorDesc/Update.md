@@ -5,8 +5,6 @@
 
 ---
 
-# Update
-
 #### 函数功能
 
 更新TensorDesc的Shape、Format、DataType属性。

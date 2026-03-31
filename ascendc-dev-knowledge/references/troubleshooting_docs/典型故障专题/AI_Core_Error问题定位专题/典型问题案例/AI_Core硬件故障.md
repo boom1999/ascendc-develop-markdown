@@ -5,8 +5,6 @@
 
 ---
 
-# AI Core硬件故障
-
 #### 问题现象
 
 Host应用类日志（log/[run|debug]/plog/plog-*pid*_*.log）中存在如下报错：

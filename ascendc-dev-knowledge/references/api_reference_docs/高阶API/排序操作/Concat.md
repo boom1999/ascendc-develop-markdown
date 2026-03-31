@@ -5,8 +5,6 @@
 
 ---
 
-# Concat
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -45,10 +43,6 @@ __aicore__ inline void Concat(LocalTensor<T> &concat, const LocalTensor<T> &src,
 | src | 输入 | 源操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 源操作数的数据类型需要与目的操作数保持一致。 |
 | tmp | 输入 | 临时空间。接口内部复杂计算时用于存储中间变量，由开发者提供，临时空间大小的获取方式请参考GetConcatTmpSize。数据类型与源操作数保持一致。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 |
 | repeatTime | 输入 | 重复迭代次数，int32_t类型，每次迭代处理16个元素，下次迭代跳至相邻的下一组16个元素。取值范围：repeatTime∈[0,255]。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

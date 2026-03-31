@@ -5,8 +5,6 @@
 
 ---
 
-# OutputTensorDesc
-
 #### 函数功能
 
 设置算子输出的Tensor描述信息，用于构造InferShapeContext的基类ExtendedKernelContext中的ComputeNodeInfo等信息。

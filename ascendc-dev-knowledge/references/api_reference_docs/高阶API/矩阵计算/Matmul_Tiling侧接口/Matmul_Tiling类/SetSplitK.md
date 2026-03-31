@@ -5,8 +5,6 @@
 
 ---
 
-# SetSplitK
-
 #### 功能说明
 
 EnableMultiCoreSplitK接口功能与该接口相同，建议使用EnableMultiCoreSplitK。
@@ -26,10 +24,6 @@ void SetSplitK(bool flag)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | flag | 输入 | 是否使能切K轴。 - true：使能切K轴- false：不使能切K轴 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

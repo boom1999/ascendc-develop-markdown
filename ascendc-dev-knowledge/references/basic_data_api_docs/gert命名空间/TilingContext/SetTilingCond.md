@@ -5,8 +5,6 @@
 
 ---
 
-# SetTilingCond
-
 #### 函数功能
 
 设置tiling cond。tiling cond是一个整型值，用于选择算子实际使用的Tiling实现。

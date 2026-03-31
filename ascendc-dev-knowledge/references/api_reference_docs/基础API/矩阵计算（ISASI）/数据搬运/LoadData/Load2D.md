@@ -5,8 +5,6 @@
 
 ---
 
-# Load2D
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -66,10 +64,6 @@ __aicore__ inline void LoadData(const LocalTensor<T>& dst, const GlobalTensor<T>
 | addrMode | 预留参数，配置为0即可。 |
 
 #### 约束说明
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

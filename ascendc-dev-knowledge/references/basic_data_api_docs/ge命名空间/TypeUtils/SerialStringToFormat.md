@@ -5,8 +5,6 @@
 
 ---
 
-# SerialStringToFormat
-
 #### 函数功能
 
 将字符串转化为Format类型值。

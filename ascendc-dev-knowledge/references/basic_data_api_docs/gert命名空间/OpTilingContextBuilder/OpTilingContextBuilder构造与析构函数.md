@@ -5,8 +5,6 @@
 
 ---
 
-# OpTilingContextBuilder构造与析构函数
-
 #### 函数功能
 
 OpTilingContextBuilder构造与析构函数。
@@ -19,10 +17,6 @@ OpTilingContextBuilder()
 ```
 
 #### 参数说明
-
-无
-
-#### 返回值说明
 
 无
 

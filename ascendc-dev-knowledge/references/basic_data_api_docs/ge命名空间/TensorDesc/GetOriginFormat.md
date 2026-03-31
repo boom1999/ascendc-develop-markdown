@@ -5,8 +5,6 @@
 
 ---
 
-# GetOriginFormat
-
 #### 函数功能
 
 获取TensorDesc所描述Tensor的原始Format。

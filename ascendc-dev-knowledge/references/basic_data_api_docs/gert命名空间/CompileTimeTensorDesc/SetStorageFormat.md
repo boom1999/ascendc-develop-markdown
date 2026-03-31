@@ -5,8 +5,6 @@
 
 ---
 
-# SetStorageFormat
-
 #### 函数功能
 
 向CompileTimeTensorDesc中设置运行时Tensor的数据排布格式。

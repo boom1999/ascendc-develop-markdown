@@ -5,8 +5,6 @@
 
 ---
 
-# GetOriginShapeDim
-
 #### 函数功能
 
 获取原始Shape第idx维度。

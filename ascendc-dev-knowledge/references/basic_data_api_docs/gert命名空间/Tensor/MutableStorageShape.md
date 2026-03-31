@@ -5,8 +5,6 @@
 
 ---
 
-# MutableStorageShape
-
 #### 函数功能
 
 获取运行时Tensor的shape，此shape对象是可变的。

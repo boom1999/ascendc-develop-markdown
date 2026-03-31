@@ -5,8 +5,6 @@
 
 ---
 
-# GetSubFormat
-
 #### 函数功能
 
 从实际format中解析出子format信息。

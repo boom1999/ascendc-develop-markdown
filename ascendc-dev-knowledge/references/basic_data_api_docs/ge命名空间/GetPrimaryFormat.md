@@ -5,8 +5,6 @@
 
 ---
 
-# GetPrimaryFormat
-
 #### 函数功能
 
 从实际format中解析出主format信息。

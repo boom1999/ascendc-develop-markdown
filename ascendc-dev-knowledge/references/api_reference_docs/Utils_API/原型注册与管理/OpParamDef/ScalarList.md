@@ -5,8 +5,6 @@
 
 ---
 
-# ScalarList
-
 #### 功能说明
 
 配置该参数后，自动生成的单算子API（aclnnxxx）接口中，输入类型为aclScalarList类型。

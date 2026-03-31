@@ -5,8 +5,6 @@
 
 ---
 
-# SetVectorMask
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -62,10 +60,6 @@ __aicore__ static inline void SetVectorMask(int32_t len)
 | maskHigh | 输入 | Normal模式：对应Normal模式下的逐比特模式，可以按位控制哪些元素参与计算。传入高位mask值。 Counter模式：需要置0，本入参不生效。 |
 | maskLow | 输入 | Normal模式：对应Normal模式下的逐比特模式，可以按位控制哪些元素参与计算。传入低位mask值。 Counter模式：整个矢量计算过程中，参与计算的元素个数。 |
 | len | 输入 | Normal模式：对应Normal模式下的mask连续模式，表示单次迭代内表示前面连续的多少个元素参与计算。 Counter模式：整个矢量计算过程中，参与计算的元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

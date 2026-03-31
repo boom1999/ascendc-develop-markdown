@@ -5,8 +5,6 @@
 
 ---
 
-# GetFormatName
-
 #### 函数功能
 
 根据传入的Format类型，获取Format的字符串描述。

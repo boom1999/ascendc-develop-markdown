@@ -5,8 +5,6 @@
 
 ---
 
-# BilinearInterpolation(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -62,10 +60,6 @@ __aicore__ inline void BilinearInterpolation(const LocalTensor<T>& dst, const Lo
 | vROffset | 输入 | 垂直迭代间，目的操作数地址偏移量，以元素为单位，取值范围为[128, 65535)，vROffset * sizeof(T)需要保证32字节对齐 。 |
 | vRepeat | 输入 | 垂直方向迭代次数，取值范围为[1, 255]。 |
 | sharedTmpBuffer | 输入 | 临时空间。                       Atlas A2 训练系列产品            /             Atlas A2 推理系列产品            ，需要保证至少分配了src0.GetSize() * 32 + src1.GetSize() * 32字节的空间。                       Atlas A3 训练系列产品            /             Atlas A3 推理系列产品            ，需要保证至少分配了src0.GetSize() * 32 + src1.GetSize() * 32字节的空间。                       Atlas 推理系列产品            AI Core，需要保证至少分配了src0OffsetLocal.GetSize() * sizeof(uint32_t)字节的空间。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

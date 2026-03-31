@@ -5,8 +5,6 @@
 
 ---
 
-# GetTanhMaxMinTmpSize
-
 #### 功能说明
 
 kernel侧Tanh接口的计算需要开发者预留/申请临时空间，本接口用于在host侧获取预留/申请的最大和最小临时空间大小，开发者基于此范围选择合适的空间大小作为Tiling参数传递到kernel侧使用。
@@ -31,10 +29,6 @@ void GetTanhMaxMinTmpSize(const ge::Shape& srcShape, const uint32_t typeSize, co
 | isReuseSource | 输入 | 是否复用源操作数输入的空间，与Tanh接口一致。 |
 | maxValue | 输出 | Tanh接口能完成计算所需的最大临时空间大小，超出该值的空间不会被该接口使用。在min-max范围内，预留/申请空间越大，接口计算性能越好。为了达到更好的性能，开发者可以根据实际的内存使用情况进行空间预留/申请。maxValue为0表示计算不需要临时空间。 > **注意:**  说明： maxValue仅作为参考值，有可能大于Unified Buffer剩余空间的大小，该场景下，开发者需要根据Unified Buffer剩余空间的大小来选取合适的临时空间大小。 |
 | minValue | 输出 | Tanh接口能完成计算所需最小临时空间大小。为保证功能正确，接口计算时预留/申请的临时空间不能小于minValue的数值。最小空间为0表示计算不需要临时空间。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

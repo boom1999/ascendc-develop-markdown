@@ -5,8 +5,6 @@
 
 ---
 
-# SetOutputPadding
-
 #### 功能说明
 
 构建Conv3DTranspose算子时，设置输出的Padding大小，用于推导输出的形状。在构建Conv3DBackpropInput算子时，此接口无实际意义，请勿使用。

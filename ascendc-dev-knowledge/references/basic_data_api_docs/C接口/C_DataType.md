@@ -5,8 +5,6 @@
 
 ---
 
-# C_DataType
-
 C_DataType枚举值定义如下：
 
 ```

@@ -5,8 +5,6 @@
 
 ---
 
-# GetSize
-
 #### 函数功能
 
 获取TensorDesc所描述Tensor的数据大小。

@@ -5,8 +5,6 @@
 
 ---
 
-# GroupedMatmul算子性能调优案例
-
 #### 案例介绍
 
 本案例对分组Matmul即GroupedMatmul算子的per-token量化场景进行性能分析和优化，GroupedMatmul算子计算过程（通过python代码表达）为：

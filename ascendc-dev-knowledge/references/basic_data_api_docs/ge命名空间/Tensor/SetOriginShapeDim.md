@@ -5,8 +5,6 @@
 
 ---
 
-# SetOriginShapeDim
-
 #### 函数功能
 
 设置原始shape第idx维度。

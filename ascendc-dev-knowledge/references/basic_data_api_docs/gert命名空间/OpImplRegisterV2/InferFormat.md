@@ -5,8 +5,6 @@
 
 ---
 
-# InferFormat
-
 #### 函数功能
 
 注册算子的InferFormat函数。

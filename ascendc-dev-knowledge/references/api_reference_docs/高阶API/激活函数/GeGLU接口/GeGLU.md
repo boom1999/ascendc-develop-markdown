@@ -5,8 +5,6 @@
 
 ---
 
-# GeGLU
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -96,10 +94,6 @@ __aicore__ inline void GeGLU(const LocalTensor<T>& dstTensor, const LocalTensor<
 | srcTensor0/ srcTensor1 | 输入 | 源操作数。 源操作数的数据类型需要与目的操作数保持一致。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | sharedTmpBuffer | 输入 | 临时缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 用于GeGLU内部复杂计算时存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考GetGeGLUMaxMinTmpSize。 |
 | calCount | 输入 | 实际计算数据元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

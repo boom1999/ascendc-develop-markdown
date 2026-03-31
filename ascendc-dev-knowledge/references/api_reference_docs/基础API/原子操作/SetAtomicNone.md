@@ -5,8 +5,6 @@
 
 ---
 
-# SetAtomicNone
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -29,10 +27,6 @@ __aicore__ inline void SetAtomicNone()
 ```
 
 #### 参数说明
-
-无
-
-#### 返回值说明
 
 无
 

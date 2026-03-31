@@ -5,8 +5,6 @@
 
 ---
 
-# AutoContiguous
-
 #### 功能说明
 
 配置该参数，当单算子API（aclnnxxx）接口中的输入（aclTensor类型）是非连续tensor时，框架会自动将其转换为连续tensor。

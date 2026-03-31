@@ -5,8 +5,6 @@
 
 ---
 
-# HCCL使用说明
-
 Ascend C提供一组HCCL通信类高阶API，方便算子Kernel开发用户在AI Core侧灵活管理通算融合算子中计算与通信任务的执行顺序。使用HCCL通信类高阶API进行算子开发前，请参考通算融合章节了解必要的背景知识。
 
 HCCL为**集合通信任务客户端**，主要对外提供了集合通信原语接口（以下统称为Prepare接口），对标集合通信C++接口，详细可参见HCCL接口参考，当前支持AllReduce、AllGather、ReduceScatter、AlltoAll接口等。本章的所有接口运行在AI Core上，且不执行通信任务，而是由用户调用Prepare接口将对应类型的通信任务信息发送给AI CPU服务端，并在合适的时机通过Commit接口通知AI CPU上的服务端执行对应的通信任务。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetValue
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -39,10 +37,6 @@ void SetValue(const uint32_t index, const T1 value) const
 | --- | --- | --- |
 | index | 输入 | LocalTensor索引，单位为元素。 |
 | value | 输入 | 待设置的数值。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# ReduceMin
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -67,10 +65,6 @@ __aicore__ inline void ReduceMin(const LocalTensor<T>& dst, const LocalTensor<T>
 | repeatTime | 输入 | 迭代次数。与通用参数说明中不同的是，支持更大的取值范围，保证不超过int32_t最大值的范围即可。 |
 | srcRepStride | 输入 | 源操作数相邻迭代间的地址步长，即源操作数每次迭代跳过的datablock数目。详细说明请参考repeatStride。 |
 | calIndex | 输入 | 指定是否获取最小值的索引，bool类型，默认值为false，取值：                     - true：同时获取最小值和最小值索引。           - false：不获取索引，只获取最小值。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

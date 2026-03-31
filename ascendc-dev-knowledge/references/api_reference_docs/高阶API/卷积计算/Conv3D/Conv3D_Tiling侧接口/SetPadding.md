@@ -5,8 +5,6 @@
 
 ---
 
-# SetPadding
-
 #### 功能说明
 
 设置Pad信息。
@@ -27,10 +25,6 @@ void SetPadding(int64_t padHead, int64_t padTail, int64_t padUp, int64_t padDown
 | padDown | 输入 | H方向下Padding大小。 |
 | padLeft | 输入 | W方向左Padding大小。 |
 | padRight | 输入 | W方向右Padding大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# GetTilingKey
-
 #### 函数功能
 
 获取tiling key。

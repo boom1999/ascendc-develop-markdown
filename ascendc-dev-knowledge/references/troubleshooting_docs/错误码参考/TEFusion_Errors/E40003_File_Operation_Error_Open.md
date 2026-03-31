@@ -5,8 +5,6 @@
 
 ---
 
-# E40003 File_Operation_Error_Open
-
 #### Symptom
 
 Failed to open the JSON file: %s.

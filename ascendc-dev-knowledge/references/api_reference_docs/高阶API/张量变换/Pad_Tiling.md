@@ -5,8 +5,6 @@
 
 ---
 
-# Pad Tiling
-
 #### 功能说明
 
 用于获取Pad Tiling参数。
@@ -45,10 +43,6 @@ void PadTilingFunc(const ge::Shape srcShape, const ge::Shape oriSrcShape, const 
 | stackBufferSize | 输入 | 可供Pad接口计算的空间大小。 |
 | typeSize | 输入 | 输入的数据类型大小，单位为字节。比如输入的数据类型为half，此处应传入2。 |
 | tiling | 输出 | 输出Pad接口所需的tiling信息。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

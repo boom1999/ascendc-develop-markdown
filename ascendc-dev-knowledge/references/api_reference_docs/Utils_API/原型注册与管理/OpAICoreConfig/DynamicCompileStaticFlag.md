@@ -5,8 +5,6 @@
 
 ---
 
-# DynamicCompileStaticFlag
-
 #### 功能说明
 
 用于标识该算子实现是否支持入图时的静态Shape编译。

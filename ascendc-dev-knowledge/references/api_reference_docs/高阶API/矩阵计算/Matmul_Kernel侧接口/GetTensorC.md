@@ -5,8 +5,6 @@
 
 ---
 
-# GetTensorC
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -105,10 +103,6 @@ __aicore__ inline void GetTensorC(const LocalTensor<DstT>& c, uint8_t enAtomic =
 **图1 **非连续写模式示意图
 ![](images/atlasascendc_api_07_0639_img_001.png)**图2 **连续写模式示意图
 ![](images/atlasascendc_api_07_0639_img_002.png)
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

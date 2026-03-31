@@ -5,8 +5,6 @@
 
 ---
 
-# TilingDataSize
-
 #### 函数功能
 
 设置算子TilingData的大小，设置该大小后，会申请相应大小的内存用于存储算子的TilingData。相较于TilingData，调用此接口时生成的TilingData指针所有权归属ContextHolder，调用者无需关注TilingData的生命周期。

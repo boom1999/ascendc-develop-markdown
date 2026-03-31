@@ -5,8 +5,6 @@
 
 ---
 
-# GetSizeInBytes
-
 #### 函数功能
 
 根据传入的element_count和data_type，获取element_count个该data_type所占用的内存总大小。

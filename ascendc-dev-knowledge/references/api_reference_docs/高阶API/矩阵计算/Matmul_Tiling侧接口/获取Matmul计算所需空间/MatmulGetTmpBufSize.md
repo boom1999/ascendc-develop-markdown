@@ -5,8 +5,6 @@
 
 ---
 
-# MatmulGetTmpBufSize
-
 #### 功能说明
 
 本接口用于在调用GetTiling接口获取Tiling参数后，根据Tiling结构体信息获取L1 Buffer/Unified Buffer/L0C Buffer的使用大小。

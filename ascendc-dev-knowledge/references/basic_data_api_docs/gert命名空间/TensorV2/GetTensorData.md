@@ -5,8 +5,6 @@
 
 ---
 
-# GetTensorData
-
 #### 函数功能
 
 获取Tensor中的数据，返回只读的TensorData类型对象。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetPadValue(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -45,10 +43,6 @@ __aicore__ inline void SetPadValue(T paddingValue)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | paddingValue | 输入 | DataCopyPad接口填充的数值，数据与DataCopyPad接口搬运的数据类型一致。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

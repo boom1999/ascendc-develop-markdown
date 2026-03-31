@@ -5,8 +5,6 @@
 
 ---
 
-# AddConfig
-
 #### 功能说明
 
 注册算子支持的AI处理器型号以及OpAICoreConfig信息。
@@ -24,10 +22,6 @@ void AddConfig(const char *soc, OpAICoreConfig &aicore_config)
 | --- | --- | --- |
 | soc | 输入 | 支持的AI处理器型号。填写规则请参考算子工程目录下编译配置项文件CMakePresets.json中的ASCEND_COMPUTE_UNIT字段，该字段取值在使用msOpGen创建工程时自动生成。 |
 | aicore_config | 输入 | AI Core配置信息请参考OpAICoreConfig定义。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

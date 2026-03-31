@@ -5,8 +5,6 @@
 
 ---
 
-# GetAicpuBlockDim
-
 #### 函数功能
 
 获取用户设置的可以调度的AI CPU核数。设置方式请参考SetAicpuBlockDim。

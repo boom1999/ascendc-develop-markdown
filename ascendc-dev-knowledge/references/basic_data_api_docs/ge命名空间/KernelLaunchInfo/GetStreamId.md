@@ -5,8 +5,6 @@
 
 ---
 
-# GetStreamId
-
 #### 函数功能
 
 获取当前Task所在流的id。

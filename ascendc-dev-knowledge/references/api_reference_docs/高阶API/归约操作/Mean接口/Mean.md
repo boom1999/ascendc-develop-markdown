@@ -5,8 +5,6 @@
 
 ---
 
-# Mean
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -75,10 +73,6 @@ __aicore__ inline void Mean(const LocalTensor<T>& dstTensor, const LocalTensor<T
 | srcTensor | 输入 | 源操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 源操作数的数据类型需要与目的操作数保持一致。 输入数据shape为outter * inner。开发者需要为其开辟大小为outter * inner * sizeof(T)的空间。 |
 | sharedTmpBuffer | 输入 | 临时缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 用于Mean内部复杂计算时存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考GetMeanMaxMinTmpSize。 |
 | srcTensor的shape信息。MeanParams类型，具体定义如下： ``` struct MeanParams{     uint32_t outter = 1;    // 表示输入数据的外轴长度     uint32_t inner;         // 表示输入数据内轴实际元素个数32字节补齐后的元素个数，inner*sizeof(T)必须是32字节的整数倍     uint32_t n;             // 表示输入数据内轴的实际元素个数 }; ```  - MeanParams.inner*sizeof(T)必须是32字节的整数倍。- MeanParams.inner是MeanParams.n向上32字节对齐后的值，inner = (n *sizeof(T) + 32 - 1) / 32 * 32 / sizeof(T)，因此MeanParams.n的大小应该满足：1 <= MeanParams.n <= MeanParams.inner。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

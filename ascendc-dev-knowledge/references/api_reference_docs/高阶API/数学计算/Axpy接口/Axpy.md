@@ -5,8 +5,6 @@
 
 ---
 
-# Axpy
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -54,10 +52,6 @@ __aicore__ inline void Axpy(const LocalTensor<T>& dstTensor, const LocalTensor<U
 | scalarValue | 输入 | scalar标量。支持的数据类型为：half、float。scalar操作数的类型需要和srcTensor保持一致。 |
 | sharedTmpBuffer | 输入 | 临时缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 由于该接口的内部实现中涉及复杂的数学计算，需要额外的临时空间来存储计算过程中的中间变量。临时空间需要开发者通过sharedTmpBuffer入参传入。临时空间大小BufferSize的获取方式请参考GetAxpyMaxMinTmpSize。 |
 | calCount | 输入 | 参与计算的元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

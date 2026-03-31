@@ -5,8 +5,6 @@
 
 ---
 
-# MutableOutputInstanceInfo
-
 #### 函数功能
 
 根据算子IR原型中的输出索引，获取对应的实例化对象。

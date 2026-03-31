@@ -5,8 +5,6 @@
 
 ---
 
-# OpAICoreConfig构造函数
-
 #### 功能说明
 
 OpAICoreConfig构造函数。
@@ -23,10 +21,6 @@ OpAICoreConfig(const char *soc)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | soc | 输入 | AI处理器型号。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

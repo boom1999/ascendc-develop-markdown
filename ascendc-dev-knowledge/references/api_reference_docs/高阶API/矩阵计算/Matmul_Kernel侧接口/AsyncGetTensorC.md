@@ -5,8 +5,6 @@
 
 ---
 
-# AsyncGetTensorC
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void AsyncGetTensorC(const LocalTensor<DstT>& c)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | c | 输出 | 结果矩阵 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# Follow
-
 #### 功能说明
 
 用于指定当前输入/输出的datatype/format/shape信息与之前定义过的某个输入一致。

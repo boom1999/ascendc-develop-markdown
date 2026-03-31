@@ -5,8 +5,6 @@
 
 ---
 
-# MutableTensorData
-
 #### 函数功能
 
 获取tensor中的数据。

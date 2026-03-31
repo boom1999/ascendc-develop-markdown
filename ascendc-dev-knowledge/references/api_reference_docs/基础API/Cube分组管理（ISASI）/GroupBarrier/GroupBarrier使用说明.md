@@ -5,8 +5,6 @@
 
 ---
 
-# GroupBarrier使用说明
-
 当同一个CubeResGroupHandle中的两个AIV任务之间存在依赖关系时，可以使用GroupBarrier控制同步。假设一组AIV A做完任务x以后，另外一组AIV B才可以开始后续业务，称AIV A组为Arrive组，AIV B组为Wait组。
 
 基于GroupBarrier的组同步使用步骤如下：

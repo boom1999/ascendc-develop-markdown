@@ -5,8 +5,6 @@
 
 ---
 
-# DataTypeForBinQuery
-
 #### 功能说明
 
 设置Input/Output用于运行时算子二进制查找的数据类型，和DataType/DataTypeList的数量一致，且一一对应。

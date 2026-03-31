@@ -5,8 +5,6 @@
 
 ---
 
-# DelInputWithOriginalType
-
 #### 函数功能
 
 根据算子类型，删除算子指定输入边。

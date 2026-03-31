@@ -5,8 +5,6 @@
 
 ---
 
-# Axpy
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -78,10 +76,6 @@ __aicore__ inline void Axpy(const LocalTensor<T>& dst, const LocalTensor<U>& src
 | half | half | half | 128 | Atlas 训练系列产品                                   Atlas A2 训练系列产品            /             Atlas A2 推理系列产品                                   Atlas A3 训练系列产品            /             Atlas A3 推理系列产品                                   Atlas 推理系列产品            AI Core                       Atlas 200I/500 A2 推理产品 |
 | float | float | float | 64 | Atlas 训练系列产品                                   Atlas A2 训练系列产品            /             Atlas A2 推理系列产品                                   Atlas A3 训练系列产品            /             Atlas A3 推理系列产品                                   Atlas 推理系列产品            AI Core                       Atlas 200I/500 A2 推理产品 |
 | half | half | float | 64 | Atlas 训练系列产品                                   Atlas A2 训练系列产品            /             Atlas A2 推理系列产品                                   Atlas A3 训练系列产品            /             Atlas A3 推理系列产品                                   Atlas 推理系列产品            AI Core                       Atlas 200I/500 A2 推理产品 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

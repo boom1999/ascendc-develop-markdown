@@ -5,8 +5,6 @@
 
 ---
 
-# SetSparse
-
 #### 功能说明
 
 设置Matmul的使用场景是否为Sparse Matmul场景。

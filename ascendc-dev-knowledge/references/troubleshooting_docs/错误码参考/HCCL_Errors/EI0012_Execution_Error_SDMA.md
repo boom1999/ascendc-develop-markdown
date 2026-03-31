@@ -5,8 +5,6 @@
 
 ---
 
-# EI0012 Execution_Error_SDMA
-
 #### Symptom
 
 SDMA memory copy task exception occurred. Remote rank: [%s]. Base information: [%s]. Task information: [%s]. Communicator information: [%s].

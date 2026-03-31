@@ -5,8 +5,6 @@
 
 ---
 
-# Init
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void Init(const TConv3DBpFilterTiling *__restrict tiling)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | tiling | 输入 | Conv3DBackpropFilter对象的Tiling参数，Conv3DBackpropFilterTilingData结构体定义请参见TConv3DBpFilterTiling结构体。 Tiling参数可以通过Host侧GetTiling接口获取，并传递到Kernel侧使用。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

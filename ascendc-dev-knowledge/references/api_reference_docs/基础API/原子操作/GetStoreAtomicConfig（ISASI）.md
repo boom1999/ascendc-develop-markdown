@@ -5,8 +5,6 @@
 
 ---
 
-# GetStoreAtomicConfig(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void GetStoreAtomicConfig(uint16_t& atomicType, uint16_t& atom
 | --- | --- | --- |
 | atomicType | 输出 | 原子操作使能位。 0：无原子操作 1：使能原子操作，进行原子操作的数据类型为float 2：使能原子操作，进行原子操作的数据类型为half 3：使能原子操作，进行原子操作的数据类型为int16_t 4：使能原子操作，进行原子操作的数据类型为int32_t 5：使能原子操作，进行原子操作的数据类型为int8_t 6：使能原子操作，进行原子操作的数据类型为bfloat16_t |
 | atomicOp | 输出 | 原子操作类型。 0：求和操作 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

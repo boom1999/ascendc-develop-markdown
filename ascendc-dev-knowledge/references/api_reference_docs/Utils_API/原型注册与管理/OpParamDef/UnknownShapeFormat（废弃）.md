@@ -5,8 +5,6 @@
 
 ---
 
-# UnknownShapeFormat（废弃）
-
 #### 功能说明
 
 > **注意:** 

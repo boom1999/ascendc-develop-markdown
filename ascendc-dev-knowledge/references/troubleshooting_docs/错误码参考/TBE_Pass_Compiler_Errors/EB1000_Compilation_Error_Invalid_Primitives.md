@@ -5,8 +5,6 @@
 
 ---
 
-# EB1000 Compilation_Error_Invalid_Primitives
-
 #### Symptom
 
 Primitives check failed. Reason: %s

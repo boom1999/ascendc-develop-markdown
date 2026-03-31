@@ -5,8 +5,6 @@
 
 ---
 
-# TBufPool简介
-
 TPipe可以管理全局内存资源，而TBufPool可以手动管理或复用Unified Buffer/L1 Buffer物理内存，主要用于多个stage计算中Unified Buffer/L1 Buffer物理内存不足的场景。
 
 完整样例链接可以参考[TBufPool样例](https://gitee.com/ascend/samples/tree/master/operator/ascendc/2_features/2_tbufpool)。

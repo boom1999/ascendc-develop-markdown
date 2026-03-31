@@ -5,8 +5,6 @@
 
 ---
 
-# GetBaseN
-
 #### 功能说明
 
 获取Tiling计算得到的baseN值。baseN参数的说明请参考表1。

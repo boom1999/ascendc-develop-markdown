@@ -5,8 +5,6 @@
 
 ---
 
-# SetOriginFormat
-
 #### 函数功能
 
 设置Tensor的原始Format。

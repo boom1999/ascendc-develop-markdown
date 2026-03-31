@@ -5,8 +5,6 @@
 
 ---
 
-# GetCmpMask(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -44,10 +42,6 @@ __aicore__ inline void GetCmpMask(const LocalTensor<T>& dst)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | dst | 输出 | Compare（结果存入寄存器）指令的比较结果。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要16字节对齐。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

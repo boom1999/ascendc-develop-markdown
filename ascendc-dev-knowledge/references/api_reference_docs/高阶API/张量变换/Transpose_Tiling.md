@@ -5,8 +5,6 @@
 
 ---
 
-# Transpose Tiling
-
 #### 功能说明
 
 用于获取Transpose Tiling参数。
@@ -74,10 +72,6 @@ void GetConfusionTransposeTilingInfo(const ge::Shape& srcShape, const uint32_t s
 | typeSize | 输入 | 输入的数据类型大小，单位为字节。比如输入的数据类型为half，此处应传入2。 |
 | transposeTypeIn | 输入 | 选择数据排布及reshape的类型，根据输入数字选择对应的场景，参数范围为[1,7]。 场景1（NZ2ND，1、2轴互换）：1 场景2（NZ2NZ，1、2轴互换）：2 场景3（NZ2NZ，尾轴切分）：3 场景4（NZ2ND，尾轴切分）：4 场景5（NZ2ND，尾轴合并）：5 场景6（NZ2NZ，尾轴合并）：6 场景7（二维转置）：7 |
 | tiling | 输出 | 输入数据的切分信息。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

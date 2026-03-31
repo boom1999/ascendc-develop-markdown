@@ -5,8 +5,6 @@
 
 ---
 
-# SetGradOutputShape
-
 #### 功能说明
 
 设置GradOutput的形状：Batch、Channel、Depth、Height、Width。

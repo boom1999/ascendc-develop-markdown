@@ -5,8 +5,6 @@
 
 ---
 
-# SetExpandDimsType
-
 #### 函数功能
 
 设置形状的补维规则。
@@ -22,10 +20,6 @@ void SetExpandDimsType(const ExpandDimsType &expand_dims_type)
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | expand_dims_type | 输入 | 需要设置的补维规则。 关于ExpandDimsType类型的定义，可参见ExpandDimsType。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

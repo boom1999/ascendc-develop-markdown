@@ -5,8 +5,6 @@
 
 ---
 
-# SetBLayout
-
 #### 功能说明
 
 设置B矩阵的Layout轴信息，包括B、S、N、G、D轴。对于BSNGD、SBNGD、BNGS1S2 Layout格式，调用IterateBatch接口之前，需要在Host侧Tiling实现中通过本接口设置B矩阵的Layout轴信息。

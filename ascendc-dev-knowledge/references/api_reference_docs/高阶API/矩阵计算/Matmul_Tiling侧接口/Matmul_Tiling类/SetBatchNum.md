@@ -5,8 +5,6 @@
 
 ---
 
-# SetBatchNum
-
 #### 功能说明
 
 设置多Batch计算的最大Batch数，最大Batch数为A矩阵batchA和B矩阵batchB中的最大值。调用IterateBatch接口之前，需要在Host侧Tiling实现中通过本接口设置多Batch计算的Batch数。

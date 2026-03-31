@@ -5,8 +5,6 @@
 
 ---
 
-# DynamicRankSupportFlag
-
 #### 功能说明
 
 标识算子是否支持dynamicRank（动态维度）。

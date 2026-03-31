@@ -5,8 +5,6 @@
 
 ---
 
-# OpName
-
 #### 函数功能
 
 设置算子名称，用于构造各子类Context的基类ExtendedKernelContext中ComputeNodeInfo信息。

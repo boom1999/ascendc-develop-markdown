@@ -5,8 +5,6 @@
 
 ---
 
-# 避免Unified Buffer的bank冲突
-
 【优先级】高
 
 > **注意:** 

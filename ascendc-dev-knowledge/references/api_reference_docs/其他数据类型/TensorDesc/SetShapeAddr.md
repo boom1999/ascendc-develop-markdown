@@ -5,8 +5,6 @@
 
 ---
 
-# SetShapeAddr
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ void SetShapeAddr(uint64_t* shapePtr)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | shapePtr | 输入 | 用于储存shape信息的地址。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

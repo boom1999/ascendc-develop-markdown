@@ -5,8 +5,6 @@
 
 ---
 
-# GetComputeNodeInputNum
-
 #### 函数功能
 
 获取算子的输入个数。

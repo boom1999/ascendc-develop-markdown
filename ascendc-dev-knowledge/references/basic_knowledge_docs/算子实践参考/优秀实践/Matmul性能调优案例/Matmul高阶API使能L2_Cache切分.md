@@ -5,8 +5,6 @@
 
 ---
 
-# Matmul高阶API使能L2 Cache切分
-
 #### 案例介绍
 
 本案例呈现了在Matmul计算过程中，输入和输出的数据总量超过L2 Cache大小时，通过L2 Cache数据切分对算子性能的提升效果。使能L2 Cache切分的完整样例请参考[L2 Cache切分的算子样例](https://gitee.com/ascend/ascendc-api-adv/tree/master/examples/matrix/matmul_l2cache)。

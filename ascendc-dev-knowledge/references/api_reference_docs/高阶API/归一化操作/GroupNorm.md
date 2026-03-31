@@ -5,8 +5,6 @@
 
 ---
 
-# GroupNorm
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -76,10 +74,6 @@ __aicore__ inline void GroupNorm(const LocalTensor<T>& output, const LocalTensor
 | sharedTmpBuffer | 输入 | 接口内部复杂计算时用于存储中间变量，由开发者提供。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 临时空间大小BufferSize的获取方式请参考GroupNorm Tiling。 |
 | epsilon | 输入 | 防除0的权重系数。数据类型需要与inputX/output保持一致。 |
 | tiling | 输入 | 输入数据的切分信息，Tiling信息的获取请参考GroupNorm Tiling。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# EnableMultiCoreSplitK
-
 #### 功能说明
 
 多核场景，通过该接口使能切K轴。不调用该接口的情况下，默认不切K轴。在GetTiling接口调用前使用。
@@ -24,10 +22,6 @@ void EnableMultiCoreSplitK(bool flag)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | flag | 输入 | 是否使能切K轴。 - true：使能切K轴- false：不使能切K轴 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

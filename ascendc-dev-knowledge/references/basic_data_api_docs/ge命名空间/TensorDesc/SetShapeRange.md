@@ -5,8 +5,6 @@
 
 ---
 
-# SetShapeRange
-
 #### 函数功能
 
 设置shape的变化范围。

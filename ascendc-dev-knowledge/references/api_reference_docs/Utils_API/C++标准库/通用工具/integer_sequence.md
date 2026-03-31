@@ -5,8 +5,6 @@
 
 ---
 
-# integer_sequence
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -49,10 +47,6 @@ using make_index_sequence = MakeIntegerSequence<size_t, N>;
 
 - N的范围为[0, 64]。
 - index_sequence作为序列，长度最大为64。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

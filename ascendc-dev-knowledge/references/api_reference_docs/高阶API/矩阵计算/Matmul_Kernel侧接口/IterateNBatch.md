@@ -5,8 +5,6 @@
 
 ---
 
-# IterateNBatch
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -49,10 +47,6 @@ __aicore__ inline void IterateNBatch(const uint32_t batchLoop, uint32_t batchA, 
 | matrixStrideA | 输入 | A矩阵源操作数相邻nd矩阵起始地址间的偏移，默认值是0。 |
 | matrixStrideB | 输入 | B矩阵源操作数相邻nd矩阵起始地址间的偏移，默认值是0。 |
 | matrixStrideC | 输入 | 该参数预留，开发者无需关注。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

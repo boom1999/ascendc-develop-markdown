@@ -5,8 +5,6 @@
 
 ---
 
-# BatchNorm Tiling
-
 #### 功能说明
 
 BatchNorm Tiling API用于获取BatchNorm kernel计算时所需的Tiling参数。获取Tiling参数主要分为如下两步：

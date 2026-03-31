@@ -5,8 +5,6 @@
 
 ---
 
-# Matmul使用说明
-
 Ascend C提供一组Matmul高阶API，方便用户快速实现Matmul矩阵乘法的运算操作。
 
 Matmul的计算公式为：C = A * B + Bias，其示意图如下。

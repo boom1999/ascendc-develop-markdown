@@ -5,8 +5,6 @@
 
 ---
 
-# Format
-
 ```
 enum Format {
   FORMAT_NCHW = 0,   // NCHW

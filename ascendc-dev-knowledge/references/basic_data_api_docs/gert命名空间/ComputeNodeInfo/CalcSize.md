@@ -5,8 +5,6 @@
 
 ---
 
-# CalcSize
-
 #### 函数功能
 
 用于计算算子对应的ComputeNodeInfo需要预分配的内存空间大小。

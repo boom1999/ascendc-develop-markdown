@@ -5,8 +5,6 @@
 
 ---
 
-# SetFixpipeNz2ndFlag
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -37,10 +35,6 @@ __aicore__ inline void SetFixpipeNz2ndFlag(uint16_t ndNum, uint16_t srcNdStride,
 | ndNum | 输入 | nd的数量，类型是uint16_t，取值范围：ndNum∈[1, 65535]。 |
 | srcNdStride | 输入 | 以分形大小为单位的源步长，源相邻nz矩阵的偏移（头与头）。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，srcNdStride∈[1, 512]，单位：fractal_size 1024B。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，srcNdStride∈[1, 512]，单位：fractal_size 1024B。 Atlas 200I/500 A2 推理产品，srcNdStride∈[1, 512]，单位：fractal_size 1024B。 |
 | dstNdStride | 输入 | 目的相邻nd矩阵的偏移（头与头）。单位为元素。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，dstNdStride∈[1, 65535]。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，dstNdStride∈[1, 65535]。 Atlas 200I/500 A2 推理产品，dstNdStride∈[1, 65535]。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

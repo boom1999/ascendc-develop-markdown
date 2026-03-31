@@ -5,8 +5,6 @@
 
 ---
 
-# GetAttachedStreamInfos
-
 #### 函数功能
 
 返回当前算子绑定的所有StreamInfo列表。

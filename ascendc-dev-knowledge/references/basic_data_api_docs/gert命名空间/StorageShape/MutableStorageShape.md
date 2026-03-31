@@ -5,8 +5,6 @@
 
 ---
 
-# MutableStorageShape
-
 #### 函数功能
 
 获取可写的运行时shape。

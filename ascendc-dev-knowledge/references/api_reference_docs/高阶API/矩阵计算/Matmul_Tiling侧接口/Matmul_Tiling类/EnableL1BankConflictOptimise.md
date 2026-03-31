@@ -5,8 +5,6 @@
 
 ---
 
-# EnableL1BankConflictOptimise
-
 #### 功能说明
 
 根据GetTiling接口计算出的Tiling参数，获取是否可以开启L1 Bank冲突优化功能。若可以开启该功能，则与TilingKey机制配合使用，通过增加TilingKey，关联Host侧与Kernel侧实现，并在Kernel侧增加代码实现分支，将MatmulConfig中的enableL1BankConflictOptimise设置为true，即可优化L1上的Bank冲突。

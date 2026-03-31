@@ -5,8 +5,6 @@
 
 ---
 
-# DataCopy简介
-
 DataCopy系列接口提供全面的数据搬运功能，支持多种数据搬运场景，并可在搬运过程中实现随路格式转换和量化激活等操作。该接口支持Local Memory与Global Memory之间的数据搬运，以及Local Memory内部的数据搬运。
 
 下表展示了DataCopy各项功能的描述和其通路的支持情况。

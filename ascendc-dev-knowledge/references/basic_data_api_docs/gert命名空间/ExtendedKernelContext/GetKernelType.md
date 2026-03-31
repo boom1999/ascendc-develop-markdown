@@ -5,8 +5,6 @@
 
 ---
 
-# GetKernelType
-
 #### 函数功能
 
 获取本kernel的类型。

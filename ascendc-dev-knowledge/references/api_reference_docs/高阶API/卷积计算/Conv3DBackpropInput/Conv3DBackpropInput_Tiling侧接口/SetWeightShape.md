@@ -5,8 +5,6 @@
 
 ---
 
-# SetWeightShape
-
 #### 功能说明
 
 设置权重矩阵Weight的形状。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetTilingFunc
-
 #### 功能说明
 
 根据算子类型OpType获取对应的Tiling函数。

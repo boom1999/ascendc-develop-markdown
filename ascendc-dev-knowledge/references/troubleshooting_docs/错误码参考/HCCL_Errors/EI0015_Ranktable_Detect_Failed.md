@@ -5,8 +5,6 @@
 
 ---
 
-# EI0015 Ranktable_Detect_Failed
-
 #### Symptom
 
 Failed to collect cluster information of the communicator based on rootInfo detection. Reason: %s.

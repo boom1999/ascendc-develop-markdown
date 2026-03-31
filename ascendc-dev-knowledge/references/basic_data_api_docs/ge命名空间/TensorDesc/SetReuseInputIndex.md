@@ -5,8 +5,6 @@
 
 ---
 
-# SetReuseInputIndex
-
 #### 函数功能
 
 设置算子输出TensorDesc复用内存的输入TensorDesc的序号。

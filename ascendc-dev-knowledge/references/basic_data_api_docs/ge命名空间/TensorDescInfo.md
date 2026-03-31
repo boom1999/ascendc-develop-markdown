@@ -5,8 +5,6 @@
 
 ---
 
-# TensorDescInfo
-
 ```
 struct TensorDescInfo {
         Format format_ = FORMAT_RESERVED;        /* tbe op register support format */

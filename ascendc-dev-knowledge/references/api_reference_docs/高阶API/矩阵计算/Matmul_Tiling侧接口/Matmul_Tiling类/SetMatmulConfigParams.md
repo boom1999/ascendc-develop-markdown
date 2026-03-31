@@ -5,8 +5,6 @@
 
 ---
 
-# SetMatmulConfigParams
-
 #### 功能说明
 
 在计算Tiling时，用于自定义设置表1中的MatmulConfig参数。本接口中配置的参数对应的功能在Tiling与Kernel中需要保持一致，所以本接口中的参数取值，需要与Kernel侧对应的MatmulConfig参数值保持一致，详细MatmulConfig参数请见表2。
@@ -43,10 +41,6 @@ void SetMatmulConfigParams(const MatmulConfigParams& configParams)
 | scheduleType | 配置Matmul数据搬运模式。参数取值如下： - ScheduleType::INNER_PRODUCT：默认模式，在K方向上做MTE1的循环搬运- ScheduleType::OUTER_PRODUCT：在M或N方向上做MTE1的循环搬运- ScheduleType::N_BUFFER_33：NBuffer33模板的数据搬运模式，MTE2每次搬运A矩阵的1x3个基本块，直至A矩阵所有3x3个基本块全载在L1 Buffer中 |
 | Matmul做矩阵运算的循环迭代顺序，即一次迭代计算出[baseM, baseN]大小的C矩阵分片后，自动偏移到下一次迭代输出的C矩阵位置的偏移顺序。参数取值如下： ``` enum class MatrixTraverse{     NOSET = 0,   // 当前无效     FIRSTM,      // 先往M轴方向偏移再往N轴方向偏移     FIRSTN,      // 先往N轴方向偏移再往M轴方向偏移 }; ``` |  |
 | enVecND2NZ | 是否使能ND2NZ |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# GetResGroupBarrierWorkSpaceSize
-
 #### 功能说明
 
 获取GroupBarrier所需要的workspace空间大小。

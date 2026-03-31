@@ -5,8 +5,6 @@
 
 ---
 
-# DeepNorm
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -71,10 +69,6 @@ __aicore__ inline void DeepNorm(const LocalTensor<T>& dstLocal, const LocalTenso
 | alpha | 输入 | 权重系数。数据类型需要与目的操作数一致。 |
 | epsilon | 输入 | 权重系数， 用来防止除零错误。数据类型需要与目的操作数一致。 |
 | tiling | 输入 | DeepNorm计算所需Tiling信息，Tiling信息的获取请参考DeepNorm Tiling。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

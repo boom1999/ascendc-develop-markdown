@@ -5,8 +5,6 @@
 
 ---
 
-# Matmul高阶API使能IBShare模板共享B矩阵数据
-
 #### 案例介绍
 
 本案例呈现了在矩阵乘算子场景中，使用Matmul高阶API进行矩阵乘法计算，B矩阵使能IBShare对算子性能的提升效果。IBShare功能通过共享L1 Buffer上相同的A矩阵或B矩阵数据，减少重复的MTE2数据搬运开销，提升算子性能。该功能支持A矩阵和B矩阵其中一个矩阵使能IBShare，也支持A矩阵和B矩阵同时使能IBShare。

@@ -5,8 +5,6 @@
 
 ---
 
-# EI0002  Communication_Error_Timeout
-
 #### Symptom
 
 The wait execution of the Notify register times out. Reason: The Notify register has not received the Notify record from remote rank: [%s]. base information: [%s]. task information: [%s]. group information: [%s]

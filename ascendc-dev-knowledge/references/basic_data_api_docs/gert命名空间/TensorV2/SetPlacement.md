@@ -5,8 +5,6 @@
 
 ---
 
-# SetPlacement
-
 #### 函数功能
 
 设置Tensor的placement。
@@ -22,10 +20,6 @@ void SetPlacement(const TensorPlacement placement)
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | placement | 输入 | 需要设置的Tensor的placement。 关于TensorPlacement类型的定义，请参见TensorPlacement。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

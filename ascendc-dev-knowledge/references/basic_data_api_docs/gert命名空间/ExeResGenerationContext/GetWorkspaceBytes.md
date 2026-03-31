@@ -5,8 +5,6 @@
 
 ---
 
-# GetWorkspaceBytes
-
 #### 函数功能
 
 获取Workspace大小。

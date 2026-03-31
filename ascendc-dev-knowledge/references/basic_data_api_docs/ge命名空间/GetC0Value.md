@@ -5,8 +5,6 @@
 
 ---
 
-# GetC0Value
-
 #### 函数功能
 
 从实际format中解析出C0 format信息。

@@ -5,8 +5,6 @@
 
 ---
 
-# Conv3D使用说明
-
 Ascend C提供一组Conv3D高阶API，方便用户快速实现3维卷积正向矩阵运算。3维正向卷积的示意图如图1，其计算公式为：
 
 ![](images/atlasascendc_api_07_10070_img_001.png)

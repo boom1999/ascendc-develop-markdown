@@ -5,8 +5,6 @@
 
 ---
 
-# SetLocalMemorySize
-
 #### 函数功能
 
 用于设置需要使用的Local Memory大小。不设置的情况下，默认为0，即算子不需要使用Local Memory。

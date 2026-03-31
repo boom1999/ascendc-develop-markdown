@@ -5,8 +5,6 @@
 
 ---
 
-# C_Format
-
 ```
 typedef enum {
   C_FORMAT_NCHW = 0,   // NCHW

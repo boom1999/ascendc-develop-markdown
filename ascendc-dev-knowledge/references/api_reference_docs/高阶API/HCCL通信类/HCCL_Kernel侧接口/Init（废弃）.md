@@ -5,8 +5,6 @@
 
 ---
 
-# Init（废弃）
-
 > **注意:** 
 
 该接口废弃，并将在后续版本移除，请不要使用该接口。请使用InitV2接口进行初始化。
@@ -40,10 +38,6 @@ __aicore__ inline void Init(GM_ADDR context, __gm__ void *initTiling = nullptr)
 | --- | --- | --- |
 | context | 输入 | 通信上下文，包含rankDim，rankID等相关信息。 |
 | initTiling | 输入 | 可选参数，通信域初始化Mc2InitTiling的地址。Mc2InitTiling在Host侧计算得出，具体请参考表1 Mc2InitTiling参数说明，由框架传递到Kernel函数中使用，完整示例请参考8.13.1.2-调用示例。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

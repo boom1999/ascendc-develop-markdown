@@ -5,8 +5,6 @@
 
 ---
 
-# AutoMappingSubgraphIndex
-
 #### 函数功能
 
 设置子图的输入输出和主图对应父节点输入输出的对应关系。

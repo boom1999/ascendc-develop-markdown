@@ -5,8 +5,6 @@
 
 ---
 
-# 纯搬运类算子VECIN和VECOUT建议复用
-
 【优先级】高
 
 【描述】纯搬运类算子在执行时并不涉及实际vector计算，若存在冗余的vector指令，会导致算子整体执行时间变长。这种场景可以使用Ascend C针对纯搬运类算子提供的TQueBind接口，该接口可以将VECIN与VECOUT绑定，省略将数据从VECIN拷贝到VECOUT的步骤，从而避免vector的无谓消耗。

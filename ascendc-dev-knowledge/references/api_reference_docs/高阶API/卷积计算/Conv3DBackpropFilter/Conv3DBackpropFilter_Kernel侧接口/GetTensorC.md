@@ -5,8 +5,6 @@
 
 ---
 
-# GetTensorC
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -44,10 +42,6 @@ __aicore__ inline void GetTensorC(const AscendC::GlobalTensor<DstT> &output, uin
 | output | 输入 | 将计算结果搬至Global Memory的GM地址。 |
 | enAtomic | 输入 | 预留参数，用户无需感知。 |
 | enSequentialWrite | 输入 | 预留参数，用户无需感知。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

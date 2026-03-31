@@ -5,8 +5,6 @@
 
 ---
 
-# AscendQuant
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -178,10 +176,6 @@ __aicore__ inline void AscendQuant(const LocalTensor<int8_t>& dstTensor, const L
 | scaleCount | 输入 | 实际量化参数元素个数，且scaleCount∈[0, min(scaleTensor.GetSize(),dstTensor.GetSize())]，要求是32的整数倍。 |
 | offsetCount | 输入 | 实际量化参数元素个数，且offsetCount∈[0, min(offsetTensor.GetSize(),dstTensor.GetSize())]，并且和scaleCount必须相等，要求是32的整数倍。 |
 | calCount | 输入 | 参与计算的元素个数。calCount必须是scaleCount的整数倍。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

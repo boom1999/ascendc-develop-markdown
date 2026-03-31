@@ -5,8 +5,6 @@
 
 ---
 
-# IBSet
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -45,10 +43,6 @@ __aicore__ inline void IBSet(const GlobalTensor<int32_t>& gmWorkspace, const Loc
 | ubWorkspace | 输入 | 存储当前核状态的公共缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | blockIdx | 输入 | 表示等待核的idx号，取值范围：[0, 核数-1]。 |
 | eventID | 输入 | 用来控制当前核的set、wait事件。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

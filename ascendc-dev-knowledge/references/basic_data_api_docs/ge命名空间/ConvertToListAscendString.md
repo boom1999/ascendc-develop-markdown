@@ -5,8 +5,6 @@
 
 ---
 
-# ConvertToListAscendString
-
 #### 函数功能
 
 定义了一个模板函数ConvertToListAscendString，用于将不同类型的字符串列表转换为AscendString类型的列表。

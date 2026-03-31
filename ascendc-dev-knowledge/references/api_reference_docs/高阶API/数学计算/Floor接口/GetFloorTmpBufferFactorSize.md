@@ -5,8 +5,6 @@
 
 ---
 
-# GetFloorTmpBufferFactorSize
-
 #### 功能说明
 
 该接口用于获取maxLiveNodeCount和extraBuf，在固定空间大小的情况下，通过maxLiveNodeCount和extraBuf可以推算算子单次最大计算元素数量。maxLiveNodeCount表示临时空间是单次计算数据量所占空间的多少倍；extraBuf表示使用的额外临时空间大小。
@@ -42,10 +40,6 @@ void GetFloorTmpBufferFactorSize(const uint32_t typeSize, uint32_t& maxLiveNodeC
 | typeSize | 输入 | 输入的数据类型大小，单位为字节。比如输入的数据类型为half，此处应传入2。 |
 | maxLiveNodeCount | 输出 | 最大存活节点数，表示临时空间是单次计算数据量所占空间的多少倍。 |
 | extraBuf | 输出 | 使用的额外临时空间大小，单位为字节。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

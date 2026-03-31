@@ -5,8 +5,6 @@
 
 ---
 
-# GetAscendAntiQuantTmpBufferFactorSize
-
 #### 功能说明
 
 该接口用于获取maxLiveNodeCount和extraBuf，在固定空间大小的情况下，通过maxLiveNodeCount和extraBuf可以推算算子单次最大计算元素数量。maxLiveNodeCount表示临时空间是单次计算数据量所占空间的多少倍；extraBuf表示使用的额外临时空间大小。
@@ -46,10 +44,6 @@ void GetAscendAntiQuantTmpBufferFactorSize(const ge::Shape& srcShape, const ge::
 | outputDataType | 输入 | 输出数据类型。ge::DataType类型，该类型的具体定义请参考DataType。 |
 | maxLiveNodeCount | 输出 | 最大存活节点数，表示临时空间是单次计算数据量所占空间的多少倍。 |
 | extraBuf | 输出 | 使用的额外临时空间大小，单位为字节。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

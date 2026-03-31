@@ -5,8 +5,6 @@
 
 ---
 
-# GetComputeNodeInfo
-
 #### 函数功能
 
 获取本Kernel对应的计算节点的信息。

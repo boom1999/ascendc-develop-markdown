@@ -5,8 +5,6 @@
 
 ---
 
-# GetDataType
-
 #### 函数功能
 
 获取CompileTimeTensorDesc所描述的Tensor的数据类型。

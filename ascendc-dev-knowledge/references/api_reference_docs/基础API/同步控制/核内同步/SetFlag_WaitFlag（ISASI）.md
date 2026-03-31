@@ -5,8 +5,6 @@
 
 ---
 
-# SetFlag/WaitFlag(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -79,10 +77,6 @@ enum class HardEvent : uint8_t {
     FIX_MTE3
 }
 ```
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

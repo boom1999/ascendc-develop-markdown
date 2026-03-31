@@ -5,8 +5,6 @@
 
 ---
 
-# ge::graphStatus
-
 graphStatus类型即uint32_t类型，其不同的状态说明如下：
 
 | 状态 | 值 | 说明 |

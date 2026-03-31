@@ -5,8 +5,6 @@
 
 ---
 
-# GetAutoMappingSubgraphIOIndexFunc
-
 #### 函数功能
 
 根据网络类型，获取已经注册的自动映射函数。

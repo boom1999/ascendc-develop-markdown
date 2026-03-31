@@ -5,8 +5,6 @@
 
 ---
 
-# SoftmaxFlashV3 Tiling接口
-
 #### 功能说明
 
 用于获取SoftmaxFlashV3接口所需的Tiling参数。
@@ -58,10 +56,6 @@ void SoftMaxFlashV3TilingFunc(const ge::Shape& srcShape, const uint32_t dataType
 | isUpdate | 输入 | 是否使能SoftMaxFlashV3 update为true的公式计算。与SoftmaxFlashV3 Kernel接口的模板参数isUpdate保持一致。 |
 | isBasicBlock | 输入 | 预留参数，暂未启用，必须使用默认值false。 |
 | softmaxFlashV3Tiling | 输出 | 输出SoftMaxFlashV3接口所需的Tiling信息，支持optiling::SoftMaxTiling形式入参和AscendC::tiling::SoftMaxTiling形式入参。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

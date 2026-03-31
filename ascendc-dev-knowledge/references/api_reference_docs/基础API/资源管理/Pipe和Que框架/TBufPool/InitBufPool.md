@@ -5,8 +5,6 @@
 
 ---
 
-# InitBufPool
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -67,10 +65,6 @@ __aicore__ inline bool InitBufPool(T& bufPool, uint32_t len, U& shareBuf)
 1. 新划分的资源池与被复用资源池的物理内存需要一致，两者共享起始地址及长度；
 2. 输入长度需要小于等于被复用资源池长度；
 3. 其他泛用约束参考TBufPool；
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

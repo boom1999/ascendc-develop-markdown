@@ -5,8 +5,6 @@
 
 ---
 
-# NPU域上板调试
-
 #### 通过DumpTensor、printf打印进行调试
 
 NPU域上板数据打印功能包括DumpTensor、printf两种，其中DumpTensor用于打印指定Tensor的数据，printf主要用于打印标量和字符串信息。

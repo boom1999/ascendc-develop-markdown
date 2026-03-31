@@ -5,8 +5,6 @@
 
 ---
 
-# Transpose
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -199,10 +197,6 @@ __aicore__ inline void Transpose(const LocalTensor<T>& dst, const LocalTensor<T>
 | sharedTmpBuffer | 输入 | 共享缓冲区，用于存放API内部计算产生的临时数据。该方式开发者可以自行管理sharedTmpBuffer内存空间，并在接口调用完成后，复用该部分内存，内存不会反复申请释放，灵活性较高，内存利用率也较高。共享缓冲区大小的获取方式请参考Transpose Tiling。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | 数据排布及reshape的类型，类型为TransposeType枚举类。                                                                                                                           ``` enum class TransposeType : uint8_t {     TRANSPOSE_TYPE_NONE,            // default value     TRANSPOSE_NZ2ND_0213,           // 场景1：NZ2ND，1、2轴互换     TRANSPOSE_NZ2NZ_0213,           // 场景2：NZ2NZ，1、2轴互换     TRANSPOSE_NZ2NZ_012_WITH_N,     // 场景3：NZ2NZ，尾轴切分     TRANSPOSE_NZ2ND_012_WITH_N,     // 场景4：NZ2ND，尾轴切分     TRANSPOSE_NZ2ND_012_WITHOUT_N,  // 场景5：NZ2ND，尾轴合并     TRANSPOSE_NZ2NZ_012_WITHOUT_N,  // 场景6：NZ2NZ，尾轴合并     TRANSPOSE_ND2ND_ONLY,           // 场景7：二维转置      TRANSPOSE_ND_UB_GM,             // 当前不支持     TRANSPOSE_GRAD_ND_UB_GM,        // 当前不支持     TRANSPOSE_ND2ND_B16,            // 当前不支持     TRANSPOSE_NCHW2NHWC,            // 当前不支持     TRANSPOSE_NHWC2NCHW            // 当前不支持                                   }; ``` |  |  |
 | tiling | 输入 | 计算所需tiling信息，Tiling信息的获取请参考Transpose Tiling。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

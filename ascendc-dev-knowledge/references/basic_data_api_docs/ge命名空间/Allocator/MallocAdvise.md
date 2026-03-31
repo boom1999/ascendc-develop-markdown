@@ -5,8 +5,6 @@
 
 ---
 
-# MallocAdvise
-
 #### 函数功能
 
 在用户内存池中根据指定size大小申请device内存，建议申请的内存地址为addr。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetShapeSize
-
 #### 函数功能
 
 获取Shape中所有dim的累乘结果。

@@ -5,8 +5,6 @@
 
 ---
 
-# SoftMax Tiling使用说明
-
 Ascend C提供一组SoftMax Tiling API，方便用户获取SoftMax kernel计算时所需的Tiling参数。阅读本节之前，请先参考Tiling实现了解Tiling实现基本流程。
 
 获取Tiling参数主要分为如下两步：

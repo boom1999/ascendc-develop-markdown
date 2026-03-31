@@ -214,7 +214,13 @@ python3 ascendc-dev-knowledge/scripts/restructure_kb.py -v 850 --keep-cache
 
 **Spider**: Crawls 5 documentation sections from the Ascend Community website, downloads pages and images, preserves tables and code blocks, generates INDEX.md per section.
 
-**Restructure**: Removes TOC-only pages (~35% of raw), builds hierarchical directory structure from breadcrumb navigation, cleans titles, moves images alongside their pages, generates new INDEX.md with directory tree.
+**Restructure** (cleanup pipeline):
+
+- **Dedup**: Removes TOC-only pages (~35% of raw content) that are just navigation link lists — keeps only pages with actual API details
+- **De-noise**: Strips invisible characters (`\xa0` non-breaking space, `\u200b` zero-width space, `\ufeff` BOM), removes `#ZH-CN_TOPIC` anchor artifacts
+- **Link cleanup**: Strips all internal cross-reference URLs and absolute hiascend.com links, preserving type names and function names as plain text — makes grep/find searches clean and precise
+- **Boilerplate removal**: Removes dead link remnants (`更多样例可参考LINK`), empty return value sections (`#### 返回值说明 → 无`), and repeated constraint references — surfaces the real API logic
+- **Structure**: Builds hierarchical directory tree from breadcrumb navigation, deduplicates H1 headings, moves images alongside their pages, generates tree-form INDEX.md per section
 
 Supported versions: `850` (CANN 8.5.0), `900beta1` (CANN 9.0.0 beta1). Switch with `-v`.
 

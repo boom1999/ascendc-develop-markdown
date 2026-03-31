@@ -5,8 +5,6 @@
 
 ---
 
-# E30008 Execution_Error_AICPU_Operator_Timeout
-
 #### Symptom
 
 AI CPU operator execution timed out.

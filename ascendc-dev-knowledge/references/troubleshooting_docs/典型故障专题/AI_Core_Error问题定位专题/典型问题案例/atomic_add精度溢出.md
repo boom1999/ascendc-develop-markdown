@@ -5,8 +5,6 @@
 
 ---
 
-# atomic add精度溢出
-
 #### 分析结果
 
 如果info.txt中给出如下结论，说明是精度溢出导致的AI Core error。

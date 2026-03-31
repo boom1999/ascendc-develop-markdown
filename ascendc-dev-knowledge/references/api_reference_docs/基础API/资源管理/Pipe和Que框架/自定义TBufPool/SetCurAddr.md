@@ -5,8 +5,6 @@
 
 ---
 
-# SetCurAddr
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetCurAddr(uint32_t curAddr)
 | curAddr | 输入 | 已分配的内存地址。 |
 
 #### 约束说明
-
-无
-
-#### 返回值说明
 
 无
 

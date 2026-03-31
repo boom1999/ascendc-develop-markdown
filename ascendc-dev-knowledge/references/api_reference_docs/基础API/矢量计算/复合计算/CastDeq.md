@@ -5,8 +5,6 @@
 
 ---
 
-# CastDeq
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -88,10 +86,6 @@ __aicore__ inline void CastDeq(const LocalTensor<T>& dst, const LocalTensor<U>& 
 
 **图1 **halfBlock说明
 ![](images/atlasascendc_api_07_0074_img_004.png)
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

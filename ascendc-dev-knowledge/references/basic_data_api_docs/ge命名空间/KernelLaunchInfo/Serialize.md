@@ -5,8 +5,6 @@
 
 ---
 
-# Serialize
-
 #### 函数功能
 
 将KernelLaunchInfo序列化成数据流。

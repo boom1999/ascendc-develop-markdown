@@ -5,8 +5,6 @@
 
 ---
 
-# ReleaseEventID
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -46,10 +44,6 @@ __aicore__ inline void ReleaseEventID(TEventID id)
 #### 约束说明
 
 AllocEventID、ReleaseEventID需成对出现，ReleaseEventID传入的TEventID需由对应的AllocEventID申请而来。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

@@ -5,8 +5,6 @@
 
 ---
 
-# GetReduceMaxMinCount(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持（仅获取最值的原型） | 是否支持（获取最值和索引的原型） |
@@ -52,10 +50,6 @@ __aicore__ inline void GetReduceMaxMinCount(T &maxMinValue)
 | --- | --- | --- |
 | maxMinValue | 输出 | ReduceMax/ReduceMin指令的最大值/最小值。 |
 | maxMinIndex | 输出 | ReduceMax/ReduceMin指令的最值对应的索引值。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

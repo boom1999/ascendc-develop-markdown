@@ -5,8 +5,6 @@
 
 ---
 
-# LoadUnzipIndex
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -47,10 +45,6 @@ __aicore__ inline void LoadUnzipIndex(const GlobalTensor<T>& src, uint32_t numOf
 | --- | --- | --- |
 | src | 输入 | 源操作数，索引表地址，类型为GlobalTensor。 src地址必须2字节对齐。src长度必须是512字节的整数倍，最大为32KB。 |
 | numOfIndexTabEntry | 输入 | 输入数据，表示加载的索引表个数。索引表个数必须大于0。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

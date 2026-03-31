@@ -5,8 +5,6 @@
 
 ---
 
-# GetResCubeGroupWorkSpaceSize
-
 #### 功能说明
 
 基于CreateCubeResGroup进行AI Core分组计算需要传入workspace用于消息通信，在Host侧提供本接口用于获取CreateCubeResGroup所需要的workspace空间大小。

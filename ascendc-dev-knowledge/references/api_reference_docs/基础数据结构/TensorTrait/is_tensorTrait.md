@@ -5,8 +5,6 @@
 
 ---
 
-# is_tensorTrait
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ template <typename T> struct is_tensorTrait
 | 参数名 | 描述 |
 | --- | --- |
 | T | 根据输入的数据类型，判断是否为TensorTrait数据结构。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

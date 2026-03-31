@@ -5,8 +5,6 @@
 
 ---
 
-# GetBaseK
-
 #### 功能说明
 
 获取Tiling计算得到的baseK值。baseK参数的说明请参考表1。

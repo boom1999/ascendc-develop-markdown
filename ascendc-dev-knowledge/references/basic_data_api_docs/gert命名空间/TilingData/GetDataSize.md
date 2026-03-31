@@ -5,8 +5,6 @@
 
 ---
 
-# GetDataSize
-
 #### 函数功能
 
 获取tiling data长度。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetCompileInfo
-
 #### 函数功能
 
 获取编译信息CompileInfo。

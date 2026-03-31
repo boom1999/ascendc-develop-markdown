@@ -5,8 +5,6 @@
 
 ---
 
-# Pad
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -71,10 +69,6 @@ __aicore__ inline void Pad(const LocalTensor<T>& dstTensor, const LocalTensor<T>
 | Pad参数，PadParams类型，PadParams结构体的具体参数如下： - leftPad，左边pad的数据量。单位：列。- rightPad，右边pad的数据量。单位：列。- padValue，补充的值，支持int32_t。 PadParams结构体的定义如下： ``` struct PadParams {     uint16_t leftPad = 0;     uint16_t rightPad = 0;     int32_t padValue = 0; }; ``` |  |  |
 | sharedTmpBuffer | 输入 | 共享缓冲区，用于存放API内部计算产生的临时数据。该方式开发者可以自行管理sharedTmpBuffer内存空间，并在接口调用完成后，复用该部分内存，内存不会反复申请释放，灵活性较高，内存利用率也较高。共享缓冲区大小的获取方式请参考Pad Tiling。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | tiling | 输入 | 计算所需tiling信息，Tiling信息的获取请参考Pad Tiling。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

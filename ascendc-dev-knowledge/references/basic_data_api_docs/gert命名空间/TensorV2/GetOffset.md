@@ -5,8 +5,6 @@
 
 ---
 
-# GetOffset
-
 #### 函数功能
 
 获取Tensor中的offset。

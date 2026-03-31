@@ -5,8 +5,6 @@
 
 ---
 
-# MrgSort
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -63,10 +61,6 @@ __aicore__ inline void MrgSort(const LocalTensor<T>& dst, const MrgSortSrcList<T
 | ifExhaustedSuspension | 某条队列耗尽后，指令是否需要停止，类型为bool，默认false。 |
 | validBit | 有效队列个数，取值如下：- 3：前两条队列有效- 7：前三条队列有效- 15：四条队列全部有效 |
 | repeatTimes | 迭代次数，每一次源操作数和目的操作数跳过四个队列总长度。取值范围：repeatTimes∈[1,255]。 repeatTimes参数生效是有条件的，需要同时满足以下四个条件：- src包含四条队列并且validBit=15- 四个源队列的长度一致- 四个源队列连续存储- ifExhaustedSuspension = False |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

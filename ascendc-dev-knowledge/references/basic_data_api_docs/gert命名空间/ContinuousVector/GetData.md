@@ -5,8 +5,6 @@
 
 ---
 
-# GetData
-
 #### 函数功能
 
 获取首个元素的指针地址，[GetData(), reinterpret_cast<T *>(GetData()) + GetSize()) 中的数据即为当前容器中保存的数据。

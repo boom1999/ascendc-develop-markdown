@@ -5,8 +5,6 @@
 
 ---
 
-# MutableStride
-
 #### 函数功能
 
 获取Tensor中的Stride引用，该Stride可修改。

@@ -5,8 +5,6 @@
 
 ---
 
-# InitV2
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void InitV2(GM_ADDR context, const void *initTiling)
 | --- | --- | --- |
 | context | 输入 | 通信上下文，包含rankDim，rankID等相关信息。通过框架提供的获取通信上下文的接口GetHcclContext获取context。 |
 | initTiling | 输入 | 通信域初始化Mc2InitTiling的地址。Mc2InitTiling在Host侧计算得出，具体请参考表1 Mc2InitTiling参数说明，由框架传递到Kernel函数中使用。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

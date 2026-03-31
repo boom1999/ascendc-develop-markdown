@@ -5,8 +5,6 @@
 
 ---
 
-# NeedCheckSupportFlag
-
 #### 功能说明
 
 标识是否在算子融合阶段调用算子参数校验函数进行data type与shape的校验。

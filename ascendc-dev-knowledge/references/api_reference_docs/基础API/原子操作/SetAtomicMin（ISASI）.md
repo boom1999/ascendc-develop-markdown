@@ -5,8 +5,6 @@
 
 ---
 
-# SetAtomicMin(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -38,10 +36,6 @@ __aicore__ inline void SetAtomicMin()
 | 参数名 | 描述 |
 | --- | --- |
 | T | 设定不同的数据类型。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，支持int8_t/int16_t/half/bfloat16_t/int32_t/float。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，支持int8_t/int16_t/half/bfloat16_t/int32_t/float。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

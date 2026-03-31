@@ -5,8 +5,6 @@
 
 ---
 
-# SyncAll
-
 #### 产品支持情况
 
 | 产品 | 是否支持（软同步原型） | 是否支持（硬同步原型） |
@@ -53,10 +51,6 @@ __aicore__ inline void SyncAll()
 | gmWorkspace | 输入 | gmWorkspace为用户定义的全局Global空间，作为所有核共用的缓存，用于保存每个核的状态标记，类型为GlobalTensor，支持的数据类型为int32_t。GlobalTensor数据结构的定义请参考GlobalTensor。 所需空间大小和使用注意项参见约束说明。 硬同步接口不支持该参数。 |
 | ubWorkspace | 输入 | ubWorkspace为用户定义的局部Local空间，每个核单独自用，用于标记当前核的状态。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT，支持的数据类型为int32_t。 所需空间大小参见约束说明。 硬同步接口不支持该参数。 |
 | usedCores | 输入 | 指定多少个核之间的同步，传入数值不能超过算子调用时指定的逻辑blockDim。此参数为默认参数，不传此参数表示全核软同步。 仅在软同步接口中支持，硬同步接口不支持该参数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

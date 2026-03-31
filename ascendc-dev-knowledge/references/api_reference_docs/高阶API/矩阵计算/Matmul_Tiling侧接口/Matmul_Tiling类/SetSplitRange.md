@@ -5,8 +5,6 @@
 
 ---
 
-# SetSplitRange
-
 #### 功能说明
 
 设置baseM/baseN/baseK的最大值和最小值。 目前Tiling暂时不支持该功能。

@@ -5,8 +5,6 @@
 
 ---
 
-# To
-
 #### 功能说明
 
 配置该参数后，在调用单算子API(aclnnxxx)接口时，会将aclScalar/aclScalarList的数据类型转换为该参数指定的数据类型。

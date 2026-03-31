@@ -5,8 +5,6 @@
 
 ---
 
-# SetNextTaskStart
-
 > **注意:** 
 
 本接口为试验接口，在后续版本中可能会调整或改进，不保证后续兼容性。请开发者在使用过程中关注后续版本更新。
@@ -67,10 +65,6 @@ __aicore__ inline void SetNextTaskStart()
 | --- | --- |
 | AIV_PIPE | SetNextTaskStart之后运行的指令，如果位于AIV上的AIV_PIPE流水，可以与后序算子并行。AIV_PIPE的取值范围为PIPE_MTE2、PIPE_MTE3、PIPE_S、PIPE_V，流水类型介绍可参考硬件流水类型。 |
 | AIC_PIPE | SetNextTaskStart之后运行的指令，如果位于AIC上的AIC_PIPE流水，可以与后序算子并行。AIC_PIPE的取值范围为PIPE_MTE1、PIPE_MTE2、PIPE_MTE3、PIPE_FIX、PIPE_M，流水类型介绍可参考硬件流水类型。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

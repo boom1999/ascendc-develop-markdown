@@ -5,8 +5,6 @@
 
 ---
 
-# SetUnknownDimNumShape
-
 #### 函数功能
 
 设置tensor的shape为{-2}，用来表示tensor是完全未知的。

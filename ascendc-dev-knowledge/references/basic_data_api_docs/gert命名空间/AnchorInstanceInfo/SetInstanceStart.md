@@ -5,8 +5,6 @@
 
 ---
 
-# SetInstanceStart
-
 #### 函数功能
 
 设置算子某个IR输入在实际输入中的起始序号（index）。

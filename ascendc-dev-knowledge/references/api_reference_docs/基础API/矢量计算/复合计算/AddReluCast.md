@@ -5,8 +5,6 @@
 
 ---
 
-# AddReluCast
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -77,10 +75,6 @@ __aicore__ inline void AddReluCast(const LocalTensor<T>& dst, const LocalTensor<
 | float | half | 将源操作数按照CAST_NONE模式取到half所能表示的数，以half格式（溢出默认按照饱和处理）存入目的操作数中。 |
 | half | int8_t | 将源操作数按照CAST_NONE模式取整，以int8_t格式（溢出默认按照饱和处理）存入目的操作数中。 |
 | int16_t | int8_t | 将源操作数按照CAST_NONE模式取到int8_t所能表示的数，以int8_t格式（溢出默认按照饱和处理）存入目的操作数中。 |
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

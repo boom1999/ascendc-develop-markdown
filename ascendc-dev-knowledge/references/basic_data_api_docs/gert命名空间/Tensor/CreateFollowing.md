@@ -5,8 +5,6 @@
 
 ---
 
-# CreateFollowing
-
 #### 函数功能
 
 创建一个指定数据类型以及大小的Tensor，其数据在Tensor对象后连续排布。

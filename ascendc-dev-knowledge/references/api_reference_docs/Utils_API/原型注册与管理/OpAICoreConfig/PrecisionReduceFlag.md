@@ -5,8 +5,6 @@
 
 ---
 
-# PrecisionReduceFlag
-
 #### 功能说明
 
 此字段用于进行ATC模型转换或者进行网络调测时，控制算子的精度模式。只有当精度模式("precision_mode")配置为混合精度("allow_mix_precision")前提下生效。

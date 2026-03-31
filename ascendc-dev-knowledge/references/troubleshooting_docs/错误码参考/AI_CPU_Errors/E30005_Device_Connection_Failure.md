@@ -5,8 +5,6 @@
 
 ---
 
-# E30005 Device_Connection_Failure
-
 #### Symptom
 
 Failed to connect the device.

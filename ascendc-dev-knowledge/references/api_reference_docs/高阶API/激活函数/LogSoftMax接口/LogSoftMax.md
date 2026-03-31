@@ -5,8 +5,6 @@
 
 ---
 
-# LogSoftMax
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -89,10 +87,6 @@ __aicore__ inline void LogSoftMax(const LocalTensor<T>& dst, const LocalTensor<T
 | sharedTmpBuffer | 输入 | 临时缓存。临时空间大小BufferSize的获取方式请参考LogSoftMax Tiling。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | tiling | 输入 | LogSoftMax计算所需Tiling信息，Tiling信息的获取请参考LogSoftMax Tiling。 |
 | src的shape信息。SoftMaxShapeInfo类型，具体定义如下：                                                                                                                           ``` struct SoftMaxShapeInfo {     uint32_t srcM; // 非尾轴长度的乘积     uint32_t srcK; // 尾轴长度，必须32Bytes对齐     uint32_t oriSrcM; // 原始非尾轴长度的乘积     uint32_t oriSrcK;  // 原始尾轴长度 }; ```                                                                                      注意，当输入输出的数据格式为NZ（FRACTAL_NZ）格式时，尾轴长度为reduce轴长度，即图2中的W0*W1，非尾轴为H0*H1。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

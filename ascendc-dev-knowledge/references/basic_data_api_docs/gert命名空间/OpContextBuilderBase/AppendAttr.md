@@ -5,8 +5,6 @@
 
 ---
 
-# AppendAttr
-
 #### 函数功能
 
 追加算子IR原型的属性信息，下标从0开始，用于构造各子类Context的基类ExtendedKernelContext中的ExtendedInfo信息。

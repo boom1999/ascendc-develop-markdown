@@ -5,8 +5,6 @@
 
 ---
 
-# SetTensorDesc
-
 #### 函数功能
 
 设置Tensor的描述符（TensorDesc）。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetShape
-
 #### 函数功能
 
 向TensorDesc中设置Tensor的Shape。

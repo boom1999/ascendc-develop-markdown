@@ -5,8 +5,6 @@
 
 ---
 
-# TransData
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -95,10 +93,6 @@ __aicore__ inline void TransData(const LocalTensor<T>& dstTensor, const LocalTen
 | srcTensor | 输入 | 源操作数。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          源操作数的数据类型需要与目的操作数保持一致。 |
 | sharedTmpBuffer | 输入 | 临时缓存。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          用于TransData内部复杂计算时存储中间变量，由开发者提供。          临时空间大小BufferSize的获取方式请参考GetTransDataMaxMinTmpSize。 |
 | 源操作数和目的操作数的Shape信息。该参数为TransDataParams数据类型，具体定义如下，其中模板参数T、U必须为Layout类型。该参数指定的Shape维度必须与config中Format对应维度保持一致。                                                                                                                           ``` template <typename T, typename U> struct TransDataParams {     T srcLayout;     U dstLayout; }; ```                                                                                      配置示例如下。                                                                                                                           ``` AscendC::Layout ncdhwLayout = AscendC::MakeLayout(AscendC::MakeShape(n, c, d, h, w), AscendC::MakeStride()); AscendC::Layout fractalzLayout = AscendC::MakeLayout(AscendC::MakeShape(d, c1, h, w, n1, n0, c0), AscendC::MakeStride()); AscendC::TransDataParams<decltype(ncdhwLayout), decltype(fractalzLayout)> params = {ncdhwLayout, fractalzLayout}; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# CreateAicpuKfcTask
-
 #### 函数功能
 
 创建一个AI CPU的KFC Task。

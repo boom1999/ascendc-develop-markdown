@@ -5,8 +5,6 @@
 
 ---
 
-# DynamicFormatFlag
-
 #### 功能说明
 
 标识是否根据SetOpSelectFormat设置的函数自动推导算子输入输出支持的dtype和format。设置为“true”，则无需在原型注册时配置固定的dtype与format，会调用推导函数来推导算子输入输出支持的dtype和format。

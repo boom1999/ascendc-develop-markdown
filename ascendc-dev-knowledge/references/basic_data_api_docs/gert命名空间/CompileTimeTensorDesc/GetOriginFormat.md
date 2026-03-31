@@ -5,8 +5,6 @@
 
 ---
 
-# GetOriginFormat
-
 #### 函数功能
 
 获取CompileTimeTensorDesc所描述Tensor的原始数据排布格式。

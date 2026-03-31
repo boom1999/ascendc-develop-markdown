@@ -5,8 +5,6 @@
 
 ---
 
-# Init
-
 #### 产品支持情况
 
 | 产品 | Tiling参数传入栈地址的接口 | Tiling参数传入GM地址的接口 |
@@ -55,10 +53,6 @@ __aicore__ inline void Init(const __gm__ TCubeTiling* gmCubeTiling, TPipe* tpipe
 | --- | --- | --- |
 | gmCubeTiling | 输入 | Matmul Tiling参数，该参数指向gm上的一块内存地址，其中的数据类型是TCubeTiling结构体，TCubeTiling结构体定义请参见表1 TCubeTiling结构说明。 Tiling参数可以通过host侧GetTiling接口获取，并传递到kernel侧使用。在kernel侧调用GET_TILING_DATA_PTR_WITH_STRUCT获取gm上Tiling参数的指针，本接口传入Tiling参数中TCubeTiling结构体的GM地址。 |
 | tpipe | 输入 | Tpipe对象。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

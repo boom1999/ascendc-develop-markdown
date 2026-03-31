@@ -5,8 +5,6 @@
 
 ---
 
-# SetPadding
-
 #### 功能说明
 
 设置Pad信息。
@@ -29,10 +27,6 @@ void SetPadding(int64_t padFront, int64_t padBack, int64_t padUp, int64_t padDow
 | padDown | 输入 | 卷积正向过程中Input Height维度的下方向Padding大小。 |
 | padLeft | 输入 | 卷积正向过程中Input Width维度的左方向Padding大小。 |
 | padRight | 输入 | 卷积正向过程中Input Width维度的右方向Padding大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

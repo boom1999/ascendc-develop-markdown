@@ -5,8 +5,6 @@
 
 ---
 
-# Conv3D模板参数
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -43,10 +41,6 @@ using Conv3D = Conv3dIntfExt<Config<ConvApi::ConvDataType<INPUT_TYPE, WEIGHT_TYP
 | OUTPUT_TYPE | 输入 | ConvType类型模板参数，指定Output的参数类型信息。 |
 | BIAS_TYPE | 可选输入 | ConvType类型模板参数，指定Bias的参数类型信息。 |
 | CONV_CFG | 可选输入 | ConvParam类型模板参数，用于使能不同场景的性能优化模板，**当前版本只支持基础模板，不使能性能优化。** |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# CreateHcomRecordTask
-
 #### 函数功能
 
 创建一个Record task，此Task用于唤醒其他流上的与其有相同group_name的Wait Task。

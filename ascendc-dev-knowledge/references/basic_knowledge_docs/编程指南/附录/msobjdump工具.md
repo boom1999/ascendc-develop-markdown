@@ -5,8 +5,6 @@
 
 ---
 
-# msobjdump工具
-
 本工具主要针对Kernel直调工程（NPU模式）、标准自定义算子工程、简易自定义算子工程编译生成的算子ELF文件（Executable and Linkable Format）提供解析和解压功能，并将结果信息以可读形式呈现，方便开发者直观获得kernel文件信息。
 
 > **注意:** 

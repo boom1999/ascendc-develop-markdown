@@ -5,8 +5,6 @@
 
 ---
 
-# GetKernelName
-
 #### 函数功能
 
 获取本kernel的名称。

@@ -5,8 +5,6 @@
 
 ---
 
-# TilingData
-
 #### 函数功能
 
 设置算子的TilingData指针，用于算子Tiling计算时，向该指针中写入TilingData数据。

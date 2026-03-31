@@ -5,8 +5,6 @@
 
 ---
 
-# CompiledJson
-
 #### 函数功能
 
 设置算子的CompiledJson指针，json格式文件指针。

@@ -5,8 +5,6 @@
 
 ---
 
-# LayerNorm
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -170,10 +168,6 @@ __aicore__ inline void LayerNorm(const LocalTensor<T>& output, const LocalTensor
 | sharedTmpBuffer | 输入 | 共享缓冲区，用于存放API内部计算产生的临时数据。该方式开发者可以自行管理sharedTmpBuffer内存空间，并在接口调用完成后，复用该部分内存，内存不会反复申请释放，灵活性较高，内存利用率也较高。共享缓冲区大小的获取方式请参考LayerNorm Tiling。            类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | LayerNorm计算所需的参数信息。LayerNormPara类型，定义如下。                                                                                                                                             ``` struct LayerNormPara {     uint32_t aLength;     uint32_t rLength;     uint32_t rLengthWithPadding; }; ```                                                                                                                   - aLength：指定输入inputX的A轴长度。               - rLength：指定输入inputX的R轴实际需要处理的数据长度。               - rLengthWithPadding：指定输入inputX的R轴对齐后的长度，该值是32B对齐的。 |  |  |
 | tiling | 输入 | LayerNorm计算所需的Tiling信息，Tiling信息的获取请参考LayerNorm Tiling。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

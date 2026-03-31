@@ -5,8 +5,6 @@
 
 ---
 
-# FreeAllEvent
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void FreeAllEvent()
 #### 约束说明
 
 该接口不支持Tensor原地操作，即TQue的depth设置为0的场景。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

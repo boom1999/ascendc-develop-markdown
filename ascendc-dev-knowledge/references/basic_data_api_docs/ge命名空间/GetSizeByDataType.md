@@ -5,8 +5,6 @@
 
 ---
 
-# GetSizeByDataType
-
 #### 函数功能
 
 根据传入的data_type，获取该data_type所占用的内存大小。如果要获取多个元素的内存大小，请使用GetSizeInBytes。

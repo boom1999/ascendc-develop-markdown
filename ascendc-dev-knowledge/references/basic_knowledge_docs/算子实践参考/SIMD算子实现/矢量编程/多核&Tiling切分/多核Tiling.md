@@ -5,8 +5,6 @@
 
 ---
 
-# 多核Tiling
-
 基于Ascend C方式实现带有Tiling的算子的开发流程如下图所示。
 
 **图1 **算子开发流程
@@ -61,7 +59,7 @@ struct AddCustomTilingData {
 #include "add_custom_tiling.h"
 constexpr int32_t CORE_NUM = 8;                             // 使用的核数
 constexpr int32_t TILE_NUM = 16;                             // 核内切分数量
-void GenerateTilingData(uint8_t* tilingBuf)
+void GenerateTilingData(uint8_t* tilingBuf)
 {
     uint32_t totalLength;
     // 此处省略如何获取数据总长TOTAL_LENGTH，可以根据具体情况实现。本章节仅介绍Tiling相关内容。

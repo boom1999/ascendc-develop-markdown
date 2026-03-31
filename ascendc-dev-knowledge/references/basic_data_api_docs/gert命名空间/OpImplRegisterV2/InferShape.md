@@ -5,8 +5,6 @@
 
 ---
 
-# InferShape
-
 #### 函数功能
 
 注册算子的InferShape函数。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetRequiredOutputFormat
-
 #### 函数功能
 
 根据算子原型定义中的输出索引获取对应的必选输出Format指针。

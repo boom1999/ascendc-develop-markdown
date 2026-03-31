@@ -5,8 +5,6 @@
 
 ---
 
-# HasC0Format
-
 #### 函数功能
 
 判断实际format中是否包含C0 format。

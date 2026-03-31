@@ -5,8 +5,6 @@
 
 ---
 
-# SetOrgShape
-
 #### 功能说明
 
 设置Matmul计算时的原始完整的形状M、N、K或Ka/Kb，单位均为元素个数。

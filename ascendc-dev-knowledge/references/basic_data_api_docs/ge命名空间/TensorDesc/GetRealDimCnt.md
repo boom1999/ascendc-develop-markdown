@@ -5,8 +5,6 @@
 
 ---
 
-# GetRealDimCnt
-
 #### 函数功能
 
 获取TensorDesc所描述Tensor的实际维度个数。

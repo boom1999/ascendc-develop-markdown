@@ -5,8 +5,6 @@
 
 ---
 
-# Add
-
 #### 函数功能
 
 新增一个ContinuousVector元素，其中新增ContinuousVector元素的容量为inner_vector_capacity。

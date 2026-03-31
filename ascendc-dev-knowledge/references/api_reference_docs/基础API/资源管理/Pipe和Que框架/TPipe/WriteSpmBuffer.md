@@ -5,8 +5,6 @@
 
 ---
 
-# WriteSpmBuffer
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -62,10 +60,6 @@ __aicore__ inline void WriteSpmBuffer(const LocalTensor<T>& writeBuffer, const i
 
 - 暂存拷贝到L1时注意writeSize和writeOffset保证32字节对齐
 - 拷贝的内存不要超出初始化的SPM Buffer大小，否则会存在溢出踩踏等问题。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

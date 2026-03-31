@@ -5,8 +5,6 @@
 
 ---
 
-# ReduceMax
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -70,10 +68,6 @@ __aicore__ inline void ReduceMax(const LocalTensor<T>& dstTensor, const LocalTen
 | sharedTmpBuffer | 输入 | 临时缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 用于ReduceMax内部复杂计算时存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考GetReduceMaxMaxMinTmpSize。 |
 | srcShape | 输入 | uint32_t类型的数组，表示源操作数的shape信息。该shape的维度必须和模板参数pattern的维度一致，例如，pattern为AR，该shape维度只能是二维。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，当前只支持二维shape。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，当前只支持二维shape。 |
 | srcInnerPad | 输入 | 表示实际需要计算的最内层轴数据是否32Bytes对齐。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，当前只支持true。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，当前只支持true。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

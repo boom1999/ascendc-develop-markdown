@@ -5,8 +5,6 @@
 
 ---
 
-# SetAlignSplit
-
 #### 功能说明
 
 多核切分时， 设置singleCoreM/singleCoreN/singleCoreK的对齐值。比如设置singleCoreM的对齐值为64（单位为元素），切分出的singleCoreM为64的倍数。

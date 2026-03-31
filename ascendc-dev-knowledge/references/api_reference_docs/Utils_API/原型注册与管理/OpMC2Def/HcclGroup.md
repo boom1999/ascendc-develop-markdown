@@ -5,8 +5,6 @@
 
 ---
 
-# HcclGroup
-
 #### 功能说明
 
 配置通信域名称，每个名称对应一个通信域。配置后在Kernel侧调用GetHcclContext接口可获取通信域对应的context（消息区）地址。

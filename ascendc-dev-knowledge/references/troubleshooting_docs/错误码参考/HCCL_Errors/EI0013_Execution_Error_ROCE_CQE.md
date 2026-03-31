@@ -5,8 +5,6 @@
 
 ---
 
-# EI0013 Execution_Error_ROCE_CQE
-
 #### Symptom
 
 An error CQE occurred during operator execution. Local information: server %s, device ID %s, device IP %s. Peer information: server %s, device ID %s, device IP %s.

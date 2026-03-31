@@ -5,8 +5,6 @@
 
 ---
 
-# GetShapeSize
-
 #### 函数功能
 
 获取当前Tensor运行时的形状大小，即此Tensor中包含的元素的数量。

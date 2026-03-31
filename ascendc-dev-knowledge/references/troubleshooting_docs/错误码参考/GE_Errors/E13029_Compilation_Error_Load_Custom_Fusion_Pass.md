@@ -5,8 +5,6 @@
 
 ---
 
-# E13029 Compilation_Error_Load_Custom_Fusion_Pass
-
 #### Symptom
 
 Failed to load custom fusion pass lib %s. Reason: %s.

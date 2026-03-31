@@ -5,8 +5,6 @@
 
 ---
 
-# icache数据校验故障
-
 #### 问题现象
 
 Device的event日志（slog/dev-os-*id*/run/event/event_*.log）中存在“**event_id=0x80C98000**”关键字。

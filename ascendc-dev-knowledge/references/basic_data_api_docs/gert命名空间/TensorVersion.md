@@ -5,8 +5,6 @@
 
 ---
 
-# TensorVersion
-
 头文件位于CANN软件安装后文件存储路径下的include/exe_graph/runtime/tensor.h。
 
 ```

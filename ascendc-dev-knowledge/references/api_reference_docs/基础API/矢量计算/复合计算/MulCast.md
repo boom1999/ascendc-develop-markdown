@@ -5,8 +5,6 @@
 
 ---
 
-# MulCast
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -76,10 +74,6 @@ __aicore__ inline void MulCast(const LocalTensor<T> &dst, const LocalTensor<U> &
 | --- | --- | --- |
 | half | int8_t | 将源操作数按照CAST_NONE模式取整，以int8_t格式（溢出默认按照饱和处理）存入目的操作数中。 |
 | half | uint8_t | 将源操作数按照CAST_NONE模式取整，以uint8_t格式（溢出默认按照饱和处理）存入目的操作数中。 |
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

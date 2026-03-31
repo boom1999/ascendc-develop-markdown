@@ -5,8 +5,6 @@
 
 ---
 
-# SoftmaxFlash
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -111,10 +109,6 @@ __aicore__ inline void SoftmaxFlash(const LocalTensor<half>& dstTensor, const Lo
 | tiling | 输入 | 接口计算所需tiling信息，Tiling信息的获取请参考SoftmaxFlash Tiling接口。 |
 | isUpdate | 输入 | 是否使能update算法。 |
 | srcTensor的shape信息。SoftMaxShapeInfo类型，具体定义如下： ``` struct SoftMaxShapeInfo {     uint32_t srcM; // 非尾轴长度的乘积     uint32_t srcK; // 尾轴长度，必须32Byte对齐     uint32_t oriSrcM; // 原始非尾轴长度的乘积     uint32_t oriSrcK;  // 原始尾轴长度 }; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

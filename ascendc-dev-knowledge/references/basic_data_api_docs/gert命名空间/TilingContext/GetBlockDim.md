@@ -5,8 +5,6 @@
 
 ---
 
-# GetBlockDim
-
 #### 函数功能
 
 获取blockDim，即参与计算的Vector或者Cube核数。blockDim的详细概念和设置方式请参考SetBlockDim。

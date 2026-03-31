@@ -5,8 +5,6 @@
 
 ---
 
-# SetAippFunctions
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -191,10 +189,6 @@ __aicore__ inline void SetAippFunctions(const GlobalTensor<T>& src0, const Globa
 | YUV400 | 无对齐要求 | - |
 
 - 对于XRGB输入格式的数据，芯片在处理的时候会默认丢弃掉第四个通道的数据输出RGB格式的数据，所以如果是X在channel0的场景下，为了达成上述目的，X通道后移的功能必须使能，将输入的通道转换为RGBX；反之如果是X在channel3的场景下，X通道后移的功能必须不使能以输出RGB格式的数据。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

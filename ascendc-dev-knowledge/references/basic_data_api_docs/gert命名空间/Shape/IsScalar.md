@@ -5,8 +5,6 @@
 
 ---
 
-# IsScalar
-
 #### 函数功能
 
 判断本shape是否为标量，所谓标量，是指GetDimNum()为0。

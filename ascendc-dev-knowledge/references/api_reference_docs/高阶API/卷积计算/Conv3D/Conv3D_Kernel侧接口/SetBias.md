@@ -5,8 +5,6 @@
 
 ---
 
-# SetBias
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ __aicore__ inline void SetBias(const AscendC::GlobalTensor<BiasT>& bias)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | bias | 输入 | Bias在Global Memory上的地址。类型为GlobalTensor。偏置矩阵Bias支持的数据类型为：half、bfloat16_t。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# TensorFlow框架
-
 本章节介绍TensorFlow框架算子适配的流程，用于将TensorFlow框架的算子映射成CANN算子（开发者基于CANN框架自定义开发的算子），从而完成从TensorFlow框架调用到CANN算子的过程。同时给出TensorFlow框架侧算子调用的示例，便于开发者了解完整流程。
 
 下图展示了完整的开发流程，具体步骤如下：

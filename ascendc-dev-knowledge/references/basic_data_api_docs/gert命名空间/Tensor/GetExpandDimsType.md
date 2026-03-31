@@ -5,8 +5,6 @@
 
 ---
 
-# GetExpandDimsType
-
 #### 函数功能
 
 获取shape的补维规则。

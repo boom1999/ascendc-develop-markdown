@@ -5,8 +5,6 @@
 
 ---
 
-# GenerateTask
-
 #### 函数功能
 
 GenerateTask阶段具体Task的生成和处理。

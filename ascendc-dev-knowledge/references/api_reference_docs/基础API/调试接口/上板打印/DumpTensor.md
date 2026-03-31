@@ -5,8 +5,6 @@
 
 ---
 
-# DumpTensor
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -83,10 +81,6 @@ __aicore__ inline void DumpTensor(const GlobalTensor<T>& tensor, uint32_t desc, 
 | desc | 输入 | 用户自定义附加信息（行号或其他自定义数字）。 在使用DumpTensor功能时，用户可通过desc参数附加自定义信息，以便在不同调用场景下区分Dump内容的来源。此功能有助于精准定位具体DumpTensor的输出，提升调试与分析效率。 |
 | dumpSize | 输入 | 需要dump的元素个数。 |
 | shapeInfo | 输入 | 传入Tensor的shape信息，可按照shape信息进行打印。- 当Shape尺寸大于dumpSize元素个数时， 按照ShapeInfo打印元素，不足的Dump数据用"-"展示。 - 当Shape尺寸小于等于dumpSize元素个数时， 按照ShapeInfo打印元素，多出的Dump数据不展示。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# SetInferDataType
-
 #### 功能说明
 
 使用图模式时，需要调用该接口注册DataType推导函数。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetQuantScalar
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -37,10 +35,6 @@ __aicore__ inline void SetQuantScalar(const uint64_t quantScalar)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | quantScalar | 输入 | 量化或反量化系数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# SetSingleRange
-
 #### 功能说明
 
 设置singleCoreM/singleCoreN/singleCoreK的最大值与最小值。

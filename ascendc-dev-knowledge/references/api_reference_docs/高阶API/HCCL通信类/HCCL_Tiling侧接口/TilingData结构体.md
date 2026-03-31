@@ -5,8 +5,6 @@
 
 ---
 
-# TilingData结构体
-
 #### 功能说明
 
 在算子实现中，由Tiling组装通信配置项，核函数实现时将Tiling配置项通过入参传递给Kernel侧通信API做通信计算。本节TilingData结构体包括Mc2InitTiling和Mc2CcTiling，这两个结构体均通过调用GetTiling接口返回。其中，Mc2CcTiling为具体每个通信任务的参数配置，当算子中有多个通信任务时，可定义多个Mc2CcTiling参数（最多支持定义8个）。

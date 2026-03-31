@@ -5,8 +5,6 @@
 
 ---
 
-# MrgSort
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -77,10 +75,6 @@ __aicore__ inline void MrgSort(const LocalTensor<T> &dst, const MrgSortSrcList<T
 | src2 | 输入 | 源操作数，第二个已经排好序的队列。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 数据类型与目的操作数保持一致。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，支持的数据类型为：half、float。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，支持的数据类型为：half、float。 Atlas 推理系列产品AI Core，支持的数据类型为：half、float。 |
 | src3 | 输入 | 源操作数，第三个已经排好序的队列。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 数据类型与目的操作数保持一致。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，支持的数据类型为：half、float。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，支持的数据类型为：half、float。 Atlas 推理系列产品AI Core，支持的数据类型为：half、float。 |
 | src4 | 输入 | 源操作数，第四个已经排好序的队列。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 数据类型与目的操作数保持一致。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，支持的数据类型为：half、float。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，支持的数据类型为：half、float。 Atlas 推理系列产品AI Core，支持的数据类型为：half、float。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# SetBufferLen
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetBufferLen(uint32_t dataLen)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | dataLen | 输入 | Buffer的元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

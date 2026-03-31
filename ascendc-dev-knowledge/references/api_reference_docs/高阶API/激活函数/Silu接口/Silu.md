@@ -5,8 +5,6 @@
 
 ---
 
-# Silu
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -49,10 +47,6 @@ __aicore__ inline void Silu(const LocalTensor<T>& dstLocal, const LocalTensor<T>
 | dstLocal | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | srcLocal | 输入 | 源操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 源操作数的数据类型需要与目的操作数保持一致。 |
 | dataSize | 输入 | 实际计算数据元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

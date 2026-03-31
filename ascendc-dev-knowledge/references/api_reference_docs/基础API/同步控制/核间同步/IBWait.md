@@ -5,8 +5,6 @@
 
 ---
 
-# IBWait
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -45,10 +43,6 @@ __aicore__ inline void IBWait(const GlobalTensor<int32_t>& gmWorkspace, const Lo
 | ubWorkspace | 输入 | 当前核的公共缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | blockIdx | 输入 | 表示等待核的idx号，取值范围：[0, 核数-1]，不包含自身blockIdx。 |
 | eventID | 输入 | 用来控制当前核的set、wait事件。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

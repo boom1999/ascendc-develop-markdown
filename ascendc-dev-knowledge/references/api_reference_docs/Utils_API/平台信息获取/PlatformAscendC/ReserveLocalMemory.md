@@ -5,8 +5,6 @@
 
 ---
 
-# ReserveLocalMemory
-
 #### 功能说明
 
 该函数用于在Unified Buffer中预留指定大小的内存空间。调用该接口后，使用GetCoreMemSize可以获取实际可用的剩余Unified Buffer空间大小。
@@ -22,10 +20,6 @@ void ReserveLocalMemory(ReservedSize size)
 | 参数名 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | 需要预留的空间大小。 ``` enum class ReservedSize {     RESERVED_SIZE_8K,  // 预留8 * 1024B空间     RESERVED_SIZE_16K, // 预留16 * 1024B空间     RESERVED_SIZE_32K, // 预留32 * 1024B空间 }; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

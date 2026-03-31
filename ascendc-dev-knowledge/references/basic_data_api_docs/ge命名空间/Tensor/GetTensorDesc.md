@@ -5,8 +5,6 @@
 
 ---
 
-# GetTensorDesc
-
 #### 函数功能
 
 获取Tensor的描述符。

@@ -5,8 +5,6 @@
 
 ---
 
-# TRACE_STOP
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -50,10 +48,6 @@ ascendc_compile_definitions(ascendc_kernels_${RUN_MODE} PRIVATE
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | apid | 输入 | 取值需与TRACE_START参数取值保持一致，否则影响打点结果。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

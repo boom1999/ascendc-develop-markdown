@@ -5,8 +5,6 @@
 
 ---
 
-# Sort
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -81,10 +79,6 @@ __aicore__ inline void Sort(const LocalTensor<T>& dst, const LocalTensor<T>& con
 | index | 输入 | 源操作数，shape为[n]。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 此源操作数固定为uint32_t数据类型。 |
 | tmp | 输入 | 临时空间。接口内部复杂计算时用于存储中间变量，由开发者提供，临时空间大小BufferSize的获取方式请参考GetSortTmpSize。数据类型与源操作数保持一致。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 |
 | repeatTime | 输入 | 重复迭代次数，int32_t类型。 - Atlas A3 训练系列产品/Atlas A3 推理系列产品：每次迭代完成32个元素的排序，下次迭代concat和index各跳过32个elements，dst跳过32*8 Byte空间。取值范围：repeatTime∈[0,255]。- Atlas A2 训练系列产品/Atlas A2 推理系列产品：每次迭代完成32个元素的排序，下次迭代concat和index各跳过32个elements，dst跳过32*8 Byte空间。取值范围：repeatTime∈[0,255]。- Atlas 推理系列产品AI Core：每次迭代完成16个region proposal的排序，下次迭代concat和dst各跳过16个region proposal。取值范围：repeatTime∈[0,255]。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# SetExpandDimsType
-
 #### 函数功能
 
 设置shape的补维规则。

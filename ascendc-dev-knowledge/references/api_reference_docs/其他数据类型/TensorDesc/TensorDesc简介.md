@@ -5,8 +5,6 @@
 
 ---
 
-# TensorDesc简介
-
 TensorDesc用于储存ListTensorDesc.GetDesc()中根据index获取对应的Tensor描述信息。
 
 #### 原型定义

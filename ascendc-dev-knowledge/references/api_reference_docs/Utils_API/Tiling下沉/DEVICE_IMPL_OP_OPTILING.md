@@ -5,8 +5,6 @@
 
 ---
 
-# DEVICE_IMPL_OP_OPTILING
-
 #### 功能说明
 
 在Tiling下沉场景中，该宏定义用于生成Tiling下沉的注册类，再通过调用注册类的成员函数来注册需要下沉的Tiling函数。
@@ -52,10 +50,6 @@ public:
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | func | 输入 | 需要注册的Tiling函数，该函数接受一个TilingContext作为输入，以ge::graphStatus为返回值。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

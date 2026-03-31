@@ -5,8 +5,6 @@
 
 ---
 
-# GetSelectMaxMinTmpSize
-
 #### 功能说明
 
 kernel侧Select接口的计算需要开发者申请临时空间，本接口用于在host侧获取申请的最大最小临时空间大小，开发者基于此范围选择合适的空间大小作为Tiling参数传递到kernel侧使用。

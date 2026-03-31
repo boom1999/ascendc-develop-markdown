@@ -5,8 +5,6 @@
 
 ---
 
-# ParseParamsByOperatorFn
-
 #### 函数功能
 
 注册解析用户自定义算子属性的函数

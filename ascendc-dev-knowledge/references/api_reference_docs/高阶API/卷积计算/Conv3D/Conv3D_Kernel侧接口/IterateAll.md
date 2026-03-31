@@ -5,8 +5,6 @@
 
 ---
 
-# IterateAll
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void IterateAll(const AscendC::GlobalTensor<OutputT>& output, 
 | --- | --- | --- |
 | output | 输入 | Output在GM上的地址。类型为GlobalTensor。结果矩阵Output支持的数据类型为：half、bfloat16_t。 |
 | enPartialSum | 输入 | 预留参数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# Compare（结果存入寄存器）
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -65,10 +63,6 @@ __aicore__ inline void Compare(const LocalTensor<T>& src0, const LocalTensor<T>&
 | cmpMode | 输入 | CMPMODE类型，表示比较模式，包括EQ，NE，GE，LE，GT，LT。                     - LT： src0小于（less than）src1           - GT： src0大于（greater than）src1           - GE：src0大于或等于（greater than or equal to）src1           - EQ：src0等于（equal to）src1           - NE：src0不等于（not equal to）src1           - LE：src0小于或等于（less than or equal to）src1 |
 | mask/mask[] | 输入 | mask用于控制每次迭代内参与计算的元素。                     - 逐bit模式：可以按位控制哪些元素参与计算，bit位的值为1表示参与计算，0表示不参与。            mask为数组形式，数组长度和数组元素的取值范围和操作数的数据类型有关。当操作数为16位时，数组长度为2，mask[0]、mask[1]∈[0, 264-1]并且不同时为0；当操作数为32位时，数组长度为1，mask[0]∈(0, 264-1]；当操作数为64位时，数组长度为1，mask[0]∈(0, 232-1]。            例如，mask=[8, 0]，8=0b1000，表示仅第4个元素参与计算。                               - 连续模式：表示前面连续的多少个元素参与计算。取值范围和操作数的数据类型有关，数据类型不同，每次迭代内能够处理的元素个数最大值不同。当操作数为16位时，mask∈[1, 128]；当操作数为32位时，mask∈[1, 64]；当操作数为64位时，mask∈[1, 32]。 |
 | repeatParams | 输入 | 控制操作数地址步长的参数。BinaryRepeatParams类型，包含操作数相邻迭代间相同datablock的地址步长，操作数同一迭代内不同datablock的地址步长等参数。          相邻迭代间的地址步长参数说明请参考repeatStride；同一迭代内DataBlock的地址步长参数说明请参考dataBlockStride。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

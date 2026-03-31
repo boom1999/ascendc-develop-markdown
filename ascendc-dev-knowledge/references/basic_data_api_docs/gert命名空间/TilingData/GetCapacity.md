@@ -5,8 +5,6 @@
 
 ---
 
-# GetCapacity
-
 #### 函数功能
 
 获取本实例可容纳的最大tiling data长度。

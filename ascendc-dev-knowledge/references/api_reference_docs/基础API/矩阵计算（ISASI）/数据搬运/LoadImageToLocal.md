@@ -5,8 +5,6 @@
 
 ---
 
-# LoadImageToLocal
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -57,10 +55,6 @@ __aicore__ inline void LoadImageToLocal(const LocalTensor<T>& dst, const LoadIma
 
 - 加载到dst的图片的大小加padding的大小必须小于等于所在存储空间的大小。
 - 当通过SetAippFunctions配置padding模式为块填充模式或者镜像块填充模式时，因为padding的数据来自于抠出的图片，左右padding的长度（leftPadSize、rightPadSize）必须小于或等于抠图的水平长度（horizSize），上下padding的长度（topPadSize、botPadSize）必须小于或等于抠图的垂直的长度（vertSize）。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

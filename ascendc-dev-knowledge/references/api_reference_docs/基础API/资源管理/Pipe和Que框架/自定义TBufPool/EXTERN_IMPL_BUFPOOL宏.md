@@ -5,8 +5,6 @@
 
 ---
 
-# EXTERN_IMPL_BUFPOOL宏
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -53,10 +51,6 @@ EXTERN_IMPL_BUFPOOL宏内部定义的函数Reset、Init、GetBufHandle、SetCurA
 | BUFID_SIZE | 输入 | 自定义TBufPool分配的Buffer块数量，建议不超过16。 |
 
 #### 约束说明
-
-无
-
-#### 返回值说明
 
 无
 

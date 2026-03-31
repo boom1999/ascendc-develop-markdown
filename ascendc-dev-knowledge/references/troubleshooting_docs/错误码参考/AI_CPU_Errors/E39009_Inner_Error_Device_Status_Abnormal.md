@@ -5,8 +5,6 @@
 
 ---
 
-# E39009 Inner_Error_Device_Status_Abnormal
-
 #### Symptom
 
 Failed to connect the device.

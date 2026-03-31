@@ -5,8 +5,6 @@
 
 ---
 
-# SetBatchInfoForNormal
-
 #### 功能说明
 
 设置A/B矩阵的M/N/K轴信息，以及A/B矩阵的Batch数。Layout类型为NORMAL的场景，调用IterateBatch或者IterateNBatch接口之前，需要在Host侧Tiling实现中通过本接口设置A/B矩阵的M/N/K轴等信息。

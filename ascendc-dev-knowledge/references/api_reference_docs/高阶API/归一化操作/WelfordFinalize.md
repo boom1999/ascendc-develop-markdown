@@ -5,8 +5,6 @@
 
 ---
 
-# WelfordFinalize
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -99,10 +97,6 @@ __aicore__ inline void WelfordFinalize(const LocalTensor<float>& outputMean, con
 | counts | 输入 | 源操作数，数据类型为int32_t。shape为[abLength]。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | sharedTmpBuffer | 输入 | 临时空间，数据类型为uint8_t。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 接口内部复杂计算时用于存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考WelfordFinalize Tiling。 |
 | 计算所需的参数信息。WelfordFinalizePara类型，定义如下。 ``` struct WelfordFinalizePara {     uint32_t rnLength;     uint32_t abLength;     uint32_t headCount;     uint32_t headCountLength;     uint32_t tailCount;     uint32_t tailCountLength;     float abRec;     float rRec;      }; ```  - rnLength：输入的Reduce轴，按abLength为一次计算的大小，拆分的次数。如果拆分后有尾块，则次数向上取整。- abLength：Reduce轴拆分的大小。在不带counts参数的接口中，abLength=headCountLength+tailCountLength。- headCount：在不带counts参数的接口中使能该参数，作为公式中非尾块的counts系数，headCount值。- headCountLength：在不带counts参数的接口中使能该参数，headCount值对应的长度。- tailCount：在不带counts参数的接口中使能该参数，作为公式中尾块的counts系数，tailCount值。- tailCountLength：在不带counts参数的接口中使能该参数，tailCount值对应的长度。- abRec：abLength的倒数，即为1/abLength的值。- rRec：输入的Reduce轴拆分后，若没有尾块，表示1/(rnLength*abLength)的值，若有尾块，表示1/R的值。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

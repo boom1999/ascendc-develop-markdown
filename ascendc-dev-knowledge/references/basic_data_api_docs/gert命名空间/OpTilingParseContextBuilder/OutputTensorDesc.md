@@ -5,8 +5,6 @@
 
 ---
 
-# OutputTensorDesc
-
 #### 函数功能
 
 设置输出Tensor描述信息，用于构造TilingParseContext的基类ExtendedKernelContext中的ComputeNodeInfo等信息。

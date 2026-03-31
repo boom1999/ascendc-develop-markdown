@@ -5,8 +5,6 @@
 
 ---
 
-# LocalMemAllocator构造函数
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline LocalMemAllocator<hard>::LocalMemAllocator()
 | 参数名 | 描述 |
 | --- | --- |
 | 用于表示数据的物理位置，Hardware枚举类型，定义如下，合法位置为：UB、L1、L0A、L0B、L0C、BIAS、FIXBUF。 ``` enum class Hardware : uint8_t {  GM,     // Global Memory UB,     // Unified Buffer L1,     // L1 Buffer L0A,    // L0A Buffer L0B,    // L0B Buffer L0C,    // L0C Buffer BIAS,   // BiasTable Buffer FIXBUF, // Fixpipe Buffer MAX }; ``` |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

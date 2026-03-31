@@ -5,8 +5,6 @@
 
 ---
 
-# GetVersion
-
 #### 函数功能
 
 获取Tensor中的版本。kTensorV1：不携带view和offset信息，kTensorV2：携带view和offset信息

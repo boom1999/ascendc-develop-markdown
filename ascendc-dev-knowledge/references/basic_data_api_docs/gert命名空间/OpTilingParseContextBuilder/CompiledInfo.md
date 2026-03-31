@@ -5,8 +5,6 @@
 
 ---
 
-# CompiledInfo
-
 #### 函数功能
 
 设置算子的CompiledInfo指针，用于存储TilingParse的结果即CompileInfo信息。

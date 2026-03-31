@@ -5,8 +5,6 @@
 
 ---
 
-# SetUserDefInfo
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetUserDefInfo(const uint64_t tilingPtr)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | tilingPtr | 输入 | 设置的算子tiling地址。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

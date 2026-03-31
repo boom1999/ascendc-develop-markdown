@@ -5,8 +5,6 @@
 
 ---
 
-# coretrace文件解析
-
 - **功能说明**
 
 解析coretrace文件。

@@ -5,8 +5,6 @@
 
 ---
 
-# IterateBatch
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -108,10 +106,6 @@ __aicore__ inline void IterateBatch(const LocalTensor<DstT>& ubCmatrix, bool enP
 | matrixStrideC | 输入 | 该参数预留，开发者无需关注。 |
 | enPartialSum | 输入 | 是否将矩阵乘的结果累加于现有的CO1数据，默认值为false。在L0C累加时，只支持A矩阵和B矩阵相乘的输出C矩阵规格为singleM==baseM &&singleN==baseN。 |
 | enAtomic | 输入 | 是否开启Atomic操作，默认值为0**。**          参数取值：          0：不开启Atomic操作          1：开启AtomicAdd累加操作          2：开启AtomicMax求最大值操作          3：开启AtomicMin求最小值操作 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

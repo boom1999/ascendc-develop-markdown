@@ -5,8 +5,6 @@
 
 ---
 
-# Conv3DBackpropInput使用说明
-
 Ascend C提供一组Conv3DBackpropInput高阶API，便于用户快速实现卷积的反向运算，求解反向传播的误差。转置卷积Conv3DTranspose与Conv3DBackpropInput具有相同的数学过程，因此用户也可以使用Conv3DBackpropInput高阶API实现转置卷积算子。卷积的正反向传播如图1 卷积层的前后向传播示意图，反向传播误差计算如图2 反向传播误差计算示意图。
 
 Conv3DBackpropInput的计算公式为：

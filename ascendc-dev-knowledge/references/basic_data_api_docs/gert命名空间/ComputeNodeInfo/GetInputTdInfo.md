@@ -5,8 +5,6 @@
 
 ---
 
-# GetInputTdInfo
-
 #### 函数功能
 
 根据输入索引信息，获取算子的对应输入Tensor描述，注意，编译时无法确定的shape信息不在Tensor描述中（由于编译时无法确定shape，因此该Tensor描述里不包含shape信息）。

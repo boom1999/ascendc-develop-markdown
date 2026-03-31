@@ -5,8 +5,6 @@
 
 ---
 
-# AssignQueue
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void AssignQueue(uint8_t queueIdIn)
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | queueIdIn | 输入 | 在CubeResGroupHandle中消息队列的序号。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

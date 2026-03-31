@@ -5,8 +5,6 @@
 
 ---
 
-# coredump文件解析
-
 - **功能说明**
 
 解析coredump文件。

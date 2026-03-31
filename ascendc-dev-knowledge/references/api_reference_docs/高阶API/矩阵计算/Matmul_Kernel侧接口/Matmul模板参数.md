@@ -5,8 +5,6 @@
 
 ---
 
-# Matmul模板参数
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -80,10 +78,6 @@ template <const auto& = MM_CFG, typename ...>  \
 | --- | --- | --- |
 | M, N, Ka, Kb, singleCoreM, singleCoreN, singleCoreK, baseM, baseN, baseK, depthA1, depthB1, stepM， stepN，stepKa，stepKb, isBias, transLength, iterateOrder, dbL0A, dbL0B, dbL0C, shareMode, shareL1Size, shareL0CSize, shareUbSize, batchM, batchN, singleBatchM, singleBatchN | int32_t | 与TCubeTiling结构体中各同名参数含义一致。本结构体中的参数是常量化后的常数值。 |
 | cfg | MatmulConfig | Matmul模板的参数配置。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

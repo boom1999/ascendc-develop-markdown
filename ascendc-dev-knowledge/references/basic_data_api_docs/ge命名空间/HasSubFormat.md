@@ -5,8 +5,6 @@
 
 ---
 
-# HasSubFormat
-
 #### 函数功能
 
 判断实际format中是否包含子format。

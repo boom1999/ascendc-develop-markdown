@@ -5,8 +5,6 @@
 
 ---
 
-# IsBasicBlockInSoftMax
-
 #### 功能说明
 
 用于判断SoftMaxTiling结构是否符合基本块特征。

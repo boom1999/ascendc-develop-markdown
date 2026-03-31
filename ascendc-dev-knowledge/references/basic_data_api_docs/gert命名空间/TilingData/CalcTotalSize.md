@@ -5,8 +5,6 @@
 
 ---
 
-# CalcTotalSize
-
 #### 函数功能
 
 通过最大容量计算TilingData实例所占用的内存空间。

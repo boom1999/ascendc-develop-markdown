@@ -5,8 +5,6 @@
 
 ---
 
-# RepeatReduceSum
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -50,10 +48,6 @@ __aicore__ inline void RepeatReduceSum(const LocalTensor<T>& dst, const LocalTen
 | srcBlkStride | 输入 | 单次迭代内datablock的地址步长。详细说明请参考dataBlockStride。 |
 | dstRepStride | 输入 | 目的操作数相邻迭代间的地址步长。以一个repeat归约后的长度为单位。          单位为dst数据类型所占字节长度。比如当dst为half时，单位为2Bytes。          注意，此参数值             Atlas 训练系列产品            不支持配置0。 |
 | srcRepStride | 输入 | 源操作数相邻迭代间的地址步长，即源操作数每次迭代跳过的datablock数目。详细说明请参考repeatStride。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# SetDeqScale
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -61,10 +59,6 @@ __aicore__ inline void SetDeqScale(const LocalTensor<T>& vdeq, const VdeqInfo& v
 | signMode | 输入 | bool类型，表示量化结果是否带符号。 用于CastDeq（isVecDeq=false）的场景，设置signMode。 |
 | vdeq | 输入 | 用于CastDeq（isVecDeq=true）的场景，输入量化tensor，大小为128Byte。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 |
 | 存储量化tensor信息的数据结构，结构体内包含量化tensor中的16组量化参数 ``` const uint8_t VDEQ_TENSOR_SIZE = 16;  struct VdeqInfo {     __aicore__ VdeqInfo() {}     __aicore__ VdeqInfo(const float vdeqScaleIn[VDEQ_TENSOR_SIZE], const int16_t vdeqOffsetIn[VDEQ_TENSOR_SIZE],         const bool vdeqSignModeIn[VDEQ_TENSOR_SIZE])     {         for (int32_t i = 0; i < VDEQ_TENSOR_SIZE; ++i) {             vdeqScale[i] = vdeqScaleIn[i];             vdeqOffset[i] = vdeqOffsetIn[i];             vdeqSignMode[i] = vdeqSignModeIn[i];         }     }      float vdeqScale[VDEQ_TENSOR_SIZE] = { 0 };     int16_t vdeqOffset[VDEQ_TENSOR_SIZE] = { 0 };     bool vdeqSignMode[VDEQ_TENSOR_SIZE] = { 0 }; }; ```  - vdeqScale：float类型的数组，用于存储量化tensor中的scale参数scale0-scale15。- vdeqOffset：int16_t类型的数组，用于存储量化tensor中的offset参数offset0-offset15。- vdeqSignMode：bool类型的数组，用于存储量化tensor中的signMode参数signMode0-signMode15。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

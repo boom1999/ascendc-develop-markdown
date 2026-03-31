@@ -5,8 +5,6 @@
 
 ---
 
-# integral_constant
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -66,10 +64,6 @@ using Int = integral_constant<size_t, v>;
 
 - Int类型是integral_constant数值结构的别名简写，数值类型必须是size_t类型。
 - 模板参数Tp不支持float等浮点数类型，因为模板参数需在编译期确定，而浮点数的精度问题可能导致编译期无法准确表示。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

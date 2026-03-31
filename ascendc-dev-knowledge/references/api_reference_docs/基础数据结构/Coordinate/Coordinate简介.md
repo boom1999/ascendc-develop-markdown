@@ -5,8 +5,6 @@
 
 ---
 
-# Coordinate简介
-
 Coordinate本质上是一个元组（tuple），用于表示张量在不同维度的位置信息，即坐标值。Coordinate（坐标）和Layout（布局）、Index（内存位置索引）之间存在紧密的关联：
 
 - 从Coordinate到Index的转换：Layout定义了张量的形状和各维度的步长，根据这些信息和给定的Coordinate，可以计算出该坐标在内存中的位置索引。

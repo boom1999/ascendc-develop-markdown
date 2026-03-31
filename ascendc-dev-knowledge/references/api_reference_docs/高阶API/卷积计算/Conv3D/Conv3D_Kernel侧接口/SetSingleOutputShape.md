@@ -5,8 +5,6 @@
 
 ---
 
-# SetSingleOutputShape
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -40,10 +38,6 @@ __aicore__ inline void SetSingleOutputShape(uint64_t singleCo, uint64_t singleDo
 | singleCo | 输入 | 单核上Output的C维度大小。 |
 | singleDo | 输入 | 单核上Output的D维度大小。 |
 | singleM | 输入 | 单核上Output的M维度大小，即H维度大小与W维度大小的乘积。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

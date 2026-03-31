@@ -5,8 +5,6 @@
 
 ---
 
-# GetArchVersion
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ __aicore__ inline void GetArchVersion(uint32_t& coreVersion)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | coreVersion | 输出 | AI处理器架构版本 数据类型：uint32_t |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

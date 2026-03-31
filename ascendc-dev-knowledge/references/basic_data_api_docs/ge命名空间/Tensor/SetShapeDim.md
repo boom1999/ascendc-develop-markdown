@@ -5,8 +5,6 @@
 
 ---
 
-# SetShapeDim
-
 #### 函数功能
 
 设置shape第idx维度。

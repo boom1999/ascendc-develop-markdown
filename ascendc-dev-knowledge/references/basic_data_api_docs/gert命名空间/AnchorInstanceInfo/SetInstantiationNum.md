@@ -5,8 +5,6 @@
 
 ---
 
-# SetInstantiationNum
-
 #### 函数功能
 
 设置IR原型定义某个输入对应的实际输入个数。

@@ -5,8 +5,6 @@
 
 ---
 
-# GenSimplifiedKey
-
 #### 函数功能
 
 注册算子的GenSimplifiedKey函数，以提供一个更加快速的二进制匹配key值。

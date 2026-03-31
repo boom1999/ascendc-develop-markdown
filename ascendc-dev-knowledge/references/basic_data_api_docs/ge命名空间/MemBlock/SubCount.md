@@ -5,8 +5,6 @@
 
 ---
 
-# SubCount
-
 #### 函数功能
 
 MemBlock引用计数减1。

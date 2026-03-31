@@ -5,8 +5,6 @@
 
 ---
 
-# AddOutputTd
-
 #### 功能说明
 
 为算子增加输入Tensor的描述。

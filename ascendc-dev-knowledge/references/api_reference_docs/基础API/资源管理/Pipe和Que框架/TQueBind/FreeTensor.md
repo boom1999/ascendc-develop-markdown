@@ -5,8 +5,6 @@
 
 ---
 
-# FreeTensor
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -44,10 +42,6 @@ __aicore__ inline void FreeTensor(LocalTensor<T>& tensor)
 | tensor | 输入 | 待释放的Tensor。 |
 
 #### 约束说明
-
-无
-
-#### 返回值说明
 
 无
 

@@ -5,8 +5,6 @@
 
 ---
 
-# Broadcast
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -89,10 +87,6 @@ __aicore__ inline void Broadcast(const LocalTensor<T>& dstLocal, const LocalTens
 | dstShape | 输入 | 输出tensor的shape：uint32_t类型的数组，长度为1或者2， 输入/输出的shape维度数目必须一致。 |
 | srcShape | 输入 | 输入tensor的shape：uint32_t类型的数组，长度为1或者2， 输入/输出的shape维度数目必须一致。 |
 | sharedTmpBuffer | 输入 | 临时缓存。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          用于Broadcast内部复杂计算时存储中间变量，由开发者提供。          临时空间大小BufferSize的获取方式请参考GetBroadCastMaxMinTmpSize。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

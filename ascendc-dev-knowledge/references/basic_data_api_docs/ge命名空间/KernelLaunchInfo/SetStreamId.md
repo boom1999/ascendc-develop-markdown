@@ -5,8 +5,6 @@
 
 ---
 
-# SetStreamId
-
 #### 函数功能
 
 设置Task的流id。
@@ -22,10 +20,6 @@ void SetStreamId(uint32_t stream_id)
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | stream_id | 输入 | 流id。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

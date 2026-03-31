@@ -5,8 +5,6 @@
 
 ---
 
-# DataCopyPad(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -201,10 +199,6 @@ __aicore__ inline void DataCopyPad(const LocalTensor<T>& dst, const LocalTensor<
 
 **图1 **VECIN/VECOUT->TSCM搬运示意图
 ![](images/atlasascendc_api_07_0265_img_005.png)
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

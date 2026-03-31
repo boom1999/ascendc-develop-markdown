@@ -5,8 +5,6 @@
 
 ---
 
-# SetConstData
-
 #### 函数功能
 
 如果TensorDesc是常量节点的描述，向TensorDesc中设置权重值。

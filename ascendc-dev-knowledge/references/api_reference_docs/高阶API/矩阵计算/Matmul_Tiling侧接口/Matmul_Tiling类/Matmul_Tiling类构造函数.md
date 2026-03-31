@@ -5,8 +5,6 @@
 
 ---
 
-# Matmul Tiling类构造函数
-
 #### 功能说明
 
 用于创建一个Matmul单核Tiling对象，或者多核Tiling对象，或者BatchMatmul Tiling对象。

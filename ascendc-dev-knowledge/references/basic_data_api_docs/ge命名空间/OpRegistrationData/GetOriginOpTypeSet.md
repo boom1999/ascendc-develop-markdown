@@ -5,8 +5,6 @@
 
 ---
 
-# GetOriginOpTypeSet
-
 #### 函数功能
 
 获取原始模型的算子类型集合。

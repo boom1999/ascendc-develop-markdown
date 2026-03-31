@@ -5,8 +5,6 @@
 
 ---
 
-# CalcOpParam
-
 #### 函数功能
 
 该接口用于GenerateTask阶段的资源计算和申请。

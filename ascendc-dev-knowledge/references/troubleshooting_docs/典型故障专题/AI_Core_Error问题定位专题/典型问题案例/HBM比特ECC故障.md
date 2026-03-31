@@ -5,8 +5,6 @@
 
 ---
 
-# HBM比特ECC故障
-
 #### 问题现象
 
 Device的event日志（slog/dev-os-*id*/run/event/event_*.log）中存在“**event_id=0x80E01809**”或“**event_id=0x80E01801**”关键字。

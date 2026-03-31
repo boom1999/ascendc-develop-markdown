@@ -5,8 +5,6 @@
 
 ---
 
-# 随路转换ND2NZ搬运
-
 #### 产品支持情况
 
 | 产品 | 是否支持 Global Memory -> Local Memory | 是否支持 Local Memory -> Local Memory |
@@ -84,10 +82,6 @@ ND2NZ转换示意图如下，样例中参数设置值和解释说明如下：
 
 **图1 **ND2NZ转换示意图（half数据类型）
 ![](images/atlasascendc_api_07_00127_img_001.png)
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

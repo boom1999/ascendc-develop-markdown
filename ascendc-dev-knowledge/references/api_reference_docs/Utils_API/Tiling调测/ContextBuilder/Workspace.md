@@ -5,8 +5,6 @@
 
 ---
 
-# Workspace
-
 #### 功能说明
 
 传入指向gert::ContinuousVector的指针。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetInputShape
-
 #### 功能说明
 
 设置特征矩阵Input的形状：Batch、Channel、Depth、Height、Width。在构建Conv3DTranspose算子时，此接口无实际意义，请勿使用。

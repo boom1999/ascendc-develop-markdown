@@ -5,8 +5,6 @@
 
 ---
 
-# DataTypeToAscendString
-
 #### 函数功能
 
 将DataType类型值转化为字符串表达。

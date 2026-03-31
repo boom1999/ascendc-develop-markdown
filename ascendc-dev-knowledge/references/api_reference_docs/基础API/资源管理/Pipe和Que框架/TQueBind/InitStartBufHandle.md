@@ -5,8 +5,6 @@
 
 ---
 
-# InitStartBufHandle
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -44,10 +42,6 @@ __aicore__ inline void InitStartBufHandle(TBufHandle startBufhandle, uint8_t num
 
 - 该接口目前只提供给自定义TBufPool初始化TQue、TBuf的内存块时使用。
 - 当使用TBuf对象调用该接口时，入参num必须为1。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

@@ -5,8 +5,6 @@
 
 ---
 
-# InputTensorDesc
-
 #### 函数功能
 
 设置输入Tensor的描述信息，用于构造InferDataTypeContext的基类ExtendedKernelContext中的ComputeNodeInfo信息。

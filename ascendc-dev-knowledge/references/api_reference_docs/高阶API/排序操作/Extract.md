@@ -5,8 +5,6 @@
 
 ---
 
-# Extract
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -45,10 +43,6 @@ __aicore__ inline void Extract(const LocalTensor<T> &dstValue, const LocalTensor
 | dstIndex | 输出 | 目的操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 此源操作数固定为uint32_t数据类型。 |
 | sorted | 输入 | 源操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 源操作数的数据类型需要与目的操作数保持一致。 |
 | repeatTime | 输入 | 重复迭代次数，int32_t类型。 Atlas A3 训练系列产品/Atlas A3 推理系列产品，每次迭代处理64个float类型或128个half类型元素。 Atlas A2 训练系列产品/Atlas A2 推理系列产品，每次迭代处理64个float类型或128个half类型元素。 Atlas 推理系列产品AI Core，每次迭代完成16个Region Proposals的元素抽取并排布到16个元素里，下次迭代跳至相邻的下一组16个Region Proposals和下一组16个元素。 取值范围：repeatTime∈[0,255]。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

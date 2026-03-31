@@ -5,8 +5,6 @@
 
 ---
 
-# SetBatchNum
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void SetBatchNum(int32_t batchA, int32_t batchB)
 | --- | --- | --- |
 | batchA | 输入 | 设置的一次计算的A矩阵Batch数。 |
 | batchB | 输入 | 设置的一次计算的B矩阵Batch数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

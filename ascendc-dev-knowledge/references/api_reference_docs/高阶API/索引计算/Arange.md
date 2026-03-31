@@ -5,8 +5,6 @@
 
 ---
 
-# Arange
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -58,10 +56,6 @@ __aicore__ inline void Arange(const LocalTensor<T>& dst, const T firstValue, con
 | firstValue | 输入 | 等差数列的首个元素值。 |
 | diffValue | 输入 | 等差数列元素之间的差值，应大于等于0。 |
 | count | 输入 | 等差数列的长度。count>0。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

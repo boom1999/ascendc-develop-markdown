@@ -5,8 +5,6 @@
 
 ---
 
-# CreateCap
-
 #### 函数功能
 
 根据指定的最大容量创建一个TilingData类实例。

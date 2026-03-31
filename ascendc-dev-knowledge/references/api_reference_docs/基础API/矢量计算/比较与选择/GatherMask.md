@@ -5,8 +5,6 @@
 
 ---
 
-# GatherMask
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -68,10 +66,6 @@ __aicore__ inline void GatherMask(const LocalTensor<T>& dst, const LocalTensor<T
 | repeatTimes | 迭代次数。 |
 | src0RepeatStride | 用于设置src0相邻迭代间的地址步长（起始地址之间的间隔）。单位为DataBlock。 |
 | src1RepeatStride | 用于设置src1相邻迭代间的地址步长（起始地址之间的间隔）。单位为DataBlock。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

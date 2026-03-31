@@ -5,8 +5,6 @@
 
 ---
 
-# PlatformInfo
-
 #### 函数功能
 
 设置算子的PlatFormInfo指针，用于构造TilingParseContext的PlatformInfo字段。

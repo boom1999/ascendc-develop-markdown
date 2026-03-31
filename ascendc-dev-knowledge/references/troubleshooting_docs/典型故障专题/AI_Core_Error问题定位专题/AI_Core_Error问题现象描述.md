@@ -5,8 +5,6 @@
 
 ---
 
-# AI Core Error问题现象描述
-
 用户应用程序报错退出，终端屏幕日志错误码为EZ9999，且日志中包含“**there is an aivec error exception**”或“**there is an aicore error exception**”；或者plog日志中存在报错日志“**Aicore kernel execute failed**”。
 
 **报错示例如下所示**：

@@ -5,8 +5,6 @@
 
 ---
 
-# AscendAntiQuant
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -144,10 +142,6 @@ __aicore__ inline void AscendAntiQuant(const LocalTensor<OutputDataType>& dst, c
 | sharedTmpBuffer | 输入 | 临时缓存。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          临时空间大小BufferSize的获取方式请参考GetAscendAntiQuantMaxMinTmpSize。 |
 | k | 输入 | isTranspose为true时，src的shape为[N,K]；isTranspose为false时，src的shape为[K,N]。          参数k对应其中的K值。 |
 | 设置参数offset和scale的shape信息，仅PER_CHANNEL场景（按通道量化）需要配置。          可选参数。在PER_CHANNEL场景，如果未传入该参数或者结构体中数据设置为0，将从offset和scale的ShapeInfo中获取offset和scale的shape信息。          AntiQuantShapeInfo类型，定义如下：                                                                                                                           ``` struct AntiQuantShapeInfo {     uint32_t offsetHeight{0};  // offset 的高     uint32_t offsetWidth{0};  // offset 的宽     uint32_t scaleHeight{0};  // scale 的高     uint32_t scaleWidth{0};  // scale 的宽 }; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

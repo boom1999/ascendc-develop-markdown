@@ -5,8 +5,6 @@
 
 ---
 
-# FusionParseParamsFn（Overload）
-
 #### 函数功能
 
 注册解析融合算子属性的函数，为FusionParseParamsFn的重载函数。

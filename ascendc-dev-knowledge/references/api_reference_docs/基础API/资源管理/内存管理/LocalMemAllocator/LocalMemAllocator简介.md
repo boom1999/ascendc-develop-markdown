@@ -5,8 +5,6 @@
 
 ---
 
-# LocalMemAllocator简介
-
 LocalMemAllocator是在使用静态Tensor编程方式时用于内存管理的类，用户无需构建TPipe/TQue，而是直接创建LocalTensor对象（也可以直接通过LocalTensor构造函数进行构造）并开发算子，从而减少运行时的开销，实现更优的性能。
 
 LocalMemAllocator仅支持在Ascend C静态Tensor编程方式中使用，不可以与TPipe等接口混用。

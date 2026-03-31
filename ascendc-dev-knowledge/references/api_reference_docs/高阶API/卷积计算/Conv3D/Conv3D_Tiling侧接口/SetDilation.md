@@ -5,8 +5,6 @@
 
 ---
 
-# SetDilation
-
 #### 功能说明
 
 设置Dilation信息。
@@ -24,10 +22,6 @@ void SetDilation(int64_t dilationD, int64_t dilationH, int64_t dilationW)
 | dilationD | 输入 | D方向Dilation大小。 |
 | dilationH | 输入 | H方向Dilation大小。 |
 | dilationW | 输入 | W方向Dilation大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

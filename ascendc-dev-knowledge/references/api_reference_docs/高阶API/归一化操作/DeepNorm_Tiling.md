@@ -5,8 +5,6 @@
 
 ---
 
-# DeepNorm Tiling
-
 #### 功能说明
 
 Ascend C提供DeepNorm Tiling API，方便用户获取DeepNorm kernel计算时所需的Tiling参数。

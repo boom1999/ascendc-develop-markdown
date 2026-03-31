@@ -5,8 +5,6 @@
 
 ---
 
-# EL0007 No_Permission
-
 #### Symptom
 
 You have no permission.

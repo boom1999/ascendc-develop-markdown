@@ -5,8 +5,6 @@
 
 ---
 
-# TensorPlacementUtils
-
 #### 函数功能
 
 提供一组函数，判断TensorPlacement的位置。

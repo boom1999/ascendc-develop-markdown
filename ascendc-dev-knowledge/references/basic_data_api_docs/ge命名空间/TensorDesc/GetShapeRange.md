@@ -5,8 +5,6 @@
 
 ---
 
-# GetShapeRange
-
 #### 函数功能
 
 获取设置的shape变化范围。

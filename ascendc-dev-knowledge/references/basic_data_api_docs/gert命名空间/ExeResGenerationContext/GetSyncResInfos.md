@@ -5,8 +5,6 @@
 
 ---
 
-# GetSyncResInfos
-
 #### 函数功能
 
 返回当前对象中保存的全部同步资源信息（SyncResInfo列表），用于查询或外部使用。

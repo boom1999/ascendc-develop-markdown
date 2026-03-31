@@ -5,8 +5,6 @@
 
 ---
 
-# MatmulConfig
-
 模板参数MatmulConfig，用于配置Matmul模板信息以及相关的配置参数。不配置默认使能Norm模板，Norm模板的介绍请参考表 模板特性。MatmulConfig的参数说明见表2。MatmulConfig的定义方式有：
 
 - 该模板参数可选取提供的模板之一，当前提供的MatmulConfig模板取值范围为【CFG_NORM、CFG_MDL、CFG_IBSHARE_NORM、MM_CFG_BB】，分别对应默认的Norm、MDL、IBShare、BasicBlock模板。各模板的介绍请参考表1。

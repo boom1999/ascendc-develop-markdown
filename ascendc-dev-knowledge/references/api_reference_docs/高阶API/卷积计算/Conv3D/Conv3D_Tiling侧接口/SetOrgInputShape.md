@@ -5,8 +5,6 @@
 
 ---
 
-# SetOrgInputShape
-
 #### 功能说明
 
 设置特征矩阵Input的原始形状。
@@ -25,10 +23,6 @@ void SetOrgInputShape(int64_t orgCi, int64_t orgDi, int64_t orgHi, int64_t orgWi
 | orgDi | 输入 | 原始Input D维度大小。 |
 | orgHi | 输入 | 原始Input H维度大小。 |
 | orgWi | 输入 | 原始Input W维度大小。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

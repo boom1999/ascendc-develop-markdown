@@ -5,8 +5,6 @@
 
 ---
 
-# AI Core Error故障信息解析
-
 - **功能说明**
 
 执行业务时，若日志文件或屏幕打印信息中包含AI Core Error报错（例如“there is an aivec error exception”或“there is an aicore error exception”），可使用AI Core Error故障信息解析功能，快速定位AI Core Error问题的原因，提高排查效率。

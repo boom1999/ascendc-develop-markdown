@@ -5,8 +5,6 @@
 
 ---
 
-# TensorTrait构造函数
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ __aicore__ inline TensorTrait(const LayoutType& t = {})
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | t | 输入 | 输入的Layout对象。输入的数据类型LayoutType，需满足约束说明。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# PlatformInfo
-
 #### 函数功能
 
 设置PlatformInfo平台信息。

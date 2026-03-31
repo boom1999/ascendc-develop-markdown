@@ -5,8 +5,6 @@
 
 ---
 
-# GetFormat
-
 #### 函数功能
 
 获取TensorDesc所描述的Tensor的Format。

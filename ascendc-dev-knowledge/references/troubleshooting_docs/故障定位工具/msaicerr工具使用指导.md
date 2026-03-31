@@ -5,8 +5,6 @@
 
 ---
 
-# msaicerr工具使用指导
-
 msaicerr工具可用于分析AI Core Error问题、解析Dump文件、检查环境。
 
 #### 使用约束

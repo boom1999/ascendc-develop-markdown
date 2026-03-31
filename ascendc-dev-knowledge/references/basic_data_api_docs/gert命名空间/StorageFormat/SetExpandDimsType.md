@@ -5,8 +5,6 @@
 
 ---
 
-# SetExpandDimsType
-
 #### 函数功能
 
 设置补维规则。

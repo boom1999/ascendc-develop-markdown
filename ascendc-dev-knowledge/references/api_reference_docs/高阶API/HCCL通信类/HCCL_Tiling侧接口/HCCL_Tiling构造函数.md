@@ -5,8 +5,6 @@
 
 ---
 
-# HCCL Tiling构造函数
-
 #### 功能说明
 
 用于创建一个Mc2CcTilingConfig对象。
@@ -36,10 +34,6 @@ Mc2CcTilingConfig(const std::string &groupName, uint32_t opType, const std::stri
 | 数据类型 | 说明 |
 | --- | --- |
 | 通信任务类型。          针对             Atlas A3 训练系列产品            /             Atlas A3 推理系列产品            ，当前支持的通信任务类型为HCCL_CMD_ALLREDUCE、HCCL_CMD_ALLGATHER、HCCL_CMD_REDUCE_SCATTER、HCCL_CMD_ALLTOALL、HCCL_CMD_ALLTOALLV、HCCL_CMD_BATCH_WRITE。          针对             Atlas A2 训练系列产品            /             Atlas A2 推理系列产品            ，当前支持的通信任务类型为HCCL_CMD_ALLREDUCE、HCCL_CMD_ALLGATHER、HCCL_CMD_REDUCE_SCATTER、HCCL_CMD_ALLTOALL、HCCL_CMD_BATCH_WRITE。                                                                                                                           ``` enum class HcclCMDType {      HCCL_CMD_INVALID = 0,     HCCL_CMD_BROADCAST = 1,     HCCL_CMD_ALLREDUCE,     HCCL_CMD_REDUCE,     HCCL_CMD_SEND,     HCCL_CMD_RECEIVE,     HCCL_CMD_ALLGATHER,     HCCL_CMD_REDUCE_SCATTER,     HCCL_CMD_ALLTOALLV,     HCCL_CMD_ALLTOALLVC,     HCCL_CMD_ALLTOALL,     HCCL_CMD_GATHER,     HCCL_CMD_SCATTER,     HCCL_CMD_BATCH_SEND_RECV,     HCCL_CMD_BATCH_PUT,     HCCL_CMD_BATCH_GET,     HCCL_CMD_ALLGATHER_V,     HCCL_CMD_REDUCE_SCATTER_V,     HCCL_CMD_BATCH_WRITE,     HCCL_CMD_HALF_ALLTOALLV = 20,     HCCL_CMD_ALL }; ``` |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

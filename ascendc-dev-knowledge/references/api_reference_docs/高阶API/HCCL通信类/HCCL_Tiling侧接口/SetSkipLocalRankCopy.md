@@ -5,8 +5,6 @@
 
 ---
 
-# SetSkipLocalRankCopy
-
 #### 功能说明
 
 设置本卡的通信算法的计算结果是否输出到目的数据buffer地址。

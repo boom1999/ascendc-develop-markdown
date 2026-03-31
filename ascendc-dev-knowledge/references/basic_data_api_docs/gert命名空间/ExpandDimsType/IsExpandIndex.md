@@ -5,8 +5,6 @@
 
 ---
 
-# IsExpandIndex
-
 #### 函数功能
 
 基于补维后的shape，判断指定的index轴是否为补维轴。

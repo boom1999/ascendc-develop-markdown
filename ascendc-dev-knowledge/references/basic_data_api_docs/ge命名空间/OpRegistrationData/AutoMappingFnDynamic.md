@@ -5,8 +5,6 @@
 
 ---
 
-# AutoMappingFnDynamic
-
 #### 函数功能
 
 动态输入/输出算子的自动映射回调函数。

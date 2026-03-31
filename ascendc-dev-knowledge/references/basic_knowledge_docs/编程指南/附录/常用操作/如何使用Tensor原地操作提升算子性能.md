@@ -5,8 +5,6 @@
 
 ---
 
-# 如何使用Tensor原地操作提升算子性能
-
 Tensor原地操作（inplace接口）是一种优化技术，全局申请、保留LocalTensor内存，避免了频繁创建和销毁LocalTensor对象。AllocTensor、FreeTensor、EnQue、DeQue接口不产生新的LocalTensor，而是在该全局LocalTensor上反复申请、释放、入队、出队。其实现原理如下图所示：
 
 **图1 **Tensor原地操作实现原理

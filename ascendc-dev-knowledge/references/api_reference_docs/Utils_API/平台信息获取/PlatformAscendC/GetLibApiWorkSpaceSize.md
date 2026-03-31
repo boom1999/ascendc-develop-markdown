@@ -5,8 +5,6 @@
 
 ---
 
-# GetLibApiWorkSpaceSize
-
 #### 功能说明
 
 获取AscendC API需要的workspace空间大小。

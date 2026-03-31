@@ -5,8 +5,6 @@
 
 ---
 
-# RmsNorm Tiling
-
 #### 功能说明
 
 Ascend C提供RmsNorm Tiling API，方便用户获取RmsNorm kernel计算时所需的Tiling参数。

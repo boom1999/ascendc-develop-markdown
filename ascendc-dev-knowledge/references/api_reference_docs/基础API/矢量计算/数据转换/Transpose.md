@@ -5,8 +5,6 @@
 
 ---
 
-# Transpose
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -72,10 +70,6 @@ __aicore__ inline void Transpose(const LocalTensor<T>& dst, const LocalTensor<T>
 | TRANSPOSE_ND2ND_B16 | 不需要临时Buffer。 |
 | 针对以下型号： - Atlas 推理系列产品AI Core 不需要临时Buffer。 针对以下型号： - Atlas A2 训练系列产品/Atlas A2 推理系列产品- Atlas A3 训练系列产品/Atlas A3 推理系列产品 临时Buffer的大小按照下述计算规则（伪代码）进行计算。 ``` auto h0 = 16; // 当数据类型的位宽为8时，h0 = 32；其他情况下，h0 = 16 auto w0 = 32 / sizeof(type);  // type代表数据类型 auto tmpBufferSize = (cSize + 2)  * h0 * w0 * sizeof(type); ``` |  |
 | 针对以下型号： - Atlas 推理系列产品AI Core 不需要临时Buffer。 针对以下型号： - Atlas A2 训练系列产品/Atlas A2 推理系列产品- Atlas A3 训练系列产品/Atlas A3 推理系列产品 临时Buffer的大小按照下述计算规则（伪代码）进行计算。 ``` auto h0 = 16; // 当数据类型的位宽为8时，h0 = 32；其他情况下，h0 = 16 auto w0 = 32 / sizeof(type);  // type代表数据类型 auto tmpBufferSize = (cSize  * 2 + 1)  * h0 * w0 * sizeof(type); ``` |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

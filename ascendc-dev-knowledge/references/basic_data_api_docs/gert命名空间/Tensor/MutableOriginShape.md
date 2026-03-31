@@ -5,8 +5,6 @@
 
 ---
 
-# MutableOriginShape
-
 #### 函数功能
 
 获取Tensor的原始shape。

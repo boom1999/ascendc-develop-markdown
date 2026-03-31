@@ -5,8 +5,6 @@
 
 ---
 
-# GetSpecialBasicConfig
-
 #### 功能说明
 
 用于配置SpecialBasicBlock模板的参数，获取自定义SpecialBasicBlock模板。当前为预留接口。

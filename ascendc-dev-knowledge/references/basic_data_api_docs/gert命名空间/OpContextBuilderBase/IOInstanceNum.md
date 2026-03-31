@@ -5,8 +5,6 @@
 
 ---
 
-# IOInstanceNum
-
 #### 函数功能
 
 当输入IR原型实例个数不为1时（一般是可选输入或动态输入场景），需要设置算子每个输入IR原型的实例个数，用于构造各子类Context的基类ExtendedKernelContext中ComputeNodeInfo信息。

@@ -5,8 +5,6 @@
 
 ---
 
-# Init
-
 #### 函数功能
 
 初始化TilingData。

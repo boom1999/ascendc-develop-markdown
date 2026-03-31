@@ -5,8 +5,6 @@
 
 ---
 
-# SetShapeDimNum
-
 #### 函数功能
 
 设置shape的维度大小，即rank大小。

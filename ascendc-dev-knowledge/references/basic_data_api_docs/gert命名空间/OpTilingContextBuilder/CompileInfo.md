@@ -5,8 +5,6 @@
 
 ---
 
-# CompileInfo
-
 #### 函数功能
 
 设置算子的CompileInfo指针。

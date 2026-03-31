@@ -5,8 +5,6 @@
 
 ---
 
-# Compare
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -92,10 +90,6 @@ __aicore__ inline void Compare(const LocalTensor<U>& dst, const LocalTensor<T>& 
 | repeatTime | 输入 | 重复迭代次数。矢量计算单元，每次读取连续的256Bytes数据进行计算，为完成对输入数据的处理，必须通过多次迭代（repeat）才能完成所有数据的读取与计算。repeatTime表示迭代的次数。          关于该参数的具体描述请参考高维切分API。 |
 | repeatParams | 输入 | 控制操作数地址步长的参数。BinaryRepeatParams类型，包含操作数相邻迭代间相同datablock的地址步长，操作数同一迭代内不同datablock的地址步长等参数。          相邻迭代间的地址步长参数说明请参考repeatStride；同一迭代内DataBlock的地址步长参数说明请参考dataBlockStride。 |
 | count | 输入 | 参与计算的元素个数。**设置count时，需要保证count个元素所占空间256字节对齐。** |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

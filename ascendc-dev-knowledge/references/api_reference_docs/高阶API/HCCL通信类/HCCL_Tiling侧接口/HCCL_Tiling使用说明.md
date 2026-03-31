@@ -5,8 +5,6 @@
 
 ---
 
-# HCCL Tiling使用说明
-
 > **注意:** 
 
 本章节详述通信算子必需的TilingData结构体。本章节提供了三个版本的TilingData，建议使用TilingData结构体，不推荐使用v1版本TilingData（废弃）和v2版本TilingData（废弃）。

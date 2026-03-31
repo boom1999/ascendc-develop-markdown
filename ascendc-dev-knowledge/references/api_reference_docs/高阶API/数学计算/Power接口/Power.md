@@ -5,8 +5,6 @@
 
 ---
 
-# Power
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -157,10 +155,6 @@ __aicore__ inline void Power(const LocalTensor<T>& dstTensor, const T& src0Scala
 | src0Scalar/src1Scalar | 输入 | 源操作数，类型为Scalar。源操作数的数据类型需要与目的操作数保持一致。 |
 | sharedTmpBuffer | 输入 | 临时内存空间。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 针对3个power接口，不同输入数据类型情况下，临时空间大小BufferSize的获取方式请参考GetPowerMaxMinTmpSize。 |
 | calCount | 输入 | 参与计算的元素个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

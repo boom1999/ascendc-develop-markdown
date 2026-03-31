@@ -5,8 +5,6 @@
 
 ---
 
-# HelloWorld
-
 本示例展示了如何使用Ascend C编写一个简单的"Hello World"程序，包括核函数（设备侧实现的入口函数）的实现、调用流程以及编译运行的完整步骤。通过本示例，您可以快速了解Ascend C的基本开发流程。完整样例请参考[LINK](https://gitcode.com/cann/asc-devkit/tree/master/examples/00_introduction/00_helloworld)。
 
 代码文件hello_world.asc包括核函数实现和主函数实现。

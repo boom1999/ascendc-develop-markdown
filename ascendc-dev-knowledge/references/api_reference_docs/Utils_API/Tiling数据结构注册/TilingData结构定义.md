@@ -5,8 +5,6 @@
 
 ---
 
-# TilingData结构定义
-
 #### 功能说明
 
 定义一个TilingData的类，添加所需的成员变量（TilingData字段），用于保存所需TilingData参数。完成该TilingData类的定义后，该类通过继承TilingDef类（用来存放、处理用户自定义Tiling结构体成员变量的基类）提供以下接口：

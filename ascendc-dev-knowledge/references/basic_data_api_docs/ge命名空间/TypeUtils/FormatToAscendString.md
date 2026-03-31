@@ -5,8 +5,6 @@
 
 ---
 
-# FormatToAscendString
-
 #### 函数功能
 
 将Format类型值转化为字符串表达。

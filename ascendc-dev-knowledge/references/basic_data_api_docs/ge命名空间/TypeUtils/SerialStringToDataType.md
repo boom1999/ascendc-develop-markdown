@@ -5,8 +5,6 @@
 
 ---
 
-# SerialStringToDataType
-
 #### 函数功能
 
 将DataType字符串表达转化为DataType类型值。

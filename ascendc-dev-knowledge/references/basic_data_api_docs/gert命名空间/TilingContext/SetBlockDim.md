@@ -5,8 +5,6 @@
 
 ---
 
-# SetBlockDim
-
 #### 函数功能
 
 设置blockDim，即参与计算的Vector或者Cube核数。

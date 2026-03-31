@@ -5,8 +5,6 @@
 
 ---
 
-# SetData
-
 #### 函数功能
 
 设置Tensor的数据。
@@ -22,10 +20,6 @@ void SetData(TensorData &&data)
 | 参数 | 输入/输出 | 说明 |
 | --- | --- | --- |
 | data | 输入 | 需要设置的数据。 关于TensorData类型的定义，请参见TensorData。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

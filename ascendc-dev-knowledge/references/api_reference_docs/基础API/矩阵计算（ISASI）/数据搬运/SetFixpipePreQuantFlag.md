@@ -5,8 +5,6 @@
 
 ---
 
-# SetFixpipePreQuantFlag
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void SetFixpipePreQuantFlag(uint64_t config)
 | 参数名称 | 输入/输出 | 含义 |
 | --- | --- | --- |
 | config | 输入 | 量化过程中使用到的标量量化参数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

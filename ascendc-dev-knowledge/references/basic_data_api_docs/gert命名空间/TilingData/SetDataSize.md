@@ -5,8 +5,6 @@
 
 ---
 
-# SetDataSize
-
 #### 函数功能
 
 设置tiling data长度。

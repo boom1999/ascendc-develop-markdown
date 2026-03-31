@@ -5,8 +5,6 @@
 
 ---
 
-# GetSingleShape
-
 #### 功能说明
 
 获取计算后的singleCoreM/singleCoreN/singleCoreK。

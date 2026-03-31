@@ -5,8 +5,6 @@
 
 ---
 
-# SetFixSplit
-
 #### 功能说明
 
 设置固定的baseM、baseN、baseK，单位为元素个数。

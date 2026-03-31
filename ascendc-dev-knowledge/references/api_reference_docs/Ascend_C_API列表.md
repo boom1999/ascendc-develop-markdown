@@ -5,8 +5,6 @@
 
 ---
 
-# Ascend C API列表
-
 Ascend C提供一组类库API，开发者使用标准C++语法和类库API进行编程。Ascend C编程类库API示意图如下所示，分为：
 
 - **基础数据结构**：kernel API中使用到的基础数据结构，比如GlobalTensor和LocalTensor。

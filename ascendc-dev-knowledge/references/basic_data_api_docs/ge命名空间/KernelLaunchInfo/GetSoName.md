@@ -5,8 +5,6 @@
 
 ---
 
-# GetSoName
-
 #### 函数功能
 
 获取AI CPU任务的so名称。

@@ -5,8 +5,6 @@
 
 ---
 
-# SoftmaxGrad Tiling接口
-
 #### 功能说明
 
 用于获取SoftmaxGrad Tiling参数。

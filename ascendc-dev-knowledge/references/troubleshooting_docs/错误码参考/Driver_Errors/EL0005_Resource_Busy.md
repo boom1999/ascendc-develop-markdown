@@ -5,8 +5,6 @@
 
 ---
 
-# EL0005 Resource_Busy
-
 #### Symptom
 
 The resources are busy.

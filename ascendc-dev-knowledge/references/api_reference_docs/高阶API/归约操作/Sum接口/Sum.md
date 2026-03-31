@@ -5,8 +5,6 @@
 
 ---
 
-# Sum
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -74,10 +72,6 @@ __aicore__ inline void Sum(const LocalTensor<T>& dstTensor, const LocalTensor<T>
 | srcTensor | 输入 | 源操作数。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          源操作数的数据类型需要与目的操作数保持一致。 |
 | sharedTmpBuffer | 输入 | 临时缓存。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          用于Sum内部复杂计算时存储中间变量，由开发者提供。          临时空间大小BufferSize的获取方式请参考GetSumMaxMinTmpSize。 |
 | srcTensor的shape信息。SumParams类型，具体定义如下：                                                                                                                           ``` struct SumParams{     uint32_t outter = 1;    // 表示输入数据的外轴长度     uint32_t inner;         // 表示输入数据内轴的补齐后元素个数，inner*sizeof(T)必须是32字节的整数倍     uint32_t n;             // 表示输入数据内轴的实际元素个数 }; ```                                                                                                 - sumParams.inner*sizeof(T)必须是32字节的整数倍。           - sumParams.inner是sumParams.n字节数转换后进而进行32的整数倍向上补齐的值，inner = (n *sizeof(T) + 32 - 1) / 32 * 32 / sizeof(T)，因此sumParams.n的大小应该满足：1 <= sumParams.n <= sumParams.inner。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

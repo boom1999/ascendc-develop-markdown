@@ -5,8 +5,6 @@
 
 ---
 
-# Sort32
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -57,10 +55,6 @@ __aicore__ inline void Sort32(const LocalTensor<T>& dst, const LocalTensor<T>& s
 | src0 | 输入 | 源操作数。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          LocalTensor的起始地址需要32字节对齐。          此源操作数的数据类型需要与目的操作数保持一致。 |
 | src1 | 输入 | 源操作数。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。          LocalTensor的起始地址需要32字节对齐。          此源操作数固定为uint32_t数据类型。 |
 | repeatTime | 输入 | 重复迭代次数，int32_t类型，每次迭代完成32个元素的排序，下次迭代src0和src1各跳过32个elements，dst跳过32*8 Byte空间。取值范围：repeatTime∈[0,255]。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

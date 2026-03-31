@@ -5,8 +5,6 @@
 
 ---
 
-# FormatForBinQuery
-
 #### 功能说明
 
 设置Input/Output用于运行时算子二进制查找的数据格式，和Format/FormatList的数量一致，且一一对应。

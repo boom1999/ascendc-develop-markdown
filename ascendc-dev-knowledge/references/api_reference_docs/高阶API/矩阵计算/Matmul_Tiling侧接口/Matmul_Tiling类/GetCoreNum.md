@@ -5,8 +5,6 @@
 
 ---
 
-# GetCoreNum
-
 #### 功能说明
 
 获得多核切分所使用的BlockDim参数。

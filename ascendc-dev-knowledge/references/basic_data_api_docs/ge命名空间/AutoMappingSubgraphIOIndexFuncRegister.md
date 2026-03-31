@@ -5,8 +5,6 @@
 
 ---
 
-# AutoMappingSubgraphIOIndexFuncRegister
-
 #### 函数功能
 
 FrameworkRegistry类的封装，通过类的构造函数调用FrameworkRegistry类的AddAutoMappingSubgraphIOIndexFunc函数完成映射函数的注册。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetRequiredInputDesc
-
 #### 函数功能
 
 根据算子原型定义中的输入索引获取对应必选输入的tensor描述信息。

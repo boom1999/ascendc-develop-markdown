@@ -5,8 +5,6 @@
 
 ---
 
-# ProposalConcat
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -67,10 +65,6 @@ __aicore__ inline void ProposalConcat(const LocalTensor<T>& dst, const LocalTens
 | src | 输入 | 源操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 源操作数的数据类型需要与目的操作数保持一致。 |
 | repeatTime | 输入 | 重复迭代次数，int32_t类型，每次迭代完成16个元素合入到16个Region Proposals里，下次迭代跳至相邻的下一组16个Region Proposals和下一组16个元素。取值范围：repeatTime∈[0,255]。 |
 | modeNumber | 输入 | 合入位置参数，取值范围：modeNumber∈[0, 5]，int32_t类型，仅限于以下配置：- 0 – 合入x1- 1 – 合入y1- 2 – 合入x2- 3 – 合入y2- 4 – 合入score- 5 – 合入label |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

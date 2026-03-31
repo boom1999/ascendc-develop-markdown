@@ -5,8 +5,6 @@
 
 ---
 
-# LaunchWithZeroEleOutputTensors
-
 #### 功能说明
 
 在算子输出为全空Tensor时，用户可以配置该算子依旧会进行NPU上板执行。

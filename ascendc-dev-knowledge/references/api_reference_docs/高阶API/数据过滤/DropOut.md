@@ -5,8 +5,6 @@
 
 ---
 
-# DropOut
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -105,10 +103,6 @@ __aicore__ inline void DropOut(const LocalTensor<T>& dstLocal, const LocalTensor
 | sharedTmpBuffer | 输入 | 共享缓冲区，用于存放API内部计算产生的临时数据。该方式开发者可以自行管理sharedTmpBuffer内存空间，并在接口调用完成后，复用该部分内存。Tensor的大小应符合对应tiling的要求，配合tiling一起使用。共享缓冲区大小BufferSize的获取方式请参考GetDropOutMaxMinTmpSize。          类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | keepProb | 输入 | 权重系数，数据类型为float，srcLocal中数据被保留的概率，过滤后的结果会除以权重系数，存放至dstLocal中。          keepProb∈(0，1) |
 | DropOutShapeInfo类型，DropOutShapeInfo结构定义如下：                                                                                                                           ``` struct DropOutShapeInfo { __aicore__ DropOutShapeInfo(){}; uint32_t firstAxis = 0;   // srcLocal/maskTensor的height轴元素个数 uint32_t srcLastAxis = 0; // srcLocal的width轴元素个数 uint32_t maskLastAxis = 0;// maskTensor的width轴元素个数（如有数据补齐场景，则为带有脏数据的长度，注意，所有模式的元素个数均为对应Tensor类型下的个数，取值需要大于0，如uint8类型Tensor对应Uint8类型元素个数） }; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

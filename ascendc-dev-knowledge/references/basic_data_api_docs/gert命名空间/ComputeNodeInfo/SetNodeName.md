@@ -5,8 +5,6 @@
 
 ---
 
-# SetNodeName
-
 #### 函数功能
 
 设置该ComputeNodeInfo对应的算子的名称。

@@ -5,8 +5,6 @@
 
 ---
 
-# 查看Device业务进程内存统计信息
-
 1. **查看并解读日志**关键字：host侧用户态plog日志中搜索“svm_mem_stats_show_device_proc_mem”，搜索结果示例如下所示：
 
 ```

@@ -5,8 +5,6 @@
 
 ---
 
-# SetInputStartPosition
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -34,10 +32,6 @@ __aicore__ inline void SetInputStartPosition(int64_t diStartPos, int64_t mStartP
 | --- | --- | --- |
 | diStartPos | 输入 | 单核上Din方向起始位置。 |
 | mStartPos | 输入 | 单核上M方向起始位置。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

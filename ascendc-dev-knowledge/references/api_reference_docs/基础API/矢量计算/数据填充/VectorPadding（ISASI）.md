@@ -5,8 +5,6 @@
 
 ---
 
-# VectorPadding(ISASI)
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -81,10 +79,6 @@ __aicore__ inline void VectorPadding(const LocalTensor<T>& dst, const LocalTenso
 | repeatTime | 输入 | 重复迭代次数。矢量计算单元，每次读取连续的256Bytes数据进行计算，为完成对输入数据的处理，必须通过多次迭代（repeat）才能完成所有数据的读取与计算。repeatTime表示迭代的次数。          关于该参数的具体描述请参考高维切分API。 |
 | repeatParams | 输入 | 控制操作数地址步长的参数。UnaryRepeatParams类型，包含操作数相邻迭代间相同DataBlock的地址步长，操作数同一迭代内不同DataBlock的地址步长等参数。          相邻迭代间的地址步长参数说明请参考repeatStride；同一迭代内DataBlock的地址步长参数说明请参考dataBlockStride。 |
 
-#### 返回值说明
-
-无
-
 #### 约束说明
 
 - mask仅控制目的操作数中的哪些元素要写入，源操作数的读取与mask无关。
@@ -93,8 +87,6 @@ __aicore__ inline void VectorPadding(const LocalTensor<T>& dst, const LocalTenso
 #### 调用示例
 
 样例的srcLocal和dstLocal均为half类型。
-
-更多样例可参考LINK。
 
 - tensor高维切分计算样例-mask连续模式
 

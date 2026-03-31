@@ -5,8 +5,6 @@
 
 ---
 
-# NotifyNextBlock
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void NotifyNextBlock(GlobalTensor<int32_t>& gmWorkspace, Local
 | --- | --- | --- |
 | gmWorkspace | 输入 | 临时空间，通过写gmWorkspace通知其他核当前核已执行完成，其他核可以继续往下执行，类型为GlobalTensor。 |
 | ubWorkspace | 输入 | 临时空间，用于操作gmWorkspace，类型为LocalTensor。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# ReduceMax
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -108,10 +106,6 @@ int finalWorkLocalNeedSize = iter2AlignStart + iter3AlignStart + iter3AlignEnd; 
 > **注意:** 
 
 开发者为了节省地址空间，可以选择sharedTmpBuffer空间复用源操作数的空间。此时因为sharedTmpBuffer需要的最小空间一定小于源操作数的空间，所以无需关注和计算最小空间。
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

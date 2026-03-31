@@ -5,8 +5,6 @@
 
 ---
 
-# WelfordUpdate
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -88,10 +86,6 @@ __aicore__ inline void WelfordUpdate(const LocalTensor<U>& outputMean, const Loc
 | inputX | 输入 | 源操作数，对应接口公式中的xi。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | sharedTmpBuffer | 输入 | 临时空间。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 接口内部复杂计算时用于存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考WelfordUpdate Tiling。 |
 | 计算所需的参数信息。WelfordUpdateParam类型，定义如下。 ``` struct WelfordUpdateParam {     uint32_t rnLength;      uint32_t abLength;      uint32_t abComputeLength;      float nRec; }; ```  - rnLength：预留参数，固定设置为1。- abLength：Reduce轴拆分的大小。- abComputeLength：从输入的起始地址开始的Reduce轴实际计算长度。- nRec：取值为1/i，i为当前调用本接口的累积次数。i的取值范围为[1, n]，n为对输入数据inputX的Reduce轴切分的块数。 各目的操作数和源操作数的shape均为[rnLength, abLength]。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

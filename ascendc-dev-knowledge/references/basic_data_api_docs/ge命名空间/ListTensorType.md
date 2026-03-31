@@ -5,8 +5,6 @@
 
 ---
 
-# ListTensorType
-
 #### 函数功能
 
 ListTensorType类用以定义输入或者输出支持的数据类型，是TensorType的封装，用于标识支持多个数据类型的情况。

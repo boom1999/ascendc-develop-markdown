@@ -5,8 +5,6 @@
 
 ---
 
-# FlashAttention算子性能调优案例
-
 #### 案例介绍
 
 本案例中的算子FlashAttentionScoreGrad，用于训练场景下计算注意力的反向输出，即FlashAttentionScore算子的反向计算。

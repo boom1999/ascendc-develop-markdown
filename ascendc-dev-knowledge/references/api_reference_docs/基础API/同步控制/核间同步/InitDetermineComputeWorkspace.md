@@ -5,8 +5,6 @@
 
 ---
 
-# InitDetermineComputeWorkspace
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void InitDetermineComputeWorkspace(GlobalTensor<int32_t>& gmWo
 | --- | --- | --- |
 | gmWorkspace | 输入 | 临时空间，初始化核间同步的共享内存，类型为GlobalTensor。 |
 | ubWorkspace | 输入 | 临时空间，用于操作gmWorkspace，类型为LocalTensor。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

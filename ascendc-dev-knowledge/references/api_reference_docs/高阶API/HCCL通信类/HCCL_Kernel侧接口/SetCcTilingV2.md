@@ -5,8 +5,6 @@
 
 ---
 
-# SetCcTilingV2
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -67,7 +65,7 @@ class UserCustomTilingData {
 ```
 extern "C" __global__ __aicore__ void userKernel(GM_ADDR aGM, GM_ADDR workspaceGM, GM_ADDR tilingGM) {
     REGISTER_TILING_DEFAULT(UserCustomTilingData);
-    GET_TILING_DATA_WITH_STRUCT(UserCustomTilingData, tilingData, tilingGM);
+    GET_TILING_DATA_WITH_STRUCT(UserCustomTilingData, tilingData, tilingGM);
 
     Hccl hccl;
     GM_ADDR contextGM = AscendC::GetHcclContext<0>();
@@ -93,7 +91,7 @@ extern "C" __global__ __aicore__ void userKernel(GM_ADDR aGM, GM_ADDR workspaceG
 ```
 extern "C" __global__ __aicore__ void userKernel(GM_ADDR aGM, GM_ADDR workspaceGM, GM_ADDR tilingGM) {
     REGISTER_TILING_DEFAULT(UserCustomTilingData);
-    GET_TILING_DATA_WITH_STRUCT(UserCustomTilingData, tilingData, tilingGM);
+    GET_TILING_DATA_WITH_STRUCT(UserCustomTilingData, tilingData, tilingGM);
 
     Hccl hccl;
     GM_ADDR contextGM = AscendC::GetHcclContext<0>();

@@ -5,8 +5,6 @@
 
 ---
 
-# SetHF32TransMode
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetHF32TransMode(bool hf32TransMode)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | hf32TransMode | 输入 | Mmad HF32取整模式控制入参，bool类型。支持如下两种取值： - true：则FP32将以向零靠近的方式四舍五入为HF32。- false：则FP32将以最接近偶数的方式四舍五入为HF32。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# ProposalExtract
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -45,10 +43,6 @@ __aicore__ inline void ProposalExtract(const LocalTensor<T>& dst, const LocalTen
 | src | 输入 | 源操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 LocalTensor的起始地址需要32字节对齐。 源操作数的数据类型需要与目的操作数保持一致。 |
 | repeatTime | 输入 | 重复迭代次数，int32_t类型，每次迭代完成16个Region Proposals的元素抽取并排布到16个元素里，下次迭代跳至相邻的下一组16个Region Proposals和下一组16个元素。取值范围：repeatTime∈[0,255]。 |
 | modeNumber | 输入 | 抽取位置参数，取值范围：modeNumber∈[0, 5]，int32_t类型，仅限于以下配置：- 0 – 从x1抽取- 1 – 从y1抽取- 2 – 从x2抽取- 3 – 从y2抽取- 4 – 从score抽取- 5 – 从label抽取 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

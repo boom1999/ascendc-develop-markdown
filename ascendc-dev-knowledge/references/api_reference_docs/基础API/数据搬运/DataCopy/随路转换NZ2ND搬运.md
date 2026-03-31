@@ -5,8 +5,6 @@
 
 ---
 
-# 随路转换NZ2ND搬运
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -86,10 +84,6 @@ __aicore__ inline void DataCopy(const GlobalTensor<T>& dst, const LocalTensor<T>
 
 **图2 **NZ2ND转换示意图（float数据类型）
 ![](images/atlasascendc_api_07_00128_img_002.png)
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

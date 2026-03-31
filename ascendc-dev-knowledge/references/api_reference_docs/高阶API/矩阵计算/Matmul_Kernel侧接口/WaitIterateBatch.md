@@ -5,8 +5,6 @@
 
 ---
 
-# WaitIterateBatch
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -33,10 +31,6 @@ __aicore__ inline void WaitIterateBatch()
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | 无 | 无 | NA |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

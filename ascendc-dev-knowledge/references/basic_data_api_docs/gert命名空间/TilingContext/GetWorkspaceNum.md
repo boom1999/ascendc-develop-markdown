@@ -5,8 +5,6 @@
 
 ---
 
-# GetWorkspaceNum
-
 #### 函数功能
 
 获取workspace个数。

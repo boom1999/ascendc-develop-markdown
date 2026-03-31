@@ -5,8 +5,6 @@
 
 ---
 
-# SetSingleShape
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -37,10 +35,6 @@ __aicore__ inline void SetSingleShape(int singleM, int singleN, int singleK)
 | singleM | 输入 | 设置的singleCoreM大小，单位为元素。 |
 | singleN | 输入 | 设置的singleCoreN大小，单位为元素。 |
 | singleK | 输入 | 设置的singleCoreK大小，单位为元素。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# NeedAtomic
-
 #### 函数功能
 
 获取是否需要atomic clean的标识值。

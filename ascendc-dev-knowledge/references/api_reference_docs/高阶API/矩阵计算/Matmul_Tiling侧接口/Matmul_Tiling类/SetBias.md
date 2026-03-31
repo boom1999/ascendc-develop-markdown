@@ -5,8 +5,6 @@
 
 ---
 
-# SetBias
-
 #### 功能说明
 
 EnableBias接口功能与该接口相同，建议使用EnableBias。

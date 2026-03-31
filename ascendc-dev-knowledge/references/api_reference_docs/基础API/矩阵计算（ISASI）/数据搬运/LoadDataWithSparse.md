@@ -5,8 +5,6 @@
 
 ---
 
-# LoadDataWithSparse
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -56,10 +54,6 @@ __aicore__ inline void LoadDataWithSparse(const LocalTensor<T>& dst, const Local
 - repeat=0表示不执行。
 - 每次迭代中的startIndex不能小于零。
 - 不支持转置功能。
-
-#### 返回值说明
-
-无
 
 #### 调用示例
 

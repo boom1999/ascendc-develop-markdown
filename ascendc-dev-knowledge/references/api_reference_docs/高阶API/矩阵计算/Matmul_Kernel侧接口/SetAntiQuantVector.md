@@ -5,8 +5,6 @@
 
 ---
 
-# SetAntiQuantVector
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -36,10 +34,6 @@ __aicore__ inline void SetAntiQuantVector(const LocalTensor<SrcT> &offsetTensor,
 | --- | --- | --- |
 | offsetTensor | 输入 | 伪量化运算时的参数向量，用于加。SrcT为A_TYPE中对应的数据类型。 |
 | scaleTensor | 输入 | 伪量化运算时的参数向量，用于乘。SrcT为A_TYPE中对应的数据类型。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

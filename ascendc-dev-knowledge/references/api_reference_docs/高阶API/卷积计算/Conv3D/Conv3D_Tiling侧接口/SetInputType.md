@@ -5,8 +5,6 @@
 
 ---
 
-# SetInputType
-
 #### 功能说明
 
 设置Input在内存上的位置、数据格式和数据类型。
@@ -24,10 +22,6 @@ void SetInputType(const ConvCommonApi::TPosition pos, const ConvCommonApi::ConvF
 | pos | 输入 | Input在内存上的位置。当前仅支持TPosition::GM。 |
 | format | 输入 | Input的数据格式。当前仅支持ConvFormat::NDC1HWC0。 |
 | dtype | 输入 | Input的数据类型。当前仅支持ConvDtype::FLOAT16、ConvDtype::BF16。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

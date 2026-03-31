@@ -5,8 +5,6 @@
 
 ---
 
-# BuildTilingContext
-
 #### 功能说明
 
 构造KernelRunContextHolder的对象，该对象可通过GetContext接口获取TilingContext类型的对象。

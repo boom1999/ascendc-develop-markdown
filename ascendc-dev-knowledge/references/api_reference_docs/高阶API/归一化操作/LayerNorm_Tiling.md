@@ -5,8 +5,6 @@
 
 ---
 
-# LayerNorm Tiling
-
 #### 功能说明
 
 Ascend C提供一组LayerNorm Tiling API，方便用户获取LayerNorm kernel计算时所需的Tiling参数。
@@ -160,10 +158,6 @@ void GetLayerNormNDTilingInfo(const ge::Shape& srcShape, const uint32_t stackBuf
 | isReuseSource | 输入 | 是否可以复用inputX的内存空间。 |
 | isComputeRstd | 输入 | 是否计算标准差的倒数rstd。用于Tiling中区分选择的LayerNorm API。 |
 | tilling | 输出 | 输入数据的切分信息。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

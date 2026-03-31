@@ -5,8 +5,6 @@
 
 ---
 
-# GetPlatformInfo
-
 #### 函数功能
 
 获取PlatFormInfos指针。PlatformInfos类用于管理和查询硬件平台的相关信息，包括核数、内存带宽等。

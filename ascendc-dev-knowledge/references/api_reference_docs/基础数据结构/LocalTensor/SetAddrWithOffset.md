@@ -5,8 +5,6 @@
 
 ---
 
-# SetAddrWithOffset
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -37,10 +35,6 @@ __aicore__ inline void SetAddrWithOffset(LocalTensor<S> &src, uint32_t offset)
 | --- | --- | --- |
 | src | 输入 | 基础地址的Tensor，将该Tensor的地址作为基础地址，设置偏移后的Tensor地址。 |
 | offset | 输入 | 偏移的长度，单位为元素。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

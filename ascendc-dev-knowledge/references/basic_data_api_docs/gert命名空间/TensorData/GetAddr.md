@@ -5,8 +5,6 @@
 
 ---
 
-# GetAddr
-
 #### 函数功能
 
 获取tensor数据地址。若存在manager函数，则由manager函数给出地址。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetFormatFromC0
-
 #### 函数功能
 
 根据传入的format和C0 format信息得到实际的format。

@@ -5,8 +5,6 @@
 
 ---
 
-# SoftmaxFlashV2 Tiling接口
-
 #### 功能说明
 
 用于获取SoftmaxFlashV2接口所需的Tiling参数。

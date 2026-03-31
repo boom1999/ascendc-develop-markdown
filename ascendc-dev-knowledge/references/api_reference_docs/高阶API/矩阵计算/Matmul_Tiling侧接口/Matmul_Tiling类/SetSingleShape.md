@@ -5,8 +5,6 @@
 
 ---
 
-# SetSingleShape
-
 #### 功能说明
 
 设置Matmul单核计算的形状singleMIn，singleNIn，singleKIn，单位为元素。

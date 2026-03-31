@@ -5,8 +5,6 @@
 
 ---
 
-# SetSysWorkSpace
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -55,10 +53,6 @@ __aicore__ inline void SetSysWorkspace(GM_ADDR workspace)
 | workspace | 输入 | 核函数传入的workspace的指针，包括系统workspace和用户使用的workspace。 |
 
 #### 约束说明
-
-无
-
-#### 返回值说明
 
 无
 

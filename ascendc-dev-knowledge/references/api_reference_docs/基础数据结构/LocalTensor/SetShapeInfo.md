@@ -5,8 +5,6 @@
 
 ---
 
-# SetShapeInfo
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetShapeInfo(const ShapeInfo& shapeInfo)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | shapeInfo | 输入 | Shape信息，ShapeInfo结构体类型。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

@@ -5,8 +5,6 @@
 
 ---
 
-# GetPlacement
-
 #### 函数功能
 
 获取Tensor中数据地址的类型。

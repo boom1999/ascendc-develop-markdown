@@ -5,8 +5,6 @@
 
 ---
 
-# Release
-
 #### 函数功能
 
 释放对TensorAddress的所有权，本接口调用后，本对象不再管理TensorAddress，而且TensorAddress并没有被释放，因此调用者负责通过manager释放TensorAddress。

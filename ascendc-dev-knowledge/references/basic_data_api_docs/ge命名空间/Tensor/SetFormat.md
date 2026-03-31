@@ -5,8 +5,6 @@
 
 ---
 
-# SetFormat
-
 #### 函数功能
 
 设置Tensor的Format。

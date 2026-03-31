@@ -5,8 +5,6 @@
 
 ---
 
-# ShiftRight
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -99,10 +97,6 @@ __aicore__ inline void ShiftRight(const LocalTensor<T>& dst, const LocalTensor<T
 | repeatTime | 输入 | 重复迭代次数。 矢量计算单元，每次读取连续的256Bytes数据进行计算，为完成对输入数据的处理，必须通过多次迭代（repeat）才能完成所有数据的读取与计算。repeatTime表示迭代的次数。          关于该参数的具体描述请参考高维切分API。 |
 | repeatParams | 输入 | 元素操作控制结构信息，具体请参考UnaryRepeatParams。 |
 | roundEn | 输入 | 舍入功能使能开关，支持数据类型：bool，true为使能，false为不使能。仅当src为int16_t/int32_t类型时使能有效。          例：使能舍入功能，src数据类型为int16_t，将src算数右移5位，如果src_ele二进制数中的第5位为1，则dst_ele值为对src_ele算术右移5后加1。          src_ele = 17 = 0b0000000000010001 第五位为1          dst_ele = arithmetic_right_shift(src_ele, 5) + 1          = 0b0000000000000000 + 1          = 0b0000000000000001                       Atlas 200I/500 A2 推理产品            ，不支持使能舍入功能，仅支持传入false。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

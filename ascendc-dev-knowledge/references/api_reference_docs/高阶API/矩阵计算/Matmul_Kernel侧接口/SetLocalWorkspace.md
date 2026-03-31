@@ -5,8 +5,6 @@
 
 ---
 
-# SetLocalWorkspace
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -42,10 +40,6 @@ __aicore__ inline void SetLocalWorkspace(const LocalTensor<uint8_t>& tmpBuffer)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | tmpBuffer | 输入 | 临时空间，由用户申请并管理，TPosition为VECCALC。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

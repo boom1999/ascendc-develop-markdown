@@ -5,8 +5,6 @@
 
 ---
 
-# Conv3DBackpropFilter使用说明
-
 Ascend C提供一组Conv3DBackpropFilter高阶API，便于用户快速实现卷积的反向运算，求解反向传播的误差。
 
 卷积反向的权重传播如图1，卷积反向权重计算如图2。

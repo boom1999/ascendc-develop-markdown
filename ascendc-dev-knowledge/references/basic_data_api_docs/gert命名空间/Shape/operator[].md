@@ -5,8 +5,6 @@
 
 ---
 
-# operator[]
-
 #### 函数功能
 
 获取指定index轴的dim值。

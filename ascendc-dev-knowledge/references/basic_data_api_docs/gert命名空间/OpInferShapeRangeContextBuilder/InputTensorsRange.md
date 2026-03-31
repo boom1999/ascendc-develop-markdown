@@ -5,8 +5,6 @@
 
 ---
 
-# InputTensorsRange
-
 #### 函数功能
 
 设置输入Tensor的Range指针，用于在Shape Range推导时，可通过该Builder类构造的上下文InferShapeRangeContext获取相应的输入Tensor Range指针，即可以获得最大Shape的Tensor和最小Shape的Tensor。

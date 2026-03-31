@@ -5,8 +5,6 @@
 
 ---
 
-# GetRawTilingData
-
 #### 函数功能
 
 获取无类型的tiling data指针。

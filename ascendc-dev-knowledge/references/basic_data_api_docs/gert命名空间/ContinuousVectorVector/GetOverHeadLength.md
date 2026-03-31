@@ -5,8 +5,6 @@
 
 ---
 
-# GetOverHeadLength
-
 #### 函数功能
 
 获取数据描述信息的长度。

@@ -5,8 +5,6 @@
 
 ---
 
-# GetPlacement
-
 #### 函数功能
 
 获取tensor的placement。

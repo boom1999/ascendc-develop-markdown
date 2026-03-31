@@ -5,8 +5,6 @@
 
 ---
 
-# GetStorageShape
-
 #### 函数功能
 
 获取运行时Tensor的StorageShape，此shape对象为只读。StorageShape和Originshape的区别如下：Originshape是Tensor最初创建时的形状，StorageShape是保存Tensor数据的底层存储的形状。运行时为了适配底层硬件，Tensor的StorageShape和其Originshape可能会有所不同。

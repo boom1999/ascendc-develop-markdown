@@ -5,8 +5,6 @@
 
 ---
 
-# GetDropOutMaxMinTmpSize
-
 #### 功能说明
 
 用于获取DropOut Tiling参数。

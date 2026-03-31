@@ -5,8 +5,6 @@
 
 ---
 
-# SetExpandIndex
-
 #### 函数功能
 
 将第index轴设置为补维轴。

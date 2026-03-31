@@ -5,8 +5,6 @@
 
 ---
 
-# GetStorageFormat
-
 #### 函数功能
 
 获取运行时Tensor的数据格式。

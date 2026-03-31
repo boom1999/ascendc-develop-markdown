@@ -5,8 +5,6 @@
 
 ---
 
-# GetMrgSortResult
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -56,10 +54,6 @@ __aicore__ inline void GetMrgSortResult(uint16_t &mrgSortList1, uint16_t &mrgSor
 | mrgSortList2 | 输出 | 类型为uint16_t，表示MrgSort第二个队列里已经处理过的Region Proposal个数。 |
 | mrgSortList3 | 输出 | 类型为uint16_t，表示MrgSort第三个队列里已经处理过的Region Proposal个数。 |
 | mrgSortList4 | 输出 | 类型为uint16_t，表示MrgSort第四个队列里已经处理过的Region Proposal个数。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

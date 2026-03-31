@@ -5,8 +5,6 @@
 
 ---
 
-# Select
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -83,10 +81,6 @@ __aicore__ inline void Select(const LocalTensor<T>& dst, T src0, const LocalTens
 | mask | 输入 | 掩码Tensor。用于描述如何选择srcTensor和srcScalar之间的值。**maskTensor尾轴需32字节对齐且元素个数为16的倍数。**                     - **src0为srcTensor（tensor类型），src1为****srcScalar（scalar类型）**            若mask的值为0，选择srcTensor相应的值放入dstLocal，否则选择srcScalar的值放入dstLocal。           - **src0为****srcScalar（scalar类型）****，src1为****srcTensor****（tensor类型）**            若mask的值为0，选择srcScalar的值放入dstLocal，否则选择srcTensor相应的值放入dstLocal。 |
 | sharedTmpBuffer | 输入 | 该API用于计算的临时空间，所需空间大小根据GetSelectMaxMinTmpSize获取。 |
 | 描述SrcTensor和maskTensor的shape信息。SelectWithBytesMaskShapeInfo类型，定义如下：                                                                                                                           ``` struct SelectWithBytesMaskShapeInfo { __aicore__ SelectShapeInfo(){}; uint32_t firstAxis = 0;     uint32_t srcLastAxis = 0;  uint32_t maskLastAxis = 0; }; ```                                                                                                 - firstAxis：srcLocal/maskTensor的前轴元素个数。           - srcLastAxis：srcLocal的尾轴元素个数。           - maskLastAxis：maskTensor的尾轴元素个数。                    注意：                     - 需要满足srcTensor和maskTensor的前轴元素个数相同，均为firstAxis。           - 需要满足firstAxis * srcLastAxis = srcTensor.GetSize() ；firstAxis * maskLastAxis = maskTensor.GetSize()。           - maskTensor尾轴的元素个数大于等于srcTensor尾轴的元素个数，计算时会丢弃maskTensor多余部分，不参与计算。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

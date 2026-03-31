@@ -5,8 +5,6 @@
 
 ---
 
-# AddCount
-
 #### 函数功能
 
 MemBlock引用计数加1。

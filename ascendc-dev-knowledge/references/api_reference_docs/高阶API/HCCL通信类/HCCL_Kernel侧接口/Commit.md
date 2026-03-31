@@ -5,8 +5,6 @@
 
 ---
 
-# Commit
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void Commit(HcclHandle handleId)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | 对应通信任务的标识ID，只能使用Prepare原语接口的返回值。 ``` using HcclHandle = int8_t; ``` |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

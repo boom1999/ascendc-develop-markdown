@@ -5,8 +5,6 @@
 
 ---
 
-# GetFormatFromSub
-
 #### 函数功能
 
 根据传入的主format和子format信息得到实际的format。

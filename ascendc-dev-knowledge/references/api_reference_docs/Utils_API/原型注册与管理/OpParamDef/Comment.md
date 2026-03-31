@@ -5,8 +5,6 @@
 
 ---
 
-# Comment
-
 #### 功能说明
 
 设置input/output参数的注释。

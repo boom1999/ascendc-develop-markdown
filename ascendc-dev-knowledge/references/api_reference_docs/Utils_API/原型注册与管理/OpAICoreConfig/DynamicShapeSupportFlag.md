@@ -5,8 +5,6 @@
 
 ---
 
-# DynamicShapeSupportFlag
-
 #### 功能说明
 
 用于标识该算子是否支持入图时的动态Shape场景。

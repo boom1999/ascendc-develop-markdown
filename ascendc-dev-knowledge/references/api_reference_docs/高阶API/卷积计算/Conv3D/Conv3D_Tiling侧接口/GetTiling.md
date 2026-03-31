@@ -5,8 +5,6 @@
 
 ---
 
-# GetTiling
-
 #### 功能说明
 
 获取Tiling参数。

@@ -5,8 +5,6 @@
 
 ---
 
-# SetInput
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -35,10 +33,6 @@ __aicore__ inline void SetInput(const AscendC::GlobalTensor<SrcT> &input)
 | 参数名 | 输入/输出 | 描述 |
 | --- | --- | --- |
 | input | 输入 | Input在Global Memory上的首地址。类型为GlobalTensor。特征矩阵Input支持的数据类型SrcT为：half、bfloat16_t。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

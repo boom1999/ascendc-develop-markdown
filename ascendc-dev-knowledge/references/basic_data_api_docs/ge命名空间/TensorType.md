@@ -5,8 +5,6 @@
 
 ---
 
-# TensorType
-
 TensorType类用以定义输入或者输出支持的数据类型，TensorType提供以下接口指定支持的数据类型：
 
 ```

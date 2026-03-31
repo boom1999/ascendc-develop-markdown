@@ -5,8 +5,6 @@
 
 ---
 
-# Free
-
 #### 函数功能
 
 MemBlock的引用计数减为0时，释放MemBlock到内存池。

@@ -5,8 +5,6 @@
 
 ---
 
-# EL0015 Invalid_Device_Access
-
 #### Symptom
 
 The device access is invalid.

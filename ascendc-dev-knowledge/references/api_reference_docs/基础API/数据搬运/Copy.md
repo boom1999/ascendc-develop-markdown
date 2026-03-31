@@ -5,8 +5,6 @@
 
 ---
 
-# Copy
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -65,10 +63,6 @@ __aicore__ inline void Copy(const LocalTensor<T>& dst, const LocalTensor<T>& src
 | --- | --- |
 | dstStride、srcStride | 用于设置同一迭代内datablock的地址步长，取值范围为[0,65535]。          同一迭代内datablock的地址步长参数说明请参考dataBlockStride。 |
 | dstRepeatSize、srcRepeatSize | 用于设置相邻迭代间的地址步长，取值范围为[0,4095]。          相邻迭代间的地址步长参数说明请参考repeatStride。 |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 

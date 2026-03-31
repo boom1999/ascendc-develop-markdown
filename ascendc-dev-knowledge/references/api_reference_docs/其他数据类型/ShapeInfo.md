@@ -5,8 +5,6 @@
 
 ---
 
-# ShapeInfo
-
 #### 功能说明
 
 ShapeInfo用来存放LocalTensor或GlobalTensor的shape信息。

@@ -5,8 +5,6 @@
 
 ---
 
-# KernelRunContextHolder结构定义
-
 #### 功能说明
 
 该结构体为ContextBuilder类最终的构造结果，可通过指定的接口获取内部算子信息或获取KernelContext类的对象。

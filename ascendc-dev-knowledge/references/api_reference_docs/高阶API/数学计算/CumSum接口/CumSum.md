@@ -5,8 +5,6 @@
 
 ---
 
-# CumSum
-
 #### 产品支持情况
 
 | 产品 | 是否支持 |
@@ -82,10 +80,6 @@ __aicore__ inline void CumSum(LocalTensor<T>& dstTensor, LocalTensor<T>& lastRow
 | srcTensor | 输入 | 源操作数。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 |
 | sharedTmpBuffer | 输入 | 临时缓存。 类型为LocalTensor，支持的TPosition为VECIN/VECCALC/VECOUT。 用于CumSum内部复杂计算时存储中间变量，由开发者提供。 临时空间大小BufferSize的获取方式请参考GetCumSumMaxMinTmpSize。 |
 | srcTensor的shape信息。CumSumInfo类型，具体定义如下： ``` struct CumSumInfo {     uint32_t outter{0};    // 表示输入数据的外轴长度     uint32_t inner{0};     // 表示输入数据的内轴长度 }; ```  注意： - cumSumInfo.outter和cumSumInfo.inner都应大于0。- cumSumInfo.outter * cumSumInfo.inner不能大于dstTensor或srcTensor的大小。- cumSumInfo.inner * sizeof(T)必须是32字节的整数倍。- 当模板参数config中的outputLastRow取值为true时，cumSumInfo.inner不能大于lastRowTensor输出的最后一行数据的大小。 |  |  |
-
-#### 返回值说明
-
-无
 
 #### 约束说明
 
