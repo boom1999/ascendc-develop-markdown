@@ -21,7 +21,11 @@
 
 根据指定的条件，从两个源操作数中选择元素，生成目标操作数。两个源操作数均可以是LocalTensor或标量。
 
-![](figures/zh-cn_formulaimage_0000002554346509.png)
+<!-- img2text -->
+$$dst_i=\begin{cases}
+src1_i, & \text{if } cond_i\ \text{is true}\\
+src2_i, & \text{if } cond_i\ \text{is false}
+\end{cases}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

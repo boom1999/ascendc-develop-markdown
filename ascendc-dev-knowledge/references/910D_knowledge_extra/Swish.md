@@ -21,9 +21,15 @@
 
 在神经网络中，Swish是一个重要的激活函数。计算公式如下，其中β为常数：
 
-![](figures/zh-cn_formulaimage_0000002523305282.png)
+<!-- img2text -->
+$$\operatorname{swish}(x)=\frac{x}{1+e^{-\beta x}}$$
 
-![](figures/zh-cn_formulaimage_0000002554425163.png)
+其中，$\beta$ 为常数。
+
+<!-- img2text -->
+$$\operatorname{swish}(x)=x * \operatorname{sigmoid}(\beta x)=\frac{x}{1+e^{-\beta x}}$$
+
+其中 $\beta$ 为常数。
 
 ## 函数原型<a name="section8850255125911"></a>
 

@@ -21,7 +21,10 @@
 
 获取输入数据x的n阶第二类贝塞尔函数yn的值。
 
-![](figures/zh-cn_formulaimage_0000002523346752.png)
+<!-- img2text -->
+$$
+y_n(x)=\sqrt{\frac{2}{\pi x}}\sin\left(x-\frac{n\pi}{2}-\frac{\pi}{4}\right)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,10 @@
 
 获取输入数据x的0阶第一类贝塞尔函数j0的值。
 
-![](figures/zh-cn_formulaimage_0000002554426027.png)
+<!-- img2text -->
+$$
+J_0(x)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(k!)^2}\left(\frac{x}{2}\right)^{2k}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

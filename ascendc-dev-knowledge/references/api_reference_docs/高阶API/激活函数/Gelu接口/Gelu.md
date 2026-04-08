@@ -20,9 +20,12 @@
 
 在神经网络中，GELU是一个重要的激活函数，其灵感来源于Relu和Dropout，在激活中引入了随机正则的思想。计算公式如下：
 
-![](images/atlasascendc_api_07_0771_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0771_img_002.png)，化简后可得![](images/atlasascendc_api_07_0771_img_003.png)
+<!-- img2text -->
+[图片无法识别]，化简后可得<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

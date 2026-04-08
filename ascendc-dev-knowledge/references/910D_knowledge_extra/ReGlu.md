@@ -21,11 +21,19 @@
 
 ReGlu是一种GLU变体，使用Relu作为激活函数，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554345867.png)
+<!-- img2text -->
+$$\operatorname{ReGLU}(x, W, V, b, c)=\operatorname{ReLU}(xW+b)\otimes(xV+c)$$
 
 其中Relu激活函数的计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554425825.png)
+<!-- img2text -->
+$$
+\operatorname{Relu}(x)=
+\begin{cases}
+x, & x>0 \\
+0, & x\leq 0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

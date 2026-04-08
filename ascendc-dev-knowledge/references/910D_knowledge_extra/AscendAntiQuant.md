@@ -40,7 +40,8 @@
 
 -   PER\_TOKEN场景 （按token量化）
 
-    ![](figures/zh-cn_formulaimage_0000002523305596.png)
+    <!-- img2text -->
+[公式无法识别]
 
 -   PER\_GROUP场景 （按组量化）
 
@@ -77,16 +78,68 @@
 
         -   k为m方向，即公式中i轴为group的计算方向：（kDim=0同时isTranspose=False）或者（kDim=1同时isTranspose= True）
 
-            ![](figures/zh-cn_formulaimage_0000002554345523.png)
+            <!-- img2text -->
+$$
+dst_{ij}=src_{ij}\times scale_{\left\lfloor \frac{i}{groupSize}\right\rfloor j}+offset_{\left\lfloor \frac{i}{groupSize}\right\rfloor j}
+$$
 
         -   k为n方向，即公式中j轴为group的计算方向：（kDim=0同时isTranspose=True）或者（kDim=1同时isTranspose =False）
 
-            ![](figures/zh-cn_formulaimage_0000002523345598.png)
+            <!-- img2text -->
+$$
+\text{groupScale}_{i,j}=\text{scale}_{\left\lfloor \frac{j}{\text{groupSize}} \right\rfloor}
+$$
+
+$$
+\text{groupOffset}_{i,j}=\text{offset}_{\left\lfloor \frac{j}{\text{groupSize}} \right\rfloor}
+$$
 
 ## 实现原理<a name="section13229175017585"></a>
 
 **图 1**  AscendAntiQuant算法框图<a name="fig18399121215208"></a>  
-![](figures/AscendAntiQuant算法框图.png "AscendAntiQuant算法框图")
+<!-- img2text -->
+```
+                    ┌───────────┐                                   ┌───────────┐
+                    │ src[k,n]  │                                   │ src[k,n]  │
+                    └─────┬─────┘                                   └─────┬─────┘
+                          │                                                 │
+                          ↓                                                 ↓
+         ┌─────────────────────────────────┐              ┌─────────────────────────────────┐
+         │ ┌─────────────────────────────┐ │              │ ┌─────────────────────────────┐ │
+         │ │      cast int8->half        │ │              │ │      cast int8->half        │ │
+         │ │          x[k,n]             │ │              │ │          x[k,n]             │ │
+         │ └──────────────┬──────────────┘ │              │ └──────────────┬──────────────┘ │
+         │                │                │              │                │                │
+         │                ↓                │              │                ↓                │
+         │ ┌─────────────────────────────┐ │  ←─────────  │ ┌─────────────────────────────┐ │  ←─────────
+         │ │             add             │ │   offset[1,n]│ │            adds             │ │   offset[1]
+         │ │ y[k,n] = x[k,n] + offset[1,n]│ │              │ │   y[k,n] = x[k,n] + offset[1]│ │
+         │ └──────────────┬──────────────┘ │              │ └──────────────┬──────────────┘ │
+         │                │                │              │                │                │
+         │                ↓                │              │                ↓                │
+         │ ┌─────────────────────────────┐ │  ←─────────  │ ┌─────────────────────────────┐ │  ←─────────
+         │ │             mul             │ │   scale[1,n] │ │            muls             │ │   scale[1]
+         │ │ y[k,n] = y[k,n] * scale[1,n]│ │              │ │    y[k,n] = y[k,n] * scale[1]│ │
+         │ └──────────────┬──────────────┘ │              │ └──────────────┬──────────────┘ │
+         └────────────────┼────────────────┘              └────────────────┼────────────────┘
+                          │                                                 │
+                          ↓                                                 ↓
+                    ┌───────────┐                                   ┌───────────┐
+                    │ dst[k,n]  │                                   │ dst[k,n]  │
+                    └───────────┘                                   └───────────┘
+
+
+图示:
+输入输出Tensor/Scalar    ┌───────────┐
+                        │           │
+                        └───────────┘
+
+vector计算            ┌─────────────────────────────┐
+                      │                             │
+                      └─────────────────────────────┘
+
+数据流向              ─────────→
+```
 
 如上图所示，为AscendAntiQuant的典型场景算法框图，计算过程分为如下几步，均在Vector上进行：
 
@@ -95,7 +148,57 @@
 3.  计算scale：当scale为向量时做Mul计算，当scale为scalar时做Muls计算。
 
 **图 2**  AscendAntiQuant PER\_TOKEN/PER\_GROUP算法框图<a name="fig585016572279"></a>  
-![](figures/AscendAntiQuant-PER_TOKEN-PER_GROUP算法框图.png "AscendAntiQuant-PER_TOKEN-PER_GROUP算法框图")
+<!-- img2text -->
+```
+                              ┌──────────────┐
+                              │ src_local[m,n] │
+                              └──────┬───────┘
+                                     │
+                                     ▼
+┌────────┐                    ┌──────────────┐
+│ scale[m] │                  │   读取src     │
+└────┬───┘                    └──────┬───────┘
+     │                               │
+     │                               ▼
+     │                    ┌──────────────────────┐
+     │                    │ src_vreg =           │
+     │                    │ Cast(ori_src_vreg)   │
+     │                    └──────┬───────────────┘
+     │                           │
+     │                           ▼
+     │                    ┌──────────────────────┐     ┌──────────────────────────┐
+     │                    │ temp_vreg=           │ ◄── │ offset_vreg =            │
+     │                    │ Add(src_vreg,        │     │ Cast(ori_offset_vreg)    │
+     │                    │ offset_vreg)         │     └──────────┬───────────────┘
+     │                    └──────┬───────────────┘                │
+     │                           │                                │
+     │                           ▼                                │
+     │                    ┌──────────────────────┐                │
+     │                    │ temp2_vreg=          │                │
+     └───────────────►    │ Mul(temp_vreg,       │                │
+                          │ scale_vreg)          │                │
+┌──────────────┐          └──────┬───────────────┘                │
+│   读取scale   │                 │                                │
+└──────┬───────┘                 ▼                                │
+       │                 ┌──────────────────────┐                 │
+       ▼                 │ dst_vreg =           │                 │
+┌──────────────────────┐ │ Cast(temp2_vreg)     │                 │
+│ scale_vreg =         │ └──────┬───────────────┘                 │
+│ Cast(ori_scale_vreg) │        │                                 │
+└──────────┬───────────┘        ▼                                 │
+           │              ┌──────────────┐                        │
+           │              │ dst_local[m,n] │                        │
+           │              └──────────────┘                        │
+           │                                                       │
+           │                                            ┌──────────┴──────────┐
+           │                                            │      读取offset      │
+           │                                            └──────────┬──────────┘
+           │                                                       │
+           │                                                       │
+           │                                            ┌──────────▼──────────┐
+           │                                            │      offset[n]      │
+           │                                            └─────────────────────┘
+```
 
 PER\_TOKEN/PER\_GROUP b8/float4场景的计算逻辑如下：
 

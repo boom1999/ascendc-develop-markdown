@@ -43,7 +43,7 @@
     __aicore__ inline void DataCopy(const LocalTensor<T>& dst, const LocalTensor<T>& src, const Nd2NzParams& intriParams)
     ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >各原型支持的具体数据通路和数据类型，请参考[支持的通路和数据类型](#section87413163309)。
 
 ## 参数说明<a name="section1251613311396"></a>
@@ -165,7 +165,91 @@ ND2NZ转换示意图如下，样例中参数设置值和解释说明如下：
 -   dstNzMatrixStride = 96，表达dst中第x个ND矩阵的起点和第x+1个ND矩阵的起点的偏移，即A1和C1之间的距离，即为6个DataBlock，6 \* 16 = 96个元素。
 
 **图 1**  ND2NZ转换示意图（half数据类型）<a name="fig128961542184620"></a>  
-![](figures/ND2NZ转换示意图（half数据类型）.png "ND2NZ转换示意图（half数据类型）")
+<!-- img2text -->
+```
+src
+                 第一个ND矩阵
+                     ↓
+      dValue = 24
+   <──────────────────>
+      datalock
+          ↓
+┌────┬────┬────┬────┐
+│ A1 │ A2 │    │    │
+├────┼────┼────┼────┤
+│ B1 │ B2 │    │    │
+├────┼────┼────┼────┤
+│    │    │    │    │
+├────┼────┼────┼────┤
+│ C1 │ C2 │    │    │
+├────┼────┼────┼────┤
+│ D1 │ D2 │    │    │
+└────┴────┴────┴────┘
+↑                    ↑
+│                    │
+srcNdMatrixStride    第x个ND矩阵
+= 144
+
+↑
+│
+srcNdRowStride
+= 48
+
+ND2NZ
+  ─────→
+
+dst
+                             ┌────┬────┐
+                             │ A1 │ A2 │→
+                             ├────┼────┤ │
+                             │ B1 │ B2 │ │
+                             ├────┼────┤ │
+                             │    │    │ │
+                             ├────┼────┤ │
+                             │    │    │ │
+                             ├────┼────┤ │
+                             │ C1 │ C2 │ │
+                             ├────┼────┤ │
+                             │    │    │ │
+                             ├────┼────┤ │
+                             │ D1 │ D2 │ │
+                             └────┴────┘ │
+                               ↓    ↓    │
+                               ↓    ↓    │
+                               └────┴────┘
+
+↑
+│
+dstNzCOStride = 11
+
+↑
+│
+dstNzMatrixStride = 96
+
+                         ↑
+                         │
+                         dstNzNStride = 2
+```
+
+说明:
+- 左图为源数据 `src` 的 ND 布局，标注了：
+  - `dValue = 24`
+  - `srcNdRowStride = 48`
+  - `srcNdMatrixStride = 144`
+  - `第一个ND矩阵`
+  - `第x个ND矩阵`
+  - `datablock`
+- 中间为转换关系：`ND2NZ`
+- 右图为目标数据 `dst` 的 NZ 布局，标注了：
+  - `dstNzCOStride = 11`
+  - `dstNzMatrixStride = 96`
+  - `dstNzNStride = 2`
+- 图中元素包含：`A1 A2 B1 B2 C1 C2 D1 D2`
+- 右图中的箭头表示 ND 到 NZ 转换后，同一行元素被重排到不同位置；其中：
+  - `A1` 和 `A2` 在 dst 中被拆到多行
+  - `A1` 与 `B1` 之间体现 `dstNzNStride = 2`
+  - `A1` 与 `C1` 之间体现 `dstNzMatrixStride = 96`
+  - 同一分块内部多行起始偏移体现 `dstNzCOStride = 11`
 
 ## 返回值说明<a name="section446456163012"></a>
 

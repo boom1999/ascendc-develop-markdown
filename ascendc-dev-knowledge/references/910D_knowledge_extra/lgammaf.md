@@ -21,7 +21,10 @@
 
 获取输入数据x伽马值的绝对值并求自然对数。
 
-![](figures/zh-cn_formulaimage_0000002523346390.png)
+<!-- img2text -->
+$$
+\ln \left| \Gamma(x) \right|
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

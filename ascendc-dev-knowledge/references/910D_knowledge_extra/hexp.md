@@ -21,7 +21,8 @@
 
 指定输入x，获取e的x次方。
 
-![](figures/zh-cn_formulaimage_0000002523305558.png)
+<!-- img2text -->
+$$\exp(x)=e^x$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

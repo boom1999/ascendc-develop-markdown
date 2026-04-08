@@ -25,7 +25,10 @@
 
     根据mask对输入数据srcReg0、srcReg1执行按元素与\( & \)操作，将结果写入dstReg。计算公式如下：
 
-    ![](figures/zh-cn_formulaimage_0000002523346810.png)
+    <!-- img2text -->
+$$
+dst_i = src0_i \,\&\, src1_i
+$$
 
 -   对MaskReg操作：
 

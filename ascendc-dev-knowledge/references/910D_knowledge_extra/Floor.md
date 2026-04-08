@@ -21,7 +21,14 @@
 
 获取小于或等于x的最小的整数值，即向负无穷取整操作。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554345145.png)
+<!-- img2text -->
+$$
+\operatorname{Floor}(x)=\lfloor x \rfloor=
+\begin{cases}
+n, & n \le x < n+1,\quad x \ge 0 \\
+n, & n-1 < x \le n,\quad x < 0
+\end{cases}
+$$
 
 举例如下：
 

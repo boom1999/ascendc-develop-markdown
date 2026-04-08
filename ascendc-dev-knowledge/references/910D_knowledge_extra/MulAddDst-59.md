@@ -21,7 +21,14 @@
 
 srcReg0与srcReg1相乘再加上dst， 根据mask将计算结果写入dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523305226.png)
+<!-- img2text -->
+$$
+\text{dstReg}[i] =
+\begin{cases}
+\text{srcReg0}[i] \times \text{srcReg1}[i] + \text{dstReg}[i], & \text{mask}[i] = 1 \\
+0 \text{ or } \text{dstReg}[i], & \text{mask}[i] = 0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

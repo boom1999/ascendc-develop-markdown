@@ -21,7 +21,14 @@
 
 获取两个输入数据中的最小值。
 
-![](figures/zh-cn_formulaimage_0000002554425767.png)
+<!-- img2text -->
+$$
+\operatorname{ullmin}(x, y) =
+\begin{cases}
+x, & x < y \\
+y, & x \geq y
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

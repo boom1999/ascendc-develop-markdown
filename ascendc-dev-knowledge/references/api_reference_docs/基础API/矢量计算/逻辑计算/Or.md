@@ -20,7 +20,10 @@
 
 每对elements按位或运算，计算公式如下：
 
-![](images/atlasascendc_api_07_0042_img_001.png)
+<!-- img2text -->
+``` 
+dstLocal[i] = src0Local[i] | src1Local[i]
+```
 
 #### 函数原型
 

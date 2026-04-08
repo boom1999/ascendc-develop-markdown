@@ -21,7 +21,14 @@
 
 获取两个输入数据中的最大值。
 
-![](figures/zh-cn_formulaimage_0000002554426829.png)
+<!-- img2text -->
+$$
+\max(x, y)=
+\begin{cases}
+x, & x > y \\
+y, & x \le y
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

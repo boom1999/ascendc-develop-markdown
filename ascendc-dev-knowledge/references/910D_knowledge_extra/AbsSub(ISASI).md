@@ -21,7 +21,8 @@
 
 将src0Local与src1相减再求绝对值， 并将计算结果写入dst。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346569.png)
+<!-- img2text -->
+$$dst_i = | src0Local_i - src1_i |$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

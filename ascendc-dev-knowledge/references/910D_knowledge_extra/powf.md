@@ -21,7 +21,10 @@
 
 获取输入数据x的y次幂。
 
-![](figures/zh-cn_formulaimage_0000002554346701.png)
+<!-- img2text -->
+$$
+\operatorname{pow}(x, y)=x^{y}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,14 @@
 
 dst与src0相乘和src1相加， 根据mask将计算结果写入dst。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523345036.png)
+<!-- img2text -->
+$$
+dst_i=
+\begin{cases}
+src0_i \times src1_i + src2_i, & \text{if mask}[i]=1 \\
+0 \text{ or } dst_i, & \text{if mask}[i]=0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

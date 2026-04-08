@@ -61,7 +61,9 @@ AscendC::ResetMask();  // 还原mask值
 【性能对比】
 
 **图1 **Normal模式和Counter模式下的Scalar执行时间对比
-![](images/atlas_ascendc_best_practices_10_0030_img_001.png)**图2 **Normal模式和Counter模式下的Vector执行时间对比
-![](images/atlas_ascendc_best_practices_10_0030_img_002.png)
+<!-- img2text -->
+[图片无法识别]**图2 **Normal模式和Counter模式下的Vector执行时间对比
+<!-- img2text -->
+[图片无法识别]
 
 以上性能数据是分别循环运行1000次反例和正例代码得到的Scalar和Vector执行时间。从上述两幅性能对比图和示例代码可以看到，使用Counter模式能够大幅度简化代码，易于维护，同时能够降低Scalar和Vector计算耗时，获得性能提升。

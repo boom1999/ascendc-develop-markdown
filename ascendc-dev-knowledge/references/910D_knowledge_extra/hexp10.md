@@ -21,7 +21,8 @@
 
 指定输入x，获取10的x次方。
 
-![](figures/zh-cn_formulaimage_0000002554346645.png)
+<!-- img2text -->
+$$\mathrm{hexp10}(x)=10^{x}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

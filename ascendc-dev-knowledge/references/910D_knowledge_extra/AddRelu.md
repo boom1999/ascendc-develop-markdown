@@ -21,7 +21,14 @@
 
 按元素求和，再进行Relu计算（结果和0对比取较大值）。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426405.png)
+<!-- img2text -->
+$$
+dst_i=
+\begin{cases}
+0, & \text{if } src0_i + src1_i < 0 \\
+src0_i + src1_i, & \text{otherwise}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

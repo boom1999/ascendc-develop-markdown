@@ -94,7 +94,25 @@ __aicore__ inline void DumpTensor(const GlobalTensor<T>& tensor, uint32_t desc, 
 
 Dump时，每个block核的dump信息前会增加对应信息头DumpHead，用于记录核号和资源使用信息；每次Dump的Tensor数据前也会添加信息头DumpTensorHead，用于记录Tensor的相关信息。如下图所示，展示了多核打印场景下的打印信息结构。
 
-![](images/atlasascendc_api_07_0192_img_001.png)
+<!-- img2text -->
+```text
+block0
+┌──────────┬────────────────┬──────────┬────────────────┬──────────┬────────────────┬─────┐
+│ DumpHead │ DumpTensorHead │ Tensor1  │ DumpTensorHead │ Tensor2  │ DumpTensorHead │ ... │
+└──────────┴────────────────┴──────────┴────────────────┴──────────┴────────────────┴─────┘
+
+block1
+┌──────────┬────────────────┬──────────┬────────────────┬──────────┬────────────────┬─────┐
+│ DumpHead │ DumpTensorHead │ Tensor1  │ DumpTensorHead │ Tensor2  │ DumpTensorHead │ ... │
+└──────────┴────────────────┴──────────┴────────────────┴──────────┴────────────────┴─────┘
+
+                                  ...
+
+blockn
+┌──────────┬────────────────┬──────────┬────────────────┬──────────┬────────────────┬─────┐
+│ DumpHead │ DumpTensorHead │ Tensor1  │ DumpTensorHead │ Tensor2  │ DumpTensorHead │ ... │
+└──────────┴────────────────┴──────────┴────────────────┴──────────┴────────────────┴─────┘
+```
 
 **DumpHead的具体信息如下：**
 

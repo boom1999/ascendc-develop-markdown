@@ -104,6 +104,6 @@
     }
     ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >完整样例请参考[Tiling模板编程样例](https://gitee.com/ascend/samples/tree/master/operator/ascendc/0_introduction/6_addtemplate_frameworklaunch)。
 

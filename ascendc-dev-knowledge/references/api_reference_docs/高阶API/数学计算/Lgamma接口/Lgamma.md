@@ -20,9 +20,11 @@
 
 按元素计算x的gamma函数的绝对值并求自然对数，计算公式如下：
 
-![](images/atlasascendc_api_07_0593_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0593_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

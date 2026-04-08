@@ -21,9 +21,15 @@
 
 按元素计算x的gamma函数的绝对值并求自然对数，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346728.png)
+<!-- img2text -->
+$$
+y = \ln \left| \Gamma(x) \right|
+$$
 
-![](figures/zh-cn_formulaimage_0000002523346726.png)
+<!-- img2text -->
+$$
+y = \ln \left( \left| \Gamma(x) \right| \right)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

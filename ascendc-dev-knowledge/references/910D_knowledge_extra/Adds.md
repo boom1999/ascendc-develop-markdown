@@ -21,7 +21,8 @@
 
 矢量内每个元素与标量求和，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306788.png)
+<!-- img2text -->
+$$dst_i = src_i + scalar,\quad i = 0, 1, \ldots, n - 1$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

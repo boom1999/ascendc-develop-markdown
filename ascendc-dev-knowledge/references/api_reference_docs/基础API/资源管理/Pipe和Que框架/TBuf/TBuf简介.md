@@ -9,7 +9,17 @@
 
 TBuf继承自TQueBind父类，继承关系如下：
 
-![](images/atlasascendc_api_07_0161_img_001.png)
+<!-- img2text -->
+```text
+┌────────────┐                         父类
+│  TQueBind  │
+└────────────┘
+       ↑
+       │
+┌────────────┐                         子类
+│    TBuf    │
+└────────────┘
+```
 
 TBuf占用的存储空间通过TPipe进行管理，您可以通过InitBuffer接口为TBuf进行内存初始化操作，之后即可通过Get获取指定长度的Tensor参与计算。
 

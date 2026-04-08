@@ -20,9 +20,15 @@
 
 按元素做反余弦函数计算，计算公式如下：
 
-![](images/atlasascendc_api_07_0504_img_001.png)
+<!-- img2text -->
+```
+          1
+y = arccos ─
+          x
+```
 
-![](images/atlasascendc_api_07_0504_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

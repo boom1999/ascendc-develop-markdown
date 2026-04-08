@@ -21,7 +21,18 @@
 
 输入矢量内的每个元素与标量进行与操作。当输入矢量、标量的数据类型不是bool时，零被视为False，非零数据被视为True。接口中矢量与标量的顺序支持标量在前和标量在后两种场景，其中，标量支持配置为LocalTensor的单点元素。计算公式如下，idx表示LocalTensor单点元素的位置系数：
 
-![](figures/zh-cn_formulaimage_0000002554426777.png)
+<!-- img2text -->
+$$
+dst_i =
+\begin{cases}
+src0_i \land scalar, & \text{标量在后} \\
+scalar \land src1_i, & \text{标量在前}
+\end{cases}
+$$
+
+$$
+scalar = scalar[idx]
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

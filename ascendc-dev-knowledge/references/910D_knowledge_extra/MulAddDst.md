@@ -21,7 +21,8 @@
 
 按元素将src0和src1相乘并和dst相加，将最终结果存放进dst中。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346840.png)
+<!-- img2text -->
+$$dst = src0 \times src1 + dst$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

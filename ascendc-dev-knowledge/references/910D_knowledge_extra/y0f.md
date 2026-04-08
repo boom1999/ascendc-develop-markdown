@@ -21,7 +21,10 @@
 
 获取输入数据x的0阶第二类贝塞尔函数y0的值。
 
-![](figures/zh-cn_formulaimage_0000002554426923.png)
+<!-- img2text -->
+$$
+y = Y_{0}(x)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

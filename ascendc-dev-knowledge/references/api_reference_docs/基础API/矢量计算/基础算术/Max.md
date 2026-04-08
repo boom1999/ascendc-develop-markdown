@@ -20,7 +20,12 @@
 
 按元素求最大值，公式表达如下：
 
-![](images/atlasascendc_api_07_0039_img_001.png)
+<!-- img2text -->
+```text
+         x1, x2, ..., xn
+max =  max {                }
+         y1, y2, ..., yn
+```
 
 #### 函数原型
 

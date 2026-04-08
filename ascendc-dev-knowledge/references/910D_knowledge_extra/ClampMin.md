@@ -21,9 +21,23 @@
 
 将srcTensor中小于scalar的数替换为scalar，大于等于scalar的数保持不变，作为dstTensor输出。
 
-![](figures/zh-cn_formulaimage_0000002554426791.png)
+<!-- img2text -->
+$$
+dstTensor_i =
+\begin{cases}
+srcTensor_i, & \text{if } srcTensor_i \geq scalar \\
+scalar, & \text{otherwise}
+\end{cases}
+$$
 
-![](figures/zh-cn_formulaimage_0000002523346892.png)
+<!-- img2text -->
+$$
+dstTensor_i =
+\begin{cases}
+srcTensor_i, & srcTensor_i \geq scalar \\
+scalar, & srcTensor_i < scalar
+\end{cases}
+$$
 
 ## 函数原型<a name="section11872143332919"></a>
 

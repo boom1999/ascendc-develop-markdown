@@ -21,9 +21,15 @@
 
 按元素做反双曲正弦函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523345224.png)
+<!-- img2text -->
+$$
+y = \operatorname{asinh}(x) = \ln\left(x + \sqrt{x^2 + 1}\right)
+$$
 
-![](figures/zh-cn_formulaimage_0000002523305242.png)
+<!-- img2text -->
+$$
+y = \operatorname{asinh}(x) = \ln \left( x + \sqrt{x^2 + 1} \right)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

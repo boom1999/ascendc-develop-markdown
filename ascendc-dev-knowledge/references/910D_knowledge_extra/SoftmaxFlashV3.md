@@ -23,11 +23,27 @@ SoftmaxFlash增强版本，对应Softmax PASA算法。将输入tensor\[m<sub>0</
 
 -   update为false：
 
-    ![](figures/zh-cn_formulaimage_0000002523346748.png)
+    <!-- img2text -->
+$$
+M_i = \max(x\_{{\rm cnt}_i})
+$$
+
+$$
+S_i = \sum \exp(x\_{{\rm cnt}_i} - M_i)
+$$
+
+$$
+E_i = \exp(x\_{{\rm cnt}_i} - M_i)
+$$
+
+$$
+A_i = \frac{E_i}{S_i}
+$$
 
 -   update为true：
 
-    ![](figures/zh-cn_formulaimage_0000002523306760.png)
+    <!-- img2text -->
+[公式无法识别]
 
 本接口当前只支持ND格式的输入，内部的reduce过程按last轴处理。
 

@@ -23,7 +23,22 @@
 
 计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346798.png)
+<!-- img2text -->
+$$
+dst_i=
+\begin{cases}
+src0_i+src1_i, & mask_i=1 \\
+dst_i, & mask_i=0
+\end{cases}
+$$
+
+$$
+carry_i=
+\begin{cases}
+1, & (uint32\_t)src0_i+(uint32\_t)src1_i>2^{32}-1 \\
+0, & \text{others}
+\end{cases}
+$$
 
 操作carry的示例如下：
 

@@ -21,7 +21,10 @@
 
 获取输入数据的双曲余弦值。
 
-![](figures/zh-cn_formulaimage_0000002554346255.png)
+<!-- img2text -->
+$$
+\cosh x = \frac{e^x + e^{-x}}{2}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

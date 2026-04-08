@@ -21,7 +21,8 @@
 
 获取输入数据a中前n个元素的平方和a\[0\]^2 + a\[1\]^2 + ...+ a\[n-1\]^2的平方根的倒数。
 
-![](figures/zh-cn_formulaimage_0000002523307014.png)
+<!-- img2text -->
+$$\frac{1}{\sqrt{\sum_{i=0}^{n-1} a[i]^2}}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

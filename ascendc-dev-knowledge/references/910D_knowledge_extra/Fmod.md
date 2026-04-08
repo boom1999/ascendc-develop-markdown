@@ -21,9 +21,15 @@
 
 按元素计算两个浮点数a, b相除后的余数。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554425263.png)
+<!-- img2text -->
+$$
+\operatorname{out}_{i} = a_{i} - \operatorname{Trunc}\left(\frac{a_{i}}{b_{i}}\right) \times b_{i}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554425269.png)
+其中，$\operatorname{Trunc}$ 为向零取整操作。
+
+<!-- img2text -->
+$$\operatorname{Fmod}(a, b) = a - \operatorname{Trunc}\left(\frac{a}{b}\right) \times b$$
 
 其中，Trunc为向零取整操作。举例如下：
 

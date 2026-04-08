@@ -21,7 +21,8 @@
 
 获取以2为底，输入数据的对数。
 
-![](figures/zh-cn_formulaimage_0000002554426637.png)
+<!-- img2text -->
+$$\log_2 x = \frac{\ln x}{\ln 2}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

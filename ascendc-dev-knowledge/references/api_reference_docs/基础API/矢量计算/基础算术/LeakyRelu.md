@@ -20,15 +20,89 @@
 
 按元素执行Leaky ReLU（Leaky Rectified Linear Unit）操作，计算公式如下：
 
-![](images/atlasascendc_api_07_0060_img_001.png)
+<!-- img2text -->
+```
+
+
+                 x > 0
+max(x, 0) + negativeSlope * min(x, 0) = {
+                                              x
+                                              negativeSlope * x
+                                            }
+
+                 x ≤ 0
+```
 
 Leaky ReLU带泄露线性整流函数是一种人工神经网络中常用的激活函数，其数学表达式为：
 
-![](images/atlasascendc_api_07_0060_img_002.png)
+<!-- img2text -->
+```
+          y
+          ↑
+          │
+          │                     /
+          │                    /
+          │                   /
+          │                  /
+          │                 /
+──────────┼────────────────────────→ x
+          │
+          │
+          │
+          │
+          │
+```
+
+说明:
+- 图中为 Leaky ReLU 的函数示意：在原点左侧为一条斜率较小的上升直线，右侧为斜率较大的上升直线，两段在原点相连。
 
 和ReLU的区别是：ReLU是将所有的负值都设为零，而Leaky ReLU是给所有负值赋予一个斜率。下图表示了Relu和Leaky ReLU的区别：
 
-![](images/atlasascendc_api_07_0060_img_003.png)![](images/atlasascendc_api_07_0060_img_004.png)
+<!-- img2text -->
+```
+            y
+            ↑
+            │
+            │                          /
+            │                        /
+            │                      /    yᵢ = xᵢ
+            │                    /
+            │                  /
+            │                /
+            │              /
+────────────┼────────────────────────→ x
+ yᵢ = 0     │
+            │
+            │
+            │
+            │
+
+                       ReLU
+```<!-- img2text -->
+```
+                ▲ y
+                │
+                │                         yᵢ = xᵢ
+                │                        /
+                │                       /
+                │                      /
+                │                     /
+────────────────┼────────────────────/────────────► x
+                │                  /
+                │                /
+                │              /
+                │            /
+                │          /
+                │        /
+                │      /
+                │    /
+                │  /
+                │ /
+                └
+             yᵢ = axᵢ
+
+             Leaky ReLU
+```
 
 #### 函数原型
 

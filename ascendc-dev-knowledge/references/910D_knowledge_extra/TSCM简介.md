@@ -63,7 +63,7 @@ que.FreeTensor(a2);</pre>
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >-   TSCM通过using定义TSCM为TQueBind目的地址为TSCM Position时的别名。
 >    -   支持AllocTensor/EnQue/DeQue/FreeTensor接口。必须严格按照AllocTensor-\>EnQue-\>DeQue-\>FreeTensor的操作执行完整的生命周期，且配对使用。
 >    -   但TSCM并不需要支持TQueBind的所有接口。不支持VacantInQue/HasTensorInQue/GetTensorCountInQue/HasIdleBuffer。

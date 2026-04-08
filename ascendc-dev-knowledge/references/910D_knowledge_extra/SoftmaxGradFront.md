@@ -21,7 +21,13 @@
 
 将输入tensor\[m<sub>0</sub>, m<sub>1</sub>, ...m<sub>t</sub>, n\]（t大于等于0）的非尾轴长度相乘的结果看作m，则输入tensor的shape看作\[m, n\]。对输入tensor\[m,n\]按行做gradfront反向计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306858.png)
+<!-- img2text -->
+$$
+\begin{cases}
+d_i = y_i \times \left( dx_i - \sum_{j=1}^{n} \left( y_j \times dx_j \right) \right), & i = 1,2,\ldots,n \\
+n \text{：输入 tensor 按行做 gradfront 反向计算时，每行元素个数}
+\end{cases}
+$$
 
 当输入shape为ND格式时，内部的reduce过程按last轴进行；当输入shape为NZ格式时，内部的reduce过程按照last轴和first轴进行，reduce过程可以参考[SoftMax](SoftMax.md)中的图示说明。
 
@@ -43,7 +49,50 @@ def softmax_grad_front(dx, y, is_fp16=False):
 以float类型，ND格式，shape为\[m, k\]的输入Tensor为例，描述SoftmaxGradFront高阶API内部算法框图，如下图所示。
 
 **图 1**  SoftmaxGradFront算法框图<a name="fig149465713201"></a>  
-![](figures/SoftmaxGradFront算法框图.png "SoftmaxGradFront算法框图")
+<!-- img2text -->
+```text
+┌──────────────┐                           ┌──────────────┐
+│    x[m,k]    │                           │    y[m,k]    │
+└──────────────┘                           └──────────────┘
+        │                                         │
+        │                                         │
+        │    ┌──────────────────────────────────────────────────────┐
+        └───→│                                                      │←───┘
+             │                  ┌──────────────────────┐            │
+             │                  │         mul          │            │
+             │                  │  (x[m,k] * y[m,k])   │            │
+             │                  └──────────────────────┘            │
+             │                             │                        │
+             │                             ↓                        │
+             │                  ┌──────────────────────┐            │
+             │                  │      reducesum       │            │
+             │                  │   ([m,k]->[m,1])     │            │
+             │                  └──────────────────────┘            │
+             │                             │                        │
+             │                             ↓                        │
+             │                  ┌──────────────────────┐            │
+             │                  │      broadcast       │            │
+             │                  │   ([m,1]->[m,8])     │            │
+             │                  └──────────────────────┘            │
+             └───────────────────────────┬──────────────────────────┘
+                                         │
+                                         ↓
+                                  ┌──────────────┐
+                                  │    z[m,8]    │
+                                  └──────────────┘
+
+
+图示:
+输入输出Tensor   ┌──────────────┐
+                │              │
+                └──────────────┘
+
+vector计算      ┌──────────────────────┐
+                │                      │
+                └──────────────────────┘
+
+数据流向        ─────────→
+```
 
 计算过程分为如下几步，均在Vector上进行：
 

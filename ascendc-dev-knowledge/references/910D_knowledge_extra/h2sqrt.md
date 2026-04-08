@@ -21,7 +21,8 @@
 
 获取输入数据x各元素的平方根。
 
-![](figures/zh-cn_formulaimage_0000002554345125.png)
+<!-- img2text -->
+$$y = \sqrt{x}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,10 @@
 
 获取输入数据的反双曲正切值。
 
-![](figures/zh-cn_formulaimage_0000002554426207.png)
+<!-- img2text -->
+$$
+\operatorname{atanh}(x) = \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,10 @@
 
 获取输入数据x的伽马函数值。
 
-![](figures/zh-cn_formulaimage_0000002554426899.png)
+<!-- img2text -->
+$$
+\Gamma(x)=\int_{0}^{\infty} t^{x-1} e^{-t}\,dt,\quad x>0
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,14 @@
 
 提供灵活标量位置的接口，支持标量在前和标量在后两种场景。其中标量输入支持配置LocalTensor单点元素，计算公式如下，idx表示LocalTensor单点元素的位置系数。
 
-![](figures/zh-cn_formulaimage_0000002523347006.png)
+<!-- img2text -->
+$$
+\text{dstLocal}[i] =
+\begin{cases}
+\text{src0Local}[i] \,\text{op}\, \text{src1Local}[\text{idx}], & \text{scalar at back} \\
+\text{src0Local}[\text{idx}] \,\text{op}\, \text{src1Local}[i], & \text{scalar at front}
+\end{cases}
+$$
 
 支持多种比较模式：
 

@@ -21,7 +21,14 @@
 
 获取两个输入数据中的最小值。
 
-![](figures/zh-cn_formulaimage_0000002523306832.png)
+<!-- img2text -->
+$$
+dst_i =
+\begin{cases}
+x_i, & \text{if } x_i < y_i \\
+y_i, & \text{otherwise}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

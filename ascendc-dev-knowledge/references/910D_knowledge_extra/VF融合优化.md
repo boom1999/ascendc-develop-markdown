@@ -10,11 +10,70 @@ VF融合优化可分为三个阶段：VF浅度融合、VF深度融合和VF内自
 
 **VF浅度融合**：编译器首先会分析两个VF的控制流是否等价，构建Cost Model分析是否有正向收益，如果满足VF融合条件，将VF外部的控制流融入到VF内，将VF外的Software Loop硬化成VF内的Hardware Loop，然后使能VF自动融合的基础能力，将两个VF融合成一个VF，为后续的VF深度融合提供基础。
 
-![](figures/VF融合.png)
+<!-- img2text -->
+```text
+┌───────────────────────┐      ┌────────────────────────────┐      ┌────────────────────────────┐      ┌────────────────────────────┐
+│ for ( ) {             │      │ VF外控制流的融             │      │ 构造VF启动融合             │      │ VF1_2 {                    │
+│   VF1 {               │ ───→ │ 入到VF内                   │ ───→ │ 的前置特性                 │ ───→ │   //May be optimized to    │
+│     ....              │      └────────────────────────────┘      └────────────────────────────┘      │   Hardware Loop            │
+│   }                   │                    ↘                                                    ↘     │   for ( ) {                │
+│ }                     │                     ↘                                                     ↘    │   }                        │
+│                       │                      ↘                                                      │  │   .... // Insert Membar   │
+│ .... // Main Scalar Code│                      ↘                                                     │  │   .... // Vec Scalar Code │
+│ for ( ) {             │                       ▼                                                     │  │   for ( ) {               │
+│   VF2 {               │      ┌────────────────────────────┐                                         │  │     ....                  │
+│     ....              │      │ VF1 {                     │                                         │  │   }                       │
+│   }                   │      │   //May be optimized to   │                                         │  │ }                         │
+│ }                     │      │   Hardware Loop           │                                         │  └────────────────────────────┘
+└───────────────────────┘      │   for ( ) {              │                                         │
+                               │     ....                 │                                         │
+                               │   }                      │                                         │
+                               │                          │                                         │
+                               │   .... // Main Scalar Code│                                         │
+                               │   VF2 {                  │                                         │
+                               │   for ( ) {              │                                         │
+                               │     ....                 │                                         │
+                               │   }                      │                                         │
+                               │   }                      │                                         │
+                               └────────────────────────────┘                                         │
+                                                                                                     │
+                               ┌────────────────────────────┐                                         │
+                               │ 融合条件：                 │─────────────────────────────────────────┘
+                               │ 1. 两个VF控制流等         │
+                               │ 价2. VF中嵌套循环         │
+                               │ 以软件&vector指令         │
+                               │ 3. Cost Model判断         │
+                               │ 融合后产生正收益          │
+                               └────────────────────────────┘
+```
 
 **VF深度融合**：VF深度融合会继续对VF内的Hardware Loop进行融合，从而减少Hardware Loop的启动开销，并且极大地减少冗余的Load/Store操作，充分复用寄存器。
 
-![](figures/VF融合2.png)
+<!-- img2text -->
+```
+┌──────────────────────────────┐         融合Hardware Loop         ┌──────────────────────────────┐         优化Ld/St指令         ┌──────────────────────────────┐
+│ VF1_2 {                      │ ───────────────────────────────→ │ VF1_2 {                      │ ─────────────────────────→ │ VF1_2 {                      │
+│   for (i) {                  │                                  │   for (i) {                  │                           │   for (i) {                  │
+│     vecA = load(AddrA[i])    │                                  │     vecA = load(AddrA[i])    │                           │     vecA = load(AddrA[i])    │
+│     vecB = load(AddrB[i])    │                                  │     vecB = load(AddrB[i])    │                           │     vecB = load(AddrB[i])    │
+│     vecC = vecA + vecB       │                                  │     vecC = vecA + vecB       │                           │     vecC = vecA + vecB       │
+│     store(AddrDst[i], vecC)  │                                  │     store(AddrDst[i], vecC)  │                           │     store(AddrDst[i], vecC)  │
+│   }                          │                                  │     //...Loop Adjacent Code  │                           │     //...Loop Adjacent Code  │
+│   //...Loop Adjacent Code    │                                  │     vecC = load(AddrDst[i])  │                           │     vecC = load(AddrDst[i])  │
+│   for (i) {                  │                                  │     vecD = load(AddrD[i])    │                           │     vecD = load(AddrD[i])    │
+│     vecC = load(AddrDst[i])  │                                  │     vecE = vecC * vecD       │                           │     vecE = vecC * vecD       │
+│     vecD = load(AddrD[i])    │                                  │     store(AddrDst[i], VecE)  │                           │     store(AddrDst[i], VecE)  │
+│     vecE = vecC * vecD       │                                  │   }                          │                           │   }                          │
+│     store(AddrDst[i], VecE)  │                                  │ }                            │                           │ }                            │
+│   }                          │                                  └──────────────────────────────┘                           └──────────────────────────────┘
+│ }                            │
+└──────────────────────────────┘
+
+
+右图中被删除/优化的指令：
+  store(AddrDst[i], vecC)
+  vecC = load(AddrDst[i])
+```
 
 **VF内自动同步**：编译器会精准地插入必要的同步指令，删除冗余的同步指令，极大地释放了硬件OOO（Out of Order）能力。用户无需手动插入同步指令，极大地降低了用户的编码难度。
 

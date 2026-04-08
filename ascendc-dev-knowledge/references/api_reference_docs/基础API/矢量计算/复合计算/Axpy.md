@@ -20,7 +20,19 @@
 
 源操作数src中每个元素与标量求积后和目的操作数dst中的对应元素相加，计算公式如下：
 
-![](images/atlasascendc_api_07_0063_img_001.png)
+<!-- img2text -->
+```
+
+
+
+      dstLocal[i] = srcLocal[i] × value + dstLocal[i]
+
+
+```
+
+说明:
+- 图中公式表示：源操作数 `src` 中每个元素与标量 `value` 相乘后，再与目的操作数 `dst` 中对应元素相加，结果写入 `dstLocal[i]`
+- 可读作：`dstLocal[i] = srcLocal[i] * value + dstLocal[i]`
 
 #### 函数原型
 

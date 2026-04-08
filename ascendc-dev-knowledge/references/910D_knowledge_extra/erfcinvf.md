@@ -21,7 +21,8 @@
 
 获取输入数据的逆互补误差函数值。
 
-![](figures/zh-cn_formulaimage_0000002523306758.png)
+<!-- img2text -->
+$$y = \operatorname{erfcinv}(x)$$
 
 ## 函数原型<a name="section1188715215306"></a>
 

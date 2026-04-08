@@ -1,6 +1,6 @@
 # SetReduceDataTypeAbility（废弃）<a name="ZH-CN_TOPIC_0000002554424633"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >该接口废弃，并将在后续版本移除，请不要使用该接口。请使用[SetReduceType](SetReduceType.md)进行设置。
 
 ## 产品支持情况<a name="section1586581915393"></a>

@@ -21,7 +21,14 @@
 
 获取输入数据的双曲反余弦值。
 
-![](figures/zh-cn_formulaimage_0000002523307026.png)
+<!-- img2text -->
+$$
+\operatorname{acosh}(x)=
+\begin{cases}
+\ln\!\left(x+\sqrt{x^2-1}\right), & x \ge 1 \\
+\mathrm{NaN}, & x<1
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

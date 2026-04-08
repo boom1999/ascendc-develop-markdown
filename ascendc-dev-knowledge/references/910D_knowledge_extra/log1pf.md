@@ -21,7 +21,8 @@
 
 获取以e为底，输入数据加1的对数。
 
-![](figures/zh-cn_formulaimage_0000002554426223.png)
+<!-- img2text -->
+$$\log(1+x)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

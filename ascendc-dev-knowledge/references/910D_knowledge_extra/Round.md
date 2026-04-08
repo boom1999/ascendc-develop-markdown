@@ -21,7 +21,14 @@
 
 将输入的元素四舍五入到最接近的整数，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426921.png)
+<!-- img2text -->
+$$
+\operatorname{round}(x)=
+\begin{cases}
+\left\lfloor x \right\rfloor, & x-\left\lfloor x \right\rfloor < 0.5 \\
+\left\lceil x \right\rceil, & x-\left\lfloor x \right\rfloor \geq 0.5
+\end{cases}
+$$
 
 举例如下：
 

@@ -20,11 +20,15 @@
 
 按元素做正弦函数计算，计算公式如下：
 
-![](images/atlasascendc_api_07_0500_img_001.png)
+<!-- img2text -->
+```
+Sin(x) = x - x³ / 3! + x⁵ / 5! - x⁷ / 7! + …
+```
 
 Sin(x)的泰勒展开式为：
 
-![](images/atlasascendc_api_07_0500_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

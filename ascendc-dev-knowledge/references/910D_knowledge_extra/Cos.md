@@ -21,11 +21,17 @@
 
 按元素做三角函数余弦运算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346434.png)
+<!-- img2text -->
+$$
+y = \cos(x)
+$$
 
 Cos\(x\)的泰勒展开式为：
 
-![](figures/zh-cn_formulaimage_0000002523306450.png)
+<!-- img2text -->
+$$
+\cos(x)=1-\frac{x^{2}}{2!}+\frac{x^{4}}{4!}-\cdots+(-1)^{n}\frac{x^{2n}}{(2n)!}+\cdots
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

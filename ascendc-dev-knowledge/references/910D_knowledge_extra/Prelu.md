@@ -21,7 +21,14 @@
 
 源操作数src0大于0的情况下直接将src0写入目的操作数dst，否则将源操作数src0\*src1的结果写入dst。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554425025.png)
+<!-- img2text -->
+$$
+dst =
+\begin{cases}
+src0, & src0 > 0 \\
+src0 \times src1, & src0 \leq 0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

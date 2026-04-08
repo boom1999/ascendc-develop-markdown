@@ -21,9 +21,15 @@
 
 按元素做逻辑回归Sigmoid，计算公式如下 ：
 
-![](figures/zh-cn_formulaimage_0000002523306896.png)
+<!-- img2text -->
+$$
+y = \frac{1}{1 + e^{-x}}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554346823.png)
+<!-- img2text -->
+$$
+dst = \frac{1}{1 + e^{-src}}
+$$
 
 ## 函数原型<a name="section19670529163214"></a>
 

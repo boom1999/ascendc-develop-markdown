@@ -20,11 +20,13 @@
 
 SwiGLU是采用Swish作为激活函数的GLU变体。具体计算公式如下：
 
-![](images/atlasascendc_api_07_0776_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
 其中Swish激活函数的计算公式如下（β为常量）：
 
-![](images/atlasascendc_api_07_0776_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

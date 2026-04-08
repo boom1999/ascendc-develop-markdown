@@ -21,7 +21,8 @@
 
 获取输入数据x的1阶第二类贝塞尔函数y1的值。
 
-![](figures/zh-cn_formulaimage_0000002523346120.png)
+<!-- img2text -->
+$$y_1(x)=\frac{2}{\pi}\left(\ln\left(\frac{x}{2}\right)J_1(x)-\frac{1}{x}\right)+\frac{1}{\pi}\sum_{k=0}^{\infty}\frac{(-1)^k\left(\psi(k+1)+\psi(k+2)\right)}{k!(k+1)!}\left(\frac{x}{2}\right)^{2k+1}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

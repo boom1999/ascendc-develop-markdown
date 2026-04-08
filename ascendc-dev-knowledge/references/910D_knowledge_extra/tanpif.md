@@ -21,7 +21,8 @@
 
 获取输入数据与π相乘的正切值。
 
-![](figures/zh-cn_formulaimage_0000002554346739.png)
+<!-- img2text -->
+$$\tan(\pi x)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

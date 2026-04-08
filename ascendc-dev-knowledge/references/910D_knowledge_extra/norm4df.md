@@ -21,7 +21,8 @@
 
 获取输入数据a、b、c、d的平方和a^2 + b^2+ c^2+ d^2的平方根。
 
-![](figures/zh-cn_formulaimage_0000002523346306.png)
+<!-- img2text -->
+$$\sqrt{a^2+b^2+c^2+d^2}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

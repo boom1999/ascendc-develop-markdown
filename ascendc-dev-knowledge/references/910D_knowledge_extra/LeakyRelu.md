@@ -21,15 +21,65 @@
 
 按元素执行Leaky ReLU（Leaky Rectified Linear Unit）操作，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426217.png)
+<!-- img2text -->
+$$
+\operatorname{LeakyReLU}(x)=
+\begin{cases}
+x, & x \geq 0 \\
+\text{negative\_slope} \times x, & x < 0
+\end{cases}
+$$
 
 Leaky ReLU带泄露线性整流函数是一种人工神经网络中常用的激活函数，其数学表达式为：
 
-![](figures/zh-cn_formulaimage_0000002554346257.png)
+<!-- img2text -->
+$$
+\operatorname{LeakyReLU}(x)=
+\begin{cases}
+x, & x \geq 0 \\
+\text{negative\_slope} \times x, & x < 0
+\end{cases}
+$$
 
 和ReLU的区别是：ReLU是将所有的负值都设为零，而Leaky ReLU是给所有负值赋予一个斜率。下图表示了Relu和Leaky ReLU的区别：
 
-![](figures/zh-cn_image_0000002523346318.png) ![](figures/zh-cn_image_0000002523346322.png)
+<!-- img2text -->
+```
+            y
+            ↑
+            │
+            │                 /
+            │               /
+            │             /     yᵢ = xᵢ
+            │           /
+            │         /
+────────────┼────────────────────→ x
+  yᵢ = 0    │
+            │
+            │
+            │
+
+           ReLU
+``` <!-- img2text -->
+```
+                ▲
+                │ y
+                │
+                │                    /
+                │                   /
+                │                  /      yᵢ = xᵢ
+                │                 /
+                │                /
+────────────────┼───────────────/────────────────► x
+                │             /
+                │           _/
+                │        __/
+                │     __/
+                │  __/          yᵢ = axᵢ
+                │_/
+
+             Leaky ReLU
+```
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

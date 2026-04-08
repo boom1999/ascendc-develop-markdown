@@ -22,7 +22,10 @@
 
 计算公式如下：
 
-![](images/atlasascendc_api_07_0056_img_001.png)
+<!-- img2text -->
+```
+dst = max(src, scalar)
+```
 
 #### 函数原型
 

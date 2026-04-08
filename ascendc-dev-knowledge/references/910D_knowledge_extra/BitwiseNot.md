@@ -21,7 +21,10 @@
 
 逐比特对输入进行取反。
 
-![](figures/zh-cn_formulaimage_0000002523345620.png)
+<!-- img2text -->
+$$
+y = \sim x
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

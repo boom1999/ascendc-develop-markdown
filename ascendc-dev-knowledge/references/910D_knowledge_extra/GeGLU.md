@@ -21,19 +21,28 @@
 
 GeGLU是采用GELU作为激活函数的GLU变体。具体计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346489.png)
+<!-- img2text -->
+$$
+y = \operatorname{GELU}(x_1) \otimes x_2
+$$
 
 其中GELU激活函数的计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346491.png)
+<!-- img2text -->
+$$\operatorname{GELU}(x)=xP(X\leq x)=x\Phi(x)$$
 
-上述公式中的erf为误差函数：![](figures/zh-cn_formulaimage_0000002554426451.png)
+上述公式中的erf为误差函数：<!-- img2text -->
+$$\operatorname{GELU}(x)=xP(X\leq x)=x\Phi(x)=\frac{x}{2}\left(1+\operatorname{erf}\left(\frac{x}{\sqrt{2}}\right)\right)$$
 
-误差函数没有解析表达式，按照业界普遍使用的tanh近似表达式：![](figures/zh-cn_formulaimage_0000002523306568.png)
+误差函数没有解析表达式，按照业界普遍使用的tanh近似表达式：<!-- img2text -->
+$$
+\operatorname{erf}(x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x}e^{-t^{2}}\,dt
+$$
 
 将GELU近似公式代入可得GeGLU表达式为：
 
-![](figures/zh-cn_formulaimage_0000002523306566.png)
+<!-- img2text -->
+$$\operatorname{GeGLU}(x_0,x_1)=x_0\times \operatorname{GELU}(x_1)=x_0\times \frac{x_1}{2}\left(1+\tanh\left(\sqrt{\frac{2}{\pi}}\left(x_1+0.044715x_1^3\right)\right)\right)$$
 
 其中_a_=-0.0713548162726,  _b_=2.2363860002236e1，x1和x0代表srcTensor1和srcTensor0中的元素。
 

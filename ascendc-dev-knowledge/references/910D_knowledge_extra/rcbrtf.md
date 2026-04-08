@@ -21,7 +21,8 @@
 
 获取输入数据x的立方根的倒数。
 
-![](figures/zh-cn_formulaimage_0000002523346780.png)
+<!-- img2text -->
+$y=\dfrac{1}{\sqrt[3]{x}}$
 
 ## 函数原型<a name="section14785247101810"></a>
 

@@ -21,9 +21,13 @@
 
 按元素计算两个输入相乘后与第三个输入相加的结果。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346700.png)
+<!-- img2text -->
+$$y = x_1 \times x_2 + x_3$$
 
-![](figures/zh-cn_formulaimage_0000002523306712.png)
+<!-- img2text -->
+$$
+y = x_1 \times x_2 + x_3
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

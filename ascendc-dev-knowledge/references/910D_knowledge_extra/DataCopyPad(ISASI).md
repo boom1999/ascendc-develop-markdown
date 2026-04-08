@@ -348,7 +348,58 @@
         -   blockLen+leftPadding+rightPadding满足32字节对齐，isPad为false，左右两侧填充的数据值会默认为随机值；否则为paddingValue。此处示例中，leftPadding、rightPadding均为0，则不填充。
         -   blockLen+leftPadding+rightPadding不满足32字节对齐时，框架会填充一些假数据dummy，保证左右填充的数据和blockLen、假数据为32字节对齐。leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值；否则为paddingValue。
 
-        ![](figures/datacopypad1.png)
+        <!-- img2text -->
+```text
+src(GM)
+┌──────────┬──────────┬─────────────┬──────────┬──────────┬─────────────┐
+│ 32Bytes  │ 32Bytes  │   1Byte     │ 32Bytes  │ 32Bytes  │   1Byte     │
+└──────────┴──────────┴─────────────┴──────────┴──────────┴─────────────┘
+<─────────────────────>
+    blockLen = 64
+                      <───────────>
+                      srcStride = 1
+
+
+dst (VECIN/VECOUT)
+blockLen+leftPadding+rightPadding32字节对齐、leftPadding/rightPadding均为0
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 32Bytes  │ 32Bytes  │ 32Bytes  │ 32Bytes  │ 32Bytes  │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+    blockLen = 64
+                      <──────────>
+                      dstStride = 1
+
+
+dst (VECIN/VECOUT)
+blockLen+leftPadding+rightPadding不满足32字节对齐、leftPadding/rightPadding不为0、LP+RP+dummy=32Bytes
+┌────┬──────────┬──────────┬────┬────────┬──────────┬────┬──────────┐
+│ LP │ 32Bytes  │ 32Bytes  │ RP │ dummy  │ 32Bytes  │ LP │ 32Bytes  │
+└────┴──────────┴──────────┴────┴────────┴──────────┴────┴──────────┘
+<────────────────────────────>
+         blockLen = 64
+                                <────────────────>
+                                dstStride = 1
+
+                 ↘                         ↑
+                  ↘                       │
+                   ↘                      │
+                    └──────→ isPad=true:  paddingValue
+                           isPad=false: 随机值
+```
+
+- blockLen=64: src 覆盖第1-2块(32Bytes+32Bytes)
+- srcStride=1: src 第1组与第2组之间间隔，即第3块(1Byte)
+- blockLen=64: dst 覆盖第1-2块(32Bytes+32Bytes)
+- dstStride=1: dst 第1组与第2组之间间隔，即第3块(32Bytes，1个dataBlock)
+- blockLen=64: 下方 dst 覆盖第1-4块(LP+32Bytes+32Bytes+RP)
+- dstStride=1: 下方 dst 第1组与第2组之间间隔，即第5-6块(dummy+32Bytes)
+
+说明:
+- 图中下方示意中，LP、RP、dummy 对应的取值由 isPad 控制：
+  - isPad=true: paddingValue
+  - isPad=false: 随机值
+- 下方示意中的斜向箭头表示 isPad 的取值同时影响 LP、RP 和 dummy 的填充值。
 
     -   配置示例2：
 
@@ -356,7 +407,53 @@
         -   blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding、rightPadding均为0：dummy会默认填充待搬运数据块的第一个元素值。
         -   blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值；否则为paddingValue。
 
-        ![](figures/datacopypad2.png)
+        <!-- img2text -->
+```text
+src(GM)
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 15Bytes  │  1Byte   │ 32Bytes  │ 15Bytes  │  1Byte   │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+     blockLen = 47
+                      <─────────>
+                      srcStride = 1
+
+dst (VECIN/VECOUT)  leftPadding/RightPadding均为0  blockLen+dummy = 64Bytes
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 15Bytes  │  dummy   │ 32Bytes  │ 32Bytes  │ 15Bytes  │ 17Bytes  │ 32Bytes  │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+     blockLen = 47
+                                  <─────────────────────>
+                                  dstStride = 1
+                      ↑
+                      待搬运数据块第一个元素值
+
+dst (VECIN/VECOUT)  leftPadding, RightPadding均不为0  LP+RP+blockLen+dummy=64Bytes
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│    LP    │ 32Bytes  │ 15Bytes  │    RP    │  dummy   │ 32Bytes  │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<──────────────────────────────>
+         blockLen = 47
+                                  <─────────────────────>
+                                  dstStride = 1
+↑                                  ↑
+│                                  │
+└──────────────→ isPad=true: paddingValue
+└────────────────────────────────→ isPad=false: 随机值
+```
+
+- blockLen=47: src 覆盖第1-2块(32Bytes+15Bytes)
+- srcStride=1: src 第1组与第2组之间间隔，即第3块(1Byte)
+- blockLen=47: dst (leftPadding/RightPadding均为0) 覆盖第1-2块(32Bytes+15Bytes)
+- dstStride=1: dst (leftPadding/RightPadding均为0) 第1组与第2组之间间隔，即第4块(32Bytes，1个dataBlock)
+- blockLen=47: dst (leftPadding, RightPadding均不为0) 覆盖第1-3块中的有效搬运部分(LP后面的32Bytes+15Bytes)
+- dstStride=1: dst (leftPadding, RightPadding均不为0) 第1组与第2组之间间隔，即第6块(32Bytes，1个dataBlock)
+
+说明:
+- 第2个 dst 图中，dummy 填充值为“待搬运数据块第一个元素值”。
+- 第3个 dst 图中，LP 表示 leftPadding，RP 表示 RightPadding。
+- 第3个 dst 图中，LP、RP、dummy 区域：isPad=true 时为 paddingValue；isPad=false 时为随机值。
 
     -   配置示例3：
 
@@ -364,16 +461,121 @@
         -   blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding、rightPadding均为0：dummy会默认填充待搬运数据块的第一个元素值。
         -   blockLen+leftPadding+rightPadding不满足32字节对齐，leftPadding/rightPadding不为0：若isPad为false，左右两侧填充的数据值和dummy值均为随机值；否则为paddingValue。
 
-        ![](figures/datacopypad.png)
+        <!-- img2text -->
+```text
+src(GM)
+┌──────────┬──────────┐
+│ 32Bytes  │ 16Bytes  │
+└──────────┴──────────┘
+<─────────────────────>
+      blockLen = 48
+<─────────────────────>
+     srcStride = -48
+
+
+dst (VECIN/VECOUT)  leftPadding/RightPadding均为0  blockLen+dummy = 64Bytes
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 16Bytes  │  dummy   │ 32Bytes  │ 32Bytes  │ 16Bytes  │ 16Bytes  │ 32Bytes  │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+      blockLen = 48
+                       <─────────────────────>
+                           dstStride = 1
+
+                dummy
+                  ↑
+        待搬运数据块第一个元素值
+
+
+dst (VECIN/VECOUT)  leftPadding/RightPadding不为0  LP+RP+blockLen+dummy=64Bytes
+┌────┬──────────┬──────────┬────┬──────────┬──────────┬────┬──────────┐
+│ LP │ 32Bytes  │ 16Bytes  │ RP │  dummy   │ 32Bytes  │ LP │ 32Bytes  │
+└────┴──────────┴──────────┴────┴──────────┴──────────┴────┴──────────┘
+<─────────────────────────>
+       blockLen = 48
+                              <─────────────────────>
+                                  dstStride = 1
+
+LP ───────↘
+RP ──↘     ↘
+      ↘     ↓
+       ↘  dummy
+          ↑
+isPad=true: paddingValue
+isPad=false: 随机值
+```
+
+- blockLen=48: src 覆盖第1-2块(32Bytes+16Bytes)
+- srcStride=-48: src 相邻数据块之间间隔-48字节，相当于每次传输的连续数据块都是同一块
+- blockLen=48: dst(leftPadding/RightPadding均为0) 覆盖第1-2块(32Bytes+16Bytes)
+- dstStride=1: dst(leftPadding/RightPadding均为0) 第1组与第2组之间间隔，即第3块(dummy)
+- blockLen=48: dst(leftPadding/RightPadding不为0) 覆盖第2-3块(32Bytes+16Bytes)
+- dstStride=1: dst(leftPadding/RightPadding不为0) 第1组与第2组之间间隔，即第4-5块(RP+dummy)
+- dummy: 待搬运数据块第一个元素值
+- LP: leftPadding
+- RP: RightPadding
+- isPad=true: LP、RP和dummy填充为paddingValue
+- isPad=false: LP、RP填充为随机值；dummy在图示语境下标注为随机值
 
 -   <a name="li1526352412213"></a>**VECIN/VECOUT**-\>**GM**
     -   当每个连续传输数据块长度blockLen为32字节对齐时，下图呈现了需要传入的DataCopyParams示例，blockLen为64，每个连续传输数据块包含64字节；srcStride为1，因为源操作数的逻辑位置为VECIN/VECOUT，srcStride的单位为dataBlock\(32字节\)，也就是说源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，因为目的操作数的逻辑位置为GM，dstStride的单位为字节，也就是说目的操作数相邻数据块之间间隔1字节。
 
-        ![](figures/datacopypad3.png)
+        <!-- img2text -->
+```text
+src (VECIN/VECOUT)
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 32Bytes  │ 32Bytes  │ 32Bytes  │ 32Bytes  │ 32Bytes  │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+    blockLen = 64
+                      <─────────────>
+                      srcStride = 1
+
+dst(GM)
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 32Bytes  │  1Byte   │ 32Bytes  │ 32Bytes  │  1Byte   │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+    blockLen = 64
+                      <─────────>
+                      dstStride = 1
+```
+
+- blockLen=64: src 覆盖第1-2块(32Bytes+32Bytes)
+- srcStride=1: src 第1组与第2组之间间隔，即第3块(32Bytes，1个dataBlock)
+- blockLen=64: dst 覆盖第1-2块(32Bytes+32Bytes)
+- dstStride=1: dst 第1组与第2组之间间隔，即第3块(1Byte)
 
     -   当每个连续传输数据块长度blockLen不满足32字节对齐，由于Unified Buffer要求32字节对齐，框架在搬出时会自动补充一些假数据来保证对齐，但在当搬到GM时会自动将填充的假数据丢弃掉。下图呈现了该场景下需要传入的DataCopyParams示例和假数据补齐的原理。blockLen为47，每个连续传输数据块包含47字节，不满足32字节对齐；srcStride为1，表示源操作数相邻数据块之间间隔1个dataBlock；dstStride为1，表示目的操作数相邻数据块之间间隔1字节。框架在搬出时会自动补充17字节的假数据来保证对齐，搬到GM时再自动将填充的假数据丢弃掉。
 
-        ![](figures/datacopypad4.png)
+        <!-- img2text -->
+```text
+src (VECIN/VECOUT)
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 15Bytes  │ 17Bytes  │ 32Bytes  │ 32Bytes  │ 15Bytes  │ 17Bytes  │ 32Bytes  │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+     blockLen = 47
+                      <──────────>
+                         dummy
+                                 <─────────────>
+                                  srcStride = 1
+
+dst (GM)
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ 32Bytes  │ 15Bytes  │  1Byte   │ 32Bytes  │ 15Bytes  │  1Byte   │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+<─────────────────────>
+     blockLen = 47
+                      <──────────>
+                      dstStride = 1
+```
+
+- blockLen=47: src 覆盖第1-2块(32Bytes+15Bytes)
+- dummy: src 覆盖第3块(17Bytes)
+- srcStride=1: src 第1组与第2组之间间隔，即第4块(32Bytes，1个dataBlock)
+- blockLen=47: dst 覆盖第1-2块(32Bytes+15Bytes)
+- dstStride=1: dst 第1组与第2组之间间隔，即第3块(1Byte)
 
 -   <a name="li1475016332217"></a>**VECIN/VECOUT-\>TSCM**
 
@@ -398,7 +600,71 @@
         -   **dstNzMatrixStride**为相邻NZ矩阵之间的元素个数，因为仅涉及1个NZ矩阵，所以可以填为1。
 
     **图 1**  VECIN/VECOUT-\>TSCM搬运示意图<a name="fig9329040132719"></a>  
-    ![](figures/VECIN-VECOUT--TSCM搬运示意图.png "VECIN-VECOUT--TSCM搬运示意图")
+    <!-- img2text -->
+```text
+src ND VECIN/VECOUT                          datablock 16个half类型元素
+┌──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│  A1  │  A2  │  A3  │  A4  │  A5  │  A6  │  A7  │
+├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│  B1  │  B2  │  B3  │  B4  │  B5  │  B6  │  B7  │
+├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│  C1  │  C2  │  C3  │  C4  │  C5  │  C6  │  C7  │
+└──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+                         │
+                         ▼
+中间存储 ND GM
+┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│  A1  │  A2  │  A3  │  A4  │  A5  │  A6  │      │      │
+├──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│  B1  │  B2  │  B3  │  B4  │  B5  │  B6  │      │      │
+├──────┼──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│  C1  │  C2  │  C3  │  C4  │  C5  │  C6  │      │      │
+└──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
+                         │
+                         ▼
+dst NZ TSCM
+┌──────┬──────┬──────┬──────┬──────┬──────┐
+│  A1  │  A2  │  A3  │  A4  │  A5  │  A6  │
+├──────┼──────┼──────┼──────┼──────┼──────┤
+│      │      │      │      │      │      │
+├──────┼──────┼──────┼──────┼──────┼──────┤
+│  B1  │  B2  │  B3  │  B4  │  B5  │  B6  │
+├──────┼──────┼──────┼──────┼──────┼──────┤
+│      │      │      │      │      │      │
+├──────┼──────┼──────┼──────┼──────┼──────┤
+│  C1  │  C2  │  C3  │  C4  │  C5  │  C6  │
+├──────┼──────┼──────┼──────┼──────┼──────┤
+│      │      │      │      │      │      │
+└──────┴──────┴──────┴──────┴──────┴──────┘
+
+映射关系（ND GM → dst NZ TSCM）:
+A1 → 第1行第1列
+A2 → 第1行第2列
+A3 → 第1行第3列
+A4 → 第1行第4列
+A5 → 第1行第5列
+A6 → 第1行第6列
+
+B1 → 第3行第1列
+B2 → 第3行第2列
+B3 → 第3行第3列
+B4 → 第3行第4列
+B5 → 第3行第5列
+B6 → 第3行第6列
+
+C1 → 第5行第1列
+C2 → 第5行第2列
+C3 → 第5行第3列
+C4 → 第5行第4列
+C5 → 第5行第5列
+C6 → 第5行第6列
+```
+
+说明:
+- src ND VECIN/VECOUT 中包含 A1~A7、B1~B7、C1~C7。
+- 中间存储 ND GM 仅保留 A1~A6、B1~B6、C1~C6，后两列为空。
+- dst NZ TSCM 为 NZ 排布：每一行有效数据之间插入一空行，因此 A/B/C 三行数据分别落在第1/3/5行，第2/4/6行为留白。
+- 图中斜箭头较密集，已用下方“映射关系”逐项精确表示。
 
 -   <a name="li1975762118172"></a>搬运模式的配置示例
     -   Normal模式
@@ -413,7 +679,49 @@
 
         blockLen \* blockCount + leftPadding + rightPadding 满足32字节对齐，isPad为false，左右两侧填充的数据值会默认为随机值，否则为paddingValue。此处示例中，leftPadding为0，rightPadding为16，在最后一个数据块右侧填充16字节。目的操作数的总长度为160字节。
 
-        ![](figures/paddingMode.png)
+        <!-- img2text -->
+```text
+src(GM)
+┌────────────────────┬────────────────────┬────────────────────┐
+│      48Bytes       │      48Bytes       │      48Bytes       │
+└────────────────────┴────────────────────┴────────────────────┘
+<───────────────────>
+   blockLen = 48
+                    <>
+                 srcStride = 0
+<────────────────────────────────────────────────────────────>
+                         blockCount = 3
+
+
+Normal
+dst (VECIN/VECOUT)
+
+                 paddingValue
+                      ↓
+┌────────────────────┬────────────┬────────────────────┬────────────┬────────────────────┬────────────┐
+│      48Bytes       │  16Bytes   │      48Bytes       │  16Bytes   │      48Bytes       │  16Bytes   │
+└────────────────────┴────────────┴────────────────────┴────────────┴────────────────────┴────────────┘
+<───────────────────>
+   blockLen = 48
+
+leftPadding = 0
+rightPadding = 16
+
+
+Compact
+dst (VECIN/VECOUT)
+
+                                                    paddingValue
+                                                         ↓
+┌────────────────────┬────────────────────┬────────────────────┬────────────┐
+│      48Bytes       │      48Bytes       │      48Bytes       │  16Bytes   │
+└────────────────────┴────────────────────┴────────────────────┴────────────┘
+<───────────────────>
+   blockLen = 48
+
+leftPadding = 0
+rightPadding = 16
+```
 
 ## 返回值说明<a name="section640mcpsimp"></a>
 

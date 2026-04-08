@@ -21,7 +21,8 @@
 
 逐比特对两个输入进行或操作。
 
-![](figures/zh-cn_formulaimage_0000002523305554.png)
+<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,8 @@
 
 计算以2为底，输入数据的对数，并对结果向下取整，返回浮点数。
 
-![](figures/zh-cn_formulaimage_0000002523346808.png)
+<!-- img2text -->
+$$\log_b(x)=\left\lfloor \log_2(|x|)\right\rfloor$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

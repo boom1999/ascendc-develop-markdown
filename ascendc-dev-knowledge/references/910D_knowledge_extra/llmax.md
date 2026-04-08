@@ -21,7 +21,8 @@
 
 获取两个输入数据中的最大值。
 
-![](figures/zh-cn_formulaimage_0000002554345903.png)
+<!-- img2text -->
+$$dst = \max(src0, src1)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

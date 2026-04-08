@@ -21,7 +21,10 @@
 
 按元素进行取反操作。当输入的数据类型不是bool时，零被视为False，非零数据被视为True。
 
-![](figures/zh-cn_formulaimage_0000002523346830.png)
+<!-- img2text -->
+$$
+\text{out}_{i}=\neg \text{input}_{i}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

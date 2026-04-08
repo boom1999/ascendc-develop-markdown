@@ -21,9 +21,13 @@
 
 按元素做双曲正弦函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426699.png)
+<!-- img2text -->
+$$y = \sinh(x) = \frac{e^{x} - e^{-x}}{2}$$
 
-![](figures/zh-cn_formulaimage_0000002523306814.png)
+<!-- img2text -->
+$$
+y_i = \sinh(x_i) = \frac{e^{x_i} - e^{-x_i}}{2}
+$$
 
 ## 函数原型<a name="section12337174753016"></a>
 

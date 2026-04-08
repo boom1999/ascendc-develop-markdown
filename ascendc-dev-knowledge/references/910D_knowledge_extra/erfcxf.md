@@ -21,7 +21,8 @@
 
 获取输入数据的缩放互补误差函数值。
 
-![](figures/zh-cn_formulaimage_0000002523346746.png)
+<!-- img2text -->
+$$\operatorname{erfcx}(x)=e^{x^{2}}\operatorname{erfc}(x)$$
 
 ## 函数原型<a name="section1188715215306"></a>
 

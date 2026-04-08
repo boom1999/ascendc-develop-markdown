@@ -21,7 +21,8 @@
 
 获取以2为底，输入数据各元素的对数。
 
-![](figures/zh-cn_formulaimage_0000002523346852.png)
+<!-- img2text -->
+$$dst_i=\log_2(x_i)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

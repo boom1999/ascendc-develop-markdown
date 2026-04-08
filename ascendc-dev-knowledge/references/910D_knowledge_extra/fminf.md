@@ -21,7 +21,15 @@
 
 获取两个输入数据中的最小值。
 
-![](figures/zh-cn_formulaimage_0000002523306744.png)
+<!-- img2text -->
+$$
+\operatorname{fminf}(x, y) =
+\begin{cases}
+x, & x < y \\
+y, & x > y \\
+x, & x = y
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

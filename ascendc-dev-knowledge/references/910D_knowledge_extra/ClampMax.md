@@ -21,9 +21,23 @@
 
 将srcTensor中大于scalar的数替换为scalar，小于等于scalar的数保持不变，作为dstTensor输出。
 
-![](figures/zh-cn_formulaimage_0000002554345167.png)
+<!-- img2text -->
+$$
+dstTensor(i)=
+\begin{cases}
+scalar, & srcTensor(i)>scalar \\
+srcTensor(i), & srcTensor(i)\leq scalar
+\end{cases}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554425137.png)
+<!-- img2text -->
+$$
+dstTensor_i =
+\begin{cases}
+srcTensor_i, & srcTensor_i \leq scalar \\
+scalar, & srcTensor_i > scalar
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

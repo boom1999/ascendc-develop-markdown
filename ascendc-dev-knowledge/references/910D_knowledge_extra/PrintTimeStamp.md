@@ -32,7 +32,7 @@
 descId is 65577, rsv is 0, timeStamp is 13806084506158, pcPtr is 20619064414544.
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+> **注意：** 
 >该功能主要用于**调试和性能分析**，开启后会对算子性能产生一定影响，**生产环境建议关闭**。
 >默认情况下，该功能关闭，开发者可以按需通过增加-DASCENDC\_TIME\_STAMP\_ON编译选项的方式，开启打点功能。
 

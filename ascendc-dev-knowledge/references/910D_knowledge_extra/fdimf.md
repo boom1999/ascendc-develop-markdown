@@ -21,7 +21,14 @@
 
 获取两个输入数据的差值，差值小于0时，返回0。
 
-![](figures/zh-cn_formulaimage_0000002523306946.png)
+<!-- img2text -->
+$$
+\operatorname{fdimf}(x, y) =
+\begin{cases}
+x - y, & x > y \\
+0, & x \leq y
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -20,7 +20,12 @@
 
 按元素求商，公式表达如下：
 
-![](images/atlasascendc_api_07_0038_img_001.png)
+<!-- img2text -->
+```
+           xi
+yi = ───────────
+      scalarValue
+```
 
 #### 函数原型
 

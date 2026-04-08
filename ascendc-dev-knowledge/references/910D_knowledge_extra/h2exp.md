@@ -21,7 +21,8 @@
 
 指定输入x，对x的各元素，获取e的该元素次方。
 
-![](figures/zh-cn_formulaimage_0000002523346842.png)
+<!-- img2text -->
+$$dst_i = e^{src_i}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

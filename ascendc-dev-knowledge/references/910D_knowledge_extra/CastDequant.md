@@ -27,15 +27,30 @@
 
     -   当isVecDeq=false时，根据SetDeqScale设置的scale、offset、signMode，对输入做量化并进行精度转换。计算公式如下：
 
-        ![](figures/zh-cn_formulaimage_0000002554426909.png)
+        <!-- img2text -->
+$$
+\text{dstLocal}_{n}=\operatorname{CastToHalf}\left(\operatorname{Round}\left(\text{srcLocal}_{n}\times \text{scale}\times \left(\operatorname{signMode}?2:1\right)+\text{offset}\right)\right)
+$$
 
     -   当isVecDeq=true时，根据SetDeqScale设置的一段128B的UB上的16组量化参数scale<sub>0</sub>-scale<sub>15</sub>、offset<sub>0</sub>-offset<sub>15</sub>、signMode<sub>0</sub>-signMode<sub>15</sub>，以循环的方式对输入做量化并进行精度转换。计算公式如下：
 
-        ![](figures/zh-cn_formulaimage_0000002554426911.png)
+        <!-- img2text -->
+$$
+\text{tmp} = x \times \text{scale}_i + \text{offset}_i,\ i = 0,1,\ldots,15
+$$
+
+$$
+\text{dst} =
+\begin{cases}
+\operatorname{float2half}(\operatorname{round}(\text{tmp})), & \text{if signMode}_i = 1 \\
+\operatorname{float2half}(\operatorname{cast}_{\text{uint16}}(\operatorname{round}(\text{tmp}))), & \text{if signMode}_i = 0
+\end{cases}
+$$
 
 -   在输入类型为int32\_t的情况下，对int32\_t类型的输入做量化并进行精度转换，得到half类型的数据。使用该接口前需要调用[SetDeqScale](SetDeqScale.md)设置scale参数。
 
-    .![](figures/zh-cn_formulaimage_0000002554426913.png)
+    .<!-- img2text -->
+$$dst = src \times scale$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 
@@ -172,7 +187,31 @@
 </table>
 
 **图 1**  halfBlock说明<a name="fig1084698268"></a>  
-![](figures/halfBlock说明.png "halfBlock说明")
+<!-- img2text -->
+```text
+src vector
+┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
+│ BLOCK 0 │ │ BLOCK 1 │ │ BLOCK 2 │ │ BLOCK 3 │ │ BLOCK 4 │ │ BLOCK 5 │ │ BLOCK 6 │ │ BLOCK 7 │
+└─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘
+
+dst vector
+halfBlock = false
+┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐
+│ BLOCK 0 │/////////│ │ BLOCK 1 │/////////│ │ BLOCK2  │/////////│ │ BLOCK 3 │/////////│
+└─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘
+┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐
+│ BLOCK4  │/////////│ │ BLOCK5  │/////////│ │ BLOCK 6 │/////////│ │ BLOCK7  │/////////│
+└─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘
+
+dst vector
+halfBlock = true
+┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐
+│/////////│ BLOCK 0 │ │/////////│ BLOCK1  │ │/////////│ BLOCK2  │ │/////////│ BLOCK 3 │
+└─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘
+┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐ ┌─────────┬─────────┐
+│/////////│ BLOCK4  │ │/////////│ BLOCK5  │ │/////////│ BLOCK 6 │ │/////////│ BLOCK7  │
+└─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘ └─────────┴─────────┘
+```
 
 ## 返回值说明<a name="section640mcpsimp"></a>
 

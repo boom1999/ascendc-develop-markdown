@@ -20,9 +20,11 @@
 
 在神经网络中，Swish是一个重要的激活函数。计算公式如下，其中β为常数：
 
-![](images/atlasascendc_api_07_0783_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0783_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

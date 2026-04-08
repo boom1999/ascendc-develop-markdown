@@ -27,7 +27,7 @@
 AscendC::DumpTensor(srcLocal, 5, dataLen);
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+> **注意：** 
 >DumpTensor接口打印功能会对算子实际运行的性能带来一定影响，通常在调测阶段使用。开发者可以按需通过设置ASCENDC\_DUMP=0来关闭打印功能。
 
 打印示例如下：
@@ -147,7 +147,25 @@ DumpTensor: desc=5, addr=0, data_type=float16, position=UB, dump_size=32
 
     Dump时，每个block核的dump信息前会增加对应信息头DumpHead，用于记录核号和资源使用信息；每次Dump的Tensor数据前也会添加信息头DumpTensorHead，用于记录Tensor的相关信息。如下图所示，展示了多核打印场景下的打印信息结构。
 
-    ![](figures/流水任务运行示意图-120.png)
+    <!-- img2text -->
+```
+block0
+┌──────────┬────────────────┬──────────┬────────────────┬──────────┬────────────────┬─────┐
+│ DumpHead │ DumpTensorHead │ Tensor1  │ DumpTensorHead │ Tensor2  │ DumpTensorHead │ ... │
+└──────────┴────────────────┴──────────┴────────────────┴──────────┴────────────────┴─────┘
+
+block1
+┌──────────┬────────────────┬──────────┬────────────────┬──────────┬────────────────┬─────┐
+│ DumpHead │ DumpTensorHead │ Tensor1  │ DumpTensorHead │ Tensor2  │ DumpTensorHead │ ... │
+└──────────┴────────────────┴──────────┴────────────────┴──────────┴────────────────┴─────┘
+
+                                      ...
+
+blockn
+┌──────────┬────────────────┬──────────┬────────────────┬──────────┬────────────────┬─────┐
+│ DumpHead │ DumpTensorHead │ Tensor1  │ DumpTensorHead │ Tensor2  │ DumpTensorHead │ ... │
+└──────────┴────────────────┴──────────┴────────────────┴──────────┴────────────────┴─────┘
+```
 
     **DumpHead的具体信息如下：**
 

@@ -21,7 +21,10 @@
 
 每对elements按位或运算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346405.png)
+<!-- img2text -->
+$$
+\text{dst}_{i} = \text{src0}_{i} \mid \text{src1}_{i}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

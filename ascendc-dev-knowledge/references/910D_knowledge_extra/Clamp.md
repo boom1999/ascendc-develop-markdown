@@ -21,9 +21,27 @@
 
 将输入中除nan值以外大于max的数替换为max，小于min的数替换为min，小于等于max和大于等于min的数保持不变，作为输出。当min大于max时，将除nan值外所有值替换为max。min和max可以为标量或LocalTensor。
 
-![](figures/zh-cn_formulaimage_0000002523346144.png)
+<!-- img2text -->
+$$
+\operatorname{out}_{i} =
+\begin{cases}
+\min, & \text{if } \operatorname{in}_{i} < \min \\
+\operatorname{in}_{i}, & \text{if } \min \le \operatorname{in}_{i} \le \max \\
+\max, & \text{if } \operatorname{in}_{i} > \max \\
+\operatorname{NaN}, & \text{if } \operatorname{in}_{i} = \operatorname{NaN}
+\end{cases}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554426047.png)
+<!-- img2text -->
+$$
+\operatorname{output}_{i}=
+\begin{cases}
+\max, & \operatorname{input}_{i}>\max \\
+\min, & \operatorname{input}_{i}<\min \\
+\operatorname{input}_{i}, & \min \le \operatorname{input}_{i} \le \max \\
+\operatorname{NaN}, & \operatorname{input}_{i}=\operatorname{NaN}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

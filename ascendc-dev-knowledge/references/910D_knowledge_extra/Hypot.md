@@ -21,9 +21,13 @@
 
 按元素计算两个浮点数平方和的平方根。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306830.png)
+<!-- img2text -->
+$$y = \sqrt{x_1^2 + x_2^2}$$
 
-![](figures/zh-cn_formulaimage_0000002554346759.png)
+<!-- img2text -->
+$$
+\operatorname{Hypot}(x_1, x_2) = \sqrt{x_1^2 + x_2^2}
+$$
 
 举例如下：
 

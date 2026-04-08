@@ -21,7 +21,10 @@
 
 按元素进行或操作。当输入的数据类型不是bool时，零被视为False，非零数据被视为True。
 
-![](figures/zh-cn_formulaimage_0000002554426003.png)
+<!-- img2text -->
+$$
+z_i = x_i \lor y_i,\quad i = 1, 2, \ldots, n
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

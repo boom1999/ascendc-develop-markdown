@@ -76,11 +76,36 @@ Python社区也有相关说明：python社区有相同问题的issue：[https://
 
 在Python官网，针对Python3.8~Python3.11版本都出了补丁版本，解决fork方式引起的bug。
 
-![](images/troubleshooting_0075_img_001.png)
+<!-- img2text -->
+```
+Looking for a specific release?
+Python releases by version number:
+
+┌──────────────────────┬────────────────┬──────────────────┬────────────────┐
+│ Release version      │ Release date   │                  │ Click for more │
+├──────────────────────┼────────────────┼──────────────────┼────────────────┤
+│ Python 3.11.10       │ Sept. 7, 2024  │ Download         │ Release Notes  │
+│ Python 3.10.15       │ Sept. 7, 2024  │ Download         │ Release Notes  │
+│ Python 3.12.6        │ Sept. 6, 2024  │ Download         │ Release Notes  │
+│ Python 3.9.20        │ Sept. 6, 2024  │ Download         │ Release Notes  │
+│ Python 3.8.20        │ Sept. 6, 2024  │ Download         │ Release Notes  │
+├──────────────────────┼────────────────┼──────────────────┼────────────────┤
+│ Python 3.12.5        │ Aug. 6, 2024   │ Download         │ Release Notes  │
+│ Python 3.12.4        │ June 6, 2024   │ Download         │ Release Notes  │
+└──────────────────────┴────────────────┴──────────────────┴────────────────┘
+
+View older releases
+```
 
 在这些补丁版本中，也有针对fork问题的相应说明，如下：
 
-![](images/troubleshooting_0075_img_002.png)
+<!-- img2text -->
+```
+Core and Builtins
+
+• gh-112275: A deadlock involving pystate.c’s HEAD_LOCK in posixmodule.c at fork is
+  now fixed. Patch by ChuBoning based on previous Python 3.12 fix by Victor Stinner.
+```
 
 - **方式二：修改客户业务代码，显式使用forkserver或者spawn方式。**
        注意事项：如果涉及修改fork的地方比较多或工作量比较大，建议采用方式一，防止修改遗漏。
@@ -89,13 +114,51 @@ Python社区也有相关说明：python社区有相同问题的issue：[https://
 
 执行**pip show torch**命令查找Python安装目录，查询结果示例如下：
 
-![](images/troubleshooting_0075_img_003.png)
+<!-- img2text -->
+```
+pip show torch
+
+Name: torch
+Version: 2.1.0
+Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
+Home-page: https://pytorch.org/
+Author: PyTorch Team
+Author-email: packages@pytorch.org
+License: BSD-3
+Location: /root/anaconda3/envs/lw38/lib/python3.8/site-packages
+Requires: filelock, fsspec, jinja2, networkx, sympy, typing-extensions
+Required-by: torch-npu
+```
 
   2. 在Python安装目录下执行**find -name popen_fork.py**命令找到popen_fork.py文件，在fork启进程的地方都增加触发堆栈的代码。
 
 在_launch(self,process_obj)函数内添加代码，目的是走fork的子进程都触发堆栈：
 
-![](images/troubleshooting_0075_img_004.png)
+<!-- img2text -->
+```
+popen_fork.py
+
+62  def kill(self):
+63      self._send_signal(signal.SIGKILL)
+
+66  def _launch(self, process_obj):
+67      code = 1
+68      parent_r, child_w = os.pipe()
+69      child_r, parent_w = os.pipe()
+70
+71      self.pid = os.fork()
+72      if self.pid == 0:
+73          try:
+74              os.close(parent_r)
+75              os.close(parent_w)
+76              code = process_obj._bootstrap(parent_sentinel=child_r)
+77          finally:
+78              os._exit(code)
+```
+
+说明:
+- 红框标注位置覆盖第70-71行附近，重点指向 `self.pid = os.fork()` 插入/定位处。
+- 上下文含义：在 `_launch(self, process_obj)` 函数内，于 fork 启进程的位置触发堆栈打印。
 
 例如，在上图70行的位置增加如下代码，用于在fork启进程的地方触发堆栈消息打印：
 

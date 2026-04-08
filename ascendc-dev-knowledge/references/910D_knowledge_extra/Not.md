@@ -21,7 +21,10 @@
 
 按元素做按位取反，计算公式如下 :
 
-![](figures/zh-cn_formulaimage_0000002554425519.png)
+<!-- img2text -->
+$$
+y_i = \sim x_i
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

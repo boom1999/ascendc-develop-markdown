@@ -21,9 +21,11 @@
 
 按元素做反双曲正切余弦函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306822.png)
+<!-- img2text -->
+$$y = \operatorname{acosh}(x) = \ln\left(x + \sqrt{x^{2} - 1}\right)$$
 
-![](figures/zh-cn_formulaimage_0000002523346814.png)
+<!-- img2text -->
+$$y_i = \operatorname{acosh}(x_i) = \ln\left(x_i + \sqrt{x_i^2 - 1}\right)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

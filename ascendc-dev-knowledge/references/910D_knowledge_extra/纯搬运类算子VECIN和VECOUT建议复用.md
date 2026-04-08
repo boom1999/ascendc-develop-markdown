@@ -89,7 +89,28 @@ template <typename ComputeT> class KernelExample {
 
 **图 1**  aiv\_vec\_time优化前后对比<a name="fig74881227195511"></a>  
 
-![](figures/1.png)
+<!-- img2text -->
+```text
+us
+30 ┤
+   │
+24 ┤
+   │
+18 ┤  ▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲──▲  before_aiv_vec_time
+   │
+12 ┤
+   │
+ 6 ┤
+   │
+ 0 ┼──■──■──■──■──■──■──■──■──■──■──■──■──■──■──■──■──■──■──■──■  after_aiv_vec_time
+    1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20  次
+
+图 1  aiv_vec_time优化前后对比
+
+图例:
+▲ before_aiv_vec_time
+■ after_aiv_vec_time
+```
 
 如上图所示，将反例中DataCopy指令替换为TQueBind之后有明显优化。由于省略了数据从VECIN拷贝到VECOUT的步骤，aiv\_vec\_time几乎缩减为0。
 

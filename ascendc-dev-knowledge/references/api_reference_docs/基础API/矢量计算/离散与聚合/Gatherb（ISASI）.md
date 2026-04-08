@@ -20,7 +20,46 @@
 
 给定一个输入的张量和一个地址偏移张量，本接口根据偏移地址按照DataBlock的粒度将输入张量收集到结果张量中。
 
-![](images/atlasascendc_api_07_0234_img_001.png)
+<!-- img2text -->
+```text
+offset
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│offset[0] │offset[1] │offset[2] │offset[3] │offset[4] │offset[5] │offset[6] │offset[7] │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+                                         │
+                                         ▼
+src的基地址 ───────────────────────────→ ⊕
+                                         │
+                                         ▼
+
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│  addr0   │  addr1   │  addr2   │  addr3   │  addr4   │  addr5   │  addr6   │  addr7   │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+      ╲          │          ╲          ╱          ╲          ╱          │          │
+       ╲         │           ╲        ╱            ╲        ╱           │          │
+        ▼        ▼            ▼      ▼              ▼      ▼            ▼          ▼
+
+src
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│DataBlock2│DataBlock0│DataBlock4│DataBlock5│DataBlock1│DataBlock6│DataBlock3│DataBlock7│
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+                                         │
+                                         ▼
+                                      Gatherb
+                                         │
+                                         ▼
+
+dst
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│DataBlock0│DataBlock1│DataBlock2│DataBlock3│DataBlock4│DataBlock5│DataBlock6│DataBlock7│
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+```
+
+说明:
+- 上方 `offset[i]` 与 `src的基地址` 相加，得到各个 `addr0~addr7`
+- `addr0~addr7` 从 `src` 中按地址选取对应的 DataBlock，经 `Gatherb` 后，按顺序写入 `dst`
+- 图中 `src` 的 DataBlock 排列为：DataBlock2、DataBlock0、DataBlock4、DataBlock5、DataBlock1、DataBlock6、DataBlock3、DataBlock7
+- 图中 `dst` 的 DataBlock 排列为：DataBlock0、DataBlock1、DataBlock2、DataBlock3、DataBlock4、DataBlock5、DataBlock6、DataBlock7
 
 #### 函数原型
 

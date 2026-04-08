@@ -20,7 +20,10 @@
 
 矢量内每个元素与标量求积，计算公式如下：
 
-![](images/atlasascendc_api_07_0055_img_001.png)
+<!-- img2text -->
+```
+dst_i = src_i * scalar
+```
 
 #### 函数原型
 

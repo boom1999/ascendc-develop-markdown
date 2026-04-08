@@ -19,11 +19,18 @@
 
 ## 功能说明<a name="section618mcpsimp"></a>
 
-按元素计算x的gamma函数的对数导数，计算公式如下，![](figures/zh-cn_formulaimage_0000002523346904.png)为伽玛函数。
+按元素计算x的gamma函数的对数导数，计算公式如下，<!-- img2text -->
+[公式无法识别]为伽玛函数。
 
-![](figures/zh-cn_formulaimage_0000002523306912.png)
+<!-- img2text -->
+$$
+y = \frac{d(\ln \Gamma(x))}{dx}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554426803.png)
+<!-- img2text -->
+$$
+\operatorname{Digamma}(x)=\frac{\Gamma'(x)}{\Gamma(x)}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

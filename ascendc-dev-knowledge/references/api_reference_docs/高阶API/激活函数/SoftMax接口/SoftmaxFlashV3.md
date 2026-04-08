@@ -22,11 +22,13 @@ SoftmaxFlash增强版本，对应Softmax PASA算法。将输入tensor[m0, m1, ..
 
 - update为false：
 
-![](images/atlasascendc_api_07_10001_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
 - update为true：
 
-![](images/atlasascendc_api_07_10001_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 本接口当前只支持ND格式的输入，内部的reduce过程按last轴处理。
 

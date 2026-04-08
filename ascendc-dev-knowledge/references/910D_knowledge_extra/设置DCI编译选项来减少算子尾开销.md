@@ -1,6 +1,6 @@
 # 设置DCI编译选项来减少算子尾开销<a name="ZH-CN_TOPIC_0000002554409037"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >该性能优化建议适用于如下型号：
 >-   Ascend 950PR/Ascend 950DT
 

@@ -21,7 +21,8 @@
 
 获取输入数据x与2的n次方的乘积。
 
-![](figures/zh-cn_formulaimage_0000002523306746.png)
+<!-- img2text -->
+$$x \cdot 2^{n}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

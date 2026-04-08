@@ -21,7 +21,8 @@
 
 获取输入数据x、y的平方和x^2 + y^2的平方根。
 
-![](figures/zh-cn_formulaimage_0000002523347022.png)
+<!-- img2text -->
+$$\sqrt{x^{2}+y^{2}}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

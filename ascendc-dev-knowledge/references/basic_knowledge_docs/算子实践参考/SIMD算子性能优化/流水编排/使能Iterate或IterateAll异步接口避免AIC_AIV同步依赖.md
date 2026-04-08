@@ -10,8 +10,28 @@
 【描述】在MIX场景，即AIC（AI Cube核）和AIV（AI Vector核）混合编程中，调用Matmul Iterate或者IterateAll时，AIV发送消息到AIC启动Matmul计算。若通过Iterate<true>同步方式，如图1 同步方式消息发送示意图，每次调用都会触发一次消息发送，而通过Iterate<false>异步方式，如图2 异步方式消息发送示意图，仅第一次需要发送消息，后续无需发送消息，从而减少Cube与Vector核间交互，减少核间通信开销。因此，MIX场景推荐使用Iterate<false>或者IterateAll<false>异步接口（注意：使用异步接口时需要设置Workspace）。
 
 **图1 **同步方式消息发送示意图
-![](images/atlas_ascendc_best_practices_10_0034_img_001.png)**图2 **异步方式消息发送示意图
-![](images/atlas_ascendc_best_practices_10_0034_img_002.png)
+<!-- img2text -->
+```text
+第1次调用Iterate()           第2次调用Iterate()           第3次调用Iterate()           第4次调用Iterate()
+
+AIV  ────────────────┐        ────────────────┐        ────────────────┐        ────────────────┐
+                     │                        │                        │                        │
+                     ▼                        ▼                        ▼                        ▼
+AIC          ────────────────          ────────────────          ────────────────          ────────────────
+```**图2 **异步方式消息发送示意图
+<!-- img2text -->
+```
+第1次调用
+Iterate<false>()
+
+AIV  ───────────────────────────╲
+                                 ╲
+AIC                              ┌────────────────┬────────────────┬────────────────┬────────────────┐
+                                 │                │                │                │                │
+                                 └────────────────┴────────────────┴────────────────┴────────────────┘
+                                   第2次调用         第3次调用         第4次调用
+                                   Iterate<false>()  Iterate<false>()  Iterate<false>()
+```
 
 【反例】
 

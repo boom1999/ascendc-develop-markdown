@@ -21,7 +21,10 @@
 
 获取输入数据x的n阶第一类贝塞尔函数jn的值。
 
-![](figures/zh-cn_formulaimage_0000002523306782.png)
+<!-- img2text -->
+$$
+J_{n}(x)=\frac{1}{\pi}\int_{0}^{\pi}\cos(n\tau-x\sin\tau)\,d\tau
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

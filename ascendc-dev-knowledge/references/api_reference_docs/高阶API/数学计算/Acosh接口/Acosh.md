@@ -20,9 +20,11 @@
 
 按元素做双曲反余弦函数计算，计算公式如下：
 
-![](images/atlasascendc_api_07_0564_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0564_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

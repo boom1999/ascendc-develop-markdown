@@ -6,7 +6,7 @@
 
 1.  使用C++语法定义Tiling结构体。
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
+    > **说明：** 
     >该结构体定义所在的头文件应放置在算子工程的op\_kernel目录下。由于只有该目录下的文件会被打包进算子包，供在线编译场景中使用，若将文件放置在其他目录中，可能导致在线编译因找不到相关文件而失败。
 
     用户在使用高阶API的Tiling结构体时，通过AscendC::tiling命名空间引用"kernel\_tiling/kernel\_tiling.h"中预定义的Tiling结构体，如下代码所示。

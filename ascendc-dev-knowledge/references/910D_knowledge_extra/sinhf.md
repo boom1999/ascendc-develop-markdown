@@ -21,7 +21,8 @@
 
 获取输入数据的双曲正弦值。
 
-![](figures/zh-cn_formulaimage_0000002523346794.png)
+<!-- img2text -->
+$$\sinh x=\frac{e^{x}-e^{-x}}{2}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,8 @@
 
 指定输入x，对x的各元素，获取2的该元素次方。
 
-![](figures/zh-cn_formulaimage_0000002523346900.png)
+<!-- img2text -->
+$$\operatorname{exp2}(x)=2^x$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

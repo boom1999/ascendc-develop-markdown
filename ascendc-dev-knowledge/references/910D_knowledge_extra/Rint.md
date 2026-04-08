@@ -21,7 +21,16 @@
 
 获取与输入数据最接近的整数，若存在两个同样接近的整数，则获取其中的偶数。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346302.png)
+<!-- img2text -->
+$$
+y = \operatorname{rint}(x) =
+\begin{cases}
+\lfloor x \rfloor, & x - \lfloor x \rfloor < 0.5 \\
+\lceil x \rceil, & x - \lfloor x \rfloor > 0.5 \\
+\lfloor x \rfloor, & x - \lfloor x \rfloor = 0.5 \text{ and } \lfloor x \rfloor \bmod 2 = 0 \\
+\lceil x \rceil, & x - \lfloor x \rfloor = 0.5 \text{ and } \lfloor x \rfloor \bmod 2 = 1
+\end{cases}
+$$
 
 举例如下：
 

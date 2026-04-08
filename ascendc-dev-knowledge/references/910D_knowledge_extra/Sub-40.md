@@ -21,7 +21,15 @@
 
 根据mask对源操作数srcReg0、srcReg1进行按元素相减操作，将结果写入目的操作数dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306514.png)
+<!-- img2text -->
+$$
+dstReg_i =
+\begin{cases}
+srcReg0_i - srcReg1_i, & \text{元素 } i \text{ 对应的 mask 位为 } 1 \\
+0, & \text{元素 } i \text{ 对应的 mask 位为 } 0,\ \text{mode = MaskMergeMode::ZEROING} \\
+dstReg_i, & \text{元素 } i \text{ 对应的 mask 位为 } 0,\ \text{mode = MaskMergeMode::MERGING}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

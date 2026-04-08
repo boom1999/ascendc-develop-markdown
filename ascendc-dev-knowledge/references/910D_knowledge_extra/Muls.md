@@ -21,7 +21,8 @@
 
 矢量内每个元素与标量求积，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346788.png)
+<!-- img2text -->
+$$dst_i = src_i * scalar,\ 0 \le i < repeat\_times * mask$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

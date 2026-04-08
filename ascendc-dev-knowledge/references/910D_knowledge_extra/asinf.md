@@ -21,7 +21,16 @@
 
 获取输入数据的反正弦值。
 
-![](figures/zh-cn_formulaimage_0000002554426933.png)
+<!-- img2text -->
+$$
+\arcsin(x)=
+\begin{cases}
+\operatorname{NaN}, & x<-1 \text{ or } x>1 \\
+\frac{\pi}{2}, & x=1 \\
+-\frac{\pi}{2}, & x=-1 \\
+\text{the inverse sine of } x, & -1<x<1
+\end{cases}
+$$
 
 arcsin\(x\)为反正弦函数的计算。
 

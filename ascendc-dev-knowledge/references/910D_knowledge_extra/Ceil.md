@@ -21,7 +21,14 @@
 
 获取大于或等于x的最小的整数值，即向正无穷取整操作。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426889.png)
+<!-- img2text -->
+$$
+\operatorname{Ceil}(x)=
+\begin{cases}
+\lceil x \rceil = \max\{n \in \mathbb{Z}\mid n \ge x\}, & x \in \mathbb{R} \\
+0, & x=\mathrm{NaN}
+\end{cases}
+$$
 
 举例如下：
 

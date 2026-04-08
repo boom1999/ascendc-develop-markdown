@@ -21,7 +21,14 @@
 
 获取输入数据的绝对值。
 
-![](figures/zh-cn_formulaimage_0000002554426931.png)
+<!-- img2text -->
+$$
+\lvert x \rvert =
+\begin{cases}
+x, & x \geq 0 \\
+-x, & x < 0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

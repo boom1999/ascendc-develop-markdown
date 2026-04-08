@@ -21,7 +21,10 @@
 
 获取输入数据的双曲反正弦值。
 
-![](figures/zh-cn_formulaimage_0000002554346343.png)
+<!-- img2text -->
+$$
+\operatorname{asinh}(x)=\ln\left(x+\sqrt{x^2+1}\right)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

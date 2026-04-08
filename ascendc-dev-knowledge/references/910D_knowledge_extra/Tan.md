@@ -21,11 +21,15 @@
 
 按元素做正切函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346878.png)
+<!-- img2text -->
+$$\tan(x) = \frac{\sin(x)}{\cos(x)}$$
 
 Tan\(x\)的泰勒展开式为：
 
-![](figures/zh-cn_formulaimage_0000002554426775.png)
+<!-- img2text -->
+$$
+\operatorname{Tan}(x)=\sum_{n=1}^{\infty}\frac{(-1)^{n-1}2^{2n}(2^{2n}-1)B_{2n}}{(2n)!}x^{2n-1},\quad -\frac{\pi}{2}<x<\frac{\pi}{2}
+$$
 
 其中B<sub>2n</sub>是伯努利数。
 

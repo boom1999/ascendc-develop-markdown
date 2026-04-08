@@ -20,9 +20,16 @@
 
 将srcTensor中小于scalar的数替换为scalar，大于等于scalar的数保持不变，作为dstTensor输出。
 
-![](images/atlasascendc_api_07_0577_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0577_img_002.png)
+<!-- img2text -->
+```text
+          scalar
+            │
+            ▼
+srcTensor ──┼──→ Maxs ───→ dstTensor
+```
 
 #### 函数原型
 

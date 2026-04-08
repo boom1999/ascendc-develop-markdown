@@ -12,7 +12,38 @@
 先使用ctrl+z中止业务复跑task，接着再次拉起业务复跑task，屏显日志显示业务复跑task错误，如下图所示。
 
 **图1 **业务复跑报task occurred error
-![](images/troubleshooting_0517_img_001.png)
+<!-- img2text -->
+```text
+2023-07-03 16:51:22,641 [ASYS] [INFO]: asys start.
+2023-07-03 16:51:22,641 [ASYS] [INFO]: asys output directory: /npu/********/infer/auto_infer/testcase/1971_aoe_ID2664_yolov5_bs64/Asys_
+path/asys_output_202307031651222641
+2023-07-03 16:51:22,641 [ASYS] [INFO]: launch task start, running:
+/^Z
+[1]+  Stopped                 python3 /usr/local/Ascend/latest/toolkit/tools/ascend_system_advisor/asys/asys.py launch --task="sh ./run.
+sh" --output="./Asys_path"
+root@huawei:/npu/********/infer/auto_infer/testcase/1971_aoe_ID2664_yolov5_bs64# head 0703test.log
+root@huawei:/npu/********/infer/auto_infer/testcase/1971_aoe_ID2664_yolov5_bs64# asys launch --task="sh ./run.sh" --output="./Asys_path"
+
+2023-07-03 16:51:48,600 [ASYS] [INFO]: asys start.
+2023-07-03 16:51:48,600 [ASYS] [INFO]: asys output directory: /npu/********/infer/auto_infer/testcase/1971_aoe_ID2664_yolov5_bs64/Asys_
+path/asys_output_20230703165148600
+2023-07-03 16:51:48,600 [ASYS] [INFO]: launch task start, running:
+2023-07-03 16:54:58,889 [ASYS] [WARNING]: task occurred error, output:
+Segmentation fault (core dumped)
+Process ForkServerPoolWorker-7:
+Traceback (most recent call last):
+  File "/usr/local/python3.7.5/lib/python3.7/multiprocessing/pool.py", line 127, in worker
+    put((job, i, result))
+  File "/usr/local/python3.7.5/lib/python3.7/multiprocessing/queues.py", line 364, in put
+    self._writer.send_bytes(obj)
+  File "/usr/local/python3.7.5/lib/python3.7/multiprocessing/connection.py", line 200, in send_bytes
+    self._send_bytes(m[offset:offset + size])
+  File "/usr/local/python3.7.5/lib/python3.7/multiprocessing/connection.py", line 403, in _send_bytes
+    self._send(header + buf)
+  File "/usr/local/python3.7.5/lib/python3.7/multiprocessing/connection.py", line 367, in _send
+    n = write(self._handle, buf)
+BrokenPipeError: [Errno 32] Broken pipe
+```
 - **可能原因**
 
 执行ctrl+z操作等导致任务异常终止，但还存在任务进程残留（且还进行重定向写文件操作等操作），与后面新启动的asys复跑任务相互冲突，导致复跑异常。

@@ -20,9 +20,11 @@
 
 按元素做误差函数计算（也称为高斯误差函数，error function or Gauss error function）。计算公式如下：
 
-![](images/atlasascendc_api_07_0544_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0544_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

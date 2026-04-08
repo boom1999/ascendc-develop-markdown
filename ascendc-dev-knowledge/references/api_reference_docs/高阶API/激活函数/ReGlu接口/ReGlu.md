@@ -20,11 +20,15 @@
 
 ReGlu是一种GLU变体，使用Relu作为激活函数，计算公式如下：
 
-![](images/atlasascendc_api_07_0790_img_001.png)
+<!-- img2text -->
+```
+ReGlu(x, y) = x * max(y, 0)
+```
 
 其中Relu激活函数的计算公式如下：
 
-![](images/atlasascendc_api_07_0790_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

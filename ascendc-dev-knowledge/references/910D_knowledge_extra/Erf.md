@@ -21,9 +21,15 @@
 
 按元素做误差函数计算（也称为高斯误差函数，error function or Gauss error function）。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346761.png)
+<!-- img2text -->
+$$
+\operatorname{erf}(x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x}e^{-t^{2}}\,dt
+$$
 
-![](figures/zh-cn_formulaimage_0000002554426719.png)
+<!-- img2text -->
+$$
+\operatorname{Erf}(x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x} e^{-t^{2}}\,dt
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

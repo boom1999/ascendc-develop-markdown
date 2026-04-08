@@ -21,7 +21,15 @@
 
 根据mask对输入数据srcReg0、srcReg1执行按元素相除操作，将结果写入dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306408.png)
+<!-- img2text -->
+$$
+\text{dstReg}[i]=
+\begin{cases}
+\text{srcReg0}[i] \mathbin{/} \text{srcReg1}[i], & \text{mask}[i]=1 \\
+0, & \text{mask}[i]=0,\ \text{mode}=\text{MaskMergeMode::ZEROING} \\
+\text{dstReg}[i], & \text{mask}[i]=0,\ \text{mode}=\text{MaskMergeMode::MERGING}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

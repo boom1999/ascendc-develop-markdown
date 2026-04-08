@@ -21,7 +21,14 @@
 
 源操作数srcReg大于0的情况下直接将srcReg写入目的操作数dstReg， 否则将srcReg\*scalarValue的结果写入dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523345278.png)
+<!-- img2text -->
+$$
+dstReg =
+\begin{cases}
+srcReg, & srcReg > 0 \\
+srcReg \times scalarValue, & \text{others}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

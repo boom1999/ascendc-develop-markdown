@@ -21,7 +21,10 @@
 
 获取输入数据的误差函数值。
 
-![](figures/zh-cn_formulaimage_0000002554346661.png)
+<!-- img2text -->
+$$
+\operatorname{erf}(x)=\frac{2}{\sqrt{\pi}}\int_{0}^{x} e^{-t^{2}}\,dt
+$$
 
 ## 函数原型<a name="section737144616169"></a>
 

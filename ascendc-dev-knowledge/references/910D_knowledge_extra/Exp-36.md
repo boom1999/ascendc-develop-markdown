@@ -21,7 +21,8 @@
 
 根据mask对输入数据srcReg进行指数操作，将结果写入dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426257.png)
+<!-- img2text -->
+$$dst_i = e^{src_i}, \quad i \in [0, \text{repeatTimes} \times \text{parallelism})$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

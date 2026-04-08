@@ -21,7 +21,14 @@
 
 按元素进行与操作。当输入的数据类型不是bool时，零被视为False，非零数据被视为True。
 
-![](figures/zh-cn_formulaimage_0000002523306486.png)
+<!-- img2text -->
+$$
+\text{out}_{i}=
+\begin{cases}
+1, & \text{if } x_{1,i}\ \text{and}\ x_{2,i}\ \text{are true} \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

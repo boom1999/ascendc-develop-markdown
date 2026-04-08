@@ -23,14 +23,22 @@
 
 -   PER\_TENSOR量化：整个srcTensor对应一个量化参数，量化参数的shape为\[1\]。
 
-    ![](figures/zh-cn_formulaimage_0000002523346866.png)
+    <!-- img2text -->
+$$dstTensor = cast\left(\frac{srcTensor}{scale} + offset\right)$$
 
 -   PER\_CHANNEL量化：srcTensor的shape为\[m, n\], 每个channel维度对应一个量化参数，量化参数的shape为\[n\]。
 
-    ![](figures/zh-cn_formulaimage_0000002523346864.png)
+    <!-- img2text -->
+$$dstTensor_{ij}=\operatorname{round}\left(\frac{srcTensor_{ij}}{scale_j}\right)-offset_j,\quad i\in[0,m),\ j\in[0,n)$$
 
 -   PER\_TOKEN量化：srcTensor的每组token（token为n方向，共有m组token）中的元素共享一组scale和offset参数，srcTensor的shape为\[m, n\]时，scale和offset的shape为\[m, 1\]。offset是可选输入。
--   ![](figures/zh-cn_formulaimage_0000002554426765.png)
+-   <!-- img2text -->
+$$
+\begin{aligned}
+dstTensor(i, j) &= \operatorname{cast}\left(\left(srcTensor(i, j) \times scale(j)\right) + offset(j)\right) \\
+&\quad i \in [0, m),\ j \in [0, n)
+\end{aligned}
+$$
 -   PER\_GROUP量化：这里定义group的计算方向为k方向，srcTensor在k方向上每groupSize个元素共享一组scale和offset。srcTensor的shape为\[m, n\]时，如果kDim=0，表示k是m方向，scale和offset的shape为\[\(m + groupSize - 1\) / groupSize, n\]；如果kDim=1，表示k是n方向，scale和offset的shape为\[m，\(n + groupSize - 1\) / groupSize\]。offset是可选输入。
 
     根据输出数据类型的不同，当前PER\_GROUP分为两种场景：fp4x2\_e2m1\_t/fp4x2\_e1m2\_t场景（后续内容中简称为float4场景）和int8\_t/hifloat8\_t/fp8\_e5m2\_t/fp8\_e4m3fn\_t场景（后续内容中简称为b8场景）。
@@ -38,31 +46,238 @@
     -   fp4x2\_e2m1\_t/float4\_e1m2场景（float4场景）
         -   kDim = 0:****
 
-            ![](figures/zh-cn_formulaimage_0000002554426755.png)
+            <!-- img2text -->
+$$\text{groupNum} = \left\lceil \frac{\text{srcShape}.K \cdot \operatorname{sizeof}(\text{srcType})}{4 \cdot 8 \cdot \text{GROUP\_SIZE}} \right\rceil$$
 
         -   kDim = 1:
 
-            ![](figures/zh-cn_formulaimage_0000002523346850.png)
+            <!-- img2text -->
+$$
+\text{dstShape}=(k,\ m,\ n)
+$$
 
     -   int8\_t/hifloat8\_t/fp8\_e5m2\_t/fp8\_e4m3fn\_t场景（b8场景）
         -   kDim=0：
 
-            ![](figures/zh-cn_formulaimage_0000002523306864.png)
+            <!-- img2text -->
+$$
+srcLocal[x_i] = srcGlobal[(srcOffset_0 + x_i) \times \cdots \times srcOffset_n], \quad 0 \le x_i < count
+$$
 
         -   kDim=1：
 
-            ![](figures/zh-cn_formulaimage_0000002554426757.png)
+            <!-- img2text -->
+$$
+\text{quantData}_{i,j}=\operatorname{round}\left(\text{input}_{i,j}\times \text{scale}_{j}+\text{offset}_{j}\right)
+$$
 
 ## 实现原理<a name="section13229175017585"></a>
 
 **图 1**  AscendQuant算法框图scale和offset都是scalar<a name="fig966236152318"></a>  
-![](figures/AscendQuant算法框图scale和offset都是scalar.png "AscendQuant算法框图scale和offset都是scalar")
+<!-- img2text -->
+```
+                                  ┌──────────────┐                                     ┌──────────────┐
+                                  │ src_local[n] │                                     │ src_local[n] │
+                                  └──────┬───────┘                                     └──────┬───────┘
+                                         │                                                      │
+                                   half input                                            float input
+                                         │                                                      │
+                     ┌───────────────────┴───────────────────┐              ┌───────────────────┴───────────────────┐
+                     │                                       │              │                                       │
+┌──────────┐         │      ┌──────────────────────────┐     │              │      ┌──────────────────────────┐     │
+│ scale[1] │ ───────→│      │ Tmp1[n]=Muls(src_local,  │     │              │      │ inputHalf[n]=Cast(src_loca│     │
+└──────────┘         │      │          scale)          │     │              │      │ l, float->half)          │     │
+                     │      └────────────┬─────────────┘     │              │      └────────────┬─────────────┘     │
+                     │                   │                   │              │                   │                   │
+┌──────────┐         │      ┌────────────▼─────────────┐     │              │      ┌────────────▼─────────────┐     │
+│ offset[1]│ ───────→│      │ Tmp2[n]=Adds(Tmp1,       │     │   ┌──────────┐      │ Tmp1[n]=Muls(inputHalf,   │     │
+└──────────┘         │      │          offset)         │     │   │ scale[1] │ ───→ │          scale)          │     │
+                     │      └────────────┬─────────────┘     │   └──────────┘      └────────────┬─────────────┘     │
+                     │                   │                   │              │                   │                   │
+                     │      ┌────────────▼─────────────┐     │              │      ┌────────────▼─────────────┐     │
+                     │      │ dst_local[n]=Cast(Tmp2,  │     │   ┌──────────┐      │ Tmp2[n]=Adds(Tmp1,       │     │
+                     │      │      half->int8_t)       │     │   │offset[1] │ ───→ │          offset)         │     │
+                     │      └────────────┬─────────────┘     │   └──────────┘      └────────────┬─────────────┘     │
+                     └───────────────────┼───────────────────┘              │                   │                   │
+                                         │                                  │      ┌────────────▼─────────────┐     │
+                                         │                                  │      │ dst_local[n]=Cast(Tmp2,  │     │
+                                  ┌──────▼───────┐                          │      │      half->int8_t)       │     │
+                                  │ dst_local[n] │                          │      └────────────┬─────────────┘     │
+                                  └──────────────┘                          └───────────────────┼───────────────────┘
+                                                                                                 │
+                                                                                          ┌──────▼───────┐
+                                                                                          │ dst_local[n] │
+                                                                                          └──────────────┘
+
+
+图示:
+输入输出Tensor/Scalar    ┌──────────┐
+                        │          │
+                        └──────────┘
+
+vector计算             ┌──────────────────────────┐
+                       │                          │
+                       └──────────────────────────┘
+
+数据流向               ─────────→
+```
 
 **图 2**  AscendQuant算法框图scale和offset都是Tensor<a name="fig2405134711019"></a>  
-![](figures/AscendQuant算法框图scale和offset都是Tensor.png "AscendQuant算法框图scale和offset都是Tensor")
+<!-- img2text -->
+```
+┌───────────────────────────────────────────────────────┐     ┌──────────────────────────────────────────────────────────────┐
+│                                                       │     │                                                              │
+│     ┌───────────┐                                     │     │             ┌───────────┐                                    │
+│     │ scale[n]  │                                     │     │             │ scale[n]  │                                    │
+│     └─────┬─────┘                                     │     │             └─────┬─────┘                                    │
+│           │                                           │     │                   │                                          │
+│           ↓                                           │     │                   ↓                                          │
+│   ┌──────────────────────────┐                        │     │   ┌──────────────────────────┐                               │
+│   │ scale[m, n]              │                        │     │   │ scale[m, n]              │                               │
+│   │ =broadcast(scale[n])     │───→┐                  │     │   │ =broadcast(scale[n])     │───→┐                         │
+│   └──────────────────────────┘   │                  │     │   └──────────────────────────┘   │                         │
+│                                  │                  │     │                                  │                         │
+│                      ┌───────────▼────────────┐     │     │     ┌───────────────┐            │                         │
+│     ┌──────────────┐ │ Tmp1[m, n] =           │     │     │     │ src_local[m, n]│            │                         │
+│     │ src_local[m, n]│ │ Mul(src_local, scale)│     │     │     └───────┬───────┘            │                         │
+│     └──────┬───────┘ └───────────┬────────────┘     │     │             │                    │                         │
+│            │                     │                  │     │       float input                │                         │
+│       half input                 ↓                  │     │             ↓                    │                         │
+│                                  │                  │     │   ┌──────────────────────────┐   │                         │
+│   ┌──────────────┐     ┌─────────▼────────────┐     │     │   │ inputHalf[m, n]          │   │                         │
+│   │ offset[n]    │     │ Tmp2[m, n] =         │     │     │   │ =Cast(src_local, float->half)│ │                         │
+│   └──────┬───────┘     │ Add(Tmp1, offset)    │     │     │   └───────────┬──────────────┘   │                         │
+│          │             └─────────┬────────────┘     │     │               │                  │                         │
+│          │                       │                  │     │               ↓                  │                         │
+│          ↓                       ↓                  │     │      ┌────────▼─────────────┐    │                         │
+│   ┌──────────────────────────┐  ┌──────────────────┐│     │      │ Tmp1[m, n] =          │    │                         │
+│   │ offset[m, n]             │──→│ dst_local[m, n] ││     │      │ =Mul(inputHalf, scale)│    │                         │
+│   │ =broadcast(offset[n])    │   │ =Cast(Tmp2,     ││     │      └────────┬──────────────┘    │                         │
+│   └──────────────────────────┘   │ half->int8_t)   ││     │               ↓                   │                         │
+│                                  └────────┬────────┘│     │      ┌────────▼─────────────┐    │                         │
+│                                           │         │     │      │ Tmp2[m, n] =          │    │                         │
+│                                           ↓         │     │      │ =Add(Tmp1, offset)    │    │                         │
+│                                  ┌────────────────┐ │     │      └────────┬──────────────┘    │                         │
+│                                  │ dst_local[m, n]│ │     │               ↓                   │                         │
+│                                  └────────────────┘ │     │      ┌────────▼─────────────┐    │                         │
+│                                                       │     │      │ dst_local[m, n]      │    │                         │
+└───────────────────────────────────────────────────────┘     │      │ =Cast(Tmp2,          │    │                         │
+                                                              │      │ half->int8_t)        │    │                         │
+                                                              │      └────────┬─────────────┘    │                         │
+                                                              │               │                  │                         │
+                                                              │               ↓                  │                         │
+                                                              │      ┌────────────────┐          │                         │
+                                                              │      │ dst_local[m, n]│          │                         │
+                                                              │      └────────────────┘          │                         │
+                                                              │                                  │                         │
+                                                              │   ┌──────────────────────────┐   │                         │
+                                                              │   │ offset[m, n]             │──→│                         │
+                                                              │   │ =broadcast(offset[n])    │   │                         │
+                                                              │   └──────────┬───────────────┘   │                         │
+                                                              │              ↑                   │                         │
+                                                              │              │                   │                         │
+                                                              │        ┌─────┴─────┐             │                         │
+                                                              │        │ offset[n] │             │                         │
+                                                              │        └───────────┘             │                         │
+                                                              └──────────────────────────────────┘                         │
+                                                                                                                           │
+                                                                                                                           │
+                                                                                     图示：                                │
+                                                                                     输入输出Tensor/Scalar  ┌───────────┐   │
+                                                                                                             │           │   │
+                                                                                                             └───────────┘   │
+                                                                                     vector计算            ┌───────────┐   │
+                                                                                                             │           │   │
+                                                                                                             └───────────┘   │
+                                                                                     数据流向                    ─────→     │
+```
 
 **图 3**  AscendQuant算法框图scale是Tensor&offset是Scalar<a name="fig6542182812108"></a>  
-![](figures/AscendQuant算法框图scale是Tensor-offset是Scalar.png "AscendQuant算法框图scale是Tensor-offset是Scalar")
+<!-- img2text -->
+```
+图 3  AscendQuant算法框图scale是Tensor&offset是Scalar
+
+┌───────────────┐                      ┌────────────────┐
+│   scale[n]    │                      │ src_local[m,n] │
+└──────┬────────┘                      └──────┬─────────┘
+       │                                      │
+       │                                      │  half input
+       │                                      │
+       │      ┌────────────────────────────────────────────────────┐
+       │      │                                                    │
+       ▼      │                       ▼                            │
+┌──────────────────────────┐   ┌──────────────────────────┐        │
+│       scale[m,n]         │ → │       Tmp1[m,n]          │        │
+│  =broadcast(scale[n])    │   │ =Mul(src_local, scale)   │        │
+└──────────────────────────┘   └──────────┬───────────────┘        │
+                                          │                        │
+                                          ▼                        │
+                                   ┌──────────────────────────┐     │
+                                   │       Tmp2[m,n]         │     │
+                                   │ =Adds(Tmp1, offset)     │     │
+                                   └──────────┬───────────────┘     │
+                                              │                     │
+                                              ▼                     │
+                                   ┌──────────────────────────┐     │
+                                   │     dst_local[m,n]       │     │
+                                   │ =Cast(Tmp2, half->int8_t)│     │
+                                   └──────────┬───────────────┘     │
+                                              │                     │
+┌───────────────┐                              │              ┌──────▼─────────┐
+│   offset[1]   │ ────────────────────────────┘              │ dst_local[m,n] │
+└───────────────┘                                             └────────────────┘
+                 └──────────────────────────────────────────────────────────────┘
+
+
+┌───────────────┐                      ┌────────────────┐
+│   scale[n]    │                      │ src_local[m,n] │
+└──────┬────────┘                      └──────┬─────────┘
+       │                                      │
+       │                                      │  float input
+       │                                      │
+       │      ┌────────────────────────────────────────────────────┐
+       │      │                                                    │
+       │      │                       ▼                            │
+       │      │        ┌──────────────────────────────┐            │
+       │      │        │      inputHalf[m,n]          │            │
+       │      │        │ =Cast(src_local, float->half)│            │
+       │      │        └─────────────┬────────────────┘            │
+       ▼      │                      │                             │
+┌──────────────────────────┐         ▼                             │
+│       scale[m,n]         │ → ┌──────────────────────────┐        │
+│  =broadcast(scale[n])    │   │       Tmp1[m,n]          │        │
+└──────────────────────────┘   │ =Mul(inputHalf, scale)   │        │
+                               └──────────┬───────────────┘        │
+                                          │                        │
+                                          ▼                        │
+                                   ┌──────────────────────────┐     │
+                                   │       Tmp2[m,n]         │     │
+                                   │ =Adds(Tmp1, offset)     │     │
+                                   └──────────┬───────────────┘     │
+                                              │                     │
+                                              ▼                     │
+                                   ┌──────────────────────────┐     │
+                                   │     dst_local[m,n]       │     │
+                                   │ =Cast(Tmp2, half->int8_t)│     │
+                                   └──────────┬───────────────┘     │
+                                              │                     │
+┌───────────────┐                              │              ┌──────▼─────────┐
+│   offset[1]   │ ────────────────────────────┘              │ dst_local[m,n] │
+└───────────────┘                                             └────────────────┘
+                 └──────────────────────────────────────────────────────────────┘
+
+
+图示:
+输入输出Tensor/Scalar   ┌───────────────┐
+                        │               │
+                        └───────────────┘
+
+vector计算             ┌──────────────────────────┐
+                        │                          │
+                        └──────────────────────────┘
+
+数据流向               ─────────→
+```
 
 如上图所示是AscendQuant内部算法框图，计算过程大致描述为如下几步，均在Vector上进行：
 
@@ -73,10 +288,95 @@
 5.  精度转换：将Tmp2从half转换成int8\_t类型，得到output。
 
 **图 4**  AscendQuant算法框图PER\_TOKEN/PER\_\_GROUP场景scale和offset都是tensor<a name="fig841775615011"></a>  
-![](figures/AscendQuant算法框图PER_TOKEN-PER__GROUP场景scale和offset都是tensor.png "AscendQuant算法框图PER_TOKEN-PER__GROUP场景scale和offset都是tensor")
+<!-- img2text -->
+```text
+                           ┌──────────┐                    ┌────────────────┐
+                           │ scale[m] │                    │ src_local[m, n]│
+                           └────┬─────┘                    └───────┬────────┘
+                                │                                  │
+                                │                                  ↓
+                                │                            ┌────────────┐
+                                │                            │  读取src   │
+                                │                            └────┬───────┘
+                                │                                 │
+                                ↓                                 ↓
+                         ┌────────────┐                  ┌──────────────────────┐
+                         │  读取scale │                  │      src_vreg =      │
+                         └────┬───────┘                  │ Cast(ori_src_vreg)   │
+                              │                          └─────────┬────────────┘
+                              │                                    │
+                              ↓                                    ↓
+                     ┌──────────────────────┐             ┌──────────────────────┐
+                     │    scale_vreg =      │ ─────────→  │     temp_vreg=       │
+                     │ Cast(ori_scale_vreg) │             │ Mul(src_vreg,        │
+                     └──────────────────────┘             │     scale_vreg)      │
+                                                          └─────────┬────────────┘
+                                                                    │
+                                                                    ↓
+                                                          ┌──────────────────────┐
+                                                          │    temp2_vreg=       │ ←──────── ┌──────────────────────┐
+                                                          │ Add(temp_vreg,       │           │    offset_vreg =     │
+                                                          │     offset_vreg)     │           │ Cast(ori_offset_vreg)│
+                                                          └─────────┬────────────┘           └─────────┬────────────┘
+                                                                    │                                  ↑
+                                                                    │                                  │
+                                                                    ↓                            ┌────────────┐
+                                                          ┌──────────────────────┐              │  读取offset│
+                                                          │      dst_vreg =      │              └────┬───────┘
+                                                          │   Cast(temp2_vreg)   │                   │
+                                                          └─────────┬────────────┘                   │
+                                                                    │                                │
+                                                                    ↓                                │
+                                                              ┌───────────────┐               ┌──────────┐
+                                                              │ dst_local[m, n]│               │ offset[n]│
+                                                              └───────────────┘               └──────────┘
+```
 
 **图 5**  AscendQuant算法框图PER\_TOKEN/PER\_\_GROUP场景scale是tensor&offset是scalar<a name="fig1452882415581"></a>  
-![](figures/AscendQuant算法框图PER_TOKEN-PER__GROUP场景scale是tensor-offset是scalar.png "AscendQuant算法框图PER_TOKEN-PER__GROUP场景scale是tensor-offset是scalar")
+<!-- img2text -->
+```text
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                              │
+│   ┌───────────────┐                               ┌────────────────┐                         │
+│   │   scale[m]    │                               │ src_local[m, n]│                         │
+│   └──────┬────────┘                               └───────┬────────┘                         │
+│          │                                                │                                  │
+│          ↓                                                ↓                                  │
+│   ┌────────────────┐                             ┌────────────────┐                         │
+│   │    读取scale    │                             │    读取src      │                         │
+│   └──────┬─────────┘                             └───────┬────────┘                         │
+│          │                                                │                                  │
+│          ↓                                                ↓                                  │
+│   ┌────────────────────────┐                    ┌────────────────────────┐                  │
+│   │      scale_vreg =      │                    │       src_vreg =       │                  │
+│   │   Cast(ori_scale_vreg) │                    │   Cast(ori_src_vreg)   │                  │
+│   └────────────┬───────────┘                    └────────────┬───────────┘                  │
+│                │                                             │                              │
+│                └──────────────────────────→ ┌────────────────────────┐                       │
+│                                             │      temp_vreg=        │                       │
+│                                             │ Mul(src_vreg, scale_vreg)│                      │
+│                                             └────────────┬───────────┘                       │
+│                                                          │                                   │
+│                                                          ↓                                   │
+│                                             ┌────────────────────────┐      ┌────────────────────────────┐
+│                                             │      temp2_vreg=       │ ←────│        cast_offset =       │
+│                                             │ Adds(temp_vreg,        │      │ ToFloat(offset)/           │
+│                                             │      cast_offset)      │      │ static_cast(offset)        │
+│                                             └────────────┬───────────┘      └────────────┬───────────────┘
+│                                                          │                                │               │
+│                                                          ↓                                │               │
+│                                             ┌────────────────────────┐                     │               │
+│                                             │       dst_vreg =       │                     │               │
+│                                             │    Cast(temp2_vreg)    │                     │               │
+│                                             └────────────┬───────────┘                     │               │
+│                                                          │                                 │               │
+│                                                          ↓                                 │               │
+│                                             ┌────────────────┐                    ┌────────┴───────┐      │
+│                                             │ dst_local[m, n]│                    │    offset      │      │
+│                                             └────────────────┘                    └────────────────┘      │
+│                                                                                              │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 PER\_TOKEN/PER\_GROUP场景的计算逻辑如下：
 

@@ -20,7 +20,8 @@
 
 按元素将src0和src1相乘并和dst相加，将最终结果存放进dst中。计算公式如下：
 
-![](images/atlasascendc_api_07_0048_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

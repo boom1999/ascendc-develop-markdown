@@ -84,7 +84,45 @@ __aicore__ inline CubeResGroupHandle(GM_ADDR workspace, uint8_t blockStart, uint
 如下图所示，CubeResGroupHandle1的blockStart为4，blockSize为4，表示起始的AIC序号为2，即blockStart / 2；AIC数量为2，即blockSize / 2。msgQueueSize为10，表示消息队列个数为10，每个Block分配的消息队列个数为Ceil\(msgQueueSize，blockSize/2\)，Block2和Block3分配到的消息队列个数均为5。CubeResGroupHandle2的msgQueueSize数量为11，最后一个Block只能分配5个消息队列。
 
 **图 1**  Block和消息队列映射示意图<a name="fig38005710136"></a>  
-![](figures/Block和消息队列映射示意图.png "Block和消息队列映射示意图")
+<!-- img2text -->
+```text
+┌────────────────────────────┬──────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
+│ CubeResGroupHandle         │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │
+│ 1                          │ Block 2  ├────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │
+│ blockStart: 4              │          ├────────────┼────────────┼────────────┼────────────┼────────────┤
+│ blockSize: 4               │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │
+│ msgQueueSize: 10           │          ├────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │
+├────────────────────────────┼──────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │ Block 3  │ msgQueue 5 │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │
+│                            │          ├────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 5 │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │
+│                            │          ├────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 5 │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │
+│                            │          ├────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 5 │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │
+└────────────────────────────┴──────────┴────────────┴────────────┴────────────┴────────────┴────────────┘
+
+
+┌────────────────────────────┬──────────┬────────────┬────────────┬────────────┬────────────┬────────────┬────────────┐
+│ CubeResGroupHandle         │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │ msgQueue 5 │
+│ 2                          │ Block 0  ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │ msgQueue 5 │
+│ blockStart: 0              │          ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│ blockSize: 4               │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │ msgQueue 5 │
+│ msgQueueSize: 11           │          ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 0 │ msgQueue 1 │ msgQueue 2 │ msgQueue 3 │ msgQueue 4 │ msgQueue 5 │
+├────────────────────────────┼──────────┼────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │ Block 1  │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │ msgQueue 10│            │
+│                            │          ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │ msgQueue 10│            │
+│                            │          ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │ msgQueue 10│            │
+│                            │          ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+│                            │          │ msgQueue 6 │ msgQueue 7 │ msgQueue 8 │ msgQueue 9 │ msgQueue 10│            │
+└────────────────────────────┴──────────┴────────────┴────────────┴────────────┴────────────┴────────────┴────────────┘
+```
 
 ## 约束说明<a name="zh-cn_topic_0000001526206862_section65498832"></a>
 

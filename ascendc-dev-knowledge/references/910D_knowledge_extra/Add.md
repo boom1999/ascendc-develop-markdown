@@ -21,7 +21,10 @@
 
 按元素求和，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346435.png)
+<!-- img2text -->
+$$
+\text{z} = \text{x} + \text{y}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

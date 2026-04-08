@@ -21,9 +21,15 @@
 
 按元素做Silu运算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346482.png)
+<!-- img2text -->
+$$
+y = \frac{x}{1 + e^{-x}}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554426379.png)
+<!-- img2text -->
+$$
+y_i = \frac{x_i}{1 + e^{-x_i}}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

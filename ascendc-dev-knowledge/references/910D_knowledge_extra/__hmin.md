@@ -21,7 +21,10 @@
 
 获取两个输入数据中的最小值。
 
-![](figures/zh-cn_formulaimage_0000002523346988.png)
+<!-- img2text -->
+$$
+dst_i=\min(x_i,\ y_i)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

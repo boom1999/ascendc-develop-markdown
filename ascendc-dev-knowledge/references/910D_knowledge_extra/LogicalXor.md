@@ -21,7 +21,14 @@
 
 按元素进行逻辑异或操作。当输入的数据类型不是bool时，零被视为False，非零数据被视为True。
 
-![](figures/zh-cn_formulaimage_0000002554346815.png)
+<!-- img2text -->
+$$
+out_i = x1_i \oplus x2_i =
+\begin{cases}
+1, & x1_i \neq x2_i \\
+0, & x1_i = x2_i
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,9 +21,13 @@
 
 按元素做双曲余弦函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306904.png)
+<!-- img2text -->
+$$y = \cosh(x) = \frac{e^x + e^{-x}}{2}$$
 
-![](figures/zh-cn_formulaimage_0000002554426795.png)
+<!-- img2text -->
+$$
+y = \cosh(x) = \frac{e^{x} + e^{-x}}{2}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

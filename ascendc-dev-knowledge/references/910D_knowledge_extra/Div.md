@@ -21,7 +21,10 @@
 
 按元素求商，公式表达如下：
 
-![](figures/zh-cn_formulaimage_0000002523346980.png)
+<!-- img2text -->
+$$
+\text{out}_{i} = \frac{x1_{i}}{x2_{i}}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

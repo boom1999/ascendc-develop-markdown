@@ -22,7 +22,10 @@ Crd2Idx函数用于将多维坐标（Coordinate）通过布局（Layout）转换
 
 对于一个布局Layout，其Shape为(d0, d1, ..., dn)，Stride为(s0, s1, ..., sn)，Coordinate为(c0, c1, ..., cn)到线性索引Index的转换公式为：
 
-![](images/atlasascendc_api_07_00146_img_001.png)
+<!-- img2text -->
+```
+Index = c₀ * s₀ + c₁ * s₁ + ... + cₙ * sₙ
+```
 
 例如，对于Shape (3, 4, 5)，Stride (20, 5, 1)和Coordinate (1, 2, 3)：
 
@@ -37,7 +40,29 @@ Index = 20 + 10 + 3 = 33
 
 去线性化的方法介绍如下：对于一个n维数组，形状为(d0, d1, ..., dn)，线性坐标c对应的多维坐标(c0, c1, ..., cn)，可以通过以下公式进行转换：
 
-![](images/atlasascendc_api_07_00146_img_002.png)
+<!-- img2text -->
+```
+线性坐标 c
+   │
+   ▼
+┌──────────────────────────────────────────────┐
+│ c mod d0                                     │
+│ (c / d0) mod d1                              │
+│ ......                                       │
+│ (c / (d0*d1*...*d(n-1))) mod dn              │
+└──────────────────────────────────────────────┘
+   │
+   ▼
+多维坐标 (c0, c1, ..., cn)
+```
+
+说明:
+- 图中表达的是去线性化（delinearize）公式：将线性坐标 c 转换为多维坐标 (c0, c1, ..., cn)。
+- 公式中的各项文字为：
+  - `c mod d0`
+  - `(c / d0) mod d1`
+  - `......`
+  - `(c / (d0*d1*...*d(n-1))) mod dn`
 
 例如：对于Shape ((2, 4), (3, 5))，Stride((3, 6), (1, 24))，Layout ((2, 4), (3, 5)) : ((3, 6), (1, 24))，Coordinate（11, 12），按照列优先原则，Crd2Idx的结果为：
 
@@ -51,17 +76,22 @@ crd2idx = delinearize(11, 12) * stride
 
 总结上述过程，计算公式如下：
 
-![](images/atlasascendc_api_07_00146_img_003.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_00146_img_004.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_00146_img_005.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_00146_img_006.png)
+<!-- img2text -->
+[图片无法识别]
 
 其中(d0, d1, ..., dn)为Shape，(s0, s1, ..., sn)为Stride，delinearize公式展开如下：
 
-![](images/atlasascendc_api_07_00146_img_007.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

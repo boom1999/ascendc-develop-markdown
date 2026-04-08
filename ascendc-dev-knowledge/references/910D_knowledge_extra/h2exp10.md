@@ -21,7 +21,8 @@
 
 指定输入x，对x的各元素，获取10的该元素次方。
 
-![](figures/zh-cn_formulaimage_0000002554346583.png)
+<!-- img2text -->
+$$\operatorname{out}_{i}=10^{x_{i}}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

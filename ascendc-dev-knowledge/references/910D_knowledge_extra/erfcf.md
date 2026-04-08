@@ -21,7 +21,10 @@
 
 获取输入数据的互补误差函数值。
 
-![](figures/zh-cn_formulaimage_0000002554426905.png)
+<!-- img2text -->
+$$
+\operatorname{erfcf}(x)=\frac{2}{\sqrt{\pi}}\int_{x}^{\infty} e^{-t^{2}}\,dt
+$$
 
 ## 函数原型<a name="section1188715215306"></a>
 

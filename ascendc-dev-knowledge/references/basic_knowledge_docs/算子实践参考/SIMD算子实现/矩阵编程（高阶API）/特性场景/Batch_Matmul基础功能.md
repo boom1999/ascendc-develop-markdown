@@ -16,7 +16,39 @@ Batch Matmul当前支持4种Layout类型：BSNGD、SBNGD、BNGS1S2、NORMAL（BM
 下图为NORMAL数据排布格式的Batch Matmul计算。整个Matmul计算一共包含4个矩阵乘操作：mat_a1*mat_b1、mat_a2*mat_b2、mat_a3*mat_b3、mat_a4*mat_b4，需要单核上计算四个singleCoreM *singleCoreN。在该场景下，如果shape较小，可以将其视为Batch Matmul场景进行批量处理，以提升性能。一次IterateBatch可同时计算出mat_c1 = mat_a1 * mat_b1、mat_c2 = mat_a2 * mat_b2、mat_c3 = mat_a3 * mat_b3、mat_c4 = mat_a4 * mat_b4。
 
 **图1 **NORMAL数据排布格式的Batch Matmul示意图
-![](images/atlas_ascendc_10_0041_img_001.png)
+<!-- img2text -->
+```text
+A                                                      B                                  C
+      ┌─────────────────────┐                        ┌─────────────┐                 ┌─────────────┐
+      │                     │                        │             │                 │             │
+      │        mat_a1       │                        │   mat_b1    │                 │   mat_c1    │
+      │                     │                        │             │                 │             │
+      ├─────────────────────┤                        ├─────────────┤                 ├─────────────┤
+      │                     │                        │             │                 │             │
+      │        mat_a2       │                        │   mat_b2    │                 │   mat_c2    │
+      │                     │                        │             │                 │             │
+      ├─────────────────────┤                        ├─────────────┤                 ├─────────────┤
+      │                     │                        │             │                 │             │
+      │        mat_a3       │          ×             │   mat_b3    │        =        │   mat_c3    │
+      │                     │                        │             │                 │             │
+      ├─────────────────────┤                        ├─────────────┤                 ├─────────────┤
+      │                     │                        │             │                 │             │
+      │        mat_a4       │                        │   mat_b4    │                 │   mat_c4    │
+      │                     │                        │             │                 │             │
+      └─────────────────────┘                        └─────────────┘                 └─────────────┘
+```
+
+说明:
+- 左侧为 A 的 NORMAL 数据排布，按批次纵向堆叠: mat_a1、mat_a2、mat_a3、mat_a4
+- 中间为 B 的 NORMAL 数据排布，按批次纵向堆叠: mat_b1、mat_b2、mat_b3、mat_b4
+- 右侧为结果 C，按批次纵向堆叠: mat_c1、mat_c2、mat_c3、mat_c4
+- 对应计算关系:
+  - mat_c1 = mat_a1 * mat_b1
+  - mat_c2 = mat_a2 * mat_b2
+  - mat_c3 = mat_a3 * mat_b3
+  - mat_c4 = mat_a4 * mat_b4
+- 图中每个大矩形内部的小网格表示矩阵元素排布；四个子矩阵在各自张量中沿批次维连续排列
+- 该图对应 Batch Matmul 的 NORMAL（BMNK）数据排布格式示意图
 
 #### 使用场景
 

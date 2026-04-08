@@ -21,9 +21,24 @@
 
 按元素执行Sign操作，Sign是指返回输入数据的符号，如果为0则返回0，如果为正数则返回1，如果为负数则返回-1。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306590.png)
+<!-- img2text -->
+$$
+y =
+\begin{cases}
+1, & x > 0 \\
+0, & x = 0 \\
+-1, & x < 0
+\end{cases}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554346513.png)
+<!-- img2text -->
+$$
+y=\begin{cases}
+-1, & x<0 \\
+0, & x=0 \\
+1, & x>0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

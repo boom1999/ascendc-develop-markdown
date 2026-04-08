@@ -21,7 +21,8 @@
 
 获取输入数据的三角函数正切值。
 
-![](figures/zh-cn_formulaimage_0000002523347016.png)
+<!-- img2text -->
+$$\tan x=\frac{\sin x}{\cos x}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

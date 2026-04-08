@@ -25,15 +25,32 @@ Quantize与[AscendQuant](AscendQuant.md)的功能类似，Quantize在PER\_TENSOR
 
 -   PER\_TENSOR量化:整个srcTensor对应一个量化参数，scale和offset的shape为\[1\]。
 
-    ![](figures/zh-cn_formulaimage_0000002554346603.png)
+    <!-- img2text -->
+$$dstTensor = \operatorname{quantize}(srcTensor, scale, offset, sqrtMode, roundMode, dstType)$$
+
+$$dstTensor_i = \operatorname{round}\left(\left(\frac{srcTensor_i}{scale_i} \cdot \frac{1}{scale_i}\right) + offset_i\right)$$
+
+$$round = \begin{cases}
+\operatorname{ceil}, & \text{when roundMode = 0} \\
+\operatorname{away\_from\_zero}, & \text{when roundMode = 1} \\
+\operatorname{floor}, & \text{when roundMode = 2} \\
+\operatorname{half\_up}, & \text{when roundMode = 3} \\
+\operatorname{half\_to\_even}, & \text{when roundMode = 4}
+\end{cases}$$
+
+$$\text{当 } sqrtMode = \text{true 时。}$$
 
 -   PER\_CHANNEL量化：srcTensor的shape为\[m, n\]，每个channel维度对应一个量化参数，scale和offset的shape为\[1, n\]。
 
-    ![](figures/zh-cn_formulaimage_0000002554346605.png)
+    <!-- img2text -->
+$$dstTensor(i, j) = \operatorname{clamp}\left(\operatorname{round}\left(\frac{srcTensor(i, j)}{scale(0, j)}\right) + offset(0, j)\right)$$
 
 -   PER\_TOKEN量化：srcTensor的每组token（token为n方向，共有m组token）中的元素共享一个量化参数，srcTensor的shape为\[m, n\]时，scale和offset的shape为\[m, 1\]。
 
-    ![](figures/zh-cn_formulaimage_0000002554346597.png)
+    <!-- img2text -->
+$$
+\text{deqScale}_{i}=\text{scale}_{i}\cdot 2^{-\text{offset}_{i}}
+$$
 
 -   PER\_GROUP量化：定义group的计算方向为k方向，srcTensor在k方向上每groupSize个元素共享一组scale和offset。srcTensor的shape为\[m, n\]时，如果kDim=0，表示k是m方向，scale和offset的shape为\[\(m + groupSize - 1\) / groupSize, n\]；如果kDim=1，表示k是n方向，scale和offset的shape为\[m，\(n + groupSize - 1\) / groupSize\]。
 
@@ -42,20 +59,32 @@ Quantize与[AscendQuant](AscendQuant.md)的功能类似，Quantize在PER\_TENSOR
     -   fp4x2\_e2m1\_t/fp4x2\_e1m2\_t场景（float4场景）
         -   kDim = 0:
 
-            ![](figures/zh-cn_formulaimage_0000002523306680.png)
+            <!-- img2text -->
+$$
+\text{quantScale} = \text{round}\left(\frac{\text{coef} \times 16}{\text{srcScale}}\right)
+$$
+
+$$
+\text{quantOffset} = \text{round}\left(\frac{\text{srcOffset} \times \text{coef} \times 16}{\text{srcScale}}\right)
+$$
 
         -   kDim = 1:
 
-            ![](figures/zh-cn_formulaimage_0000002554346599.png)
+            <!-- img2text -->
+$$dstLocal[n] = \sum_{i=0}^{srcK-1} src0Local[i \times srcM + n] \times src1Local[i],\ 0 \leq n < srcM$$
 
     -   int8\_t/hifloat8\_t/fp8\_e5m2\_t/fp8\_e4m3fn\_t场景（b8场景）
         -   kDim = 0：
 
-            ![](figures/zh-cn_formulaimage_0000002523346672.png)
+            <!-- img2text -->
+$$
+dstLocal[row, col] = src0Local[row, col] \times src1Local[row]
+$$
 
         -   kDim = 1:
 
-            ![](figures/zh-cn_formulaimage_0000002523346658.png)
+            <!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

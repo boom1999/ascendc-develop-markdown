@@ -20,11 +20,19 @@
 
 按元素做正切函数计算，计算公式如下：
 
-![](images/atlasascendc_api_07_0532_img_001.png)
+<!-- img2text -->
+```
+tan(x) = x + x^3 / 3 + 2x^5 / 15 + 17x^7 / 315 + ...
+```
 
 Tan(x)的泰勒展开式为：
 
-![](images/atlasascendc_api_07_0532_img_002.png)
+<!-- img2text -->
+```
+           x^3        2x^5       17x^7
+Tan(x)=x + ── +      ───── +    ────── + ...
+            3          15         315
+```
 
 其中B2n是伯努利数。
 

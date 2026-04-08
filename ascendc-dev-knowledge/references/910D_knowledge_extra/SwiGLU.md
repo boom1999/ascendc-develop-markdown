@@ -21,11 +21,13 @@
 
 SwiGLU是采用Swish作为激活函数的GLU变体。具体计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346422.png)
+<!-- img2text -->
+$$\operatorname{SwiGLU}(x, W, V, b, c)=\operatorname{Swish}(xW+b)\otimes(xV+c)$$
 
 其中Swish激活函数的计算公式如下（β为常量）：
 
-![](figures/zh-cn_formulaimage_0000002554426327.png)
+<!-- img2text -->
+$$\operatorname{swish}(x)=x\cdot \sigma(\beta x)=\frac{x}{1+e^{-\beta x}}$$
 
 ## 函数原型<a name="section8850255125911"></a>
 

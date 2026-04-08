@@ -21,7 +21,8 @@
 
 按元素求差，再进行Relu计算（结果和0对比取较大值）。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346630.png)
+<!-- img2text -->
+$$y_i = \max(x_{1i} - x_{2i}, 0)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

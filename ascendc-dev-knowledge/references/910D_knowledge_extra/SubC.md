@@ -21,7 +21,13 @@
 
 根据mask对源操作数src0、src1以及进位数据carrySrc进行按元素相减的操作，将结果写入目的操作数dst。src0、src1、carrySrc相减时如果产生借位，在MaskReg carry中对应位置每4bit的最低位写0，否则写1。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426353.png)
+<!-- img2text -->
+$$
+\begin{aligned}
+&\text{if } \mathrm{mask}[i]=1,\ \mathrm{dst}[i]=\mathrm{src0}[i]-\mathrm{src1}[i]-\mathrm{carrySrc}[i], \\
+&\qquad \text{if borrow occurs, } \mathrm{carry}[4i]=0,\ \text{else } \mathrm{carry}[4i]=1
+\end{aligned}
+$$
 
 具体的示例如下：
 

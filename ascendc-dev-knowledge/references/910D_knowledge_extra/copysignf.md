@@ -21,7 +21,14 @@
 
 获取由第一个输入x的数值部分和第二个输入y的符号部分拼接得到的浮点数。
 
-![](figures/zh-cn_formulaimage_0000002554346875.png)
+<!-- img2text -->
+$$
+\operatorname{copysign}(x,y)=
+\begin{cases}
+|x|, & y\geq 0 \\
+-|x|, & y<0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

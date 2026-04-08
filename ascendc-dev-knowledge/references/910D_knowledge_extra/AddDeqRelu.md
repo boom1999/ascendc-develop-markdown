@@ -21,11 +21,17 @@
 
 依次计算按元素求和、结果进行deq量化后再进行relu计算（结果和0对比取较大值）。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346733.png)
+<!-- img2text -->
+$$
+f\left( x_1, x_2 \right) = \max\left( \operatorname{deq}\left( x_1 + x_2 \right),\ 0 \right)
+$$
 
 Deq的计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426693.png)
+<!-- img2text -->
+$$
+\mathrm{Deq}=\frac{x}{2^{17}}\times \mathrm{DeqScale}\times 2^{17}
+$$
 
 如上公式先除以2^17再乘以2^17用于防止x乘以DeqScale出现溢出情况；公式中DeqScale需要通过SetDeqScale进行设置，具体可参考[SetDeqScale](SetDeqScale.md)。
 

@@ -21,7 +21,8 @@
 
 获取输入数据x的1阶第一类贝塞尔函数j1的值。
 
-![](figures/zh-cn_formulaimage_0000002554426703.png)
+<!-- img2text -->
+$$j_1(x)=\frac{1}{\pi}\int_0^\pi \cos\!\left(\tau-x\sin\tau\right)\,d\tau$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

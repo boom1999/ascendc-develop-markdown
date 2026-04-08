@@ -21,7 +21,8 @@
 
 获取输入数据的反正切值。
 
-![](figures/zh-cn_formulaimage_0000002523306748.png)
+<!-- img2text -->
+$$\operatorname{atanf}(x)=\arctan(x)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -20,7 +20,23 @@
 
 每对elements按位与运算，公式表达如下：
 
-![](images/atlasascendc_api_07_0041_img_001.png)
+<!-- img2text -->
+```
+dstLocal
+┌────┬────┬────┬────┬────┐
+│dst0│dst1│dst2│dst3│... │
+└────┴────┴────┴────┴────┘
+  ↑    ↑    ↑    ↑
+  │    │    │    │
+┌────┬────┬────┬────┬────┐
+│src0│src1│src2│src3│... │
+└────┴────┴────┴────┴────┘
+srcLocal
+```
+
+说明:
+- 图中表达的公式为：dstLocal = dstLocal & srcLocal
+- 即每对 elements 按位与运算：dst0=dst0&src0，dst1=dst1&src1，dst2=dst2&src2，dst3=dst3&src3，...
 
 #### 函数原型
 

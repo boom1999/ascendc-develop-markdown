@@ -21,7 +21,8 @@
 
 获取输入数据x的标准正态分布的累积分布函数值。
 
-![](figures/zh-cn_formulaimage_0000002523347024.png)
+<!-- img2text -->
+$$\Phi(x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^{2}}{2}}\,dt$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

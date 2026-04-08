@@ -20,7 +20,8 @@
 
 按元素将src0和dst相乘并加上src1，再进行Relu计算（结果和0对比取较大值），最终结果存放进dst中。计算公式如下：
 
-![](images/atlasascendc_api_07_0051_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

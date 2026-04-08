@@ -20,19 +20,50 @@
 
 GeGLU是采用GELU作为激活函数的GLU变体。具体计算公式如下：
 
-![](images/atlasascendc_api_07_0786_img_001.png)
+<!-- img2text -->
+```
+                    ┌───────────┐
+                    │           │
+                    │   GELU    │
+                    │           │
+                    └───────────┘
+                         ▲
+                         │
+x2 ──────────────────────┘
+
+x1 ────────────────────────────────┐
+                                    ▼
+                               ┌────────┐
+                               │   ×    │
+                               └────────┘
+                                    │
+                                    ▼
+                                    y
+```
 
 其中GELU激活函数的计算公式如下：
 
-![](images/atlasascendc_api_07_0786_img_002.png)
+<!-- img2text -->
+```
 
-上述公式中的erf为误差函数：![](images/atlasascendc_api_07_0786_img_003.png)
 
-误差函数没有解析表达式，按照业界普遍使用的tanh近似表达式：![](images/atlasascendc_api_07_0786_img_004.png)
+                    x
+GELU(x) = ────────────────
+                 x
+           1 + e^(-1.702x)
+
+```
+
+上述公式中的erf为误差函数：<!-- img2text -->
+[图片无法识别]
+
+误差函数没有解析表达式，按照业界普遍使用的tanh近似表达式：<!-- img2text -->
+[图片无法识别]
 
 将GELU近似公式代入可得GeGLU表达式为：
 
-![](images/atlasascendc_api_07_0786_img_005.png)
+<!-- img2text -->
+[图片无法识别]
 
 其中*a*=-0.0713548162726, *b*=2.2363860002236e1，x1和x0代表srcTensor1和srcTensor0中的元素。
 

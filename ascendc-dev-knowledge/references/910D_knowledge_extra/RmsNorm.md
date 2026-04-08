@@ -21,7 +21,10 @@
 
 实现对shape大小为\[B，S，H\]的输入数据的RmsNorm归一化，其计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306452.png)
+<!-- img2text -->
+$$
+y_i = \frac{x_i}{\sqrt{\frac{1}{n}\sum_{i=1}^{n} x_i^2 + \varepsilon}} \cdot \gamma_i
+$$
 
 其中，γ为缩放系数，ε为防除零的权重系数。
 

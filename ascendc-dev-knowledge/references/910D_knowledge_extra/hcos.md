@@ -21,7 +21,8 @@
 
 获取输入数据的三角函数余弦值。
 
-![](figures/zh-cn_formulaimage_0000002523306722.png)
+<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

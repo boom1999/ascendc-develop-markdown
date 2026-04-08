@@ -21,7 +21,8 @@
 
 获取输入数据与π相乘的三角函数正弦值和余弦值。
 
-![](figures/zh-cn_formulaimage_0000002523346718.png)
+<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

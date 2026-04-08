@@ -21,9 +21,15 @@
 
 按元素做逻辑回归Tanh，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346450.png)
+<!-- img2text -->
+$$
+y_i = \operatorname{sign}(x_i)\left(1 - e^{-2|x_i|}\right) \Big/ \left(1 + e^{-2|x_i|}\right)
+$$
 
-![](figures/zh-cn_formulaimage_0000002554426345.png)
+<!-- img2text -->
+$$
+y_i = \frac{2}{1 + e^{-2x_i}} - 1
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,9 +21,20 @@
 
 在神经网络中，GELU是一个重要的激活函数，其灵感来源于relu和dropout，在激活中引入了随机正则的思想。为了降低GELU的算力需求，业界提出了FastGelu等版本。本接口FasterGelu是针对FastGelu的化简版本，公式化简可以大幅度提升计算性能。计算公式如下:
 
-![](figures/zh-cn_formulaimage_0000002523346540.png)
+<!-- img2text -->
+$$
+\operatorname{fastergelu}(x)=\frac{x}{1+e^{-1.702|x|}}\cdot e^{0.851(x-|x|)}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554346479.png)，化简后可得![](figures/zh-cn_formulaimage_0000002554346473.png)
+<!-- img2text -->
+$$
+\operatorname{FasterGelu}(x)=
+\begin{cases}
+\dfrac{x}{1+e^{-1.702x}}, & x>0 \\
+\dfrac{xe^{1.702x}}{1+e^{1.702x}}, & x\leq 0
+\end{cases}
+$$，化简后可得<!-- img2text -->
+$$\operatorname{fastergelu}(x)=\frac{x}{1+e^{-1.702|x|}}\cdot e^{0.851(x-|x|)}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

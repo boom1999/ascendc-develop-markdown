@@ -21,7 +21,8 @@
 
 获取输入数据的三角函数余弦值。
 
-![](figures/zh-cn_formulaimage_0000002523307028.png)
+<!-- img2text -->
+$$\cos(x)=\frac{e^{ix}+e^{-ix}}{2}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -72,7 +72,118 @@ __aicore__ inline void Copy(const LocalTensor<T>& dst, const LocalTensor<T>& src
   - 通用的Counter模式：Mask代表**整个矢量计算参与计算的元素个数，迭代次数不生效**。
   - Counter模式配合Copy高维切分计算API，Mask代表**每次Repeat中处理的元素个数，迭代次数生效。**示意图如下：
 
-![](images/atlasascendc_api_07_0106_img_001.png)
+<!-- img2text -->
+```
+srcLocal
+┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
+│ 1  │    │ 2  │    │ 3  │ ...│ N  │ ...│ 1  │    │ 2  │    │ 3  │ ...│ N  │    │
+└────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
+<───────────────────────────────────────>
+              srcRepeatSize
+
+<────>
+srcStride
+
+<───>
+ bk1
+
+        <───>
+         bk2
+
+                <───>
+                 bk3
+
+                        <───>
+                         bkN
+
+<──────────────────────────────>
+          repeat 1
+
+                                        <───>
+                                         bk1
+
+                                                <───>
+                                                 bk2
+
+                                                        <───>
+                                                         bk3
+
+                                                                        <───>
+                                                                         bkN
+
+                                        <──────────────────────────────>
+                                                  repeat 2
+
+
+N=ceil(Mask*sizeof(T)/datablockSize)
+
+
+dstLocal
+┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
+│ 1  │    │ 2  │    │ 3  │ ...│ N  │ ...│ 1  │ 2  │ 3  │ ...│ N  │    │    │
+└────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
+<──────────────────────────────────>
+            dstRepeatSize
+
+<──>
+dstStride
+
+<───>
+ bk1
+
+      <───>
+       bk2
+
+            <───>
+             bk3
+
+                    <───>
+                     bkN
+
+<───────────────────────>
+        repeat 1
+
+                                <───>
+                                 bk1
+
+                                      <───>
+                                       bk2
+
+                                            <───>
+                                             bk3
+
+                                                    <───>
+                                                     bkN
+
+                                <───────────────────────>
+                                          repeat 2
+```
+
+- srcRepeatSize: srcLocal 覆盖第1-8块(从第1个 repeat 的起始到第2个 repeat 的起始前)
+- srcStride: srcLocal 覆盖第1-2块(相邻源块之间的间隔)
+- bk1: srcLocal 覆盖第1-1块(第1个数据块)
+- bk2: srcLocal 覆盖第3-3块(第2个数据块)
+- bk3: srcLocal 覆盖第5-5块(第3个数据块)
+- bkN: srcLocal 覆盖第7-7块(第N个数据块)
+- repeat 1: srcLocal 覆盖第1-7块(第1次 Repeat 的处理范围)
+- bk1: srcLocal 覆盖第9-9块(第2个 repeat 的第1个数据块)
+- bk2: srcLocal 覆盖第11-11块(第2个 repeat 的第2个数据块)
+- bk3: srcLocal 覆盖第13-13块(第2个 repeat 的第3个数据块)
+- bkN: srcLocal 覆盖第15-15块(第2个 repeat 的第N个数据块)
+- repeat 2: srcLocal 覆盖第9-15块(第2次 Repeat 的处理范围)
+
+- dstRepeatSize: dstLocal 覆盖第1-8块(从第1个 repeat 的起始到第2个 repeat 的起始前)
+- dstStride: dstLocal 覆盖第1-1块(相邻目标块之间的间隔)
+- bk1: dstLocal 覆盖第1-1块(第1个数据块)
+- bk2: dstLocal 覆盖第3-3块(第2个数据块)
+- bk3: dstLocal 覆盖第5-5块(第3个数据块)
+- bkN: dstLocal 覆盖第7-7块(第N个数据块)
+- repeat 1: dstLocal 覆盖第1-7块(第1次 Repeat 的处理范围)
+- bk1: dstLocal 覆盖第9-9块(第2个 repeat 的第1个数据块)
+- bk2: dstLocal 覆盖第10-10块(第2个 repeat 的第2个数据块)
+- bk3: dstLocal 覆盖第11-11块(第2个 repeat 的第3个数据块)
+- bkN: dstLocal 覆盖第13-13块(第2个 repeat 的第N个数据块)
+- repeat 2: dstLocal 覆盖第9-13块(第2次 Repeat 的处理范围)
 
 #### 调用示例
 

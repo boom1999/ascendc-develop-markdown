@@ -21,9 +21,22 @@
 
 按元素进行正弦计算和余弦计算，分别获得正弦和余弦的结果。
 
-![](figures/zh-cn_formulaimage_0000002523346676.png)
+<!-- img2text -->
+$$
+\begin{aligned}
+y_1 &= \sin(x) \\
+y_2 &= \cos(x)
+\end{aligned}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554346611.png)
+<!-- img2text -->
+$$
+\text{sinOut} = \sin(x)
+$$
+
+$$
+\text{cosOut} = \cos(x)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

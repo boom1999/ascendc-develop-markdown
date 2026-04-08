@@ -21,7 +21,8 @@
 
 获取以10为底，输入数据各元素的对数。
 
-![](figures/zh-cn_formulaimage_0000002523346874.png)
+<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

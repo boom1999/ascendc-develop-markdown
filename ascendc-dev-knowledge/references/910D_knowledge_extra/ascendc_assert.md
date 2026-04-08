@@ -31,7 +31,7 @@ ascendc_assert(assertFlag != 10, "The assertFlag value is 10.\n");
 ascendc_assert(assertFlag != 10, "The assertFlag value is %d.\n", assertFlag);
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+> **注意：** 
 >ascendc\_assert接口打印功能会对算子实际运行的性能带来一定影响（每一条ascendc\_assert，系统会额外增加一条逻辑判断，具体性能影响取决于代码中ascendc\_assert的使用数量），通常在调测阶段使用。开发者可以通过设置ASCENDC\_DUMP=0来关闭打印功能。
 
 NPU域ascendc\_assert打印信息示例如下（DumpHead信息仅在使用自定义算子工程时才会打印）：

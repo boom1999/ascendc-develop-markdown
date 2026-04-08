@@ -21,7 +21,10 @@
 
 获取输入数据x的1阶常规修正圆柱贝塞尔函数的值。
 
-![](figures/zh-cn_formulaimage_0000002554426627.png)
+<!-- img2text -->
+$$
+I_{1}(x)=\sum_{m=0}^{\infty}\frac{1}{m!\,\Gamma(m+2)}\left(\frac{x}{2}\right)^{2m+1}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

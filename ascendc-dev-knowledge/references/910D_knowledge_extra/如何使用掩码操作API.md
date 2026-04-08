@@ -167,7 +167,7 @@ Mask操作的使用方式如下：
     AscendC::ResetMask();
     ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >-   前n个数据计算API接口内部会设置工作模式为Counter模式，所以如果前n个数据计算API配合Counter模式使用时，无需手动调用[SetMaskCount](SetMaskCount.md)设置Counter模式。
 >-   所有手动使用Counter模式的场景，使用完毕后，需要调用[SetMaskNorm](SetMaskNorm.md)恢复工作模式。
 >-   调用[SetVectorMask](SetVectorMask.md)设置Mask，使用完毕后，需要调用[ResetMask](ResetMask.md)恢复Mask值为默认值。

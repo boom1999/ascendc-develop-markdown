@@ -21,7 +21,8 @@
 
 获取输入数据的三角函数正弦值。
 
-![](figures/zh-cn_formulaimage_0000002523346396.png)
+<!-- img2text -->
+$$\sin x=\frac{e^{ix}-e^{-ix}}{2i}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

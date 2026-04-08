@@ -20,21 +20,30 @@
 
 按元素取自然指数，用户可以选择是否使用泰勒展开公式进行计算，计算公式如下：
 
-![](images/atlasascendc_api_07_0589_img_001.png)
+<!-- img2text -->
+```
+      x
+y = e
+```
 
 - 设置泰勒展开项数为0，即不使用泰勒展开公式进行计算，公式如下：
 
-![](images/atlasascendc_api_07_0589_img_002.png)
+<!-- img2text -->
+```
+[图片无法识别]
+```
 
 - 设置泰勒展开项数不为0，即使用泰勒展开公式进行计算，公式如下：
 
-![](images/atlasascendc_api_07_0589_img_003.png)
+<!-- img2text -->
+[图片无法识别]
 
 xAi代表源操作数的整数部分，该值通过floor(x)获取。xBi代表源操作数的小数部分。
 
 泰勒展开公式如下：
 
-![](images/atlasascendc_api_07_0589_img_004.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

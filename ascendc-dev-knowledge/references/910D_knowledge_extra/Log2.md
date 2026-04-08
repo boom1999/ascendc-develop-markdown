@@ -21,7 +21,14 @@
 
 根据mask对输入数据srcReg进行求2的对数操作，将结果写入dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346168.png)
+<!-- img2text -->
+$$
+dst_i =
+\begin{cases}
+\log_{2}(src_i), & \text{if mask}_i \text{ is true} \\
+0, & \text{if mask}_i \text{ is false}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

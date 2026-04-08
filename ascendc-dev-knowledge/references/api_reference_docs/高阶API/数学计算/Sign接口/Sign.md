@@ -20,9 +20,11 @@
 
 按元素执行Sign操作，Sign是指返回输入数据的符号，如果为0则返回0，如果为正数则返回1，如果为负数则返回-1。计算公式如下：
 
-![](images/atlasascendc_api_07_0552_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0552_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

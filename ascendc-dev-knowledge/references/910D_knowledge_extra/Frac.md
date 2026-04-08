@@ -21,7 +21,10 @@
 
 按元素做取小数计算。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306080.png)
+<!-- img2text -->
+$$
+y_i = x_i - \operatorname{trunc}(x_i)
+$$
 
 举例如下：
 

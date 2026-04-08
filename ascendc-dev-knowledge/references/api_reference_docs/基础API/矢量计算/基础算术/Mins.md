@@ -22,7 +22,10 @@
 
 计算公式如下：
 
-![](images/atlasascendc_api_07_0057_img_001.png)
+<!-- img2text -->
+```
+dst_i = x_i > scalarValue ? scalarValue : x_i
+```
 
 #### 函数原型
 

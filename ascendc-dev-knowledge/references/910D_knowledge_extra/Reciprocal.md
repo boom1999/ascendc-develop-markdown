@@ -21,7 +21,10 @@
 
 按元素取倒数，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554346961.png)
+<!-- img2text -->
+$$
+y = \frac{1}{x}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

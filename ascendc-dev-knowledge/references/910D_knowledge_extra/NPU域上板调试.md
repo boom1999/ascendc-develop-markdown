@@ -35,7 +35,7 @@ NPU域上板数据打印功能包括DumpTensor、printf两种，其中DumpTensor
     printf("fmt string %d", 0x123);
     ```
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >DumpTensor、printf接口打印功能会对算子实际运行的性能带来一定影响，通常在调测阶段使用。开发者可以按需关闭打印功能。具体方法请参考[DumpTensor](DumpTensor.md)、[printf](printf.md)。
 
 ## 使用msSanitizer工具进行异常检测<a name="section931475414217"></a>

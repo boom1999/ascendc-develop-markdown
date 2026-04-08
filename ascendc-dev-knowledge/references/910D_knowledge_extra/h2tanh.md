@@ -21,7 +21,8 @@
 
 获取输入数据各元素的三角函数双曲正切值。
 
-![](figures/zh-cn_formulaimage_0000002554345117.png)
+<!-- img2text -->
+$$\tanh(x)=\frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

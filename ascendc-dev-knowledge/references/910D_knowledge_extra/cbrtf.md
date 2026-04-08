@@ -21,7 +21,8 @@
 
 获取输入数据x的立方根。
 
-![](figures/zh-cn_formulaimage_0000002554346305.png)
+<!-- img2text -->
+$$\operatorname{cbrtf}(x)=\sqrt[3]{x}$$
 
 ## 函数原型<a name="section349316241116"></a>
 

@@ -20,7 +20,10 @@
 
 按元素做按位取反，计算公式如下 :
 
-![](images/atlasascendc_api_07_0031_img_001.png)
+<!-- img2text -->
+```
+dst_i = ~src_i
+```
 
 #### 函数原型
 

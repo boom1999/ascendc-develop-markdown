@@ -21,7 +21,8 @@
 
 按元素做浮点数截断，即向零取整操作。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426697.png)
+<!-- img2text -->
+$$y_i = \operatorname{trunc}(x_i)$$
 
 举例如下：
 

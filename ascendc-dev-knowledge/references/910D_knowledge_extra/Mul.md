@@ -21,7 +21,10 @@
 
 按元素求积，公式表达如下：
 
-![](figures/zh-cn_formulaimage_0000002523305652.png)
+<!-- img2text -->
+$$
+Y_i = x1_i \times x2_i,\quad i \in [0, N)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,11 @@
 
 提供灵活标量位置的接口，支持标量在前和标量在后两种场景。其中标量输入支持配置LocalTensor单点元素，计算公式如下，idx表示LocalTensor单点元素的位置系数。
 
-![](figures/zh-cn_formulaimage_0000002554426203.png)
+<!-- img2text -->
+$$dst_i = src0_i\ op\ src1_i,\quad i \in [0, calCount)$$
+$$dst_i = scalar\ op\ src1_i,\quad i \in [0, calCount)$$
+$$dst_i = src0_i\ op\ scalar,\quad i \in [0, calCount)$$
+$$scalar = src[idx]$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

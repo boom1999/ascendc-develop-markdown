@@ -21,7 +21,10 @@
 
 获取以10为底，输入数据的对数。
 
-![](figures/zh-cn_formulaimage_0000002554346635.png)
+<!-- img2text -->
+$$
+y = \log_{10}(x)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

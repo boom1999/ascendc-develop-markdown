@@ -21,7 +21,19 @@
 
 矢量内每个元素与标量求积，计算公式如下，其中VL\_T表示矢量计算单元一个迭代能够处理的元素个数。VL\_T的取值参考[RegTensor](RegTensor.md)。
 
-![](figures/zh-cn_formulaimage_0000002554345317.png)
+<!-- img2text -->
+$$
+dst_i=
+\begin{cases}
+src0_i \times scalar, & \text{if mask bit is 1} \\
+0, & \text{if mask bit is 0 and mode is ZEROING} \\
+dst_i, & \text{if mask bit is 0 and mode is MERGING}
+\end{cases}
+$$
+
+$$
+i = 0,1,\ldots,VL_T-1
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

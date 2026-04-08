@@ -20,7 +20,11 @@
 
 将输入的元素四舍五入到最接近的整数，计算公式如下：
 
-![](images/atlasascendc_api_07_0581_img_001.png)
+<!-- img2text -->
+```
+Round(x) = floor(x + 0.5), x ≥ 0
+Round(x) = ceil(x - 0.5),  x < 0
+```
 
 举例如下：
 

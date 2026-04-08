@@ -21,9 +21,25 @@
 
 [LayerNorm](LayerNorm.md)中，已知均值和方差，计算shape为\[A，R\]的输入数据的标准差的倒数rstd和y，其计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554425899.png)
+<!-- img2text -->
+$$
+rstd = \frac{1}{\sqrt{\mathrm{Var}[i] + \varepsilon}}
+$$
 
-![](figures/zh-cn_formulaimage_0000002523306018.png)
+$$
+Y[i, j] = \gamma[j] \times (X[i, j] - E[i]) \times rstd + \beta[j]
+$$
+
+其中，$E$ 和 $\mathrm{Var}$ 分别代表输入在 $R$ 轴的均值、方差，$\gamma$ 为缩放系数，$\beta$ 为平移系数，$\varepsilon$ 为防除零的权重系数。
+
+<!-- img2text -->
+$$
+\mathrm{rstd}=\frac{1}{\sqrt{\mathrm{Var}[x]+\varepsilon}}
+$$
+
+$$
+y=(x-E[x])\times \mathrm{rstd}\times \gamma+\beta
+$$
 
 其中，E和Var分别代表输入在R轴的均值，方差，γ为缩放系数，β为平移系数，ε为防除零的权重系数。
 

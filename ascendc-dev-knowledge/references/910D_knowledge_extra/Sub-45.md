@@ -21,7 +21,22 @@
 
 根据mask对源操作数src0、src1进行按元素相减的操作，将结果写入目的操作数dst。src0, src1相减产生借位结果时，在MaskReg carry中对应位置每4bit的最低位写0，否则写1。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426657.png)
+<!-- img2text -->
+$$
+\text{dst}_{i} =
+\begin{cases}
+\text{src0}_{i} - \text{src1}_{i}, & \text{mask}_{i} = 1 \\
+\text{dst}_{i}, & \text{mask}_{i} = 0
+\end{cases}
+$$
+
+$$
+\text{carry}_{i} =
+\begin{cases}
+0, & \text{src0}_{i} - \text{src1}_{i} < 0 \\
+1, & \text{src0}_{i} - \text{src1}_{i} \geq 0
+\end{cases}
+$$
 
 具体的示例如下：
 

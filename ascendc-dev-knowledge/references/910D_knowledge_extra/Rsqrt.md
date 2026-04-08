@@ -21,7 +21,10 @@
 
 按元素进行开方后取倒数的计算，公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346884.png)
+<!-- img2text -->
+$$
+y = \frac{1}{\sqrt{x}}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

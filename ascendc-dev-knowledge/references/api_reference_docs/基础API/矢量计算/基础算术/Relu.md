@@ -20,7 +20,10 @@
 
 按元素做线性整流Relu，计算公式如下 ：
 
-![](images/atlasascendc_api_07_0032_img_001.png)
+<!-- img2text -->
+```
+         y = max(0, x)
+```
 
 #### 函数原型
 

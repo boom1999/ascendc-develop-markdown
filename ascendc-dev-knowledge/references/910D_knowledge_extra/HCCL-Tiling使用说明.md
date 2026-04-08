@@ -1,6 +1,6 @@
 # HCCL Tiling使用说明<a name="ZH-CN_TOPIC_0000002523343966"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >对于[TilingData结构体](TilingData结构体.md)，在定义通算融合算子的Tiling结构体时，[Mc2InitTiling](TilingData结构体.md#table4835205712588)必须定义为算子Tiling结构体的第一个参数，[Mc2CcTiling](TilingData结构体.md#table678914014562)对于在算子Tiling结构体中被定义的位置没有要求。
 
 根据[使用标准C++语法定义Tiling结构体](使用标准C++语法定义Tiling结构体.md)的方式，Ascend C提供一组HCCL Tiling API，方便用户获取HCCL Kernel计算时所需的Tiling参数。您只需要传入通信的相关信息，调用API接口，即可获取通信相关的Tiling参数。

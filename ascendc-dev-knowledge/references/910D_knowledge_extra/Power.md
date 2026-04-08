@@ -21,9 +21,28 @@
 
 实现按元素做幂运算功能，提供3类接口，处理逻辑如下：
 
-![](figures/zh-cn_formulaimage_0000002523346974.png)
+<!-- img2text -->
+$$
+Y = \operatorname{pow}(X, \textit{exponent})
+$$
 
-![](figures/zh-cn_formulaimage_0000002554346909.png)
+$$
+Y_i =
+\begin{cases}
+X_i^{\textit{exponent}}, & X_i \geq 0 \\
+\left| X_i \right|^{\textit{exponent}} \times \cos(\pi \times \textit{exponent}) + \left( \left| X_i \right|^{\textit{exponent}} \times \sin(\pi \times \textit{exponent}) \right) i, & X_i < 0
+\end{cases}
+$$
+
+<!-- img2text -->
+$$
+\text{dstTensor}_i =
+\begin{cases}
+\text{src0Tensor}_i^{\text{src1Tensor}_i} & \text{Power(dstTensor, src0Tensor, src1Tensor)} \\
+\text{src0Tensor}_i^{\text{scalar}} & \text{Power(dstTensor, src0Tensor, scalar)} \\
+\text{scalar}^{\text{src1Tensor}_i} & \text{Power(dstTensor, scalar, src1Tensor)}
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

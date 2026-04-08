@@ -21,7 +21,8 @@
 
 指定输入x，获取e的x次方减1。
 
-![](figures/zh-cn_formulaimage_0000002554426229.png)
+<!-- img2text -->
+$$y=e^{x}-1$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

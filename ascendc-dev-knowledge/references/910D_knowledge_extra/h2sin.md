@@ -21,7 +21,8 @@
 
 获取输入数据各元素的三角函数正弦值。
 
-![](figures/zh-cn_formulaimage_0000002554346587.png)
+<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

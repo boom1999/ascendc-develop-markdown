@@ -21,9 +21,15 @@
 
 按元素做反余弦函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306976.png)
+<!-- img2text -->
+$$
+y = \arccos(x)
+$$
 
-![](figures/zh-cn_formulaimage_0000002554426867.png)
+<!-- img2text -->
+$$
+y = \arccos(x)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

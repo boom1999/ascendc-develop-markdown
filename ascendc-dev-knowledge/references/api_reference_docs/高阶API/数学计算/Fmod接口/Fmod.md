@@ -20,9 +20,19 @@
 
 按元素计算两个浮点数a, b相除后的余数。计算公式如下：
 
-![](images/atlasascendc_api_07_0608_img_001.png)
+<!-- img2text -->
+```
+dst = a - Trunc(a / b) * b
+```
 
-![](images/atlasascendc_api_07_0608_img_002.png)
+说明:
+- Trunc：向零取整操作
+- 图中公式表示：按元素计算两个浮点数 a、b 相除后的余数
+
+<!-- img2text -->
+```
+Fmod(a, b) = a - Trunc(a / b) * b
+```
 
 其中，Trunc为向零取整操作。举例如下：
 

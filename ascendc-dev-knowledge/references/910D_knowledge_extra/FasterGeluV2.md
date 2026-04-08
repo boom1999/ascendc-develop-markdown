@@ -21,11 +21,30 @@
 
 在神经网络中，GELU是一个重要的激活函数，其灵感来源于relu和dropout，在激活中引入了随机正则的思想。为了降低GELU的算力需求，业界提出了FastGeluV2版本。本接口实现了FastGeluV2，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523305066.png)
+<!-- img2text -->
+$$
+\operatorname{FastGeluV2}(x)=
+\begin{cases}
+\dfrac{x}{1+e^{-\left(2\sqrt{\dfrac{2}{\pi}}\left(x+0.044715x^{3}\right)\right)}}, & x\leq 0 \\
+x, & x>0
+\end{cases}
+$$
 
-![](figures/zh-cn_formulaimage_0000002554424943.png)
+$$
+e=\text{EXP}\left(2\sqrt{\dfrac{2}{\pi}}\left(x+0.044715x^{3}\right)\right)
+$$
 
-其中，![](figures/zh-cn_formulaimage_0000002554344983.png)
+<!-- img2text -->
+$$
+\operatorname{FastGeluV2}(x)=
+\begin{cases}
+x-\dfrac{x}{1+\exp(2x)}, & x \le 0 \\
+\dfrac{x}{1+\exp(-2x)}, & x > 0
+\end{cases}
+$$
+
+其中，<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

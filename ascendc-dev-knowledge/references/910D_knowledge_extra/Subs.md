@@ -21,7 +21,12 @@
 
 矢量内每个元素和标量间做减法，支持标量在前和标量在后两种场景，其中标量输入支持配置LocalTensor单点元素。计算公式如下，idx表示LocalTensor单点元素的位置系数。
 
-![](figures/zh-cn_formulaimage_0000002554426475.png)
+<!-- img2text -->
+$$dst_i = src0_i - src1,\quad \text{or}\quad dst_i = src1 - src0_i$$
+
+$$i = 0,1,\ldots,n-1$$
+
+$$src1 = \text{value}[idx]$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

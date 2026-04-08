@@ -21,7 +21,8 @@
 
 获取输入数据与π相乘的余弦值。
 
-![](figures/zh-cn_formulaimage_0000002554346679.png)
+<!-- img2text -->
+$$\cos(\pi x)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,10 @@
 
 每对elements按位与运算，公式表达如下：
 
-![](figures/zh-cn_formulaimage_0000002523306754.png)
+<!-- img2text -->
+$$
+dst_i = src0_i \& src1_i
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

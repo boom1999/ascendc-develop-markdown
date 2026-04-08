@@ -21,11 +21,17 @@
 
 按元素做正弦函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306474.png)
+<!-- img2text -->
+$$
+y = \sin(x)
+$$
 
 Sin\(x\)的泰勒展开式为：
 
-![](figures/zh-cn_formulaimage_0000002554426365.png)
+<!-- img2text -->
+$$
+\sin(x) = \sum_{i=0}^{\infty} (-1)^i \frac{x^{2i+1}}{(2i+1)!}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

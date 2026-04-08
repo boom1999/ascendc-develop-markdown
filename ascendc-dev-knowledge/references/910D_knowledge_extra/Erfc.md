@@ -21,13 +21,27 @@
 
 返回输入x的互补误差函数结果，积分区间为x到无穷大。原始的理论计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426893.png)
+<!-- img2text -->
+$$
+\operatorname{erfc}(x)=\frac{2}{\sqrt{\pi}}\int_{x}^{+\infty} e^{-t^{2}}\,dt
+$$
 
-![](figures/zh-cn_formulaimage_0000002523307006.png)
+<!-- img2text -->
+$$
+\operatorname{erfc}(x)=\frac{2}{\sqrt{\pi}}\int_{x}^{\infty} e^{-t^{2}}\,dt
+$$
 
 由于Erfc函数没有初等函数表达方式，一般通过函数逼近的方式计算，近似计算公式如下所示：
 
-![](figures/zh-cn_formulaimage_0000002554346927.png)
+<!-- img2text -->
+$$
+\operatorname{Erfc}(x) \approx
+\begin{cases}
+\exp(-x^2) \cdot R(x), & x \in [0, 2.2] \\
+\dfrac{\exp(-x^2)}{x} \cdot R\!\left(\dfrac{1}{x^2}\right), & x \in [2.2, 6.9] \\
+0, & x > 6.9
+\end{cases}
+$$
 
 其中，
 

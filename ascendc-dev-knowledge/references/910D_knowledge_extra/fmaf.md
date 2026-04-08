@@ -21,7 +21,8 @@
 
 对输入数据x、y、z，计算x与y相乘加上z的结果。
 
-![](figures/zh-cn_formulaimage_0000002554346763.png)
+<!-- img2text -->
+$$x \times y + z$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

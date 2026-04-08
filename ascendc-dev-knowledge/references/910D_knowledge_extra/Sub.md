@@ -21,7 +21,10 @@
 
 按元素求差，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306696.png)
+<!-- img2text -->
+$$
+y_i = x1_i - x2_i
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -23,7 +23,10 @@ Crd2Idx函数用于将多维坐标（Coordinate）通过布局（Layout）转换
 
 对于一个布局Layout，其Shape为\(d<sub>0</sub>, d<sub>1</sub>, ..., d<sub>n</sub>\)，Stride为\(s<sub>0</sub>, s<sub>1</sub>, ..., s<sub>n</sub>\)，Coordinate为\(c<sub>0</sub>, c<sub>1</sub>, ..., c<sub>n</sub>\)到线性索引Index的转换公式为：
 
-![](figures/zh-cn_formulaimage_0000002554425685.png)
+<!-- img2text -->
+$$
+\mathrm{Index} = \sum_{i=0}^{n} c_i \times s_i
+$$
 
 例如，对于Shape \(3, 4, 5\)，Stride \(20, 5, 1\)和Coordinate \(1, 2, 3\)：
 
@@ -38,7 +41,10 @@ Index = 20 + 10 + 3 = 33
 
 去线性化的方法介绍如下：对于一个n维数组，形状为\(d<sub>0</sub>, d<sub>1</sub>, ..., d<sub>n</sub>\)，线性坐标c对应的多维坐标\(c<sub>0</sub>, c<sub>1</sub>, ..., c<sub>n</sub>\)，可以通过以下公式进行转换：
 
-![](figures/zh-cn_formulaimage_0000002554345715.png)
+<!-- img2text -->
+$$
+c_i = \left\lfloor \frac{c}{\prod_{j=i+1}^{n} d_j} \right\rfloor \bmod d_i
+$$
 
 例如：对于Shape \(\(2, 4\), \(3, 5\)\)，Stride\(\(3, 6\), \(1, 24\)\)，Layout \(\(2, 4\), \(3, 5\)\) : \(\(3, 6\), \(1, 24\)\)，Coordinate（11, 12），按照列优先原则，Crd2Idx的结果为：
 
@@ -52,17 +58,40 @@ crd2idx = delinearize(11, 12) * stride
 
 总结上述过程，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523305794.png)
+<!-- img2text -->
+$$\mathrm{AlignUp}\left(\frac{M}{\left(M\mathrm{TE}1\text{ Block height}\right)},16\right)\times K\times\left(M\mathrm{TE}1\text{ Block height}\right)$$
 
-![](figures/zh-cn_formulaimage_0000002554345725.png)
+<!-- img2text -->
+$$
+L_{j} = \sum_{i=0}^{\left\lfloor \frac{l}{8} \right\rfloor} 8 \times \left\lfloor \frac{l + 7}{8} \right\rfloor + 8 \times \left\lfloor \frac{l + 7}{8} \right\rfloor + l \times l
+$$
 
-![](figures/zh-cn_formulaimage_0000002523345764.png)
+<!-- img2text -->
+$$
+\begin{aligned}
+\mathrm{delinearize}(x) = (&x / s_0,\; x \bmod s_0 / s_1,\; \ldots,\; x \bmod s_{n-1} / s_n,\; x \bmod s_n) \\
+= (&x / (d_1 \cdot d_2 \cdots d_n), \\
+&x \bmod (d_1 \cdot d_2 \cdots d_n) / (d_2 \cdot d_3 \cdots d_n), \\
+&\ldots, \\
+&x \bmod (d_{n-1} \cdot d_n) / d_n, \\
+&x \bmod d_n)
+\end{aligned}
+$$
 
-![](figures/zh-cn_formulaimage_0000002523345794.png)
+<!-- img2text -->
+[公式无法识别]
 
 其中\(d<sub>0</sub>, d<sub>1</sub>, ..., d<sub>n</sub>\)为Shape，\(s<sub>0</sub>, s<sub>1</sub>, ..., s<sub>n</sub>\)为Stride，delinearize公式展开如下：
 
-![](figures/zh-cn_formulaimage_0000002523305784.png)
+<!-- img2text -->
+$$
+\begin{aligned}
+x_0 &= \left\lfloor \frac{\mathrm{Linear}}{s_0} \right\rfloor \\
+x_1 &= \left\lfloor \frac{\mathrm{Linear} - x_0 \cdot s_0}{s_1} \right\rfloor \\
+&\ \ \vdots \\
+x_n &= \left\lfloor \frac{\mathrm{Linear} - x_0 \cdot s_0 - x_1 \cdot s_1 - \cdots - x_{n-1} \cdot s_{n-1}}{s_n} \right\rfloor
+\end{aligned}
+$$
 
 ## 函数原型<a name="zh-cn_topic_0000002078486173_zh-cn_topic_0000001576727153_zh-cn_topic_0000001389787297_section13230182415108"></a>
 

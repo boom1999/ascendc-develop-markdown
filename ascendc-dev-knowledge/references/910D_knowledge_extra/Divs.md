@@ -21,7 +21,14 @@
 
 矢量内每个元素和标量间做除法，支持标量在前和标量在后两种场景，其中标量输入支持配置LocalTensor单点元素。计算公式如下，idx表示LocalTensor单点元素的位置系数。
 
-![](figures/zh-cn_formulaimage_0000002554425777.png)
+<!-- img2text -->
+$$dst_i=\frac{src_i}{scalar},\quad 0\le i<calCount$$
+
+$$dst_i=\frac{scalar}{src_i},\quad 0\le i<calCount$$
+
+$$dst_i=\frac{src_i}{src0[idx]},\quad 0\le i<calCount$$
+
+$$dst_i=\frac{src0[idx]}{src_i},\quad 0\le i<calCount$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

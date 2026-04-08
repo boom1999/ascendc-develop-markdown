@@ -21,7 +21,8 @@
 
 获取输入数据与π相乘的正弦值。
 
-![](figures/zh-cn_formulaimage_0000002554426617.png)
+<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

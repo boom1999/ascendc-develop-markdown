@@ -21,7 +21,50 @@
 
 给定一个输入的张量和一个地址偏移张量，本接口根据偏移地址按照DataBlock的粒度将输入张量收集到结果张量中。
 
-![](figures/repeat-times-107.png)
+<!-- img2text -->
+```text
+offset
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│ offset[0]│ offset[1]│ offset[2]│ offset[3]│ offset[4]│ offset[5]│ offset[6]│ offset[7]│
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+                                       │
+                                       ▼
+src的基地址 ─────────────────────────→  ⊕
+                                       │
+                                       ▼
+
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│  addr0   │  addr1   │  addr2   │  addr3   │  addr4   │  addr5   │  addr6   │  addr7   │
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+
+src
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│DataBlock2│DataBlock0│DataBlock4│DataBlock5│DataBlock1│DataBlock6│DataBlock3│DataBlock7│
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+                                       │
+                                       ▼
+                                     Gatherb
+                                       │
+                                       ▼
+
+dst
+┌──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┬──────────┐
+│DataBlock0│DataBlock1│DataBlock2│DataBlock3│DataBlock4│DataBlock5│DataBlock6│DataBlock7│
+└──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘
+```
+
+说明:
+- `offset[i]` 与 `src的基地址` 相加生成 `addri`
+- `addr0~addr7` 对应从 `src` 中按地址收集的数据块，最终通过 `Gatherb` 写入 `dst`
+- 图中可读出的收集结果顺序为:
+  - `addr0 → src` 中的 `DataBlock2 → dst` 的 `DataBlock0`
+  - `addr1 → src` 中的 `DataBlock0 → dst` 的 `DataBlock1`
+  - `addr2 → src` 中的 `DataBlock4 → dst` 的 `DataBlock2`
+  - `addr3 → src` 中的 `DataBlock5 → dst` 的 `DataBlock3`
+  - `addr4 → src` 中的 `DataBlock1 → dst` 的 `DataBlock4`
+  - `addr5 → src` 中的 `DataBlock6 → dst` 的 `DataBlock5`
+  - `addr6 → src` 中的 `DataBlock3 → dst` 的 `DataBlock6`
+  - `addr7 → src` 中的 `DataBlock7 → dst` 的 `DataBlock7`
 
 ## 函数原型<a name="section15660625202219"></a>
 

@@ -21,7 +21,8 @@
 
 获取输入数据各元素的三角函数余弦值。
 
-![](figures/zh-cn_formulaimage_0000002554345279.png)
+<!-- img2text -->
+$$dst_i=\cos(src_i)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

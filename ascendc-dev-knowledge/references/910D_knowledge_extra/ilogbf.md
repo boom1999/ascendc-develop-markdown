@@ -21,7 +21,8 @@
 
 计算以2为底，输入数据的对数，并对结果向下取整，返回整数。
 
-![](figures/zh-cn_formulaimage_0000002554426611.png)
+<!-- img2text -->
+$$\left\lfloor \log_{2}\left| x \right| \right\rfloor$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,8 @@
 
 获取输入x乘以2的exp次幂的结果。
 
-![](figures/zh-cn_formulaimage_0000002554426219.png)
+<!-- img2text -->
+$$\operatorname{ldexpf}(x,\ \mathrm{exp}) = x \cdot 2^{\mathrm{exp}}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

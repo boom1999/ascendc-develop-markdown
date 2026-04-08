@@ -20,11 +20,13 @@
 
 依次计算按元素求和、结果进行deq量化后再进行relu计算（结果和0对比取较大值）。计算公式如下：
 
-![](images/atlasascendc_api_07_0045_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
 Deq的计算公式如下：
 
-![](images/atlasascendc_api_07_0045_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
 如上公式先除以2^17再乘以2^17用于防止x乘以DeqScale出现溢出情况；公式中DeqScale需要通过SetDeqScale进行设置，具体可参考SetDeqScale。
 

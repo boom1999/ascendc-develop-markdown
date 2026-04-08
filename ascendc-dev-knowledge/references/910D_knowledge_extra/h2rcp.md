@@ -21,7 +21,8 @@
 
 获取输入数据x各元素的倒数。
 
-![](figures/zh-cn_formulaimage_0000002554426745.png)
+<!-- img2text -->
+$$dst = \frac{1}{x}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

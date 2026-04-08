@@ -21,9 +21,13 @@
 
 按元素做双曲反余弦函数计算，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523346256.png)
+<!-- img2text -->
+$$y_i = \operatorname{acosh}(x_i) = \ln\left(x_i + \sqrt{x_i^2 - 1}\right)$$
 
-![](figures/zh-cn_formulaimage_0000002554426155.png)
+<!-- img2text -->
+$$
+y_i = \operatorname{acosh}(x_i) = \ln\left(x_i + \sqrt{x_i^2 - 1}\right)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

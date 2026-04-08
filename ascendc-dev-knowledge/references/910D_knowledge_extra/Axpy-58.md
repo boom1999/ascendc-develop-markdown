@@ -21,7 +21,18 @@
 
 根据mask对输入数据dstReg、srcReg、scalarValue按元素做乘加操作，将结果写入dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002554426573.png)
+<!-- img2text -->
+$$
+\text{dstReg}[i] =
+\begin{cases}
+\text{dstReg}[i] \times \text{scalarValue} + \text{srcReg}[i], & \text{if mask}[i] = 1 \\
+0, & \text{if mask}[i] = 0
+\end{cases}
+$$
+
+$$
+i \in [0, \text{PAR})
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

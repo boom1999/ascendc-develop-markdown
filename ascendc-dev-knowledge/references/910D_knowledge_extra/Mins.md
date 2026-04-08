@@ -23,7 +23,8 @@
 
 计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523345232.png)
+<!-- img2text -->
+$$dst_i=\min(src_i,\ scalar)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

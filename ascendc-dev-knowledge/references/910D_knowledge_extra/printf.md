@@ -29,7 +29,7 @@ AscendC::printf("fmt string %d\n", 0x123);
 AscendC::PRINTF("fmt string %d\n", 0x123);
 ```
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
+> **注意：** 
 >printf（PRINTF）接口打印功能会对算子实际运行的性能带来一定影响，通常在调测阶段使用。开发者可以按需通过设置ASCENDC\_DUMP=0的方式关闭打印功能。
 
 ## 函数原型<a name="section2067518173415"></a>

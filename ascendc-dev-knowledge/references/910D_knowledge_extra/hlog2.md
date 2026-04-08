@@ -21,7 +21,8 @@
 
 获取以2为底，输入数据的对数。
 
-![](figures/zh-cn_formulaimage_0000002523306710.png)
+<!-- img2text -->
+$$\log_{2}(x)$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

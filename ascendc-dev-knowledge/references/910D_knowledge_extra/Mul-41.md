@@ -21,7 +21,14 @@
 
 根据mask对输入数据srcReg0、srcReg1按元素相乘操作，将结果写入dstReg。计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306786.png)
+<!-- img2text -->
+$$
+\text{dstReg}_i =
+\begin{cases}
+\text{srcReg0}_i \times \text{srcReg1}_i, & \text{if mask bit } i \text{ is } 1 \\
+0, & \text{if mask bit } i \text{ is } 0
+\end{cases}
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

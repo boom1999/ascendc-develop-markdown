@@ -21,7 +21,12 @@
 
 根据mask对输入数据srcReg进行relu操作，将结果写入dstReg。relu计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523305772.png)
+<!-- img2text -->
+$$dst_i =
+\begin{cases}
+src_i, & src_i > 0 \\
+0, & src_i \leq 0
+\end{cases}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

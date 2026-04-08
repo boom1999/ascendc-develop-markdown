@@ -21,7 +21,7 @@
 
 在SIMD与SIMT混合编程场景，启动SIMT VF（Vector Function）子任务，通过参数配置，启动指定数目的线程，执行指定的SIMT核函数。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
+> **说明：** 
 >asc\_vf\_call启动SIMT VF子任务时，子任务函数不能是类的成员函数，推荐使用普通函数或类静态函数，且入口函数必须使用\_\_simt\_vf\_\_修饰宏。
 >asc\_vf\_call启动SIMT VF子任务时，传递的参数只支持裸指针，常见基本数据类型。不支持传递结构体，数组等。
 

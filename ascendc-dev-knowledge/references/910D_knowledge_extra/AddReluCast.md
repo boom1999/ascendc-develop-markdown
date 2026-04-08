@@ -21,7 +21,17 @@
 
 按元素求和，结果和0对比取较大值，并根据源操作数和目的操作数Tensor的数据类型进行精度转换。计算公式如下，其中dstType表示目的操作数的数据类型：
 
-![](figures/zh-cn_formulaimage_0000002523306626.png)
+<!-- img2text -->
+$$dst_i=\max(0,src0_i+src1_i),\quad 0\le i<n$$
+
+$$
+\begin{cases}
+\operatorname{round}(dst_i), & dstType\in\{\texttt{int16\_t},\texttt{half},\texttt{int32\_t}\}\\
+dst_i, & \text{others}
+\end{cases}
+$$
+
+其中，$\operatorname{round}$表示四舍五入。
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

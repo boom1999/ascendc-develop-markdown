@@ -21,7 +21,8 @@
 
 获取输入数据y/x的反正切值。
 
-![](figures/zh-cn_formulaimage_0000002523347034.png)
+<!-- img2text -->
+[公式无法识别]
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

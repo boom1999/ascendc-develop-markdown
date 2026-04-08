@@ -21,7 +21,8 @@
 
 获取输入数据x各元素的平方根的倒数。
 
-![](figures/zh-cn_formulaimage_0000002523306870.png)
+<!-- img2text -->
+$$\operatorname{out}_{i}=\frac{1}{\sqrt{x_{i}}}$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

@@ -21,7 +21,12 @@
 
 获取输入数据x的平方根。
 
-![](figures/zh-cn_formulaimage_0000002554346659.png)
+<!-- img2text -->
+$$\sqrt{x}=\left\{\begin{array}{ll}
+0, & x=0 \\
+\text{NaN}, & x<0 \\
+\sqrt{x}, & x>0
+\end{array}\right.$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

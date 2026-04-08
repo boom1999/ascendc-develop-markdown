@@ -20,7 +20,10 @@
 
 按元素做取小数计算。计算公式如下：
 
-![](images/atlasascendc_api_07_0540_img_001.png)
+<!-- img2text -->
+```
+Frac(x) = x - truncf(x)
+```
 
 举例如下：
 

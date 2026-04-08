@@ -21,7 +21,10 @@
 
 按元素求积，并根据源操作数和目的操作数Tensor的数据类型进行精度转换。计算公式如下:
 
-![](figures/zh-cn_formulaimage_0000002554426733.png)
+<!-- img2text -->
+$$
+dst_i = src0_i \times src1_i
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

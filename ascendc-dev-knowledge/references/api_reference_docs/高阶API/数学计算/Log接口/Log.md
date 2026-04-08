@@ -20,17 +20,23 @@
 
 按元素以e、2、10为底做对数运算，计算公式如下：
 
-![](images/atlasascendc_api_07_0512_img_001.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0512_img_002.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0512_img_003.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0512_img_004.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0512_img_005.png)
+<!-- img2text -->
+[图片无法识别]
 
-![](images/atlasascendc_api_07_0512_img_006.png)
+<!-- img2text -->
+[图片无法识别]
 
 #### 函数原型
 

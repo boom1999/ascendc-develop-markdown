@@ -21,7 +21,8 @@
 
 按元素进行取相反数操作，计算公式如下：
 
-![](figures/zh-cn_formulaimage_0000002523306778.png)
+<!-- img2text -->
+$$y = -x$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 

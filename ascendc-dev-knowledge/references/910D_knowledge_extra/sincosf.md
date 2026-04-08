@@ -21,7 +21,13 @@
 
 获取输入数据的三角函数正弦值和余弦值。
 
-![](figures/zh-cn_formulaimage_0000002554346671.png)
+<!-- img2text -->
+$$
+s = \sin(x)
+$$
+$$
+c = \cos(x)
+$$
 
 ## 函数原型<a name="section620mcpsimp"></a>
 
