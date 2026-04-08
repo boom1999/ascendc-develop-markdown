@@ -2,91 +2,63 @@
 
 Huawei AscendC operator development documentation converted to searchable markdown, with a Claude Code skill for NPU operator development.
 
+## Technical Details
+
+| 项目 | 数值 |
+|---|---|
+| Markdown 文档数 | 3,742 |
+| 知识库大小 | ~35 MB（纯 Markdown，图片已转为文本） |
+| 数据来源 | [hiascend.com](https://www.hiascend.com) 官方文档 |
+| CANN 版本 | 8.5.0 Community Edition |
+| 图片处理 | 1,927 张图片转为 ASCII art / LaTeX / 文字描述，140 个图标引用已清理 |
+
+**Size Breakdown**:
+
+| 分类 | 文件数 | 大小 |
+|---|---|---|
+| API Reference (`api_reference_docs/`) | 863 | ~6.9 MB |
+| Programming Guide (`basic_knowledge_docs/`) | 164 | ~3.1 MB |
+| Host-side Data API (`basic_data_api_docs/`) | 596 | ~2.7 MB |
+| Troubleshooting (`troubleshooting_docs/`) | 72 | ~532 KB |
+| Log Reference (`log_reference_docs/`) | 8 | ~52 KB |
+| 910D Extra Knowledge (`910D_knowledge_extra/`) | ~2,000 | ~22 MB |
+
 ## What's Here
 
-1. **API Reference** (863 markdown files)
-   - Complete Kernel-side API documentation
-   - Function signatures, parameters, constraints, data type support
-   - Covers vector/matrix compute, data transfer, sync control, Matmul, Conv3D, quantization, etc.
+1. **API Reference** — Complete Kernel-side API documentation: function signatures, parameters, constraints, data type support. Covers vector/matrix compute, data transfer, sync control, Matmul, Conv3D, quantization, etc.
 
-2. **Programming Guide + Operator Examples** (164 markdown files)
-   - AI Core architecture, programming paradigms (CopyIn → Compute → CopyOut)
-   - SIMD operator implementation (vector, matrix, fused)
-   - Performance optimization (Tiling, double buffering, bank conflict avoidance)
-   - Getting started tutorials (HelloWorld, Add operator)
+2. **Programming Guide + Operator Examples** — AI Core architecture, programming paradigms (CopyIn → Compute → CopyOut), SIMD operator implementation, performance optimization (Tiling, double buffering, bank conflict avoidance), getting started tutorials.
 
-3. **Host-side Data API** (596 markdown files)
-   - `gert` namespace: TilingContext, InferShape, Shape, TensorV2, CompileTimeTensorDesc
-   - `ge` namespace: AscendString, OpRegistrationData, KernelLaunchInfo
-   - C interface wrappers
+3. **Host-side Data API** — `gert` namespace (TilingContext, InferShape, Shape, TensorV2), `ge` namespace (AscendString, OpRegistrationData), C interface wrappers.
 
-4. **Troubleshooting** (72 markdown files)
-   - Error code reference (GE/RTS/HCCL/AI_CPU/FE/Driver)
-   - AI Core Error diagnosis, OOM analysis, process hang/crash
-   - asys diagnostic tool guide
+4. **Troubleshooting** — Error code reference (GE/RTS/HCCL/AI_CPU/FE/Driver), AI Core Error diagnosis, OOM analysis, process hang/crash, asys diagnostic tool guide.
 
-5. **Log Reference** (8 markdown files)
-   - Log level configuration, plog framework, FAQ
+5. **Log Reference** — Log level configuration, plog framework, FAQ.
 
-6. **910D (Ascend 351x) Extra Knowledge** (~2000 markdown files)
-   - 220x → 351x architecture migration
-   - RegBase programming, SIMD VF functions, MicroAPI reference
-   - 351x-specific API documentation
+6. **910D (Ascend 351x) Extra Knowledge** — 220x → 351x architecture migration, RegBase programming, SIMD VF functions, MicroAPI reference, 351x-specific API documentation.
 
-7. **AscendC Development Skill** for Claude Code
-   - API lookup with search guides per section
-   - Programming concept and pattern search
-   - Error code diagnosis
-   - Prerequisite check (auto-detect if knowledge base needs building)
+7. **AscendC Development Skill** for Claude Code — API lookup, programming concept search, error code diagnosis, prerequisite check.
 
 ## Why
 
-Huawei's official AscendC documentation is:
-- Spread across hundreds of HTML pages on the Ascend Community website
-- Requires clicking through multi-level navigation to find API details
-- Not searchable across sections with standard tools
+Huawei's official AscendC documentation is spread across hundreds of HTML pages, requires clicking through multi-level navigation, and is not searchable with standard tools. This conversion enables:
 
-This conversion enables:
 - `grep -r "void DataCopy" references/api_reference_docs/` instead of clicking through pages
 - `grep -rl "DoubleBuffer" references/basic_knowledge_docs/` for concept lookup
 - `grep -rl "EZ9999" references/troubleshooting_docs/` for error code diagnosis
 - Direct file access for AI tools (Claude Code, Copilot)
 - Offline reference with hierarchical organization
 
-**Example 1**: Find DataCopy API signature:
-
-```bash
-$ grep -r "void DataCopy" ascendc-dev-knowledge/references/api_reference_docs/基础API/数据搬运/
-DataCopy.md: void DataCopy(const LocalTensor<T>& dstLocal, const GlobalTensor<T>& srcGlobal, ...
-```
-
-**Example 2**: Look up error code EZ9999:
-
-```bash
-$ grep -rl "EZ9999" ascendc-dev-knowledge/references/troubleshooting_docs/
-```
-
-**Example 3**: Find 351x migration guide:
-
-```bash
-$ find ascendc-dev-knowledge/references/910D_knowledge_extra -name "*351x*"
-351x架构迁移指导.md
-```
-
 ## Structure
 
 ```
-ascendc-dev-knowledge/                       # Portable Claude Code skill (~88MB)
+ascendc-dev-knowledge/                       # Portable Claude Code skill (~35MB)
 ├── SKILL.md                                 # Main skill definition
 ├── scripts/
-│   ├── ascendc_spider.py                    # Web scraper for Ascend Community docs
-│   └── restructure_kb.py                    # Raw → cleaned knowledge base converter
+│   ├── ascendc_spider.py                    # Step 1: 爬虫 — 从 hiascend.com 抓取文档
+│   ├── restructure_kb.py                    # Step 2: 清洗 — 整理目录结构，清理内容
+│   └── convert_images_to_text.py            # Step 3: 图片转文本 — LLM Vision API 转换
 └── references/
-    ├── api-reference.md                     # Search guide: API reference
-    ├── basic-knowledge.md                   # Search guide: programming concepts
-    ├── basic-data-api.md                    # Search guide: host-side data API
-    ├── troubleshooting.md                   # Search guide: error codes & faults
-    ├── log-reference.md                     # Search guide: logging
     ├── api_reference_docs/                  # 863 files — Kernel-side APIs
     │   ├── INDEX.md
     │   ├── 基础API/                         # Vector/matrix compute, data transfer, sync
@@ -109,14 +81,35 @@ ascendc-dev-knowledge/                       # Portable Claude Code skill (~88MB
     │   ├── 典型故障专题/                    # AI Core Error, OOM, hang, crash
     │   └── 故障定位工具/                    # asys tool
     ├── log_reference_docs/                  # 8 files — Log configuration
-    │   ├── INDEX.md
-    │   └── FAQ/
+    │   └── INDEX.md
     └── 910D_knowledge_extra/                # ~2000 files — 910D/351x specific
-        ├── *.md                             # Flat structure (API, architecture, migration)
-        └── figures/                         # Diagrams
 
 README.md                                    # This file
 ```
+
+## Knowledge Base Usage
+
+**IMPORTANT**: Before developing any AscendC code, query the knowledge base via the `ascendc-dev-knowledge` skill.
+
+### First Use — Load Core Indexes
+
+After environment check passes, **must read** the following two core indexes:
+
+1. `skills/ascendc-dev-knowledge/references/basic_knowledge_docs/INDEX.md` (programming guide + operator practice)
+2. `skills/ascendc-dev-knowledge/references/api_reference_docs/INDEX.md` (API signatures/parameters/constraints)
+
+### On-Demand Lookup
+
+Read the corresponding INDEX.md based on task type, then follow paths to specific documents:
+
+| Scenario | INDEX.md Path (relative to `~/.claude/` or `.claude/`) |
+|---|---|
+| API signatures/parameters/constraints | `skills/ascendc-dev-knowledge/references/api_reference_docs/INDEX.md` |
+| Programming guide + operator practice | `skills/ascendc-dev-knowledge/references/basic_knowledge_docs/INDEX.md` |
+| Host-side APIs (Tiling/InferShape) | `skills/ascendc-dev-knowledge/references/basic_data_api_docs/INDEX.md` |
+| Error codes / troubleshooting | `skills/ascendc-dev-knowledge/references/troubleshooting_docs/INDEX.md` |
+| Log reference | `skills/ascendc-dev-knowledge/references/log_reference_docs/INDEX.md` |
+| 910D specific (351x) | `skills/ascendc-dev-knowledge/references/910D_knowledge_extra/` (grep search) |
 
 ## Using the Skill
 
@@ -138,131 +131,101 @@ The skill activates automatically for AscendC work. Ask Claude:
 - "351x 架构和 220x 有什么区别？"
 - "Matmul 高阶 API 怎么调用？"
 
-Claude searches the local documentation and provides answers with file references.
+## Build Pipeline
 
-## Search Examples
+知识库通过三个脚本分步构建。可以在 Step 2 之后直接使用（保留原始图片），也可以继续执行 Step 3 将图片转为纯文本。
 
-### API Reference
-
-Find a specific API:
-```bash
-find ascendc-dev-knowledge/references/api_reference_docs -name "Sqrt.md"
+```
+hiascend.com ──→ [Step 1: 爬虫] ──→ [Step 2: 清洗] ──→ 可直接使用（含图片，~88MB）
+                                                    ──→ [Step 3: 图片转文本] ──→ 纯文本版（~35MB）
 ```
 
-Search function signatures:
-```bash
-grep -r "void DataCopy" ascendc-dev-knowledge/references/api_reference_docs/基础API/数据搬运/
-```
+### Step 1: 爬虫 — `ascendc_spider.py`
 
-Find data type support:
-```bash
-grep -rl "bfloat16" ascendc-dev-knowledge/references/api_reference_docs/
-```
-
-### Programming Concepts
-
-Find Tiling strategies:
-```bash
-find ascendc-dev-knowledge/references/basic_knowledge_docs -name "*Tiling*" -o -name "*tiling*"
-```
-
-Search for double buffering:
-```bash
-grep -rl "DoubleBuffer\|双缓冲" ascendc-dev-knowledge/references/basic_knowledge_docs/
-```
-
-### Host-side API
-
-Look up TilingContext methods:
-```bash
-find ascendc-dev-knowledge/references/basic_data_api_docs/gert命名空间/TilingContext/ -name "*.md"
-```
-
-### Troubleshooting
-
-Search error codes:
-```bash
-grep -rl "EZ9999" ascendc-dev-knowledge/references/troubleshooting_docs/错误码参考/
-```
-
-### 910D Knowledge
-
-Find migration docs:
-```bash
-find ascendc-dev-knowledge/references/910D_knowledge_extra -maxdepth 1 -name "*迁移*"
-```
-
-Search RegBase programming:
-```bash
-grep -rl "RegBase" ascendc-dev-knowledge/references/910D_knowledge_extra/
-```
-
-## Regenerating
-
-The knowledge base is built from Huawei's Ascend Community documentation in a two-step pipeline:
+从 hiascend.com 爬取文档页面，将 HTML 转为 Markdown，下载关联图片。
 
 ```bash
-# 1. Scrape raw pages from Ascend Community website
+# 爬取 CANN 8.5.0 全部六个分类
 python3 ascendc-dev-knowledge/scripts/ascendc_spider.py -v 850
 
-# 2. Clean and restructure into hierarchical knowledge base (auto-deletes cache)
-python3 ascendc-dev-knowledge/scripts/restructure_kb.py -v 850
+# 仅爬取指定分类
+python3 ascendc-dev-knowledge/scripts/ascendc_spider.py -v 850 -s api_reference
 
-# Keep raw cache for inspection:
-python3 ascendc-dev-knowledge/scripts/restructure_kb.py -v 850 --keep-cache
+# 指定输出目录
+python3 ascendc-dev-knowledge/scripts/ascendc_spider.py -v 850 -o /path/to/output
 ```
 
-**Spider**: Crawls 5 documentation sections from the Ascend Community website, downloads pages and images, preserves tables and code blocks, generates INDEX.md per section.
+支持的文档分类：`api_reference`、`basic_knowledge`、`basic_data_api`、`troubleshooting`、`log_reference`
 
-**Restructure** (cleanup pipeline):
+支持的版本：`850` (CANN 8.5.0)、`900beta1` (CANN 9.0.0 beta1)
 
-- **Dedup**: Removes TOC-only pages (~35% of raw content) that are just navigation link lists — keeps only pages with actual API details
-- **De-noise**: Strips invisible characters (`\xa0` non-breaking space, `\u200b` zero-width space, `\ufeff` BOM), removes `#ZH-CN_TOPIC` anchor artifacts
-- **Link cleanup**: Strips all internal cross-reference URLs and absolute hiascend.com links, preserving type names and function names as plain text — makes grep/find searches clean and precise
-- **Boilerplate removal**: Removes dead link remnants (`更多样例可参考LINK`), empty return value sections (`#### 返回值说明 → 无`), and repeated constraint references — surfaces the real API logic
-- **Structure**: Builds hierarchical directory tree from breadcrumb navigation, deduplicates H1 headings, moves images alongside their pages, generates tree-form INDEX.md per section
+### Step 2: 清洗 — `restructure_kb.py`
 
-Supported versions: `850` (CANN 8.5.0), `900beta1` (CANN 9.0.0 beta1). Switch with `-v`.
+将爬虫的扁平输出整理为层级目录结构，清理冗余内容（去重标题、剥离模板文本、修复链接等），生成每个分类的 `INDEX.md` 索引文件。
+
+```bash
+# 整理 CANN 8.5.0 全部分类
+python3 ascendc-dev-knowledge/scripts/restructure_kb.py -v 850
+
+# 仅整理指定分类
+python3 ascendc-dev-knowledge/scripts/restructure_kb.py -v 850 -s api_reference
+```
+
+**完成此步骤后即可使用知识库**（包含原始图片，约 88MB）。
+
+Cleanup pipeline details:
+- **Dedup**: Removes TOC-only pages (~35% of raw content)
+- **De-noise**: Strips invisible characters (`\xa0`, `\u200b`, `\ufeff`), removes anchor artifacts
+- **Link cleanup**: Strips internal cross-reference URLs, preserving type/function names as plain text
+- **Boilerplate removal**: Removes dead link remnants, empty sections, repeated constraint references
+- **Structure**: Builds hierarchical directory tree from breadcrumb navigation, generates tree-form INDEX.md
 
 **Note**: `910D_knowledge_extra/` is an independently maintained knowledge base and does not participate in the spider/restructure pipeline.
 
-## Technical Details
+### Step 3（可选）: 图片转文本 — `convert_images_to_text.py`
 
-**API Reference (CANN 8.5.0)**:
-- Files: 863 markdown + INDEX.md
-- Size: 16 MB (including images)
-- Source: https://www.hiascend.com/ (Ascend C API Reference)
+通过 LLM Vision API 将文档中的图片引用转为纯文本：
 
-**Programming Guide (CANN 8.5.0)**:
-- Files: 164 markdown + INDEX.md
-- Size: 18 MB (including images)
-- Source: https://www.hiascend.com/ (AscendC Programming Guide)
+- 公式图 → LaTeX 数学表达式
+- 示意图/架构图 → ASCII art + 文字标注
+- 图标 → 删除引用
 
-**Host-side Data API (CANN 8.5.0)**:
-- Files: 596 markdown + INDEX.md
-- Size: 2.9 MB
-- Source: https://www.hiascend.com/ (Basic Data API Reference)
+#### 环境变量
 
-**Troubleshooting (CANN 8.5.0)**:
-- Files: 72 markdown + INDEX.md
-- Size: 1.6 MB
-- Source: https://www.hiascend.com/ (Troubleshooting Guide)
+| 变量 | 说明 | 默认值 |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | API 密钥 | （必须设置） |
+| `ANTHROPIC_BASE_URL` | API 地址（支持 litellm proxy 等兼容端点） | `https://api.anthropic.com` |
 
-**Log Reference (CANN 8.5.0)**:
-- Files: 8 markdown + INDEX.md
-- Size: 176 KB
-- Source: https://www.hiascend.com/ (Log Reference)
+#### 用法
 
-**910D Extra Knowledge**:
-- Files: ~2000 markdown
-- Size: 50 MB (including figures)
-- Covers: Ascend 351x architecture, 220x→351x migration, RegBase, MicroAPI
+```bash
+# 1. 扫描统计图片引用
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --scan
 
-**Total skill size**: ~88 MB
+# 2. 清理图标引用
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --clean-icons
 
-**License**: Documentation content originates from Huawei Ascend Community.
+# 3. 全量转换（默认 gpt-5.4, 16 线程并发）
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --convert
 
-The skill uses Claude Code's progressive disclosure: `SKILL.md` is always loaded, search guides and documentation are searched on-demand via grep/find.
+# 4. 转换完成后清理图片文件
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --cleanup
+
+# 5. 验证无残留
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --scan
+```
+
+也可以指定文件或目录进行局部操作：
+
+```bash
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --convert path/to/file.md
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --convert path/to/dir/
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --convert --limit 5
+python3 ascendc-dev-knowledge/scripts/convert_images_to_text.py --convert --model gpt-5.4 -w 16
+```
+
+已转换的内容用 `<!-- img2text -->` 标记，重复运行会自动跳过。
 
 ## Use Cases
 
@@ -272,7 +235,6 @@ The skill uses Claude Code's progressive disclosure: `SKILL.md` is always loaded
 - **Debugging** — Error code lookup, AI Core Error diagnosis, OOM analysis
 - **910D/351x development** — Architecture migration, RegBase programming
 - **Learning AscendC** — Tutorials, programming paradigms, example operators
-- **Training AI models** on AscendC/NPU development
 
 ---
 
