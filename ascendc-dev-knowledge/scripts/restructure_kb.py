@@ -144,6 +144,9 @@ ANCHOR_REF_RE = re.compile(
 # Multiple blank lines
 MULTI_BLANK_RE = re.compile(r"\n{3,}")
 
+# Broken image marker produced by stripped or incomplete image links, e.g. a lone "!["
+BROKEN_IMAGE_MARKER_RE = re.compile(r"^!\[\s*$", re.MULTILINE)
+
 # ---------------------------------------------------------------------------
 # Logging
 # ---------------------------------------------------------------------------
@@ -304,6 +307,9 @@ def clean_content(
     # 8. Remove boilerplate lines
     for pattern in BOILERPLATE_PATTERNS:
         body = pattern.sub("", body)
+
+    # 8.5. Drop broken standalone image markers left after link stripping
+    body = BROKEN_IMAGE_MARKER_RE.sub("", body)
 
     # 9. Collapse multiple blank lines
     body = MULTI_BLANK_RE.sub("\n\n", body)

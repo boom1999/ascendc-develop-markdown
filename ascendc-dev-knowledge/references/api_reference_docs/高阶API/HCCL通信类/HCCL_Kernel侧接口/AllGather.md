@@ -59,7 +59,6 @@ __aicore__ inline HcclHandle AllGather(GM_ADDR sendBuf, GM_ADDR recvBuf, uint64_
 | repeat | 输入 | 一次下发的AllGather通信任务个数。repeat取值≥1，默认值为1。当repeat>1时，每个AllGather任务的sendBuf和recvBuf地址由服务端自动算出，计算公式如下：          sendBuf[i] = sendBuf + sendCount* sizeof(datatype) * i, i∈[0, repeat)          recvBuf[i] = recvBuf + sendCount* sizeof(datatype) * i, i∈0, repeat)          注意：当设置repeat>1时，须与strideCount参数配合使用，规划通信数据地址。 |
 
 **图1 **AllGather通信示例
-![
 
 #### 返回值说明
 

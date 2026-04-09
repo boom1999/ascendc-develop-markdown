@@ -62,7 +62,6 @@ __aicore__ inline HcclHandle AllReduce(GM_ADDR sendBuf, GM_ADDR recvBuf, uint64_
 | repeat | 输入 | 一次下发的AllReduce通信任务个数。repeat取值≥1，默认值为1。当repeat>1时，每个AllReduce任务的sendBuf和recvBuf地址由服务端自动算出，计算公式如下：          sendBuf[i] = sendBuf + count* sizeof(datatype) * i, i∈[0, repeat)          recvBuf[i] = recvBuf + count* sizeof(datatype) * i, i∈0, repeat)          注意：当设置repeat>1时，须与count参数配合使用，规划通信数据地址。 |
 
 **图1 **AllReduce三轮切分通信示例
-![
 
 #### 返回值说明
 
